@@ -1,0 +1,11 @@
+reaction:
+  kf: 1.0
+  kr: 0.5
+initial:
+  conc:
+    A: 1.0
+    B: 0.0
+sim:
+  time_span: 5.0
+  time_step: 0.05
+system: WellMixed
