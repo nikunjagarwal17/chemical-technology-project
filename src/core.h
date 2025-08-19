@@ -29,6 +29,21 @@ int simulate_multi_reactor(int N, int M,
                            double time_span, double dt,
                            double* times, double* conc_out_flat, int max_len);
 
+// Adaptive RK45 versions (embedded) with relative & absolute tolerances.
+// dt_init: initial time step to try
+// atol, rtol: absolute and relative tolerances
+int simulate_reactor_adaptive(double kf, double kr, double A0, double B0,
+                              double time_span, double dt_init, double atol, double rtol,
+                              double* times, double* Aout, double* Bout, int max_len);
+
+int simulate_multi_reactor_adaptive(int N, int M,
+                                    double* kf, double* kr,
+                                    int* reac_idx, double* reac_nu, int* reac_off,
+                                    int* prod_idx, double* prod_nu, int* prod_off,
+                                    double* conc0,
+                                    double time_span, double dt_init, double atol, double rtol,
+                                    double* times, double* conc_out_flat, int max_len);
+
 }
 
 #endif // SIMPLECANTERA_CORE_H

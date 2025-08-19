@@ -1,0 +1,57 @@
+name: Build wheels
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python-version: [3.10, 3.11, 3.12, 3.13]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install build dependencies
+        run: |
+          python -m pip install --upgrade pip setuptools wheel build cython numpy
+      - name: Build wheel(s)
+        run: |
+          python -m build -w
+      - name: List built wheels
+        run: |
+          echo "Wheels in dist:" && ls -la dist || true
+      - name: Upload per-job wheel artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: wheels-${{ matrix.os }}-py${{ matrix.python-version }}
+          path: dist/*.whl
+
+  collect-wheels:
+    name: Collect and zip all wheels
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          # no name => download all artifacts produced by previous jobs
+          path: ./downloaded_artifacts
+      - name: Create combined zip of all wheels
+        run: |
+          mkdir -p out_wheels
+          # find all .whl files under downloaded_artifacts and copy
+          find downloaded_artifacts -name "*.whl" -exec cp {} out_wheels/ \;
+          ls -la out_wheels
+          zip -r wheels-all.zip out_wheels || true
+      - name: Upload combined wheels zip
+        uses: actions/upload-artifact@v4
+        with:
+          name: wheels-all
+          path: wheels-all.zip

@@ -1,0 +1,17 @@
+species:
+  - A
+  - B
+reactions:
+  - kf: 1.0
+    kr: 0.5
+    reactants:
+      A: 1
+    products:
+      B: 1
+sim:
+  time_span: 5.0
+  time_step: 0.01
+initial:
+  conc:
+    A: 1.0
+    B: 0.0

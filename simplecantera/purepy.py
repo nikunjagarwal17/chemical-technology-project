@@ -122,6 +122,69 @@ class MultiReactor:
             traj.append(list(self.conc))
         return times, traj
 
+    def run_adaptive(self, time_span: float, dt_init: float = 1e-3, atol: float = 1e-6, rtol: float = 1e-6):
+        # Step-doubling adaptive RK4 (take dt and two dt/2 steps)
+        def rk4_step(y, dt):
+            N = len(y)
+            def deriv(state):
+                d = [0.0] * N
+                for rxn in self.reactions:
+                    rate = rxn.rate(state)
+                    for idx, nu in rxn.reactants.items():
+                        d[int(idx)] -= nu * rate
+                    for idx, nu in rxn.products.items():
+                        d[int(idx)] += nu * rate
+                return d
+            k1 = deriv(y)
+            y2 = [y[i] + 0.5 * dt * k1[i] for i in range(N)]
+            k2 = deriv(y2)
+            y3 = [y[i] + 0.5 * dt * k2[i] for i in range(N)]
+            k3 = deriv(y3)
+            y4 = [y[i] + dt * k3[i] for i in range(N)]
+            k4 = deriv(y4)
+            ynew = [y[i] + (dt/6.0)*(k1[i] + 2.0*k2[i] + 2.0*k3[i] + k4[i]) for i in range(N)]
+            return ynew
+
+        t = 0.0
+        y = list(self.conc)
+        out_times = [0.0]
+        out_traj = [list(y)]
+        dt = float(dt_init)
+        while t < time_span:
+            if t + dt > time_span:
+                dt = time_span - t
+            # one step
+            y_big = rk4_step(y, dt)
+            # two half steps
+            y_half = rk4_step(y, dt*0.5)
+            y_two = rk4_step(y_half, dt*0.5)
+            # error estimate
+            errnorm = 0.0
+            for i in range(self.N):
+                sc = atol + rtol * max(abs(y[i]), abs(y_two[i]))
+                e = (y_two[i] - y_big[i]) / sc if sc != 0 else 0.0
+                errnorm += e*e
+            errnorm = (errnorm / self.N) ** 0.5
+            if errnorm <= 1.0:
+                t += dt
+                y = [max(0.0, v) for v in y_two]
+                out_times.append(t)
+                out_traj.append(list(y))
+            # adjust dt
+            safety = 0.9
+            minscale = 0.2
+            maxscale = 2.0
+            if errnorm == 0.0:
+                errnorm = 1e-16
+            # RK4 step-doubling: error ~ dt^5 so exponent is 1/5
+            scale = safety * errnorm ** (-0.2)
+            scale = max(minscale, min(maxscale, scale))
+            dt *= scale
+            if dt < 1e-12:
+                dt = 1e-12
+        self.conc = list(y)
+        return out_times, out_traj
+
 
 class WellMixedReactor:
     """Constant-volume, isothermal reactor using forward Euler integration.
@@ -163,6 +226,55 @@ class WellMixedReactor:
             times.append((i + 1) * time_step)
             traj.append([self.conc[0], self.conc[1]])
         return times, traj
+
+    def run_adaptive(self, time_span: float, dt_init: float = 1e-3, atol: float = 1e-6, rtol: float = 1e-6):
+        # Step-doubling adaptive RK4 for scalar system
+        def rk4_step_scalar(state, dt):
+            a, b = state
+            def f(a, b):
+                r = self.reaction.rate([a, b])
+                return -r, r
+            k1A, k1B = f(a, b)
+            k2A, k2B = f(a + 0.5*dt*k1A, b + 0.5*dt*k1B)
+            k3A, k3B = f(a + 0.5*dt*k2A, b + 0.5*dt*k2B)
+            k4A, k4B = f(a + dt*k3A, b + dt*k3B)
+            anew = a + (dt/6.0)*(k1A + 2.0*k2A + 2.0*k3A + k4A)
+            bnew = b + (dt/6.0)*(k1B + 2.0*k2B + 2.0*k3B + k4B)
+            return anew, bnew
+
+        t = 0.0
+        A = self.conc[0]
+        B = self.conc[1]
+        out_times = [0.0]
+        out_traj = [[A, B]]
+        dt = float(dt_init)
+        while t < time_span:
+            if t + dt > time_span:
+                dt = time_span - t
+            # one big step
+            A_big, B_big = rk4_step_scalar((A, B), dt)
+            # two half steps
+            A_half, B_half = rk4_step_scalar((A, B), dt*0.5)
+            A_two, B_two = rk4_step_scalar((A_half, B_half), dt*0.5)
+            # error
+            scA = atol + rtol * max(abs(A), abs(A_two))
+            scB = atol + rtol * max(abs(B), abs(B_two))
+            eA = (A_two - A_big) / scA if scA != 0 else 0.0
+            eB = (B_two - B_big) / scB if scB != 0 else 0.0
+            errnorm = (eA*eA + eB*eB) ** 0.5 / (2 ** 0.5)
+            if errnorm <= 1.0:
+                t += dt
+                A, B = max(0.0, A_two), max(0.0, B_two)
+                out_times.append(t); out_traj.append([A, B])
+            safety = 0.9; minscale = 0.2; maxscale = 2.0
+            if errnorm == 0.0: errnorm = 1e-16
+            # RK4 step-doubling: error ~ dt^5 so exponent is 1/5
+            scale = safety * (errnorm ** -0.2)
+            scale = max(minscale, min(maxscale, scale))
+            dt *= scale
+            if dt < 1e-12: dt = 1e-12
+        self.conc = [A, B]
+        return out_times, out_traj
 
 
 class CSTR(WellMixedReactor):
@@ -398,6 +510,7 @@ def run_simulation_from_dict(spec: dict, csv_out: str = None, plot: bool = False
             # header
             if isinstance(traj[0][0], list) or isinstance(traj[0][0], tuple):
                 # network-like history: traj[t][reactor_index] == [A,B]
+                    # ...existing code...
                 nreact = len(traj[0])
                 header = ['time']
                 for i in range(nreact):
@@ -433,6 +546,19 @@ def run_simulation_from_dict(spec: dict, csv_out: str = None, plot: bool = False
             pass
 
     return times, traj
+
+
+# Small benchmarking helper
+def benchmark_multi_reactor(reactor: MultiReactor, time_span: float = 1.0, time_step: float = 0.001) -> float:
+    """Run a short timed loop of the reactor and return elapsed seconds.
+
+    This is a tiny helper for local microbenchmarks. It uses time.perf_counter.
+    """
+    import time
+    t0 = time.perf_counter()
+    reactor.run(time_span, time_step)
+    t1 = time.perf_counter()
+    return t1 - t0
 
 
 # Backwards-compatible alias
