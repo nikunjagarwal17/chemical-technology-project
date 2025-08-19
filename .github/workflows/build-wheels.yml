@@ -28,6 +28,8 @@ jobs:
         shell: bash
 
       - name: Build wheels with cibuildwheel
+        env:
+          CIBW_BUILD_VERBOSITY: 1
         run: |
           # capture full cibuildwheel output to a log file for debugging
           python -m cibuildwheel --output-dir dist 2>&1 | tee cibuildwheel.log
@@ -37,8 +39,8 @@ jobs:
         run: |
           echo "Contents of dist for $RUNNER_OS:"
           ls -la dist || true
-          echo "--- cibuildwheel log tail ---"
-          tail -n 200 cibuildwheel.log || true
+          echo "--- cibuildwheel log (full) ---"
+          sed -n '1,4000p' cibuildwheel.log || true
 
       - name: Upload wheels artifact and log
         if: always()
