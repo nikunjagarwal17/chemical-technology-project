@@ -35,8 +35,6 @@ if os.path.exists(os.path.join('simplecantera', 'pybindings.cpp')):
         sources=sources,
         language='c++',
         include_dirs=include_dirs + [os.path.abspath('simplecantera')],
-        library_dirs=library_dirs,
-        libraries=[py_lib_name] if py_lib_name else [],
     )
     extensions = [ext]
 else:
@@ -49,8 +47,6 @@ else:
             sources=sources,
             language='c++',
             include_dirs=include_dirs + [os.path.abspath('simplecantera')],
-            library_dirs=library_dirs,
-            libraries=[py_lib_name] if py_lib_name else [],
         )
         extensions = cythonize([ext])
     except Exception:
