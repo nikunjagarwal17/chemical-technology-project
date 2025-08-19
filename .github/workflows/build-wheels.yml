@@ -1,65 +1,74 @@
 name: Build wheels
 
-on:
-  push:
-  pull_request:
-
 name: Build wheels (cibuildwheel)
 
 on:
-  workflow_dispatch:
   push:
     branches: [ main ]
+  pull_request:
+  workflow_dispatch:
 
 jobs:
-  build-wheels:
-    name: Build wheels on ${{ matrix.os }} for Python ${{ matrix.python-version }}
+  build:
+    name: Build wheels on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
-        python-version: ['3.10','3.11','3.12','3.13']
     steps:
       - uses: actions/checkout@v4
-      - name: Set up Python
+
+      - name: Set up Python (bootstrap)
         uses: actions/setup-python@v4
         with:
-          python-version: ${{ matrix.python-version }}
-      - name: Install build tools
+          python-version: 3.11
+
+      - name: Install build tools and deps
         run: |
-          python -m pip install --upgrade pip setuptools wheel build cibuildwheel==2.17.5
-          python -m pip install cython numpy
+          python -m pip install --upgrade pip setuptools wheel
+          python -m pip install cibuildwheel==2.17.5 cython numpy
+
       - name: Build wheels with cibuildwheel
-        env:
-          CIBW_TEST_REQUIRES: pytest
-          CIBW_BEFORE_BUILD: python -c "import sys; print('Python', sys.version)"
         run: |
-          python -m cibuildwheel --output-dir dist
-      - name: List built wheels
+          # capture full cibuildwheel output to a log file for debugging
+          python -m cibuildwheel --output-dir dist 2>&1 | tee cibuildwheel.log
+        shell: bash
+
+      - name: Show dist contents
         run: |
-          python -c "import glob,sys; print('Wheels in dist:'); print(glob.glob('dist/*.whl'))"
-      - name: Upload wheels artifact
+          echo "Contents of dist for $RUNNER_OS:"
+          ls -la dist || true
+          echo "--- cibuildwheel log tail ---"
+          tail -n 200 cibuildwheel.log || true
+
+      - name: Upload wheels artifact and log
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: wheels-${{ matrix.os }}-py${{ matrix.python-version }}
-          path: dist/*.whl
+          name: wheels-${{ matrix.os }}
+          path: |
+            dist
+            cibuildwheel.log
 
-  collect-wheels:
+  collect:
     name: Collect and zip all wheels
     runs-on: ubuntu-latest
-    needs: build-wheels
+    needs: build
     steps:
       - uses: actions/checkout@v4
+
       - name: Download all artifacts
         uses: actions/download-artifact@v4
         with:
           path: ./downloaded_artifacts
+
       - name: Create combined zip of all wheels
         run: |
           mkdir -p out_wheels
           find downloaded_artifacts -name "*.whl" -exec cp {} out_wheels/ \;
           ls -la out_wheels || true
           zip -r wheels-all.zip out_wheels || true
+
       - name: Upload combined wheels zip
         uses: actions/upload-artifact@v4
         with:

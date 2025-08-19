@@ -37,3 +37,12 @@ def load_spec_from_yaml(path: str) -> dict:
         return spec
     else:
         return yaml.safe_load(txt)
+
+
+def parse_mechanism(path: str) -> dict:
+    """Compatibility wrapper: alias for load_spec_from_yaml.
+
+    Some users expect a function named `parse_mechanism` (from CTI-style tools).
+    Provide a thin alias that returns the same spec dict as `load_spec_from_yaml`.
+    """
+    return load_spec_from_yaml(path)

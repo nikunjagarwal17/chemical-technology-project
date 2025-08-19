@@ -16,6 +16,12 @@ pip install -r requirements.txt
 python -m examples.run_example
 ```
 
+You can also parse simple mechanism files with `simplecantera.io.parse_mechanism(path)` (YAML or minimal CTI placeholder), and run the CSTR example:
+
+```bash
+python -m examples.run_cstr
+```
+
 Package layout
 
 - `simplecantera/` - package code (pure-Python fallback)

@@ -1,0 +1,52 @@
+Install MSVC Build Tools and install CI wheels
+
+This file documents the minimal steps to install Microsoft C++ Build Tools on Windows, build the Cython/C++ extension in-place, and the alternative of using CI-built wheels.
+
+1) Install Microsoft C++ Build Tools (minimal)
+- Download "Build Tools for Visual Studio" from:
+  https://visualstudio.microsoft.com/downloads/
+  (choose "Build Tools for Visual Studio")
+- Run the installer and select:
+  - Workload: "Desktop development with C++"
+  - Ensure these individual components are selected:
+    - MSVC v14x toolset (e.g. "MSVC v143 - VS 2022 C++ x64/x86 build tools")
+    - Windows 10/11 SDK (latest)
+  - Optional but useful: "C++ CMake tools for Windows"
+
+Notes:
+- Use the 64-bit toolset if your Python is 64-bit (recommended).
+- The requirement reported by setuptools is: "Microsoft Visual C++ 14.0 or greater".
+
+2) Build the extension locally (in a Developer command prompt)
+- Open the appropriate developer prompt:
+  - Start Menu → "x64 Native Tools Command Prompt for VS 20xx" (or x86 if using 32-bit Python).
+- From your repo root run:
+
+  python -m pip install --upgrade pip setuptools wheel
+  python -m pip install cython numpy
+  python setup.py build_ext --inplace
+
+- Or to install the package (builds extension during install):
+
+  python -m pip install -e .
+
+Verification:
+- After successful build, run the test suite to confirm everything works:
+
+  python -m pytest -q
+
+Common issues and quick fixes:
+- "Microsoft Visual C++ 14.0 or greater is required": Re-run Build Tools installer and ensure MSVC toolset + Windows SDK selected.
+- "cl.exe not found": Open the "Native Tools" developer prompt (not a plain cmd.exe).
+- Architecture mismatch: Use x64 Native Tools for 64-bit Python.
+- Missing Cython/numpy: pip install cython numpy before building.
+
+3) CI alternative: get prebuilt wheels
+- Repo has a GitHub Actions workflow that builds wheels across OS/Python versions and produces artifacts (e.g., wheels-all.zip).
+- Trigger: push your branch or open a PR to GitHub Actions.
+- After workflow completes: GitHub → Actions → workflow run → Artifacts → download wheels-all.zip.
+- Install a wheel that matches your Python/ABI/platform:
+
+  python -m pip install path\to\simplecantera-<version>-cpXY-<platform>.whl
+
+If a build fails locally, copy the first 30 lines of the build error here and I'll diagnose.

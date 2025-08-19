@@ -1,0 +1,23 @@
+Defaulting to user installation because normal site-packages is not writeable
+Obtaining file:///C:/Users/nikun/OneDrive/Documents/Chemical%20Technology%20Project/project
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: numpy in c:\users\nikun\appdata\roaming\python\python313\site-packages (from simplecantera==0.1.0) (2.3.2)
+Building wheels for collected packages: simplecantera
+  Building editable for simplecantera (pyproject.toml): started
+  Building editable for simplecantera (pyproject.toml): finished with status 'done'
+  Created wheel for simplecantera: filename=simplecantera-0.1.0-0.editable-py3-none-any.whl size=2839 sha256=31cc5b24a14c62ff76f900b79b5b77bfd934865e87036f565b68635ae52fa695
+  Stored in directory: C:\Users\nikun\AppData\Local\Temp\pip-ephem-wheel-cache-rzf1oqfd\wheels\36\fd\c1\16ec09d71480051b344493c99fdd01e626f1c193dadbe6e0f9
+Successfully built simplecantera
+Installing collected packages: simplecantera
+  Attempting uninstall: simplecantera
+    Found existing installation: simplecantera 0.1.0
+    Uninstalling simplecantera-0.1.0:
+      Successfully uninstalled simplecantera-0.1.0
+Successfully installed simplecantera-0.1.0
