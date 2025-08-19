@@ -4,33 +4,41 @@ on:
   push:
   pull_request:
 
+name: Build wheels (cibuildwheel)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
 jobs:
-  build:
+  build-wheels:
+    name: Build wheels on ${{ matrix.os }} for Python ${{ matrix.python-version }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
-        python-version: ['3.10', '3.11', '3.12', '3.13']
+        python-version: ['3.10','3.11','3.12','3.13']
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Show Python version
+      - name: Install build tools
         run: |
-          python -V
-          which python || where python || true
-      - name: Install build dependencies
+          python -m pip install --upgrade pip setuptools wheel build cibuildwheel==2.17.5
+          python -m pip install cython numpy
+      - name: Build wheels with cibuildwheel
+        env:
+          CIBW_TEST_REQUIRES: pytest
+          CIBW_BEFORE_BUILD: python -c "import sys; print('Python', sys.version)"
         run: |
-          python -m pip install --upgrade pip setuptools wheel build cython numpy
-      - name: Build wheel(s)
-        run: |
-          python -m build -w
+          python -m cibuildwheel --output-dir dist
       - name: List built wheels
         run: |
           python -c "import glob,sys; print('Wheels in dist:'); print(glob.glob('dist/*.whl'))"
-      - name: Upload per-job wheel artifact
+      - name: Upload wheels artifact
         uses: actions/upload-artifact@v4
         with:
           name: wheels-${{ matrix.os }}-py${{ matrix.python-version }}
@@ -39,20 +47,18 @@ jobs:
   collect-wheels:
     name: Collect and zip all wheels
     runs-on: ubuntu-latest
-    needs: build
+    needs: build-wheels
     steps:
       - uses: actions/checkout@v4
       - name: Download all artifacts
         uses: actions/download-artifact@v4
         with:
-          # no name => download all artifacts produced by previous jobs
           path: ./downloaded_artifacts
       - name: Create combined zip of all wheels
         run: |
           mkdir -p out_wheels
-          # find all .whl files under downloaded_artifacts and copy
           find downloaded_artifacts -name "*.whl" -exec cp {} out_wheels/ \;
-          ls -la out_wheels
+          ls -la out_wheels || true
           zip -r wheels-all.zip out_wheels || true
       - name: Upload combined wheels zip
         uses: actions/upload-artifact@v4
