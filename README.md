@@ -70,4 +70,8 @@ Package layout
 - `examples/` - example scripts
 - `tests/` - unit tests
 
+Documentation & project overview
+- `FOLDER_STRUCTURE.md` — formatted folder map and developer guidance
+- `PROGRESS.md` — three-part presentation plan (Part 1, Part 2, Part 3)
+
 ```

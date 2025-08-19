@@ -1,0 +1,76 @@
+Folder structure and project overview
+
+This file documents the repository layout, the purpose of each folder/file, the modular structure, how pieces work together, and the main technologies used.
+
+Root (project root)
+- README.md, USAGE.md, DEV.md, DOCS_FULL.md, STATUS.md, ROADMAP.md
+  - Purpose: high-level documentation, developer notes, usage instructions and roadmap.
+- pyproject.toml, setup.py, MANIFEST.in, requirements.txt
+  - Purpose: build/packaging metadata and build-system requirements (PEP 517/518 and setuptools configuration).
+- setup_bdist_output*.txt, run.log, build/ (build artifacts)
+  - Purpose: build logs and temporary build outputs produced during development.
+- INSTALL_WINDOWS_WHEELS.txt
+  - Purpose: notes about Windows wheel installation issues and guidance (developer-maintained).
+
+Top-level source and packaging folders
+- simplecantera/
+  - Purpose: Python package that provides the public API.
+  - Key files:
+    - __init__.py: imports compiled bindings if available, otherwise falls back to pure-Python implementation.
+    - purepy.py: pure-Python implementation (thermo, reaction models, reactors, RK4 & adaptive integrators). This ensures the package is usable without a compiled extension.
+    - io.py: YAML/spec helpers.
+    - pybindings.pyx (Cython): Cython wrapper source to expose the C++ core when building compiled extension.
+    - (generated) pybindings.cpp: sometimes present/generated during build; builds may regenerate this from the .pyx.
+- src/
+  - Purpose: C++ numerical core used for performance-critical computations.
+  - Key files: core.cpp / core.h implementing RK4 and Cash–Karp RK45 adaptive integrators and simulation entry points callable from Cython.
+
+Examples, docs, tests
+- examples/
+  - Purpose: runnable example specs and scripts (YAML specs, small scripts that call the package, plot results, write CSV).
+  - Examples include sample_spec.yaml, sample_display.py, and test1_spec.yaml/test2_spec.yaml/test3_spec.yaml and generated plots.
+- docs/
+  - Purpose: Sphinx/technical docs and long-form documentation.
+- tests/
+  - Purpose: pytest-based unit tests validating the pure-Python implementation and project behavior (8 tests present and passing locally).
+
+Build, CI and packaging
+- CI-related files (not always visible here): GitHub Actions workflows using cibuildwheel to produce manylinux/macos/windows wheels.
+- Packaging strategy:
+  - Pure-Python fallback: keep `purepy.py` fully functional so users can `pip install` from source without C toolchain.
+  - Compiled path: C++ core in `src/` + Cython wrapper in `simplecantera/pybindings.pyx`. `pyproject.toml` contains build-system requirements (numpy, Cython pinned) so isolated builds regenerate wrappers with a compatible Cython.
+  - `setup.py` contains conditional logic to cythonize when appropriate and add NumPy include dirs.
+
+Modular architecture and how it works
+- Layered design:
+  1. Public Python API (`simplecantera.__init__`) exports user-facing classes/functions.
+  2. High-level implementation: `purepy.py` provides models and integrators in pure Python. It is the canonical fallback and reference implementation.
+  3. Performance core (optional): `src/core.cpp` implements faster integrators and vectorized operations. The C++ functions are exposed to Python via Cython (`pybindings.pyx`).
+  4. IO & specs: YAML-based specs live in `examples/` and `io.py` contains helpers to load those specs into the builder (`build_from_dict`).
+  5. Tests & examples exercise both the pure-Python path and, when available, compiled bindings.
+
+How components interact at runtime
+- Importing the package:
+  - `simplecantera.__init__` attempts to import compiled `_pybindings` (C-extension). If present, it will expose the compiled core. If not present, it imports and uses `purepy.py`.
+- Running an example:
+  - Example script loads YAML spec -> uses `build_from_dict` to create reactor(s) and reactions -> calls `reactor.run(...)` to integrate -> writes CSV / plots results.
+
+Key algorithms & features implemented
+- Integrators: fixed-step RK4 and adaptive step-doubling RK4 in pure-Python; Cash–Karp RK45 in the C++ core for adaptive integration.
+- Reactor models: Well-mixed reactor, CSTR, discretized PFR, multi-species MultiReactor, and ReactorNetwork for simple series/parallel setups.
+- IO: YAML spec loader and convenience builders to translate specs into runtime objects.
+
+Technologies used
+- Language & build: Python (3.10–3.13 targeted), C++ (modern standard), Cython for bindings.
+- Libraries: NumPy (array ops), PyYAML (spec parsing), matplotlib (plotting examples), pytest (tests).
+- Packaging & CI: setuptools, wheel, build, cibuildwheel (for cross-platform wheel builds), GitHub Actions for CI.
+
+Notes and developer guidance
+- For local development without a C toolchain, use the pure-Python path — run examples and tests directly.
+- For building wheels or compiled extension locally, ensure matching Cython and Python versions (build isolation via `pyproject.toml` is recommended).
+- If you want a committed generated wrapper (`pybindings.cpp`) to avoid local cythonize, make sure it was produced with the target Cython/Python combination; otherwise CI-built wheels are safer.
+
+Status (short)
+- Pure-Python fallback implemented and tested locally (tests pass). C++ core and Cython sources exist but local builds on some Windows/Python combos may require CI or environment tweaks.
+
+If you want this file in a different format (Markdown with richer formatting) or named differently (for example `FOLDER_STRUCTURE.md`), tell me and I'll create/replace it.

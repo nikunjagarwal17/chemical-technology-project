@@ -1,0 +1,63 @@
+Challenges and Mitigations — Part 1
+
+This file lists concrete technical and conceptual challenges encountered so far and our mitigation strategies. It covers build/dependency issues, runtime/design challenges, and conceptual difficulties in logic and modeling.
+
+1) Build & packaging challenges
+- Problem: Local native builds fail across different CPython/Cython/NumPy combinations. Errors observed include unresolved linker symbols and C-API mismatches.
+- Cause: Cython-generated wrapper code may reference internals that changed between CPython versions; pre-generated `.cpp` files can become incompatible with the local Cython/Python combo.
+- Mitigation:
+  - Pin Cython < 3.0 in `pyproject.toml` to avoid Cython 3.x generated code that references unstable internals.
+  - Add `numpy` to build-system requirements and use `numpy.get_include()` in `setup.py` so headers are available.
+  - Prefer CI builds with `cibuildwheel` for wheel generation; publish artifacts rather than relying on local builds.
+
+2) Runtime consistency
+- Problem: Ensuring identical behavior between pure-Python and compiled paths.
+- Cause: Numerical tolerances and integration step selection can differ between implementations.
+- Mitigation:
+  - Keep pure-Python implementation as canonical reference and run unit tests against both implementations where possible.
+  - Use consistent tolerances and step control parameters in wrappers and document any differences.
+
+3) Reproducibility of generated wrapper
+- Problem: Committing generated `pybindings.cpp` can lead to incompatibility with different Cython/Python combos.
+- Mitigation:
+  - Prefer PEP-517 builds that regenerate wrappers with the build-time toolchain.
+  - If committing generated sources, include a clear note about the exact toolchain used to produce them and treat as a last resort.
+
+4) Conceptual modeling & logic challenges
+- Problem: Mapping human-readable YAML specs to numerical model objects (stoichiometry, species indexing, initial conditions) without ambiguity.
+- Cause: Variations in spec formats (scalar vs list time_span, optional keys, differing reaction representations) can create brittle parsing.
+- Mitigation:
+  - Build tolerant parsers (`build_from_dict`) that accept common variants and provide defaults.
+  - Document spec schema in `docs/` and include example YAMLs.
+
+5) Algorithm & numerical issues
+- Problem: Handling stiff systems and ensuring integrator stability.
+- Cause: Explicit RK4 and simple step-doubling adaptive integrator are not ideal for stiff systems.
+- Mitigation:
+  - For Part 1 demos, restrict to non-stiff representative problems.
+  - In C++ core (Part 2/3), implement more robust adaptive integrators (Cash–Karp RK45) and consider adding implicit integrators later if needed.
+
+6) Testing & validation
+- Problem: Ensuring correctness across multiple code paths (pure-Python vs C++), edge cases (zero conc, negative values), and multi-reactor networks.
+- Mitigation:
+  - Add unit tests for empty/zero conditions, conservation checks, and reaction reversibility.
+  - Compare outputs between pure-Python and compiled path using small tolerances; add benchmarks.
+
+7) Project coordination & presentation risks
+- Problem: Presenting Part 1 without the compiled path ready could raise questions about readiness.
+- Mitigation:
+  - Emphasize the deliberate pure-Python fallback and show reproducible demos.
+  - Prepare clear timeline and next steps to show a path to compiled performance.
+
+8) Documentation & onboarding
+- Problem: New contributors may struggle to reproduce builds or tests.
+- Mitigation:
+  - Provide `PART1_QUICKSTART.md`, `FOLDER_STRUCTURE.md`, `PROGRESS.md` and a `DEV.md` with detailed setup notes.
+
+9) Future conceptual challenges to prepare for
+- Extending the reaction language (complex stoichiometry, third-body effects, pressure-dependence)
+  - Plan: Incrementally add features and validate with unit tests and small benchmarks.
+- Numerical stability and performance tuning
+  - Plan: Add more advanced integrators, profiling, and possibly parallelization for large networks.
+
+If you want these written into slides or condensed into speaker notes, I can produce a `PART1_CHALLENGES.md` slide or a speaker notes file next.
