@@ -27,31 +27,32 @@ except Exception:
 library_dirs = [os.path.abspath('.')] + ([libdir] if libdir else [])
 
 sources = []
-if os.path.exists(os.path.join('simplecantera', 'pybindings.cpp')):
-    # Use the generated C++ file
-    sources = ['simplecantera/pybindings.cpp', 'src/core.cpp']
+# Prefer to cythonize the .pyx when Cython is available in the build
+# environment (PEP 517 isolated builds will install Cython if declared
+# in pyproject.toml). If Cython is not available, fall back to using the
+# pre-generated .cpp file if present.
+try:
+    from Cython.Build import cythonize
+    sources = ['simplecantera/pybindings.pyx', 'src/core.cpp']
     ext = Extension(
         'simplecantera._pybindings',
         sources=sources,
         language='c++',
         include_dirs=include_dirs + [os.path.abspath('simplecantera')],
     )
-    extensions = [ext]
-else:
-    # Fall back to Cython -> .pyx
-    try:
-        from Cython.Build import cythonize
-        sources = ['simplecantera/pybindings.pyx', 'src/core.cpp']
+    extensions = cythonize([ext])
+except Exception:
+    if os.path.exists(os.path.join('simplecantera', 'pybindings.cpp')):
+        # Use the generated C++ file when Cython isn't available
+        sources = ['simplecantera/pybindings.cpp', 'src/core.cpp']
         ext = Extension(
             'simplecantera._pybindings',
             sources=sources,
             language='c++',
             include_dirs=include_dirs + [os.path.abspath('simplecantera')],
         )
-        extensions = cythonize([ext])
-    except Exception:
-        # If Cython isn't available and no generated C++ exists, don't build
-        # a compiled extension (fall back to pure-Python package).
+        extensions = [ext]
+    else:
         extensions = []
 
 setup(
