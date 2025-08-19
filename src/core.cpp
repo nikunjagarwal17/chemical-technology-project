@@ -1,5 +1,6 @@
 #include "core.h"
 #include <cmath>
+#include <cstdlib>
 
 int simulate_reactor(double kf, double kr, double A0, double B0,
                      double time_span, double dt,

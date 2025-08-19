@@ -190,11 +190,30 @@ class WellMixedReactor:
     """Constant-volume, isothermal reactor using forward Euler integration.
 
     State: concentrations [A, B]
+    
+    Constructor is flexible:
+      - WellMixedReactor(thermo, reaction, T=..., conc0=(A0,B0))  # full form
+      - WellMixedReactor(reaction, A0=..., B0=...)               # convenient short form
     """
-    def __init__(self, thermo: Thermodynamics, reaction: Reaction,
-                 T: float = 300.0, volume: float = 1.0, conc0: Tuple[float, float] = (1.0, 0.0)):
-        self.thermo = thermo
-        self.reaction = reaction
+    def __init__(self, *args, T: float = 300.0, volume: float = 1.0, conc0: Tuple[float, float] = (1.0, 0.0), **kwargs):
+        # Backwards-compatible and convenient constructors
+        if len(args) == 1 and isinstance(args[0], Reaction):
+            # Short form: (reaction, A0=..., B0=...)
+            self.thermo = Thermodynamics()
+            self.reaction = args[0]
+        elif len(args) >= 2:
+            # Full form: (thermo, reaction, ...)
+            self.thermo = args[0]
+            self.reaction = args[1]
+        else:
+            raise TypeError('Expected WellMixedReactor(reaction, ...) or WellMixedReactor(thermo, reaction, ...)')
+
+        # Accept A0/B0 legacy keyword args for convenience
+        if 'A0' in kwargs or 'B0' in kwargs:
+            A0 = kwargs.get('A0', conc0[0])
+            B0 = kwargs.get('B0', conc0[1])
+            conc0 = (float(A0), float(B0))
+
         self.T = float(T)
         self.volume = float(volume)
         self.conc = [float(conc0[0]), float(conc0[1])]

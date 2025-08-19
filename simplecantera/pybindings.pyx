@@ -3,7 +3,8 @@ from libc.stdlib cimport malloc, free
 from cpython.ref cimport PyObject
 import cython
 
-cdef extern from "../src/core.h":
+# core.h is expected to be found via include_dirs passed by setup.py (src/)
+cdef extern from "core.h":
 	int simulate_reactor(double kf, double kr, double A0, double B0,
 						 double time_span, double dt,
 						 double* times, double* Aout, double* Bout, int max_len)
@@ -17,12 +18,9 @@ cdef extern from "../src/core.h":
 							   double time_span, double dt,
 							   double* times, double* conc_out_flat, int max_len)
 
-try:
-	import numpy as np
-	cimport numpy as np
-	_HAS_NUMPY = True
-except Exception:
-	_HAS_NUMPY = False
+import numpy as np
+cimport numpy as np
+_HAS_NUMPY = True
 
 
 cdef class Thermodynamics:
