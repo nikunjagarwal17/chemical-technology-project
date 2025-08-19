@@ -1,5 +1,6 @@
 from setuptools import setup, find_packages, Extension
 import os
+import sys
 
 install_requires = ['numpy']
 
@@ -34,22 +35,34 @@ sources = []
 try:
     from Cython.Build import cythonize
     sources = ['simplecantera/pybindings.pyx', 'src/core.cpp']
+    # Set C++ standard flags so lambdas/auto are supported on all platforms
+    if sys.platform == 'win32':
+        extra_compile_args = ['/std:c++17']
+    else:
+        extra_compile_args = ['-std=gnu++14']
     ext = Extension(
         'simplecantera._pybindings',
         sources=sources,
         language='c++',
         include_dirs=include_dirs + [os.path.abspath('simplecantera')],
+        extra_compile_args=extra_compile_args,
     )
     extensions = cythonize([ext])
 except Exception:
     if os.path.exists(os.path.join('simplecantera', 'pybindings.cpp')):
         # Use the generated C++ file when Cython isn't available
         sources = ['simplecantera/pybindings.cpp', 'src/core.cpp']
+        # Set C++ standard flags for fallback path as well
+        if sys.platform == 'win32':
+            extra_compile_args = ['/std:c++17']
+        else:
+            extra_compile_args = ['-std=gnu++14']
         ext = Extension(
             'simplecantera._pybindings',
             sources=sources,
             language='c++',
             include_dirs=include_dirs + [os.path.abspath('simplecantera')],
+            extra_compile_args=extra_compile_args,
         )
         extensions = [ext]
     else:
