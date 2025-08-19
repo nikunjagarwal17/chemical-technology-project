@@ -1,5 +1,5 @@
 """Run a small example simulation and save results to CSV."""
-from simplecantera import run_simulation
+from pyroxa import run_simulation
 import os
 
 spec = {

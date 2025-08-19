@@ -4,7 +4,7 @@ Outputs: examples/test3_plot.png and prints final concentrations
 """
 import yaml
 import matplotlib.pyplot as plt
-from simplecantera import Reaction, WellMixedReactor, ReactorNetwork
+from pyroxa import Reaction, WellMixedReactor, ReactorNetwork
 
 
 def run():

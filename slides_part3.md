@@ -1,7 +1,7 @@
-% SimpleCantera MVP — Part 3 Slides
+% Pyroxa MVP — Part 3 Slides
 
 # Slide 1 — Title
-SimpleCantera MVP — Part 3
+Pyroxa MVP — Part 3
 Release, wheels, and benchmarks
 
 ---

@@ -1,7 +1,7 @@
 PART 1 — Handout (Condensed)
 
 Goal
-- Communicate design, architecture, and demo plan for SimpleCantera MVP.
+- Communicate design, architecture, and demo plan for Pyroxa MVP.
 
 What this project is
 - Lightweight MVP inspired by Cantera.

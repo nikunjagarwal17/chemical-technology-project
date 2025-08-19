@@ -1,4 +1,4 @@
-DEV notes — SimpleCantera
+DEV notes — Pyroxa
 
 Purpose
 -------
@@ -31,7 +31,7 @@ python -m examples.run_example
 
 Build notes (compiled extension)
 --------------------------------
-- The project contains a C++ core under `src/` and Cython bindings in `simplecantera/pybindings.pyx`.
+- The project contains a C++ core under `src/` and Cython bindings in `pyroxa/pybindings.pyx`.
 - Building compiled extensions depends on matching Cython <> CPython compatibility:
   - `pyproject.toml` pins build-time Cython to `>=0.29,<3.0` for CI builds.
   - Locally, if you have Cython 3.x installed, it may generate code that needs CPython internals not present in your interpreter (causes unresolved link symbols).

@@ -13,7 +13,7 @@ This file documents the repository layout, the purpose of each folder/file, the 
   - Purpose: notes about Windows wheel installation issues and guidance (developer-maintained).
 
 ## Top-level source and packaging folders
-- `simplecantera/`
+- `pyroxa/`
   - Purpose: Python package that provides the public API.
   - Key files:
     - `__init__.py`: imports compiled bindings if available, otherwise falls back to pure-Python implementation.
@@ -38,7 +38,7 @@ This file documents the repository layout, the purpose of each folder/file, the 
 - CI-related files (not always visible here): GitHub Actions workflows using `cibuildwheel` to produce manylinux/macos/windows wheels.
 - Packaging strategy:
   - Pure-Python fallback: keep `purepy.py` fully functional so users can `pip install` from source without C toolchain.
-  - Compiled path: C++ core in `src/` + Cython wrapper in `simplecantera/pybindings.pyx`. `pyproject.toml` contains build-system requirements (numpy, Cython pinned) so isolated builds regenerate wrappers with a compatible Cython.
+  - Compiled path: C++ core in `src/` + Cython wrapper in `pyroxa/pybindings.pyx`. `pyproject.toml` contains build-system requirements (numpy, Cython pinned) so isolated builds regenerate wrappers with a compatible Cython.
   - `setup.py` contains conditional logic to cythonize when appropriate and add NumPy include dirs.
 
 ## Notes and developer guidance

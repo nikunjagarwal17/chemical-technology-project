@@ -37,8 +37,8 @@ Expected outputs
 
 Files to show during the demo
 - `folder str` (or `FOLDER_STRUCTURE.md`) — open this file to show the repo layout.
-- `simplecantera/__init__.py` — show import fallback logic.
-- `simplecantera/purepy.py` — open a small RK4/adaptive integrator snippet.
+- `pyroxa/__init__.py` — show import fallback logic.
+- `pyroxa/purepy.py` — open a small RK4/adaptive integrator snippet.
 - Examples: `examples/test1_spec.yaml` and the generated `examples/test1_plot.png`.
 
 Optional: Capture screenshots

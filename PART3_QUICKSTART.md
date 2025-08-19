@@ -9,19 +9,19 @@ Prerequisites
 Install from CI artifact (example)
 
 ```cmd
-pip install https://ci.example.com/artifacts/simplecantera-1.0.0-cp310-win_amd64.whl
+pip install https://ci.example.com/artifacts/pyroxa-1.0.0-cp310-win_amd64.whl
 ```
 
 Or install from local dist directory
 
 ```cmd
-pip install dist\simplecantera-<version>-<platform>.whl
+pip install dist\pyroxa-<version>-<platform>.whl
 ```
 
 Validate installation
 
 ```cmd
-python -c "import simplecantera; print(simplecantera.Reaction)"
+python -c "import pyroxa; print(pyroxa.Reaction)"
 python -m test1  # run demo to validate correct behaviour and performance
 ```
 

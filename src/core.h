@@ -1,5 +1,5 @@
-#ifndef SIMPLECANTERA_CORE_H
-#define SIMPLECANTERA_CORE_H
+#ifndef PYROXA_CORE_H
+#define PYROXA_CORE_H
 
 extern "C" {
 
@@ -46,4 +46,4 @@ int simulate_multi_reactor_adaptive(int N, int M,
 
 }
 
-#endif // SIMPLECANTERA_CORE_H
+#endif // PYROXA_CORE_H

@@ -5,7 +5,7 @@ Outputs: examples/test2_plot.png and prints final concentrations
 import yaml
 import numpy as np
 import matplotlib.pyplot as plt
-from simplecantera import CSTR, PFR
+from pyroxa import CSTR, PFR
 
 
 def run():

@@ -1,5 +1,5 @@
 """
-Pure-Python core implementation for the SimpleCantera MVP.
+Pure-Python core implementation for the Pyroxa MVP.
 
 Includes:
 - Thermodynamics: ideal-gas, constant cp enthalpy/entropy

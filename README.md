@@ -1,4 +1,4 @@
-# SimpleCantera MVP
+# Pyroxa MVP
 
 Minimal MVP inspired by Cantera for a reversible reaction A <=> B in a constant-volume, isothermal reactor.
 
@@ -16,14 +16,14 @@ pip install -r requirements.txt
 python -m examples.run_example
 ```
 
-You can also parse simple mechanism files with `simplecantera.io.parse_mechanism(path)` (YAML or minimal CTI placeholder), and run the CSTR example:
+You can also parse simple mechanism files with `pyroxa.io.parse_mechanism(path)` (YAML or minimal CTI placeholder), and run the CSTR example:
 
 ```bash
 python -m examples.run_cstr
 ```
 
 ```markdown
-# SimpleCantera MVP
+# Pyroxa MVP
 
 Minimal MVP inspired by Cantera for a reversible reaction A <=> B in a constant-volume, isothermal reactor.
 
@@ -52,7 +52,7 @@ python -m pytest -q
 - Start an interactive experiment (import the package):
 
 ```python
-from simplecantera import Reaction, WellMixedReactor
+from pyroxa import Reaction, WellMixedReactor
 rxn = Reaction(1.0, 0.5)
 r = WellMixedReactor(rxn, A0=1.0, B0=0.0)
 times, traj = r.run(0.5, 0.1)
@@ -60,13 +60,13 @@ times, traj = r.run(0.5, 0.1)
 
 Notes on the compiled extension
 
-- The project contains a C++ core and Cython bindings for performance. Building wheels or local extensions requires a compatible Cython/Python toolchain. For immediate local development you do not need to build the extension — the pure-Python fallback (`simplecantera/purepy.py`) is functional and tested.
+- The project contains a C++ core and Cython bindings for performance. Building wheels or local extensions requires a compatible Cython/Python toolchain. For immediate local development you do not need to build the extension — the pure-Python fallback (`pyroxa/purepy.py`) is functional and tested.
 
 When you're ready to produce binary wheels for distribution, use the CI workflow (cibuildwheel) which will build platform-specific wheels in controlled environments. This was deferred per current plan.
 
 Package layout
 
-- `simplecantera/` - package code (pure-Python fallback)
+- `pyroxa/` - package code (pure-Python fallback)
 - `examples/` - example scripts
 - `tests/` - unit tests
 

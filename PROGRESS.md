@@ -30,15 +30,15 @@ python -m test2
 python -m test3
 ```
 
-- A short script to show the public API and how import chooses compiled vs pure-Python (open `simplecantera/__init__.py`).
+- A short script to show the public API and how import chooses compiled vs pure-Python (open `pyroxa/__init__.py`).
 - A one-slide timeline showing Part 2 and Part 3 milestones (deliverable dates, resources needed).
 
 ### Design + modular structure to present (talking points)
 - Layered design:
-  1. Public API: `simplecantera.__init__` provides `Reaction`, `WellMixedReactor`, `CSTR`, `PFR`, `ReactorNetwork`, etc.
-  2. Pure-Python reference: `simplecantera/purepy.py` — fully functional fallback implementing RK4 and adaptive integrators (step-doubling RK4).
+  1. Public API: `pyroxa.__init__` provides `Reaction`, `WellMixedReactor`, `CSTR`, `PFR`, `ReactorNetwork`, etc.
+  2. Pure-Python reference: `pyroxa/purepy.py` — fully functional fallback implementing RK4 and adaptive integrators (step-doubling RK4).
   3. Performance core: `src/core.cpp` + `src/core.h` — C++ implementation for RK4 and Cash–Karp RK45 adaptive integrator.
-  4. Bindings: `simplecantera/pybindings.pyx` (Cython) — exposes C++ functions to Python; `pybindings.cpp` may be generated at build-time.
+  4. Bindings: `pyroxa/pybindings.pyx` (Cython) — exposes C++ functions to Python; `pybindings.cpp` may be generated at build-time.
   5. IO/Specs: YAML specs in `examples/` and helper `io.py` / `build_from_dict` to construct runtime objects.
   6. Packaging/CI: `pyproject.toml`, `setup.py`, and GitHub Actions + cibuildwheel to produce wheels.
 
@@ -68,7 +68,7 @@ python -m test3
 - Pure-Python engine (`purepy.py`): Thermodynamics, Reaction (A <=> B), ReactionMulti, WellMixedReactor, CSTR, PFR, MultiReactor, ReactorNetwork, RK4 and adaptive integrators — tested and working locally.
 - Examples + YAML specs: `examples/` contains multiple specs and scripts (`test1.py`, `test2.py`, `test3.py`) that generate plots and CSV.
 - Unit tests: `tests/` contains pytest tests (8 tests) — passing locally.
-- C++ core and Cython wrapper: source files present (`src/core.cpp`, `src/core.h`, `simplecantera/pybindings.pyx`), but local builds have produced environment-specific issues; CI integration exists.
+- C++ core and Cython wrapper: source files present (`src/core.cpp`, `src/core.h`, `pyroxa/pybindings.pyx`), but local builds have produced environment-specific issues; CI integration exists.
 
 ### Remaining tasks (explicit)
 - Fix and stabilise local/native builds on Windows/CPython 3.13 (resolve C-API mismatches) or document a recommended Python toolchain for local builds.
@@ -118,8 +118,8 @@ python -m test3
 
 - Files to point to in the repo during presentation:
   - `folder str` (folder map)
-  - `simplecantera/__init__.py` (import fallback logic)
-  - `simplecantera/purepy.py` (show RK4/adaptive implementation, Reaction API)
+  - `pyroxa/__init__.py` (import fallback logic)
+  - `pyroxa/purepy.py` (show RK4/adaptive implementation, Reaction API)
   - `examples/test1_spec.yaml`, `examples/test2_spec.yaml`, `examples/test3_spec.yaml` and `examples/*.png`
   - `tests/` (pytest tests) and `run_test_import.py` for a quick import check
 

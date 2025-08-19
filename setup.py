@@ -30,25 +30,25 @@ else:
 extensions = []
 try:
     from Cython.Build import cythonize
-    sources = ['simplecantera/pybindings.pyx', 'src/core.cpp']
+    sources = ['pyroxa/pybindings.pyx', 'src/core.cpp']
     ext = Extension(
-        'simplecantera._pybindings',
+        'pyroxa._pybindings',
         sources=sources,
         language='c++',
-        include_dirs=include_dirs + [os.path.abspath('simplecantera')],
+        include_dirs=include_dirs + [os.path.abspath('pyroxa')],
         extra_compile_args=extra_compile_args,
         define_macros=[('NPY_NO_DEPRECATED_API', 'NPY_1_7_API_VERSION')],
     )
     extensions = cythonize([ext], compiler_directives={"language_level": "3"})
 except Exception:
     # Last-resort fallback: if Cython not present and no pre-generated .cpp, skip ext build
-    if os.path.exists(os.path.join('simplecantera', 'pybindings.cpp')):
-        sources = ['simplecantera/pybindings.cpp', 'src/core.cpp']
+    if os.path.exists(os.path.join('pyroxa', 'pybindings.cpp')):
+        sources = ['pyroxa/pybindings.cpp', 'src/core.cpp']
         ext = Extension(
-            'simplecantera._pybindings',
+            'pyroxa._pybindings',
             sources=sources,
             language='c++',
-            include_dirs=include_dirs + [os.path.abspath('simplecantera')],
+            include_dirs=include_dirs + [os.path.abspath('pyroxa')],
             extra_compile_args=extra_compile_args,
             define_macros=[('NPY_NO_DEPRECATED_API', 'NPY_1_7_API_VERSION')],
         )
@@ -57,7 +57,7 @@ except Exception:
         extensions = []
 
 setup(
-    name='simplecantera',
+    name='pyroxa',
     version='0.1.0',
     packages=find_packages(),
     install_requires=install_requires,

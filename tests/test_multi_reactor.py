@@ -1,5 +1,5 @@
 """Tests for multi-species multi-reaction reactor"""
-from simplecantera import build_from_dict, run_simulation
+from pyroxa import build_from_dict, run_simulation
 
 
 def test_simple_two_step_series():

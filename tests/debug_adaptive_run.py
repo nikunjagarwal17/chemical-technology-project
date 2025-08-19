@@ -1,4 +1,4 @@
-from simplecantera.purepy import Thermodynamics, Reaction, WellMixedReactor, MultiReactor, ReactionMulti
+from pyroxa.purepy import Thermodynamics, Reaction, WellMixedReactor, MultiReactor, ReactionMulti
 
 print('Single reactor debug')
 thermo = Thermodynamics()

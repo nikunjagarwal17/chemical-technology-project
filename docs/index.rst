@@ -1,4 +1,4 @@
-SimpleCantera
+Pyroxa
 ===============
 
 .. toctree::

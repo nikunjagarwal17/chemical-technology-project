@@ -1,4 +1,4 @@
-from simplecantera.purepy import Thermodynamics, Reaction, WellMixedReactor, MultiReactor, ReactionMulti
+from pyroxa.purepy import Thermodynamics, Reaction, WellMixedReactor, MultiReactor, ReactionMulti
 
 
 def test_adaptive_single_close():

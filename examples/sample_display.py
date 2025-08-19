@@ -1,10 +1,10 @@
-"""Sample script that uses simplecantera to run a simulation and print a summary.
+"""Sample script that uses pyroxa to run a simulation and print a summary.
 
 Usage:
     python examples/sample_display.py
 """
 import yaml
-from simplecantera.purepy import build_from_dict
+from pyroxa.purepy import build_from_dict
 
 def main():
     with open('examples/sample_spec.yaml') as f:

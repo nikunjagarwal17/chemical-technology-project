@@ -1,5 +1,5 @@
 """Test ReactorNetwork series of two well-mixed reactors"""
-from simplecantera import run_simulation
+from pyroxa import run_simulation
 
 
 def test_series_network_equilibrium():

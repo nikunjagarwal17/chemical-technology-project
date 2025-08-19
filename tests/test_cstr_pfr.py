@@ -1,5 +1,5 @@
 """Tests for CSTR and PFR behaviors."""
-from simplecantera import build_from_dict, run_simulation
+from pyroxa import build_from_dict, run_simulation
 import os
 
 

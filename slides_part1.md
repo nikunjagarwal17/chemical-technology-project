@@ -1,7 +1,7 @@
-% SimpleCantera MVP — Part 1 Slides
+% Pyroxa MVP — Part 1 Slides
 
 # Slide 1 — Title
-SimpleCantera MVP — Part 1
+Pyroxa MVP — Part 1
 Design, architecture, and demo plan
 
 ---
@@ -12,7 +12,7 @@ Design, architecture, and demo plan
 
 ---
 # Slide 3 — Folder structure (high level)
-- `simplecantera/` — public API, pure-Python implementation, Cython sources
+- `pyroxa/` — public API, pure-Python implementation, Cython sources
 - `src/` — C++ core
 - `examples/` — YAML specs and demo scripts
 - `tests/` — pytest unit tests

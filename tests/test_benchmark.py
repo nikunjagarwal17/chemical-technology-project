@@ -1,5 +1,5 @@
 import pytest
-from simplecantera.purepy import Thermodynamics, ReactionMulti, MultiReactor, benchmark_multi_reactor
+from pyroxa.purepy import Thermodynamics, ReactionMulti, MultiReactor, benchmark_multi_reactor
 
 
 def test_benchmark_small():

@@ -39,7 +39,7 @@ Attempt a local editable build (optional, may fail on Windows CPython 3.13)
 
 ```cmd
 pip install -e .
-python -c "import simplecantera; print(simplecantera.Reaction)"
+python -c "import pyroxa; print(pyroxa.Reaction)"
 ```
 
 Create sdist and wheel locally (useful to reproduce CI behaviour)
@@ -51,7 +51,7 @@ python -m build --sdist --wheel
 If you have a CI-provided wheel, install and demo
 
 ```cmd
-pip install dist\simplecantera-<version>-<platform>.whl
+pip install dist\pyroxa-<version>-<platform>.whl
 python -m test1  # run same demo to show speedup
 ```
 

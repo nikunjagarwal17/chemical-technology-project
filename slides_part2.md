@@ -1,7 +1,7 @@
-% SimpleCantera MVP — Part 2 Slides
+% Pyroxa MVP — Part 2 Slides
 
 # Slide 1 — Title
-SimpleCantera MVP — Part 2
+Pyroxa MVP — Part 2
 Code status, tests, and benchmarks
 
 ---

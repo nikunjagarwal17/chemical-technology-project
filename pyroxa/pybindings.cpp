@@ -23,16 +23,16 @@
         "include_dirs": [
             "c:\\Users\\nikun\\OneDrive\\Documents\\Chemical Technology Project\\project\\src",
             "C:\\Users\\nikun\\AppData\\Roaming\\Python\\Python313\\site-packages\\numpy\\_core\\include",
-            "c:\\Users\\nikun\\OneDrive\\Documents\\Chemical Technology Project\\project\\simplecantera"
+            "c:\\Users\\nikun\\OneDrive\\Documents\\Chemical Technology Project\\project\\pyroxa"
         ],
         "language": "c++",
-        "name": "simplecantera._pybindings",
+        "name": "pyroxa._pybindings",
         "sources": [
-            "simplecantera/pybindings.pyx",
+            "pyroxa/pybindings.pyx",
             "src/core.cpp"
         ]
     },
-    "module_name": "simplecantera._pybindings"
+    "module_name": "pyroxa._pybindings"
 }
 END: Cython Metadata */
 
@@ -794,8 +794,8 @@ static CYTHON_INLINE float __PYX_NAN() {
   #endif
 #endif
 
-#define __PYX_HAVE__simplecantera___pybindings
-#define __PYX_HAVE_API__simplecantera___pybindings
+#define __PYX_HAVE__pyroxa___pybindings
+#define __PYX_HAVE_API__pyroxa___pybindings
 /* Early includes */
 #include <string.h>
 #include <stdlib.h>
@@ -1041,7 +1041,7 @@ static const char *__pyx_filename;
 
 static const char *__pyx_f[] = {
   "stringsource",
-  "simplecantera\\pybindings.pyx",
+  "pyroxa\\pybindings.pyx",
   "__init__.pxd",
   "type.pxd",
 };
@@ -1236,49 +1236,49 @@ static CYTHON_INLINE __pyx_t_long_double_complex __pyx_t_long_double_complex_fro
 
 
 /*--- Type declarations ---*/
-struct __pyx_obj_13simplecantera_11_pybindings_Thermodynamics;
-struct __pyx_obj_13simplecantera_11_pybindings_Reaction;
-struct __pyx_obj_13simplecantera_11_pybindings_ReactionMulti;
-struct __pyx_obj_13simplecantera_11_pybindings_MultiReactor;
-struct __pyx_obj_13simplecantera_11_pybindings_Reactor;
+struct __pyx_obj_13pyroxa_11_pybindings_Thermodynamics;
+struct __pyx_obj_13pyroxa_11_pybindings_Reaction;
+struct __pyx_obj_13pyroxa_11_pybindings_ReactionMulti;
+struct __pyx_obj_13pyroxa_11_pybindings_MultiReactor;
+struct __pyx_obj_13pyroxa_11_pybindings_Reactor;
 
-/* "simplecantera/pybindings.pyx":26
+/* "pyroxa/pybindings.pyx":26
  * 
  * 
  * cdef class Thermodynamics:             # <<<<<<<<<<<<<<
  * 	cdef double cp
  * 
  */
-struct __pyx_obj_13simplecantera_11_pybindings_Thermodynamics {
+struct __pyx_obj_13pyroxa_11_pybindings_Thermodynamics {
   PyObject_HEAD
   double cp;
 };
 
 
-/* "simplecantera/pybindings.pyx":39
+/* "pyroxa/pybindings.pyx":39
  * 
  * 
  * cdef class Reaction:             # <<<<<<<<<<<<<<
  * 	cdef double kf
  * 	cdef double kr
  */
-struct __pyx_obj_13simplecantera_11_pybindings_Reaction {
+struct __pyx_obj_13pyroxa_11_pybindings_Reaction {
   PyObject_HEAD
   double kf;
   double kr;
 };
 
 
-/* "simplecantera/pybindings.pyx":51
+/* "pyroxa/pybindings.pyx":51
  * 
  * 
  * cdef class ReactionMulti:             # <<<<<<<<<<<<<<
  * 	cdef double kf
  * 	cdef double kr
  */
-struct __pyx_obj_13simplecantera_11_pybindings_ReactionMulti {
+struct __pyx_obj_13pyroxa_11_pybindings_ReactionMulti {
   PyObject_HEAD
-  struct __pyx_vtabstruct_13simplecantera_11_pybindings_ReactionMulti *__pyx_vtab;
+  struct __pyx_vtabstruct_13pyroxa_11_pybindings_ReactionMulti *__pyx_vtab;
   double kf;
   double kr;
   PyObject *reactants;
@@ -1286,16 +1286,16 @@ struct __pyx_obj_13simplecantera_11_pybindings_ReactionMulti {
 };
 
 
-/* "simplecantera/pybindings.pyx":84
+/* "pyroxa/pybindings.pyx":84
  * 
  * 
  * cdef class MultiReactor:             # <<<<<<<<<<<<<<
  * 	cdef list species
  * 	cdef list conc
  */
-struct __pyx_obj_13simplecantera_11_pybindings_MultiReactor {
+struct __pyx_obj_13pyroxa_11_pybindings_MultiReactor {
   PyObject_HEAD
-  struct __pyx_vtabstruct_13simplecantera_11_pybindings_MultiReactor *__pyx_vtab;
+  struct __pyx_vtabstruct_13pyroxa_11_pybindings_MultiReactor *__pyx_vtab;
   PyObject *species;
   PyObject *conc;
   PyObject *reactions;
@@ -1303,14 +1303,14 @@ struct __pyx_obj_13simplecantera_11_pybindings_MultiReactor {
 };
 
 
-/* "simplecantera/pybindings.pyx":135
+/* "pyroxa/pybindings.pyx":135
  * 
  * 
  * cdef class Reactor:             # <<<<<<<<<<<<<<
  * 	cdef double kf
  * 	cdef double kr
  */
-struct __pyx_obj_13simplecantera_11_pybindings_Reactor {
+struct __pyx_obj_13pyroxa_11_pybindings_Reactor {
   PyObject_HEAD
   double kf;
   double kr;
@@ -1322,7 +1322,7 @@ struct __pyx_obj_13simplecantera_11_pybindings_Reactor {
 
 
 
-/* "simplecantera/pybindings.pyx":51
+/* "pyroxa/pybindings.pyx":51
  * 
  * 
  * cdef class ReactionMulti:             # <<<<<<<<<<<<<<
@@ -1330,13 +1330,13 @@ struct __pyx_obj_13simplecantera_11_pybindings_Reactor {
  * 	cdef double kr
  */
 
-struct __pyx_vtabstruct_13simplecantera_11_pybindings_ReactionMulti {
-  double (*rate)(struct __pyx_obj_13simplecantera_11_pybindings_ReactionMulti *, PyObject *, int __pyx_skip_dispatch);
+struct __pyx_vtabstruct_13pyroxa_11_pybindings_ReactionMulti {
+  double (*rate)(struct __pyx_obj_13pyroxa_11_pybindings_ReactionMulti *, PyObject *, int __pyx_skip_dispatch);
 };
-static struct __pyx_vtabstruct_13simplecantera_11_pybindings_ReactionMulti *__pyx_vtabptr_13simplecantera_11_pybindings_ReactionMulti;
+static struct __pyx_vtabstruct_13pyroxa_11_pybindings_ReactionMulti *__pyx_vtabptr_13pyroxa_11_pybindings_ReactionMulti;
 
 
-/* "simplecantera/pybindings.pyx":84
+/* "pyroxa/pybindings.pyx":84
  * 
  * 
  * cdef class MultiReactor:             # <<<<<<<<<<<<<<
@@ -1344,10 +1344,10 @@ static struct __pyx_vtabstruct_13simplecantera_11_pybindings_ReactionMulti *__py
  * 	cdef list conc
  */
 
-struct __pyx_vtabstruct_13simplecantera_11_pybindings_MultiReactor {
-  PyObject *(*_dcdt)(struct __pyx_obj_13simplecantera_11_pybindings_MultiReactor *, PyObject *, int __pyx_skip_dispatch);
+struct __pyx_vtabstruct_13pyroxa_11_pybindings_MultiReactor {
+  PyObject *(*_dcdt)(struct __pyx_obj_13pyroxa_11_pybindings_MultiReactor *, PyObject *, int __pyx_skip_dispatch);
 };
-static struct __pyx_vtabstruct_13simplecantera_11_pybindings_MultiReactor *__pyx_vtabptr_13simplecantera_11_pybindings_MultiReactor;
+static struct __pyx_vtabstruct_13pyroxa_11_pybindings_MultiReactor *__pyx_vtabptr_13pyroxa_11_pybindings_MultiReactor;
 
 /* --- Runtime support code (head) --- */
 /* Refnanny.proto */
@@ -2012,8 +2012,8 @@ static int __Pyx_check_binary_version(void);
 /* InitStrings.proto */
 static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
-static double __pyx_f_13simplecantera_11_pybindings_13ReactionMulti_rate(struct __pyx_obj_13simplecantera_11_pybindings_ReactionMulti *__pyx_v_self, PyObject *__pyx_v_conc, int __pyx_skip_dispatch); /* proto*/
-static PyObject *__pyx_f_13simplecantera_11_pybindings_12MultiReactor__dcdt(struct __pyx_obj_13simplecantera_11_pybindings_MultiReactor *__pyx_v_self, PyObject *__pyx_v_conc, int __pyx_skip_dispatch); /* proto*/
+static double __pyx_f_13pyroxa_11_pybindings_13ReactionMulti_rate(struct __pyx_obj_13pyroxa_11_pybindings_ReactionMulti *__pyx_v_self, PyObject *__pyx_v_conc, int __pyx_skip_dispatch); /* proto*/
+static PyObject *__pyx_f_13pyroxa_11_pybindings_12MultiReactor__dcdt(struct __pyx_obj_13pyroxa_11_pybindings_MultiReactor *__pyx_v_self, PyObject *__pyx_v_conc, int __pyx_skip_dispatch); /* proto*/
 
 /* Module declarations from 'libc.string' */
 
@@ -2057,17 +2057,17 @@ static PyTypeObject *__pyx_ptype_5numpy_flexible = 0;
 static PyTypeObject *__pyx_ptype_5numpy_character = 0;
 static PyTypeObject *__pyx_ptype_5numpy_ufunc = 0;
 
-/* Module declarations from 'simplecantera._pybindings' */
-static PyTypeObject *__pyx_ptype_13simplecantera_11_pybindings_Thermodynamics = 0;
-static PyTypeObject *__pyx_ptype_13simplecantera_11_pybindings_Reaction = 0;
-static PyTypeObject *__pyx_ptype_13simplecantera_11_pybindings_ReactionMulti = 0;
-static PyTypeObject *__pyx_ptype_13simplecantera_11_pybindings_MultiReactor = 0;
-static PyTypeObject *__pyx_ptype_13simplecantera_11_pybindings_Reactor = 0;
-#define __Pyx_MODULE_NAME "simplecantera._pybindings"
-extern int __pyx_module_is_main_simplecantera___pybindings;
-int __pyx_module_is_main_simplecantera___pybindings = 0;
+/* Module declarations from 'pyroxa._pybindings' */
+static PyTypeObject *__pyx_ptype_13pyroxa_11_pybindings_Thermodynamics = 0;
+static PyTypeObject *__pyx_ptype_13pyroxa_11_pybindings_Reaction = 0;
+static PyTypeObject *__pyx_ptype_13pyroxa_11_pybindings_ReactionMulti = 0;
+static PyTypeObject *__pyx_ptype_13pyroxa_11_pybindings_MultiReactor = 0;
+static PyTypeObject *__pyx_ptype_13pyroxa_11_pybindings_Reactor = 0;
+#define __Pyx_MODULE_NAME "pyroxa._pybindings"
+extern int __pyx_module_is_main_pyroxa___pybindings;
+int __pyx_module_is_main_pyroxa___pybindings = 0;
 
-/* Implementation of 'simplecantera._pybindings' */
+/* Implementation of 'pyroxa._pybindings' */
 static PyObject *__pyx_builtin_TypeError;
 static PyObject *__pyx_builtin_range;
 static PyObject *__pyx_builtin_round;
@@ -2177,10 +2177,10 @@ static const char __pyx_k_allocation_failed[] = "allocation failed";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
 static const char __pyx_k_run_simulation_cpp[] = "run_simulation_cpp";
 static const char __pyx_k_spec_must_be_a_dict[] = "spec must be a dict";
-static const char __pyx_k_simplecantera__pybindings[] = "simplecantera._pybindings";
+static const char __pyx_k_pyroxa__pybindings[] = "pyroxa._pybindings";
 static const char __pyx_k_allocation_failed_for_conc0[] = "allocation failed for conc0";
 static const char __pyx_k_allocation_failed_for_kf_kr[] = "allocation failed for kf/kr";
-static const char __pyx_k_simplecantera_pybindings_pyx[] = "simplecantera\\pybindings.pyx";
+static const char __pyx_k_pyroxa_pybindings_pyx[] = "pyroxa\\pybindings.pyx";
 static const char __pyx_k_allocation_failed_for_products[] = "allocation failed for products";
 static const char __pyx_k_allocation_failed_for_reactants[] = "allocation failed for reactants";
 static const char __pyx_k_allocation_failed_for_output_buf[] = "allocation failed for output buffers";
@@ -2297,8 +2297,8 @@ static PyObject *__pyx_n_s_setstate_cython;
 static PyObject *__pyx_n_s_shape;
 static PyObject *__pyx_n_s_sim;
 static PyObject *__pyx_n_u_sim;
-static PyObject *__pyx_n_s_simplecantera__pybindings;
-static PyObject *__pyx_kp_s_simplecantera_pybindings_pyx;
+static PyObject *__pyx_n_s_pyroxa__pybindings;
+static PyObject *__pyx_kp_s_pyroxa_pybindings_pyx;
 static PyObject *__pyx_kp_u_simulation_failed_or_insufficien;
 static PyObject *__pyx_n_s_spec;
 static PyObject *__pyx_kp_u_spec_must_be_a_dict;
@@ -2317,35 +2317,35 @@ static PyObject *__pyx_n_s_total_prod;
 static PyObject *__pyx_n_s_total_reac;
 static PyObject *__pyx_n_s_traj;
 static PyObject *__pyx_n_s_written;
-static int __pyx_pf_13simplecantera_11_pybindings_14Thermodynamics___cinit__(struct __pyx_obj_13simplecantera_11_pybindings_Thermodynamics *__pyx_v_self, double __pyx_v_cp); /* proto */
-static PyObject *__pyx_pf_13simplecantera_11_pybindings_14Thermodynamics_2enthalpy(struct __pyx_obj_13simplecantera_11_pybindings_Thermodynamics *__pyx_v_self, double __pyx_v_T); /* proto */
-static PyObject *__pyx_pf_13simplecantera_11_pybindings_14Thermodynamics_4entropy(struct __pyx_obj_13simplecantera_11_pybindings_Thermodynamics *__pyx_v_self, double __pyx_v_T); /* proto */
-static PyObject *__pyx_pf_13simplecantera_11_pybindings_14Thermodynamics_6__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_13simplecantera_11_pybindings_Thermodynamics *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_13simplecantera_11_pybindings_14Thermodynamics_8__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_13simplecantera_11_pybindings_Thermodynamics *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
-static int __pyx_pf_13simplecantera_11_pybindings_8Reaction___cinit__(struct __pyx_obj_13simplecantera_11_pybindings_Reaction *__pyx_v_self, double __pyx_v_kf, double __pyx_v_kr); /* proto */
-static PyObject *__pyx_pf_13simplecantera_11_pybindings_8Reaction_2rate(struct __pyx_obj_13simplecantera_11_pybindings_Reaction *__pyx_v_self, double __pyx_v_A, double __pyx_v_B); /* proto */
-static PyObject *__pyx_pf_13simplecantera_11_pybindings_8Reaction_4__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_13simplecantera_11_pybindings_Reaction *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_13simplecantera_11_pybindings_8Reaction_6__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_13simplecantera_11_pybindings_Reaction *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
-static int __pyx_pf_13simplecantera_11_pybindings_13ReactionMulti___cinit__(struct __pyx_obj_13simplecantera_11_pybindings_ReactionMulti *__pyx_v_self, double __pyx_v_kf, double __pyx_v_kr, PyObject *__pyx_v_reactants, PyObject *__pyx_v_products); /* proto */
-static PyObject *__pyx_pf_13simplecantera_11_pybindings_13ReactionMulti_2rate(struct __pyx_obj_13simplecantera_11_pybindings_ReactionMulti *__pyx_v_self, PyObject *__pyx_v_conc); /* proto */
-static PyObject *__pyx_pf_13simplecantera_11_pybindings_13ReactionMulti_4__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_13simplecantera_11_pybindings_ReactionMulti *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_13simplecantera_11_pybindings_13ReactionMulti_6__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_13simplecantera_11_pybindings_ReactionMulti *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
-static int __pyx_pf_13simplecantera_11_pybindings_12MultiReactor___cinit__(struct __pyx_obj_13simplecantera_11_pybindings_MultiReactor *__pyx_v_self, PyObject *__pyx_v_species, PyObject *__pyx_v_conc0, PyObject *__pyx_v_reactions, double __pyx_v_T); /* proto */
-static PyObject *__pyx_pf_13simplecantera_11_pybindings_12MultiReactor_2_dcdt(struct __pyx_obj_13simplecantera_11_pybindings_MultiReactor *__pyx_v_self, PyObject *__pyx_v_conc); /* proto */
-static PyObject *__pyx_pf_13simplecantera_11_pybindings_12MultiReactor_4step(struct __pyx_obj_13simplecantera_11_pybindings_MultiReactor *__pyx_v_self, double __pyx_v_dt); /* proto */
-static PyObject *__pyx_pf_13simplecantera_11_pybindings_12MultiReactor_6run(struct __pyx_obj_13simplecantera_11_pybindings_MultiReactor *__pyx_v_self, double __pyx_v_time_span, double __pyx_v_dt); /* proto */
-static PyObject *__pyx_pf_13simplecantera_11_pybindings_12MultiReactor_8__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_13simplecantera_11_pybindings_MultiReactor *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_13simplecantera_11_pybindings_12MultiReactor_10__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_13simplecantera_11_pybindings_MultiReactor *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
-static int __pyx_pf_13simplecantera_11_pybindings_7Reactor___cinit__(struct __pyx_obj_13simplecantera_11_pybindings_Reactor *__pyx_v_self, struct __pyx_obj_13simplecantera_11_pybindings_Reaction *__pyx_v_rxn, double __pyx_v_A0, double __pyx_v_B0, double __pyx_v_time_span, double __pyx_v_dt); /* proto */
-static PyObject *__pyx_pf_13simplecantera_11_pybindings_7Reactor_2run(struct __pyx_obj_13simplecantera_11_pybindings_Reactor *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_13simplecantera_11_pybindings_7Reactor_4__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_13simplecantera_11_pybindings_Reactor *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_13simplecantera_11_pybindings_7Reactor_6__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_13simplecantera_11_pybindings_Reactor *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
-static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_spec); /* proto */
-static PyObject *__pyx_tp_new_13simplecantera_11_pybindings_Thermodynamics(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
-static PyObject *__pyx_tp_new_13simplecantera_11_pybindings_Reaction(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
-static PyObject *__pyx_tp_new_13simplecantera_11_pybindings_ReactionMulti(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
-static PyObject *__pyx_tp_new_13simplecantera_11_pybindings_MultiReactor(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
-static PyObject *__pyx_tp_new_13simplecantera_11_pybindings_Reactor(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static int __pyx_pf_13pyroxa_11_pybindings_14Thermodynamics___cinit__(struct __pyx_obj_13pyroxa_11_pybindings_Thermodynamics *__pyx_v_self, double __pyx_v_cp); /* proto */
+static PyObject *__pyx_pf_13pyroxa_11_pybindings_14Thermodynamics_2enthalpy(struct __pyx_obj_13pyroxa_11_pybindings_Thermodynamics *__pyx_v_self, double __pyx_v_T); /* proto */
+static PyObject *__pyx_pf_13pyroxa_11_pybindings_14Thermodynamics_4entropy(struct __pyx_obj_13pyroxa_11_pybindings_Thermodynamics *__pyx_v_self, double __pyx_v_T); /* proto */
+static PyObject *__pyx_pf_13pyroxa_11_pybindings_14Thermodynamics_6__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_13pyroxa_11_pybindings_Thermodynamics *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_13pyroxa_11_pybindings_14Thermodynamics_8__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_13pyroxa_11_pybindings_Thermodynamics *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
+static int __pyx_pf_13pyroxa_11_pybindings_8Reaction___cinit__(struct __pyx_obj_13pyroxa_11_pybindings_Reaction *__pyx_v_self, double __pyx_v_kf, double __pyx_v_kr); /* proto */
+static PyObject *__pyx_pf_13pyroxa_11_pybindings_8Reaction_2rate(struct __pyx_obj_13pyroxa_11_pybindings_Reaction *__pyx_v_self, double __pyx_v_A, double __pyx_v_B); /* proto */
+static PyObject *__pyx_pf_13pyroxa_11_pybindings_8Reaction_4__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_13pyroxa_11_pybindings_Reaction *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_13pyroxa_11_pybindings_8Reaction_6__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_13pyroxa_11_pybindings_Reaction *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
+static int __pyx_pf_13pyroxa_11_pybindings_13ReactionMulti___cinit__(struct __pyx_obj_13pyroxa_11_pybindings_ReactionMulti *__pyx_v_self, double __pyx_v_kf, double __pyx_v_kr, PyObject *__pyx_v_reactants, PyObject *__pyx_v_products); /* proto */
+static PyObject *__pyx_pf_13pyroxa_11_pybindings_13ReactionMulti_2rate(struct __pyx_obj_13pyroxa_11_pybindings_ReactionMulti *__pyx_v_self, PyObject *__pyx_v_conc); /* proto */
+static PyObject *__pyx_pf_13pyroxa_11_pybindings_13ReactionMulti_4__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_13pyroxa_11_pybindings_ReactionMulti *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_13pyroxa_11_pybindings_13ReactionMulti_6__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_13pyroxa_11_pybindings_ReactionMulti *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
+static int __pyx_pf_13pyroxa_11_pybindings_12MultiReactor___cinit__(struct __pyx_obj_13pyroxa_11_pybindings_MultiReactor *__pyx_v_self, PyObject *__pyx_v_species, PyObject *__pyx_v_conc0, PyObject *__pyx_v_reactions, double __pyx_v_T); /* proto */
+static PyObject *__pyx_pf_13pyroxa_11_pybindings_12MultiReactor_2_dcdt(struct __pyx_obj_13pyroxa_11_pybindings_MultiReactor *__pyx_v_self, PyObject *__pyx_v_conc); /* proto */
+static PyObject *__pyx_pf_13pyroxa_11_pybindings_12MultiReactor_4step(struct __pyx_obj_13pyroxa_11_pybindings_MultiReactor *__pyx_v_self, double __pyx_v_dt); /* proto */
+static PyObject *__pyx_pf_13pyroxa_11_pybindings_12MultiReactor_6run(struct __pyx_obj_13pyroxa_11_pybindings_MultiReactor *__pyx_v_self, double __pyx_v_time_span, double __pyx_v_dt); /* proto */
+static PyObject *__pyx_pf_13pyroxa_11_pybindings_12MultiReactor_8__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_13pyroxa_11_pybindings_MultiReactor *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_13pyroxa_11_pybindings_12MultiReactor_10__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_13pyroxa_11_pybindings_MultiReactor *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
+static int __pyx_pf_13pyroxa_11_pybindings_7Reactor___cinit__(struct __pyx_obj_13pyroxa_11_pybindings_Reactor *__pyx_v_self, struct __pyx_obj_13pyroxa_11_pybindings_Reaction *__pyx_v_rxn, double __pyx_v_A0, double __pyx_v_B0, double __pyx_v_time_span, double __pyx_v_dt); /* proto */
+static PyObject *__pyx_pf_13pyroxa_11_pybindings_7Reactor_2run(struct __pyx_obj_13pyroxa_11_pybindings_Reactor *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_13pyroxa_11_pybindings_7Reactor_4__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_13pyroxa_11_pybindings_Reactor *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_13pyroxa_11_pybindings_7Reactor_6__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_13pyroxa_11_pybindings_Reactor *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
+static PyObject *__pyx_pf_13pyroxa_11_pybindings_run_simulation_cpp(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_spec); /* proto */
+static PyObject *__pyx_tp_new_13pyroxa_11_pybindings_Thermodynamics(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_13pyroxa_11_pybindings_Reaction(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_13pyroxa_11_pybindings_ReactionMulti(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_13pyroxa_11_pybindings_MultiReactor(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_13pyroxa_11_pybindings_Reactor(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_float_0_0;
 static PyObject *__pyx_float_0_5;
 static PyObject *__pyx_float_1_0;
@@ -2387,7 +2387,7 @@ static PyObject *__pyx_tuple__29;
 static PyObject *__pyx_codeobj__30;
 /* Late includes */
 
-/* "simplecantera/pybindings.pyx":29
+/* "pyroxa/pybindings.pyx":29
  * 	cdef double cp
  * 
  * 	def __cinit__(self, double cp=29.1):             # <<<<<<<<<<<<<<
@@ -2396,8 +2396,8 @@ static PyObject *__pyx_codeobj__30;
  */
 
 /* Python wrapper */
-static int __pyx_pw_13simplecantera_11_pybindings_14Thermodynamics_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static int __pyx_pw_13simplecantera_11_pybindings_14Thermodynamics_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static int __pyx_pw_13pyroxa_11_pybindings_14Thermodynamics_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_13pyroxa_11_pybindings_14Thermodynamics_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   double __pyx_v_cp;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
@@ -2446,23 +2446,23 @@ static int __pyx_pw_13simplecantera_11_pybindings_14Thermodynamics_1__cinit__(Py
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 0, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(1, 29, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("simplecantera._pybindings.Thermodynamics.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyroxa._pybindings.Thermodynamics.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_13simplecantera_11_pybindings_14Thermodynamics___cinit__(((struct __pyx_obj_13simplecantera_11_pybindings_Thermodynamics *)__pyx_v_self), __pyx_v_cp);
+  __pyx_r = __pyx_pf_13pyroxa_11_pybindings_14Thermodynamics___cinit__(((struct __pyx_obj_13pyroxa_11_pybindings_Thermodynamics *)__pyx_v_self), __pyx_v_cp);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_13simplecantera_11_pybindings_14Thermodynamics___cinit__(struct __pyx_obj_13simplecantera_11_pybindings_Thermodynamics *__pyx_v_self, double __pyx_v_cp) {
+static int __pyx_pf_13pyroxa_11_pybindings_14Thermodynamics___cinit__(struct __pyx_obj_13pyroxa_11_pybindings_Thermodynamics *__pyx_v_self, double __pyx_v_cp) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "simplecantera/pybindings.pyx":30
+  /* "pyroxa/pybindings.pyx":30
  * 
  * 	def __cinit__(self, double cp=29.1):
  * 		self.cp = cp             # <<<<<<<<<<<<<<
@@ -2471,7 +2471,7 @@ static int __pyx_pf_13simplecantera_11_pybindings_14Thermodynamics___cinit__(str
  */
   __pyx_v_self->cp = __pyx_v_cp;
 
-  /* "simplecantera/pybindings.pyx":29
+  /* "pyroxa/pybindings.pyx":29
  * 	cdef double cp
  * 
  * 	def __cinit__(self, double cp=29.1):             # <<<<<<<<<<<<<<
@@ -2485,7 +2485,7 @@ static int __pyx_pf_13simplecantera_11_pybindings_14Thermodynamics___cinit__(str
   return __pyx_r;
 }
 
-/* "simplecantera/pybindings.pyx":32
+/* "pyroxa/pybindings.pyx":32
  * 		self.cp = cp
  * 
  * 	def enthalpy(self, double T):             # <<<<<<<<<<<<<<
@@ -2494,8 +2494,8 @@ static int __pyx_pf_13simplecantera_11_pybindings_14Thermodynamics___cinit__(str
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_13simplecantera_11_pybindings_14Thermodynamics_3enthalpy(PyObject *__pyx_v_self, PyObject *__pyx_arg_T); /*proto*/
-static PyObject *__pyx_pw_13simplecantera_11_pybindings_14Thermodynamics_3enthalpy(PyObject *__pyx_v_self, PyObject *__pyx_arg_T) {
+static PyObject *__pyx_pw_13pyroxa_11_pybindings_14Thermodynamics_3enthalpy(PyObject *__pyx_v_self, PyObject *__pyx_arg_T); /*proto*/
+static PyObject *__pyx_pw_13pyroxa_11_pybindings_14Thermodynamics_3enthalpy(PyObject *__pyx_v_self, PyObject *__pyx_arg_T) {
   double __pyx_v_T;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
@@ -2508,18 +2508,18 @@ static PyObject *__pyx_pw_13simplecantera_11_pybindings_14Thermodynamics_3enthal
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
-  __Pyx_AddTraceback("simplecantera._pybindings.Thermodynamics.enthalpy", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyroxa._pybindings.Thermodynamics.enthalpy", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_13simplecantera_11_pybindings_14Thermodynamics_2enthalpy(((struct __pyx_obj_13simplecantera_11_pybindings_Thermodynamics *)__pyx_v_self), ((double)__pyx_v_T));
+  __pyx_r = __pyx_pf_13pyroxa_11_pybindings_14Thermodynamics_2enthalpy(((struct __pyx_obj_13pyroxa_11_pybindings_Thermodynamics *)__pyx_v_self), ((double)__pyx_v_T));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_13simplecantera_11_pybindings_14Thermodynamics_2enthalpy(struct __pyx_obj_13simplecantera_11_pybindings_Thermodynamics *__pyx_v_self, double __pyx_v_T) {
+static PyObject *__pyx_pf_13pyroxa_11_pybindings_14Thermodynamics_2enthalpy(struct __pyx_obj_13pyroxa_11_pybindings_Thermodynamics *__pyx_v_self, double __pyx_v_T) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -2528,7 +2528,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_14Thermodynamics_2enthal
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("enthalpy", 0);
 
-  /* "simplecantera/pybindings.pyx":33
+  /* "pyroxa/pybindings.pyx":33
  * 
  * 	def enthalpy(self, double T):
  * 		return enthalpy_c(self.cp, T)             # <<<<<<<<<<<<<<
@@ -2542,7 +2542,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_14Thermodynamics_2enthal
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "simplecantera/pybindings.pyx":32
+  /* "pyroxa/pybindings.pyx":32
  * 		self.cp = cp
  * 
  * 	def enthalpy(self, double T):             # <<<<<<<<<<<<<<
@@ -2553,7 +2553,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_14Thermodynamics_2enthal
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("simplecantera._pybindings.Thermodynamics.enthalpy", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyroxa._pybindings.Thermodynamics.enthalpy", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -2561,7 +2561,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_14Thermodynamics_2enthal
   return __pyx_r;
 }
 
-/* "simplecantera/pybindings.pyx":35
+/* "pyroxa/pybindings.pyx":35
  * 		return enthalpy_c(self.cp, T)
  * 
  * 	def entropy(self, double T):             # <<<<<<<<<<<<<<
@@ -2570,8 +2570,8 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_14Thermodynamics_2enthal
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_13simplecantera_11_pybindings_14Thermodynamics_5entropy(PyObject *__pyx_v_self, PyObject *__pyx_arg_T); /*proto*/
-static PyObject *__pyx_pw_13simplecantera_11_pybindings_14Thermodynamics_5entropy(PyObject *__pyx_v_self, PyObject *__pyx_arg_T) {
+static PyObject *__pyx_pw_13pyroxa_11_pybindings_14Thermodynamics_5entropy(PyObject *__pyx_v_self, PyObject *__pyx_arg_T); /*proto*/
+static PyObject *__pyx_pw_13pyroxa_11_pybindings_14Thermodynamics_5entropy(PyObject *__pyx_v_self, PyObject *__pyx_arg_T) {
   double __pyx_v_T;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
@@ -2584,18 +2584,18 @@ static PyObject *__pyx_pw_13simplecantera_11_pybindings_14Thermodynamics_5entrop
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
-  __Pyx_AddTraceback("simplecantera._pybindings.Thermodynamics.entropy", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyroxa._pybindings.Thermodynamics.entropy", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_13simplecantera_11_pybindings_14Thermodynamics_4entropy(((struct __pyx_obj_13simplecantera_11_pybindings_Thermodynamics *)__pyx_v_self), ((double)__pyx_v_T));
+  __pyx_r = __pyx_pf_13pyroxa_11_pybindings_14Thermodynamics_4entropy(((struct __pyx_obj_13pyroxa_11_pybindings_Thermodynamics *)__pyx_v_self), ((double)__pyx_v_T));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_13simplecantera_11_pybindings_14Thermodynamics_4entropy(struct __pyx_obj_13simplecantera_11_pybindings_Thermodynamics *__pyx_v_self, double __pyx_v_T) {
+static PyObject *__pyx_pf_13pyroxa_11_pybindings_14Thermodynamics_4entropy(struct __pyx_obj_13pyroxa_11_pybindings_Thermodynamics *__pyx_v_self, double __pyx_v_T) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -2604,7 +2604,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_14Thermodynamics_4entrop
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("entropy", 0);
 
-  /* "simplecantera/pybindings.pyx":36
+  /* "pyroxa/pybindings.pyx":36
  * 
  * 	def entropy(self, double T):
  * 		return entropy_c(self.cp, T)             # <<<<<<<<<<<<<<
@@ -2618,7 +2618,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_14Thermodynamics_4entrop
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "simplecantera/pybindings.pyx":35
+  /* "pyroxa/pybindings.pyx":35
  * 		return enthalpy_c(self.cp, T)
  * 
  * 	def entropy(self, double T):             # <<<<<<<<<<<<<<
@@ -2629,7 +2629,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_14Thermodynamics_4entrop
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("simplecantera._pybindings.Thermodynamics.entropy", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyroxa._pybindings.Thermodynamics.entropy", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -2644,19 +2644,19 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_14Thermodynamics_4entrop
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_13simplecantera_11_pybindings_14Thermodynamics_7__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyObject *__pyx_pw_13simplecantera_11_pybindings_14Thermodynamics_7__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_13pyroxa_11_pybindings_14Thermodynamics_7__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_13pyroxa_11_pybindings_14Thermodynamics_7__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__reduce_cython__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_13simplecantera_11_pybindings_14Thermodynamics_6__reduce_cython__(((struct __pyx_obj_13simplecantera_11_pybindings_Thermodynamics *)__pyx_v_self));
+  __pyx_r = __pyx_pf_13pyroxa_11_pybindings_14Thermodynamics_6__reduce_cython__(((struct __pyx_obj_13pyroxa_11_pybindings_Thermodynamics *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_13simplecantera_11_pybindings_14Thermodynamics_6__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_13simplecantera_11_pybindings_Thermodynamics *__pyx_v_self) {
+static PyObject *__pyx_pf_13pyroxa_11_pybindings_14Thermodynamics_6__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_13pyroxa_11_pybindings_Thermodynamics *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -2686,7 +2686,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_14Thermodynamics_6__redu
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("simplecantera._pybindings.Thermodynamics.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyroxa._pybindings.Thermodynamics.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
@@ -2701,19 +2701,19 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_14Thermodynamics_6__redu
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_13simplecantera_11_pybindings_14Thermodynamics_9__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state); /*proto*/
-static PyObject *__pyx_pw_13simplecantera_11_pybindings_14Thermodynamics_9__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pw_13pyroxa_11_pybindings_14Thermodynamics_9__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state); /*proto*/
+static PyObject *__pyx_pw_13pyroxa_11_pybindings_14Thermodynamics_9__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__setstate_cython__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_13simplecantera_11_pybindings_14Thermodynamics_8__setstate_cython__(((struct __pyx_obj_13simplecantera_11_pybindings_Thermodynamics *)__pyx_v_self), ((PyObject *)__pyx_v___pyx_state));
+  __pyx_r = __pyx_pf_13pyroxa_11_pybindings_14Thermodynamics_8__setstate_cython__(((struct __pyx_obj_13pyroxa_11_pybindings_Thermodynamics *)__pyx_v_self), ((PyObject *)__pyx_v___pyx_state));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_13simplecantera_11_pybindings_14Thermodynamics_8__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_13simplecantera_11_pybindings_Thermodynamics *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_13pyroxa_11_pybindings_14Thermodynamics_8__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_13pyroxa_11_pybindings_Thermodynamics *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -2743,14 +2743,14 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_14Thermodynamics_8__sets
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("simplecantera._pybindings.Thermodynamics.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyroxa._pybindings.Thermodynamics.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "simplecantera/pybindings.pyx":43
+/* "pyroxa/pybindings.pyx":43
  * 	cdef double kr
  * 
  * 	def __cinit__(self, double kf=1.0, double kr=0.5):             # <<<<<<<<<<<<<<
@@ -2759,8 +2759,8 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_14Thermodynamics_8__sets
  */
 
 /* Python wrapper */
-static int __pyx_pw_13simplecantera_11_pybindings_8Reaction_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static int __pyx_pw_13simplecantera_11_pybindings_8Reaction_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static int __pyx_pw_13pyroxa_11_pybindings_8Reaction_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_13pyroxa_11_pybindings_8Reaction_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   double __pyx_v_kf;
   double __pyx_v_kr;
   int __pyx_lineno = 0;
@@ -2825,23 +2825,23 @@ static int __pyx_pw_13simplecantera_11_pybindings_8Reaction_1__cinit__(PyObject 
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 0, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(1, 43, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("simplecantera._pybindings.Reaction.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyroxa._pybindings.Reaction.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_13simplecantera_11_pybindings_8Reaction___cinit__(((struct __pyx_obj_13simplecantera_11_pybindings_Reaction *)__pyx_v_self), __pyx_v_kf, __pyx_v_kr);
+  __pyx_r = __pyx_pf_13pyroxa_11_pybindings_8Reaction___cinit__(((struct __pyx_obj_13pyroxa_11_pybindings_Reaction *)__pyx_v_self), __pyx_v_kf, __pyx_v_kr);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_13simplecantera_11_pybindings_8Reaction___cinit__(struct __pyx_obj_13simplecantera_11_pybindings_Reaction *__pyx_v_self, double __pyx_v_kf, double __pyx_v_kr) {
+static int __pyx_pf_13pyroxa_11_pybindings_8Reaction___cinit__(struct __pyx_obj_13pyroxa_11_pybindings_Reaction *__pyx_v_self, double __pyx_v_kf, double __pyx_v_kr) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "simplecantera/pybindings.pyx":44
+  /* "pyroxa/pybindings.pyx":44
  * 
  * 	def __cinit__(self, double kf=1.0, double kr=0.5):
  * 		self.kf = kf             # <<<<<<<<<<<<<<
@@ -2850,7 +2850,7 @@ static int __pyx_pf_13simplecantera_11_pybindings_8Reaction___cinit__(struct __p
  */
   __pyx_v_self->kf = __pyx_v_kf;
 
-  /* "simplecantera/pybindings.pyx":45
+  /* "pyroxa/pybindings.pyx":45
  * 	def __cinit__(self, double kf=1.0, double kr=0.5):
  * 		self.kf = kf
  * 		self.kr = kr             # <<<<<<<<<<<<<<
@@ -2859,7 +2859,7 @@ static int __pyx_pf_13simplecantera_11_pybindings_8Reaction___cinit__(struct __p
  */
   __pyx_v_self->kr = __pyx_v_kr;
 
-  /* "simplecantera/pybindings.pyx":43
+  /* "pyroxa/pybindings.pyx":43
  * 	cdef double kr
  * 
  * 	def __cinit__(self, double kf=1.0, double kr=0.5):             # <<<<<<<<<<<<<<
@@ -2873,7 +2873,7 @@ static int __pyx_pf_13simplecantera_11_pybindings_8Reaction___cinit__(struct __p
   return __pyx_r;
 }
 
-/* "simplecantera/pybindings.pyx":47
+/* "pyroxa/pybindings.pyx":47
  * 		self.kr = kr
  * 
  * 	def rate(self, double A, double B):             # <<<<<<<<<<<<<<
@@ -2882,8 +2882,8 @@ static int __pyx_pf_13simplecantera_11_pybindings_8Reaction___cinit__(struct __p
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_13simplecantera_11_pybindings_8Reaction_3rate(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_13simplecantera_11_pybindings_8Reaction_3rate(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_13pyroxa_11_pybindings_8Reaction_3rate(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_13pyroxa_11_pybindings_8Reaction_3rate(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   double __pyx_v_A;
   double __pyx_v_B;
   int __pyx_lineno = 0;
@@ -2934,18 +2934,18 @@ static PyObject *__pyx_pw_13simplecantera_11_pybindings_8Reaction_3rate(PyObject
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("rate", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(1, 47, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("simplecantera._pybindings.Reaction.rate", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyroxa._pybindings.Reaction.rate", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_13simplecantera_11_pybindings_8Reaction_2rate(((struct __pyx_obj_13simplecantera_11_pybindings_Reaction *)__pyx_v_self), __pyx_v_A, __pyx_v_B);
+  __pyx_r = __pyx_pf_13pyroxa_11_pybindings_8Reaction_2rate(((struct __pyx_obj_13pyroxa_11_pybindings_Reaction *)__pyx_v_self), __pyx_v_A, __pyx_v_B);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_13simplecantera_11_pybindings_8Reaction_2rate(struct __pyx_obj_13simplecantera_11_pybindings_Reaction *__pyx_v_self, double __pyx_v_A, double __pyx_v_B) {
+static PyObject *__pyx_pf_13pyroxa_11_pybindings_8Reaction_2rate(struct __pyx_obj_13pyroxa_11_pybindings_Reaction *__pyx_v_self, double __pyx_v_A, double __pyx_v_B) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -2954,7 +2954,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_8Reaction_2rate(struct _
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("rate", 0);
 
-  /* "simplecantera/pybindings.pyx":48
+  /* "pyroxa/pybindings.pyx":48
  * 
  * 	def rate(self, double A, double B):
  * 		return self.kf * A - self.kr * B             # <<<<<<<<<<<<<<
@@ -2968,7 +2968,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_8Reaction_2rate(struct _
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "simplecantera/pybindings.pyx":47
+  /* "pyroxa/pybindings.pyx":47
  * 		self.kr = kr
  * 
  * 	def rate(self, double A, double B):             # <<<<<<<<<<<<<<
@@ -2979,7 +2979,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_8Reaction_2rate(struct _
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("simplecantera._pybindings.Reaction.rate", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyroxa._pybindings.Reaction.rate", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -2994,19 +2994,19 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_8Reaction_2rate(struct _
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_13simplecantera_11_pybindings_8Reaction_5__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyObject *__pyx_pw_13simplecantera_11_pybindings_8Reaction_5__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_13pyroxa_11_pybindings_8Reaction_5__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_13pyroxa_11_pybindings_8Reaction_5__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__reduce_cython__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_13simplecantera_11_pybindings_8Reaction_4__reduce_cython__(((struct __pyx_obj_13simplecantera_11_pybindings_Reaction *)__pyx_v_self));
+  __pyx_r = __pyx_pf_13pyroxa_11_pybindings_8Reaction_4__reduce_cython__(((struct __pyx_obj_13pyroxa_11_pybindings_Reaction *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_13simplecantera_11_pybindings_8Reaction_4__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_13simplecantera_11_pybindings_Reaction *__pyx_v_self) {
+static PyObject *__pyx_pf_13pyroxa_11_pybindings_8Reaction_4__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_13pyroxa_11_pybindings_Reaction *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -3036,7 +3036,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_8Reaction_4__reduce_cyth
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("simplecantera._pybindings.Reaction.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyroxa._pybindings.Reaction.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
@@ -3051,19 +3051,19 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_8Reaction_4__reduce_cyth
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_13simplecantera_11_pybindings_8Reaction_7__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state); /*proto*/
-static PyObject *__pyx_pw_13simplecantera_11_pybindings_8Reaction_7__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pw_13pyroxa_11_pybindings_8Reaction_7__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state); /*proto*/
+static PyObject *__pyx_pw_13pyroxa_11_pybindings_8Reaction_7__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__setstate_cython__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_13simplecantera_11_pybindings_8Reaction_6__setstate_cython__(((struct __pyx_obj_13simplecantera_11_pybindings_Reaction *)__pyx_v_self), ((PyObject *)__pyx_v___pyx_state));
+  __pyx_r = __pyx_pf_13pyroxa_11_pybindings_8Reaction_6__setstate_cython__(((struct __pyx_obj_13pyroxa_11_pybindings_Reaction *)__pyx_v_self), ((PyObject *)__pyx_v___pyx_state));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_13simplecantera_11_pybindings_8Reaction_6__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_13simplecantera_11_pybindings_Reaction *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_13pyroxa_11_pybindings_8Reaction_6__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_13pyroxa_11_pybindings_Reaction *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -3093,14 +3093,14 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_8Reaction_6__setstate_cy
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("simplecantera._pybindings.Reaction.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyroxa._pybindings.Reaction.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "simplecantera/pybindings.pyx":57
+/* "pyroxa/pybindings.pyx":57
  * 	cdef dict products
  * 
  * 	def __cinit__(self, double kf=1.0, double kr=0.0, reactants=None, products=None):             # <<<<<<<<<<<<<<
@@ -3109,8 +3109,8 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_8Reaction_6__setstate_cy
  */
 
 /* Python wrapper */
-static int __pyx_pw_13simplecantera_11_pybindings_13ReactionMulti_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static int __pyx_pw_13simplecantera_11_pybindings_13ReactionMulti_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static int __pyx_pw_13pyroxa_11_pybindings_13ReactionMulti_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_13pyroxa_11_pybindings_13ReactionMulti_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   double __pyx_v_kf;
   double __pyx_v_kr;
   PyObject *__pyx_v_reactants = 0;
@@ -3201,18 +3201,18 @@ static int __pyx_pw_13simplecantera_11_pybindings_13ReactionMulti_1__cinit__(PyO
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 0, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(1, 57, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("simplecantera._pybindings.ReactionMulti.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyroxa._pybindings.ReactionMulti.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_13simplecantera_11_pybindings_13ReactionMulti___cinit__(((struct __pyx_obj_13simplecantera_11_pybindings_ReactionMulti *)__pyx_v_self), __pyx_v_kf, __pyx_v_kr, __pyx_v_reactants, __pyx_v_products);
+  __pyx_r = __pyx_pf_13pyroxa_11_pybindings_13ReactionMulti___cinit__(((struct __pyx_obj_13pyroxa_11_pybindings_ReactionMulti *)__pyx_v_self), __pyx_v_kf, __pyx_v_kr, __pyx_v_reactants, __pyx_v_products);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_13simplecantera_11_pybindings_13ReactionMulti___cinit__(struct __pyx_obj_13simplecantera_11_pybindings_ReactionMulti *__pyx_v_self, double __pyx_v_kf, double __pyx_v_kr, PyObject *__pyx_v_reactants, PyObject *__pyx_v_products) {
+static int __pyx_pf_13pyroxa_11_pybindings_13ReactionMulti___cinit__(struct __pyx_obj_13pyroxa_11_pybindings_ReactionMulti *__pyx_v_self, double __pyx_v_kf, double __pyx_v_kr, PyObject *__pyx_v_reactants, PyObject *__pyx_v_products) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -3223,7 +3223,7 @@ static int __pyx_pf_13simplecantera_11_pybindings_13ReactionMulti___cinit__(stru
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "simplecantera/pybindings.pyx":58
+  /* "pyroxa/pybindings.pyx":58
  * 
  * 	def __cinit__(self, double kf=1.0, double kr=0.0, reactants=None, products=None):
  * 		self.kf = kf             # <<<<<<<<<<<<<<
@@ -3232,7 +3232,7 @@ static int __pyx_pf_13simplecantera_11_pybindings_13ReactionMulti___cinit__(stru
  */
   __pyx_v_self->kf = __pyx_v_kf;
 
-  /* "simplecantera/pybindings.pyx":59
+  /* "pyroxa/pybindings.pyx":59
  * 	def __cinit__(self, double kf=1.0, double kr=0.0, reactants=None, products=None):
  * 		self.kf = kf
  * 		self.kr = kr             # <<<<<<<<<<<<<<
@@ -3241,7 +3241,7 @@ static int __pyx_pf_13simplecantera_11_pybindings_13ReactionMulti___cinit__(stru
  */
   __pyx_v_self->kr = __pyx_v_kr;
 
-  /* "simplecantera/pybindings.pyx":60
+  /* "pyroxa/pybindings.pyx":60
  * 		self.kf = kf
  * 		self.kr = kr
  * 		self.reactants = reactants if reactants is not None else {}             # <<<<<<<<<<<<<<
@@ -3265,7 +3265,7 @@ static int __pyx_pf_13simplecantera_11_pybindings_13ReactionMulti___cinit__(stru
   __pyx_v_self->reactants = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "simplecantera/pybindings.pyx":61
+  /* "pyroxa/pybindings.pyx":61
  * 		self.kr = kr
  * 		self.reactants = reactants if reactants is not None else {}
  * 		self.products = products if products is not None else {}             # <<<<<<<<<<<<<<
@@ -3289,7 +3289,7 @@ static int __pyx_pf_13simplecantera_11_pybindings_13ReactionMulti___cinit__(stru
   __pyx_v_self->products = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "simplecantera/pybindings.pyx":57
+  /* "pyroxa/pybindings.pyx":57
  * 	cdef dict products
  * 
  * 	def __cinit__(self, double kf=1.0, double kr=0.0, reactants=None, products=None):             # <<<<<<<<<<<<<<
@@ -3303,14 +3303,14 @@ static int __pyx_pf_13simplecantera_11_pybindings_13ReactionMulti___cinit__(stru
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_AddTraceback("simplecantera._pybindings.ReactionMulti.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyroxa._pybindings.ReactionMulti.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "simplecantera/pybindings.pyx":63
+/* "pyroxa/pybindings.pyx":63
  * 		self.products = products if products is not None else {}
  * 
  * 	cpdef double rate(self, list conc):             # <<<<<<<<<<<<<<
@@ -3318,8 +3318,8 @@ static int __pyx_pf_13simplecantera_11_pybindings_13ReactionMulti___cinit__(stru
  * 		cdef double r = 1.0
  */
 
-static PyObject *__pyx_pw_13simplecantera_11_pybindings_13ReactionMulti_3rate(PyObject *__pyx_v_self, PyObject *__pyx_v_conc); /*proto*/
-static double __pyx_f_13simplecantera_11_pybindings_13ReactionMulti_rate(struct __pyx_obj_13simplecantera_11_pybindings_ReactionMulti *__pyx_v_self, PyObject *__pyx_v_conc, int __pyx_skip_dispatch) {
+static PyObject *__pyx_pw_13pyroxa_11_pybindings_13ReactionMulti_3rate(PyObject *__pyx_v_self, PyObject *__pyx_v_conc); /*proto*/
+static double __pyx_f_13pyroxa_11_pybindings_13ReactionMulti_rate(struct __pyx_obj_13pyroxa_11_pybindings_ReactionMulti *__pyx_v_self, PyObject *__pyx_v_conc, int __pyx_skip_dispatch) {
   double __pyx_v_f;
   double __pyx_v_r;
   int __pyx_v_idx;
@@ -3353,7 +3353,7 @@ static double __pyx_f_13simplecantera_11_pybindings_13ReactionMulti_rate(struct 
       #endif
       __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_rate); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 63, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_13simplecantera_11_pybindings_13ReactionMulti_3rate)) {
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_13pyroxa_11_pybindings_13ReactionMulti_3rate)) {
         __Pyx_INCREF(__pyx_t_1);
         __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
         if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
@@ -3389,7 +3389,7 @@ static double __pyx_f_13simplecantera_11_pybindings_13ReactionMulti_rate(struct 
     #endif
   }
 
-  /* "simplecantera/pybindings.pyx":64
+  /* "pyroxa/pybindings.pyx":64
  * 
  * 	cpdef double rate(self, list conc):
  * 		cdef double f = 1.0             # <<<<<<<<<<<<<<
@@ -3398,7 +3398,7 @@ static double __pyx_f_13simplecantera_11_pybindings_13ReactionMulti_rate(struct 
  */
   __pyx_v_f = 1.0;
 
-  /* "simplecantera/pybindings.pyx":65
+  /* "pyroxa/pybindings.pyx":65
  * 	cpdef double rate(self, list conc):
  * 		cdef double f = 1.0
  * 		cdef double r = 1.0             # <<<<<<<<<<<<<<
@@ -3407,7 +3407,7 @@ static double __pyx_f_13simplecantera_11_pybindings_13ReactionMulti_rate(struct 
  */
   __pyx_v_r = 1.0;
 
-  /* "simplecantera/pybindings.pyx":67
+  /* "pyroxa/pybindings.pyx":67
  * 		cdef double r = 1.0
  * 		cdef int idx
  * 		for key, nu in self.reactants.items():             # <<<<<<<<<<<<<<
@@ -3435,7 +3435,7 @@ static double __pyx_f_13simplecantera_11_pybindings_13ReactionMulti_rate(struct 
     __Pyx_XDECREF_SET(__pyx_v_nu, __pyx_t_3);
     __pyx_t_3 = 0;
 
-    /* "simplecantera/pybindings.pyx":68
+    /* "pyroxa/pybindings.pyx":68
  * 		cdef int idx
  * 		for key, nu in self.reactants.items():
  * 			idx = int(key)             # <<<<<<<<<<<<<<
@@ -3448,7 +3448,7 @@ static double __pyx_f_13simplecantera_11_pybindings_13ReactionMulti_rate(struct 
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_v_idx = __pyx_t_9;
 
-    /* "simplecantera/pybindings.pyx":69
+    /* "pyroxa/pybindings.pyx":69
  * 		for key, nu in self.reactants.items():
  * 			idx = int(key)
  * 			val = conc[idx]             # <<<<<<<<<<<<<<
@@ -3464,7 +3464,7 @@ static double __pyx_f_13simplecantera_11_pybindings_13ReactionMulti_rate(struct 
     __Pyx_XDECREF_SET(__pyx_v_val, __pyx_t_3);
     __pyx_t_3 = 0;
 
-    /* "simplecantera/pybindings.pyx":70
+    /* "pyroxa/pybindings.pyx":70
  * 			idx = int(key)
  * 			val = conc[idx]
  * 			if val <= 0:             # <<<<<<<<<<<<<<
@@ -3476,7 +3476,7 @@ static double __pyx_f_13simplecantera_11_pybindings_13ReactionMulti_rate(struct 
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     if (__pyx_t_10) {
 
-      /* "simplecantera/pybindings.pyx":71
+      /* "pyroxa/pybindings.pyx":71
  * 			val = conc[idx]
  * 			if val <= 0:
  * 				f = 0.0             # <<<<<<<<<<<<<<
@@ -3485,7 +3485,7 @@ static double __pyx_f_13simplecantera_11_pybindings_13ReactionMulti_rate(struct 
  */
       __pyx_v_f = 0.0;
 
-      /* "simplecantera/pybindings.pyx":72
+      /* "pyroxa/pybindings.pyx":72
  * 			if val <= 0:
  * 				f = 0.0
  * 				break             # <<<<<<<<<<<<<<
@@ -3494,7 +3494,7 @@ static double __pyx_f_13simplecantera_11_pybindings_13ReactionMulti_rate(struct 
  */
       goto __pyx_L4_break;
 
-      /* "simplecantera/pybindings.pyx":70
+      /* "pyroxa/pybindings.pyx":70
  * 			idx = int(key)
  * 			val = conc[idx]
  * 			if val <= 0:             # <<<<<<<<<<<<<<
@@ -3503,7 +3503,7 @@ static double __pyx_f_13simplecantera_11_pybindings_13ReactionMulti_rate(struct 
  */
     }
 
-    /* "simplecantera/pybindings.pyx":73
+    /* "pyroxa/pybindings.pyx":73
  * 				f = 0.0
  * 				break
  * 			f *= val ** nu             # <<<<<<<<<<<<<<
@@ -3525,7 +3525,7 @@ static double __pyx_f_13simplecantera_11_pybindings_13ReactionMulti_rate(struct 
   __pyx_L4_break:;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "simplecantera/pybindings.pyx":74
+  /* "pyroxa/pybindings.pyx":74
  * 				break
  * 			f *= val ** nu
  * 		for key, nu in self.products.items():             # <<<<<<<<<<<<<<
@@ -3553,7 +3553,7 @@ static double __pyx_f_13simplecantera_11_pybindings_13ReactionMulti_rate(struct 
     __Pyx_XDECREF_SET(__pyx_v_nu, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "simplecantera/pybindings.pyx":75
+    /* "pyroxa/pybindings.pyx":75
  * 			f *= val ** nu
  * 		for key, nu in self.products.items():
  * 			idx = int(key)             # <<<<<<<<<<<<<<
@@ -3566,7 +3566,7 @@ static double __pyx_f_13simplecantera_11_pybindings_13ReactionMulti_rate(struct 
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_v_idx = __pyx_t_9;
 
-    /* "simplecantera/pybindings.pyx":76
+    /* "pyroxa/pybindings.pyx":76
  * 		for key, nu in self.products.items():
  * 			idx = int(key)
  * 			val = conc[idx]             # <<<<<<<<<<<<<<
@@ -3582,7 +3582,7 @@ static double __pyx_f_13simplecantera_11_pybindings_13ReactionMulti_rate(struct 
     __Pyx_XDECREF_SET(__pyx_v_val, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "simplecantera/pybindings.pyx":77
+    /* "pyroxa/pybindings.pyx":77
  * 			idx = int(key)
  * 			val = conc[idx]
  * 			if val <= 0:             # <<<<<<<<<<<<<<
@@ -3594,7 +3594,7 @@ static double __pyx_f_13simplecantera_11_pybindings_13ReactionMulti_rate(struct 
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     if (__pyx_t_10) {
 
-      /* "simplecantera/pybindings.pyx":78
+      /* "pyroxa/pybindings.pyx":78
  * 			val = conc[idx]
  * 			if val <= 0:
  * 				r = 0.0             # <<<<<<<<<<<<<<
@@ -3603,7 +3603,7 @@ static double __pyx_f_13simplecantera_11_pybindings_13ReactionMulti_rate(struct 
  */
       __pyx_v_r = 0.0;
 
-      /* "simplecantera/pybindings.pyx":79
+      /* "pyroxa/pybindings.pyx":79
  * 			if val <= 0:
  * 				r = 0.0
  * 				break             # <<<<<<<<<<<<<<
@@ -3612,7 +3612,7 @@ static double __pyx_f_13simplecantera_11_pybindings_13ReactionMulti_rate(struct 
  */
       goto __pyx_L7_break;
 
-      /* "simplecantera/pybindings.pyx":77
+      /* "pyroxa/pybindings.pyx":77
  * 			idx = int(key)
  * 			val = conc[idx]
  * 			if val <= 0:             # <<<<<<<<<<<<<<
@@ -3621,7 +3621,7 @@ static double __pyx_f_13simplecantera_11_pybindings_13ReactionMulti_rate(struct 
  */
     }
 
-    /* "simplecantera/pybindings.pyx":80
+    /* "pyroxa/pybindings.pyx":80
  * 				r = 0.0
  * 				break
  * 			r *= val ** nu             # <<<<<<<<<<<<<<
@@ -3643,7 +3643,7 @@ static double __pyx_f_13simplecantera_11_pybindings_13ReactionMulti_rate(struct 
   __pyx_L7_break:;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "simplecantera/pybindings.pyx":81
+  /* "pyroxa/pybindings.pyx":81
  * 				break
  * 			r *= val ** nu
  * 		return self.kf * f - self.kr * r             # <<<<<<<<<<<<<<
@@ -3653,7 +3653,7 @@ static double __pyx_f_13simplecantera_11_pybindings_13ReactionMulti_rate(struct 
   __pyx_r = ((__pyx_v_self->kf * __pyx_v_f) - (__pyx_v_self->kr * __pyx_v_r));
   goto __pyx_L0;
 
-  /* "simplecantera/pybindings.pyx":63
+  /* "pyroxa/pybindings.pyx":63
  * 		self.products = products if products is not None else {}
  * 
  * 	cpdef double rate(self, list conc):             # <<<<<<<<<<<<<<
@@ -3667,7 +3667,7 @@ static double __pyx_f_13simplecantera_11_pybindings_13ReactionMulti_rate(struct 
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_WriteUnraisable("simplecantera._pybindings.ReactionMulti.rate", __pyx_clineno, __pyx_lineno, __pyx_filename, 1, 0);
+  __Pyx_WriteUnraisable("pyroxa._pybindings.ReactionMulti.rate", __pyx_clineno, __pyx_lineno, __pyx_filename, 1, 0);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_key);
@@ -3678,8 +3678,8 @@ static double __pyx_f_13simplecantera_11_pybindings_13ReactionMulti_rate(struct 
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_13simplecantera_11_pybindings_13ReactionMulti_3rate(PyObject *__pyx_v_self, PyObject *__pyx_v_conc); /*proto*/
-static PyObject *__pyx_pw_13simplecantera_11_pybindings_13ReactionMulti_3rate(PyObject *__pyx_v_self, PyObject *__pyx_v_conc) {
+static PyObject *__pyx_pw_13pyroxa_11_pybindings_13ReactionMulti_3rate(PyObject *__pyx_v_self, PyObject *__pyx_v_conc); /*proto*/
+static PyObject *__pyx_pw_13pyroxa_11_pybindings_13ReactionMulti_3rate(PyObject *__pyx_v_self, PyObject *__pyx_v_conc) {
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -3687,7 +3687,7 @@ static PyObject *__pyx_pw_13simplecantera_11_pybindings_13ReactionMulti_3rate(Py
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("rate (wrapper)", 0);
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_conc), (&PyList_Type), 1, "conc", 1))) __PYX_ERR(1, 63, __pyx_L1_error)
-  __pyx_r = __pyx_pf_13simplecantera_11_pybindings_13ReactionMulti_2rate(((struct __pyx_obj_13simplecantera_11_pybindings_ReactionMulti *)__pyx_v_self), ((PyObject*)__pyx_v_conc));
+  __pyx_r = __pyx_pf_13pyroxa_11_pybindings_13ReactionMulti_2rate(((struct __pyx_obj_13pyroxa_11_pybindings_ReactionMulti *)__pyx_v_self), ((PyObject*)__pyx_v_conc));
 
   /* function exit code */
   goto __pyx_L0;
@@ -3698,7 +3698,7 @@ static PyObject *__pyx_pw_13simplecantera_11_pybindings_13ReactionMulti_3rate(Py
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_13simplecantera_11_pybindings_13ReactionMulti_2rate(struct __pyx_obj_13simplecantera_11_pybindings_ReactionMulti *__pyx_v_self, PyObject *__pyx_v_conc) {
+static PyObject *__pyx_pf_13pyroxa_11_pybindings_13ReactionMulti_2rate(struct __pyx_obj_13pyroxa_11_pybindings_ReactionMulti *__pyx_v_self, PyObject *__pyx_v_conc) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -3707,7 +3707,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_13ReactionMulti_2rate(st
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("rate", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_13simplecantera_11_pybindings_13ReactionMulti_rate(__pyx_v_self, __pyx_v_conc, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 63, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_13pyroxa_11_pybindings_13ReactionMulti_rate(__pyx_v_self, __pyx_v_conc, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 63, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -3716,7 +3716,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_13ReactionMulti_2rate(st
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("simplecantera._pybindings.ReactionMulti.rate", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyroxa._pybindings.ReactionMulti.rate", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -3731,19 +3731,19 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_13ReactionMulti_2rate(st
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_13simplecantera_11_pybindings_13ReactionMulti_5__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyObject *__pyx_pw_13simplecantera_11_pybindings_13ReactionMulti_5__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_13pyroxa_11_pybindings_13ReactionMulti_5__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_13pyroxa_11_pybindings_13ReactionMulti_5__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__reduce_cython__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_13simplecantera_11_pybindings_13ReactionMulti_4__reduce_cython__(((struct __pyx_obj_13simplecantera_11_pybindings_ReactionMulti *)__pyx_v_self));
+  __pyx_r = __pyx_pf_13pyroxa_11_pybindings_13ReactionMulti_4__reduce_cython__(((struct __pyx_obj_13pyroxa_11_pybindings_ReactionMulti *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_13simplecantera_11_pybindings_13ReactionMulti_4__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_13simplecantera_11_pybindings_ReactionMulti *__pyx_v_self) {
+static PyObject *__pyx_pf_13pyroxa_11_pybindings_13ReactionMulti_4__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_13pyroxa_11_pybindings_ReactionMulti *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -3773,7 +3773,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_13ReactionMulti_4__reduc
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("simplecantera._pybindings.ReactionMulti.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyroxa._pybindings.ReactionMulti.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
@@ -3788,19 +3788,19 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_13ReactionMulti_4__reduc
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_13simplecantera_11_pybindings_13ReactionMulti_7__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state); /*proto*/
-static PyObject *__pyx_pw_13simplecantera_11_pybindings_13ReactionMulti_7__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pw_13pyroxa_11_pybindings_13ReactionMulti_7__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state); /*proto*/
+static PyObject *__pyx_pw_13pyroxa_11_pybindings_13ReactionMulti_7__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__setstate_cython__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_13simplecantera_11_pybindings_13ReactionMulti_6__setstate_cython__(((struct __pyx_obj_13simplecantera_11_pybindings_ReactionMulti *)__pyx_v_self), ((PyObject *)__pyx_v___pyx_state));
+  __pyx_r = __pyx_pf_13pyroxa_11_pybindings_13ReactionMulti_6__setstate_cython__(((struct __pyx_obj_13pyroxa_11_pybindings_ReactionMulti *)__pyx_v_self), ((PyObject *)__pyx_v___pyx_state));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_13simplecantera_11_pybindings_13ReactionMulti_6__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_13simplecantera_11_pybindings_ReactionMulti *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_13pyroxa_11_pybindings_13ReactionMulti_6__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_13pyroxa_11_pybindings_ReactionMulti *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -3830,14 +3830,14 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_13ReactionMulti_6__setst
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("simplecantera._pybindings.ReactionMulti.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyroxa._pybindings.ReactionMulti.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "simplecantera/pybindings.pyx":90
+/* "pyroxa/pybindings.pyx":90
  * 	cdef double T
  * 
  * 	def __cinit__(self, list species, list conc0, list reactions, double T=300.0):             # <<<<<<<<<<<<<<
@@ -3846,8 +3846,8 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_13ReactionMulti_6__setst
  */
 
 /* Python wrapper */
-static int __pyx_pw_13simplecantera_11_pybindings_12MultiReactor_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static int __pyx_pw_13simplecantera_11_pybindings_12MultiReactor_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static int __pyx_pw_13pyroxa_11_pybindings_12MultiReactor_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_13pyroxa_11_pybindings_12MultiReactor_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_species = 0;
   PyObject *__pyx_v_conc0 = 0;
   PyObject *__pyx_v_reactions = 0;
@@ -3927,14 +3927,14 @@ static int __pyx_pw_13simplecantera_11_pybindings_12MultiReactor_1__cinit__(PyOb
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 3, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(1, 90, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("simplecantera._pybindings.MultiReactor.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyroxa._pybindings.MultiReactor.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_species), (&PyList_Type), 1, "species", 1))) __PYX_ERR(1, 90, __pyx_L1_error)
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_conc0), (&PyList_Type), 1, "conc0", 1))) __PYX_ERR(1, 90, __pyx_L1_error)
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_reactions), (&PyList_Type), 1, "reactions", 1))) __PYX_ERR(1, 90, __pyx_L1_error)
-  __pyx_r = __pyx_pf_13simplecantera_11_pybindings_12MultiReactor___cinit__(((struct __pyx_obj_13simplecantera_11_pybindings_MultiReactor *)__pyx_v_self), __pyx_v_species, __pyx_v_conc0, __pyx_v_reactions, __pyx_v_T);
+  __pyx_r = __pyx_pf_13pyroxa_11_pybindings_12MultiReactor___cinit__(((struct __pyx_obj_13pyroxa_11_pybindings_MultiReactor *)__pyx_v_self), __pyx_v_species, __pyx_v_conc0, __pyx_v_reactions, __pyx_v_T);
 
   /* function exit code */
   goto __pyx_L0;
@@ -3945,7 +3945,7 @@ static int __pyx_pw_13simplecantera_11_pybindings_12MultiReactor_1__cinit__(PyOb
   return __pyx_r;
 }
 
-static int __pyx_pf_13simplecantera_11_pybindings_12MultiReactor___cinit__(struct __pyx_obj_13simplecantera_11_pybindings_MultiReactor *__pyx_v_self, PyObject *__pyx_v_species, PyObject *__pyx_v_conc0, PyObject *__pyx_v_reactions, double __pyx_v_T) {
+static int __pyx_pf_13pyroxa_11_pybindings_12MultiReactor___cinit__(struct __pyx_obj_13pyroxa_11_pybindings_MultiReactor *__pyx_v_self, PyObject *__pyx_v_species, PyObject *__pyx_v_conc0, PyObject *__pyx_v_reactions, double __pyx_v_T) {
   PyObject *__pyx_7genexpr__pyx_v_x = NULL;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
@@ -3958,7 +3958,7 @@ static int __pyx_pf_13simplecantera_11_pybindings_12MultiReactor___cinit__(struc
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "simplecantera/pybindings.pyx":91
+  /* "pyroxa/pybindings.pyx":91
  * 
  * 	def __cinit__(self, list species, list conc0, list reactions, double T=300.0):
  * 		self.species = species             # <<<<<<<<<<<<<<
@@ -3971,7 +3971,7 @@ static int __pyx_pf_13simplecantera_11_pybindings_12MultiReactor___cinit__(struc
   __Pyx_DECREF(__pyx_v_self->species);
   __pyx_v_self->species = __pyx_v_species;
 
-  /* "simplecantera/pybindings.pyx":92
+  /* "pyroxa/pybindings.pyx":92
  * 	def __cinit__(self, list species, list conc0, list reactions, double T=300.0):
  * 		self.species = species
  * 		self.conc = [float(x) for x in conc0]             # <<<<<<<<<<<<<<
@@ -4015,7 +4015,7 @@ static int __pyx_pf_13simplecantera_11_pybindings_12MultiReactor___cinit__(struc
   __pyx_v_self->conc = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "simplecantera/pybindings.pyx":93
+  /* "pyroxa/pybindings.pyx":93
  * 		self.species = species
  * 		self.conc = [float(x) for x in conc0]
  * 		self.reactions = reactions             # <<<<<<<<<<<<<<
@@ -4028,7 +4028,7 @@ static int __pyx_pf_13simplecantera_11_pybindings_12MultiReactor___cinit__(struc
   __Pyx_DECREF(__pyx_v_self->reactions);
   __pyx_v_self->reactions = __pyx_v_reactions;
 
-  /* "simplecantera/pybindings.pyx":94
+  /* "pyroxa/pybindings.pyx":94
  * 		self.conc = [float(x) for x in conc0]
  * 		self.reactions = reactions
  * 		self.T = T             # <<<<<<<<<<<<<<
@@ -4037,7 +4037,7 @@ static int __pyx_pf_13simplecantera_11_pybindings_12MultiReactor___cinit__(struc
  */
   __pyx_v_self->T = __pyx_v_T;
 
-  /* "simplecantera/pybindings.pyx":90
+  /* "pyroxa/pybindings.pyx":90
  * 	cdef double T
  * 
  * 	def __cinit__(self, list species, list conc0, list reactions, double T=300.0):             # <<<<<<<<<<<<<<
@@ -4052,7 +4052,7 @@ static int __pyx_pf_13simplecantera_11_pybindings_12MultiReactor___cinit__(struc
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("simplecantera._pybindings.MultiReactor.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyroxa._pybindings.MultiReactor.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_7genexpr__pyx_v_x);
@@ -4060,7 +4060,7 @@ static int __pyx_pf_13simplecantera_11_pybindings_12MultiReactor___cinit__(struc
   return __pyx_r;
 }
 
-/* "simplecantera/pybindings.pyx":96
+/* "pyroxa/pybindings.pyx":96
  * 		self.T = T
  * 
  * 	cpdef list _dcdt(self, list conc):             # <<<<<<<<<<<<<<
@@ -4068,8 +4068,8 @@ static int __pyx_pf_13simplecantera_11_pybindings_12MultiReactor___cinit__(struc
  * 		cdef list d = [0.0] * N
  */
 
-static PyObject *__pyx_pw_13simplecantera_11_pybindings_12MultiReactor_3_dcdt(PyObject *__pyx_v_self, PyObject *__pyx_v_conc); /*proto*/
-static PyObject *__pyx_f_13simplecantera_11_pybindings_12MultiReactor__dcdt(struct __pyx_obj_13simplecantera_11_pybindings_MultiReactor *__pyx_v_self, PyObject *__pyx_v_conc, int __pyx_skip_dispatch) {
+static PyObject *__pyx_pw_13pyroxa_11_pybindings_12MultiReactor_3_dcdt(PyObject *__pyx_v_self, PyObject *__pyx_v_conc); /*proto*/
+static PyObject *__pyx_f_13pyroxa_11_pybindings_12MultiReactor__dcdt(struct __pyx_obj_13pyroxa_11_pybindings_MultiReactor *__pyx_v_self, PyObject *__pyx_v_conc, int __pyx_skip_dispatch) {
   int __pyx_v_N;
   PyObject *__pyx_v_d = 0;
   double __pyx_v_rate;
@@ -4105,7 +4105,7 @@ static PyObject *__pyx_f_13simplecantera_11_pybindings_12MultiReactor__dcdt(stru
       #endif
       __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_dcdt); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 96, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_13simplecantera_11_pybindings_12MultiReactor_3_dcdt)) {
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_13pyroxa_11_pybindings_12MultiReactor_3_dcdt)) {
         __Pyx_XDECREF(__pyx_r);
         __Pyx_INCREF(__pyx_t_1);
         __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
@@ -4142,7 +4142,7 @@ static PyObject *__pyx_f_13simplecantera_11_pybindings_12MultiReactor__dcdt(stru
     #endif
   }
 
-  /* "simplecantera/pybindings.pyx":97
+  /* "pyroxa/pybindings.pyx":97
  * 
  * 	cpdef list _dcdt(self, list conc):
  * 		cdef int N = len(conc)             # <<<<<<<<<<<<<<
@@ -4156,7 +4156,7 @@ static PyObject *__pyx_f_13simplecantera_11_pybindings_12MultiReactor__dcdt(stru
   __pyx_t_5 = PyList_GET_SIZE(__pyx_v_conc); if (unlikely(__pyx_t_5 == ((Py_ssize_t)-1))) __PYX_ERR(1, 97, __pyx_L1_error)
   __pyx_v_N = __pyx_t_5;
 
-  /* "simplecantera/pybindings.pyx":98
+  /* "pyroxa/pybindings.pyx":98
  * 	cpdef list _dcdt(self, list conc):
  * 		cdef int N = len(conc)
  * 		cdef list d = [0.0] * N             # <<<<<<<<<<<<<<
@@ -4175,7 +4175,7 @@ static PyObject *__pyx_f_13simplecantera_11_pybindings_12MultiReactor__dcdt(stru
   __pyx_v_d = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "simplecantera/pybindings.pyx":101
+  /* "pyroxa/pybindings.pyx":101
  * 		cdef double rate
  * 		cdef object rxn
  * 		for rxn in self.reactions:             # <<<<<<<<<<<<<<
@@ -4198,7 +4198,7 @@ static PyObject *__pyx_f_13simplecantera_11_pybindings_12MultiReactor__dcdt(stru
     __Pyx_XDECREF_SET(__pyx_v_rxn, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "simplecantera/pybindings.pyx":102
+    /* "pyroxa/pybindings.pyx":102
  * 		cdef object rxn
  * 		for rxn in self.reactions:
  * 			rate = rxn.rate(conc)             # <<<<<<<<<<<<<<
@@ -4226,7 +4226,7 @@ static PyObject *__pyx_f_13simplecantera_11_pybindings_12MultiReactor__dcdt(stru
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_v_rate = __pyx_t_6;
 
-    /* "simplecantera/pybindings.pyx":103
+    /* "pyroxa/pybindings.pyx":103
  * 		for rxn in self.reactions:
  * 			rate = rxn.rate(conc)
  * 			for key, nu in rxn.reactants.items():             # <<<<<<<<<<<<<<
@@ -4257,7 +4257,7 @@ static PyObject *__pyx_f_13simplecantera_11_pybindings_12MultiReactor__dcdt(stru
       __Pyx_XDECREF_SET(__pyx_v_nu, __pyx_t_3);
       __pyx_t_3 = 0;
 
-      /* "simplecantera/pybindings.pyx":104
+      /* "pyroxa/pybindings.pyx":104
  * 			rate = rxn.rate(conc)
  * 			for key, nu in rxn.reactants.items():
  * 				d[int(key)] -= nu * rate             # <<<<<<<<<<<<<<
@@ -4283,7 +4283,7 @@ static PyObject *__pyx_f_13simplecantera_11_pybindings_12MultiReactor__dcdt(stru
     }
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "simplecantera/pybindings.pyx":105
+    /* "pyroxa/pybindings.pyx":105
  * 			for key, nu in rxn.reactants.items():
  * 				d[int(key)] -= nu * rate
  * 			for key, nu in rxn.products.items():             # <<<<<<<<<<<<<<
@@ -4314,7 +4314,7 @@ static PyObject *__pyx_f_13simplecantera_11_pybindings_12MultiReactor__dcdt(stru
       __Pyx_XDECREF_SET(__pyx_v_nu, __pyx_t_3);
       __pyx_t_3 = 0;
 
-      /* "simplecantera/pybindings.pyx":106
+      /* "pyroxa/pybindings.pyx":106
  * 				d[int(key)] -= nu * rate
  * 			for key, nu in rxn.products.items():
  * 				d[int(key)] += nu * rate             # <<<<<<<<<<<<<<
@@ -4340,7 +4340,7 @@ static PyObject *__pyx_f_13simplecantera_11_pybindings_12MultiReactor__dcdt(stru
     }
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "simplecantera/pybindings.pyx":101
+    /* "pyroxa/pybindings.pyx":101
  * 		cdef double rate
  * 		cdef object rxn
  * 		for rxn in self.reactions:             # <<<<<<<<<<<<<<
@@ -4350,7 +4350,7 @@ static PyObject *__pyx_f_13simplecantera_11_pybindings_12MultiReactor__dcdt(stru
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "simplecantera/pybindings.pyx":107
+  /* "pyroxa/pybindings.pyx":107
  * 			for key, nu in rxn.products.items():
  * 				d[int(key)] += nu * rate
  * 		return d             # <<<<<<<<<<<<<<
@@ -4362,7 +4362,7 @@ static PyObject *__pyx_f_13simplecantera_11_pybindings_12MultiReactor__dcdt(stru
   __pyx_r = __pyx_v_d;
   goto __pyx_L0;
 
-  /* "simplecantera/pybindings.pyx":96
+  /* "pyroxa/pybindings.pyx":96
  * 		self.T = T
  * 
  * 	cpdef list _dcdt(self, list conc):             # <<<<<<<<<<<<<<
@@ -4378,7 +4378,7 @@ static PyObject *__pyx_f_13simplecantera_11_pybindings_12MultiReactor__dcdt(stru
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_11);
   __Pyx_XDECREF(__pyx_t_12);
-  __Pyx_AddTraceback("simplecantera._pybindings.MultiReactor._dcdt", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyroxa._pybindings.MultiReactor._dcdt", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_d);
@@ -4391,8 +4391,8 @@ static PyObject *__pyx_f_13simplecantera_11_pybindings_12MultiReactor__dcdt(stru
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_13simplecantera_11_pybindings_12MultiReactor_3_dcdt(PyObject *__pyx_v_self, PyObject *__pyx_v_conc); /*proto*/
-static PyObject *__pyx_pw_13simplecantera_11_pybindings_12MultiReactor_3_dcdt(PyObject *__pyx_v_self, PyObject *__pyx_v_conc) {
+static PyObject *__pyx_pw_13pyroxa_11_pybindings_12MultiReactor_3_dcdt(PyObject *__pyx_v_self, PyObject *__pyx_v_conc); /*proto*/
+static PyObject *__pyx_pw_13pyroxa_11_pybindings_12MultiReactor_3_dcdt(PyObject *__pyx_v_self, PyObject *__pyx_v_conc) {
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -4400,7 +4400,7 @@ static PyObject *__pyx_pw_13simplecantera_11_pybindings_12MultiReactor_3_dcdt(Py
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("_dcdt (wrapper)", 0);
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_conc), (&PyList_Type), 1, "conc", 1))) __PYX_ERR(1, 96, __pyx_L1_error)
-  __pyx_r = __pyx_pf_13simplecantera_11_pybindings_12MultiReactor_2_dcdt(((struct __pyx_obj_13simplecantera_11_pybindings_MultiReactor *)__pyx_v_self), ((PyObject*)__pyx_v_conc));
+  __pyx_r = __pyx_pf_13pyroxa_11_pybindings_12MultiReactor_2_dcdt(((struct __pyx_obj_13pyroxa_11_pybindings_MultiReactor *)__pyx_v_self), ((PyObject*)__pyx_v_conc));
 
   /* function exit code */
   goto __pyx_L0;
@@ -4411,7 +4411,7 @@ static PyObject *__pyx_pw_13simplecantera_11_pybindings_12MultiReactor_3_dcdt(Py
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_13simplecantera_11_pybindings_12MultiReactor_2_dcdt(struct __pyx_obj_13simplecantera_11_pybindings_MultiReactor *__pyx_v_self, PyObject *__pyx_v_conc) {
+static PyObject *__pyx_pf_13pyroxa_11_pybindings_12MultiReactor_2_dcdt(struct __pyx_obj_13pyroxa_11_pybindings_MultiReactor *__pyx_v_self, PyObject *__pyx_v_conc) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -4420,7 +4420,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_12MultiReactor_2_dcdt(st
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_dcdt", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_13simplecantera_11_pybindings_12MultiReactor__dcdt(__pyx_v_self, __pyx_v_conc, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 96, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_13pyroxa_11_pybindings_12MultiReactor__dcdt(__pyx_v_self, __pyx_v_conc, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 96, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -4429,7 +4429,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_12MultiReactor_2_dcdt(st
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("simplecantera._pybindings.MultiReactor._dcdt", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyroxa._pybindings.MultiReactor._dcdt", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -4437,7 +4437,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_12MultiReactor_2_dcdt(st
   return __pyx_r;
 }
 
-/* "simplecantera/pybindings.pyx":109
+/* "pyroxa/pybindings.pyx":109
  * 		return d
  * 
  * 	def step(self, double dt):             # <<<<<<<<<<<<<<
@@ -4446,8 +4446,8 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_12MultiReactor_2_dcdt(st
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_13simplecantera_11_pybindings_12MultiReactor_5step(PyObject *__pyx_v_self, PyObject *__pyx_arg_dt); /*proto*/
-static PyObject *__pyx_pw_13simplecantera_11_pybindings_12MultiReactor_5step(PyObject *__pyx_v_self, PyObject *__pyx_arg_dt) {
+static PyObject *__pyx_pw_13pyroxa_11_pybindings_12MultiReactor_5step(PyObject *__pyx_v_self, PyObject *__pyx_arg_dt); /*proto*/
+static PyObject *__pyx_pw_13pyroxa_11_pybindings_12MultiReactor_5step(PyObject *__pyx_v_self, PyObject *__pyx_arg_dt) {
   double __pyx_v_dt;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
@@ -4460,18 +4460,18 @@ static PyObject *__pyx_pw_13simplecantera_11_pybindings_12MultiReactor_5step(PyO
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
-  __Pyx_AddTraceback("simplecantera._pybindings.MultiReactor.step", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyroxa._pybindings.MultiReactor.step", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_13simplecantera_11_pybindings_12MultiReactor_4step(((struct __pyx_obj_13simplecantera_11_pybindings_MultiReactor *)__pyx_v_self), ((double)__pyx_v_dt));
+  __pyx_r = __pyx_pf_13pyroxa_11_pybindings_12MultiReactor_4step(((struct __pyx_obj_13pyroxa_11_pybindings_MultiReactor *)__pyx_v_self), ((double)__pyx_v_dt));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_13simplecantera_11_pybindings_12MultiReactor_4step(struct __pyx_obj_13simplecantera_11_pybindings_MultiReactor *__pyx_v_self, double __pyx_v_dt) {
+static PyObject *__pyx_pf_13pyroxa_11_pybindings_12MultiReactor_4step(struct __pyx_obj_13pyroxa_11_pybindings_MultiReactor *__pyx_v_self, double __pyx_v_dt) {
   PyObject *__pyx_v_y0 = NULL;
   PyObject *__pyx_v_k1 = NULL;
   PyObject *__pyx_v_y1 = NULL;
@@ -4502,7 +4502,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_12MultiReactor_4step(str
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("step", 0);
 
-  /* "simplecantera/pybindings.pyx":110
+  /* "pyroxa/pybindings.pyx":110
  * 
  * 	def step(self, double dt):
  * 		y0 = self.conc             # <<<<<<<<<<<<<<
@@ -4514,19 +4514,19 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_12MultiReactor_4step(str
   __pyx_v_y0 = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "simplecantera/pybindings.pyx":111
+  /* "pyroxa/pybindings.pyx":111
  * 	def step(self, double dt):
  * 		y0 = self.conc
  * 		k1 = self._dcdt(y0)             # <<<<<<<<<<<<<<
  * 		y1 = [y0[i] + 0.5 * dt * k1[i] for i in range(len(y0))]
  * 		k2 = self._dcdt(y1)
  */
-  __pyx_t_1 = ((struct __pyx_vtabstruct_13simplecantera_11_pybindings_MultiReactor *)__pyx_v_self->__pyx_vtab)->_dcdt(__pyx_v_self, __pyx_v_y0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 111, __pyx_L1_error)
+  __pyx_t_1 = ((struct __pyx_vtabstruct_13pyroxa_11_pybindings_MultiReactor *)__pyx_v_self->__pyx_vtab)->_dcdt(__pyx_v_self, __pyx_v_y0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 111, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_k1 = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "simplecantera/pybindings.pyx":112
+  /* "pyroxa/pybindings.pyx":112
  * 		y0 = self.conc
  * 		k1 = self._dcdt(y0)
  * 		y1 = [y0[i] + 0.5 * dt * k1[i] for i in range(len(y0))]             # <<<<<<<<<<<<<<
@@ -4573,19 +4573,19 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_12MultiReactor_4step(str
   __pyx_v_y1 = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "simplecantera/pybindings.pyx":113
+  /* "pyroxa/pybindings.pyx":113
  * 		k1 = self._dcdt(y0)
  * 		y1 = [y0[i] + 0.5 * dt * k1[i] for i in range(len(y0))]
  * 		k2 = self._dcdt(y1)             # <<<<<<<<<<<<<<
  * 		y2 = [y0[i] + 0.5 * dt * k2[i] for i in range(len(y0))]
  * 		k3 = self._dcdt(y2)
  */
-  __pyx_t_1 = ((struct __pyx_vtabstruct_13simplecantera_11_pybindings_MultiReactor *)__pyx_v_self->__pyx_vtab)->_dcdt(__pyx_v_self, __pyx_v_y1, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 113, __pyx_L1_error)
+  __pyx_t_1 = ((struct __pyx_vtabstruct_13pyroxa_11_pybindings_MultiReactor *)__pyx_v_self->__pyx_vtab)->_dcdt(__pyx_v_self, __pyx_v_y1, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 113, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_k2 = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "simplecantera/pybindings.pyx":114
+  /* "pyroxa/pybindings.pyx":114
  * 		y1 = [y0[i] + 0.5 * dt * k1[i] for i in range(len(y0))]
  * 		k2 = self._dcdt(y1)
  * 		y2 = [y0[i] + 0.5 * dt * k2[i] for i in range(len(y0))]             # <<<<<<<<<<<<<<
@@ -4632,19 +4632,19 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_12MultiReactor_4step(str
   __pyx_v_y2 = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "simplecantera/pybindings.pyx":115
+  /* "pyroxa/pybindings.pyx":115
  * 		k2 = self._dcdt(y1)
  * 		y2 = [y0[i] + 0.5 * dt * k2[i] for i in range(len(y0))]
  * 		k3 = self._dcdt(y2)             # <<<<<<<<<<<<<<
  * 		y3 = [y0[i] + dt * k3[i] for i in range(len(y0))]
  * 		k4 = self._dcdt(y3)
  */
-  __pyx_t_1 = ((struct __pyx_vtabstruct_13simplecantera_11_pybindings_MultiReactor *)__pyx_v_self->__pyx_vtab)->_dcdt(__pyx_v_self, __pyx_v_y2, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 115, __pyx_L1_error)
+  __pyx_t_1 = ((struct __pyx_vtabstruct_13pyroxa_11_pybindings_MultiReactor *)__pyx_v_self->__pyx_vtab)->_dcdt(__pyx_v_self, __pyx_v_y2, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 115, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_k3 = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "simplecantera/pybindings.pyx":116
+  /* "pyroxa/pybindings.pyx":116
  * 		y2 = [y0[i] + 0.5 * dt * k2[i] for i in range(len(y0))]
  * 		k3 = self._dcdt(y2)
  * 		y3 = [y0[i] + dt * k3[i] for i in range(len(y0))]             # <<<<<<<<<<<<<<
@@ -4691,19 +4691,19 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_12MultiReactor_4step(str
   __pyx_v_y3 = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "simplecantera/pybindings.pyx":117
+  /* "pyroxa/pybindings.pyx":117
  * 		k3 = self._dcdt(y2)
  * 		y3 = [y0[i] + dt * k3[i] for i in range(len(y0))]
  * 		k4 = self._dcdt(y3)             # <<<<<<<<<<<<<<
  * 		for i in range(len(y0)):
  * 			self.conc[i] += (dt / 6.0) * (k1[i] + 2.0 * k2[i] + 2.0 * k3[i] + k4[i])
  */
-  __pyx_t_1 = ((struct __pyx_vtabstruct_13simplecantera_11_pybindings_MultiReactor *)__pyx_v_self->__pyx_vtab)->_dcdt(__pyx_v_self, __pyx_v_y3, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 117, __pyx_L1_error)
+  __pyx_t_1 = ((struct __pyx_vtabstruct_13pyroxa_11_pybindings_MultiReactor *)__pyx_v_self->__pyx_vtab)->_dcdt(__pyx_v_self, __pyx_v_y3, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 117, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_k4 = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "simplecantera/pybindings.pyx":118
+  /* "pyroxa/pybindings.pyx":118
  * 		y3 = [y0[i] + dt * k3[i] for i in range(len(y0))]
  * 		k4 = self._dcdt(y3)
  * 		for i in range(len(y0)):             # <<<<<<<<<<<<<<
@@ -4719,7 +4719,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_12MultiReactor_4step(str
   for (__pyx_t_4 = 0; __pyx_t_4 < __pyx_t_3; __pyx_t_4+=1) {
     __pyx_v_i = __pyx_t_4;
 
-    /* "simplecantera/pybindings.pyx":119
+    /* "pyroxa/pybindings.pyx":119
  * 		k4 = self._dcdt(y3)
  * 		for i in range(len(y0)):
  * 			self.conc[i] += (dt / 6.0) * (k1[i] + 2.0 * k2[i] + 2.0 * k3[i] + k4[i])             # <<<<<<<<<<<<<<
@@ -4799,7 +4799,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_12MultiReactor_4step(str
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-    /* "simplecantera/pybindings.pyx":120
+    /* "pyroxa/pybindings.pyx":120
  * 		for i in range(len(y0)):
  * 			self.conc[i] += (dt / 6.0) * (k1[i] + 2.0 * k2[i] + 2.0 * k3[i] + k4[i])
  * 			if self.conc[i] < 0:             # <<<<<<<<<<<<<<
@@ -4818,7 +4818,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_12MultiReactor_4step(str
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     if (__pyx_t_11) {
 
-      /* "simplecantera/pybindings.pyx":121
+      /* "pyroxa/pybindings.pyx":121
  * 			self.conc[i] += (dt / 6.0) * (k1[i] + 2.0 * k2[i] + 2.0 * k3[i] + k4[i])
  * 			if self.conc[i] < 0:
  * 				self.conc[i] = 0.0             # <<<<<<<<<<<<<<
@@ -4831,7 +4831,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_12MultiReactor_4step(str
       }
       if (unlikely(__Pyx_SetItemInt(__pyx_v_self->conc, __pyx_v_i, __pyx_float_0_0, Py_ssize_t, 1, PyInt_FromSsize_t, 1, 1, 1) < 0)) __PYX_ERR(1, 121, __pyx_L1_error)
 
-      /* "simplecantera/pybindings.pyx":120
+      /* "pyroxa/pybindings.pyx":120
  * 		for i in range(len(y0)):
  * 			self.conc[i] += (dt / 6.0) * (k1[i] + 2.0 * k2[i] + 2.0 * k3[i] + k4[i])
  * 			if self.conc[i] < 0:             # <<<<<<<<<<<<<<
@@ -4841,7 +4841,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_12MultiReactor_4step(str
     }
   }
 
-  /* "simplecantera/pybindings.pyx":109
+  /* "pyroxa/pybindings.pyx":109
  * 		return d
  * 
  * 	def step(self, double dt):             # <<<<<<<<<<<<<<
@@ -4859,7 +4859,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_12MultiReactor_4step(str
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_8);
   __Pyx_XDECREF(__pyx_t_9);
-  __Pyx_AddTraceback("simplecantera._pybindings.MultiReactor.step", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyroxa._pybindings.MultiReactor.step", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_y0);
@@ -4875,7 +4875,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_12MultiReactor_4step(str
   return __pyx_r;
 }
 
-/* "simplecantera/pybindings.pyx":123
+/* "pyroxa/pybindings.pyx":123
  * 				self.conc[i] = 0.0
  * 
  * 	def run(self, double time_span, double dt):             # <<<<<<<<<<<<<<
@@ -4884,8 +4884,8 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_12MultiReactor_4step(str
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_13simplecantera_11_pybindings_12MultiReactor_7run(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_13simplecantera_11_pybindings_12MultiReactor_7run(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_13pyroxa_11_pybindings_12MultiReactor_7run(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_13pyroxa_11_pybindings_12MultiReactor_7run(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   double __pyx_v_time_span;
   double __pyx_v_dt;
   int __pyx_lineno = 0;
@@ -4936,18 +4936,18 @@ static PyObject *__pyx_pw_13simplecantera_11_pybindings_12MultiReactor_7run(PyOb
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("run", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(1, 123, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("simplecantera._pybindings.MultiReactor.run", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyroxa._pybindings.MultiReactor.run", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_13simplecantera_11_pybindings_12MultiReactor_6run(((struct __pyx_obj_13simplecantera_11_pybindings_MultiReactor *)__pyx_v_self), __pyx_v_time_span, __pyx_v_dt);
+  __pyx_r = __pyx_pf_13pyroxa_11_pybindings_12MultiReactor_6run(((struct __pyx_obj_13pyroxa_11_pybindings_MultiReactor *)__pyx_v_self), __pyx_v_time_span, __pyx_v_dt);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_13simplecantera_11_pybindings_12MultiReactor_6run(struct __pyx_obj_13simplecantera_11_pybindings_MultiReactor *__pyx_v_self, double __pyx_v_time_span, double __pyx_v_dt) {
+static PyObject *__pyx_pf_13pyroxa_11_pybindings_12MultiReactor_6run(struct __pyx_obj_13pyroxa_11_pybindings_MultiReactor *__pyx_v_self, double __pyx_v_time_span, double __pyx_v_dt) {
   int __pyx_v_nsteps;
   int __pyx_v_i;
   PyObject *__pyx_v_times = NULL;
@@ -4967,7 +4967,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_12MultiReactor_6run(stru
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("run", 0);
 
-  /* "simplecantera/pybindings.pyx":124
+  /* "pyroxa/pybindings.pyx":124
  * 
  * 	def run(self, double time_span, double dt):
  * 		cdef int nsteps = <int>round(time_span / dt)             # <<<<<<<<<<<<<<
@@ -4987,7 +4987,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_12MultiReactor_6run(stru
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_nsteps = ((int)__pyx_t_3);
 
-  /* "simplecantera/pybindings.pyx":126
+  /* "pyroxa/pybindings.pyx":126
  * 		cdef int nsteps = <int>round(time_span / dt)
  * 		cdef int i
  * 		times = [0.0]             # <<<<<<<<<<<<<<
@@ -5002,7 +5002,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_12MultiReactor_6run(stru
   __pyx_v_times = ((PyObject*)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "simplecantera/pybindings.pyx":127
+  /* "pyroxa/pybindings.pyx":127
  * 		cdef int i
  * 		times = [0.0]
  * 		traj = [list(self.conc)]             # <<<<<<<<<<<<<<
@@ -5019,7 +5019,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_12MultiReactor_6run(stru
   __pyx_v_traj = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "simplecantera/pybindings.pyx":128
+  /* "pyroxa/pybindings.pyx":128
  * 		times = [0.0]
  * 		traj = [list(self.conc)]
  * 		for i in range(nsteps):             # <<<<<<<<<<<<<<
@@ -5031,7 +5031,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_12MultiReactor_6run(stru
   for (__pyx_t_5 = 0; __pyx_t_5 < __pyx_t_4; __pyx_t_5+=1) {
     __pyx_v_i = __pyx_t_5;
 
-    /* "simplecantera/pybindings.pyx":129
+    /* "pyroxa/pybindings.pyx":129
  * 		traj = [list(self.conc)]
  * 		for i in range(nsteps):
  * 			self.step(dt)             # <<<<<<<<<<<<<<
@@ -5060,7 +5060,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_12MultiReactor_6run(stru
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "simplecantera/pybindings.pyx":130
+    /* "pyroxa/pybindings.pyx":130
  * 		for i in range(nsteps):
  * 			self.step(dt)
  * 			times.append((i + 1) * dt)             # <<<<<<<<<<<<<<
@@ -5072,7 +5072,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_12MultiReactor_6run(stru
     __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_times, __pyx_t_1); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(1, 130, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "simplecantera/pybindings.pyx":131
+    /* "pyroxa/pybindings.pyx":131
  * 			self.step(dt)
  * 			times.append((i + 1) * dt)
  * 			traj.append(list(self.conc))             # <<<<<<<<<<<<<<
@@ -5085,7 +5085,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_12MultiReactor_6run(stru
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
 
-  /* "simplecantera/pybindings.pyx":132
+  /* "pyroxa/pybindings.pyx":132
  * 			times.append((i + 1) * dt)
  * 			traj.append(list(self.conc))
  * 		return times, traj             # <<<<<<<<<<<<<<
@@ -5105,7 +5105,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_12MultiReactor_6run(stru
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "simplecantera/pybindings.pyx":123
+  /* "pyroxa/pybindings.pyx":123
  * 				self.conc[i] = 0.0
  * 
  * 	def run(self, double time_span, double dt):             # <<<<<<<<<<<<<<
@@ -5119,7 +5119,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_12MultiReactor_6run(stru
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_7);
-  __Pyx_AddTraceback("simplecantera._pybindings.MultiReactor.run", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyroxa._pybindings.MultiReactor.run", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_times);
@@ -5136,19 +5136,19 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_12MultiReactor_6run(stru
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_13simplecantera_11_pybindings_12MultiReactor_9__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyObject *__pyx_pw_13simplecantera_11_pybindings_12MultiReactor_9__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_13pyroxa_11_pybindings_12MultiReactor_9__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_13pyroxa_11_pybindings_12MultiReactor_9__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__reduce_cython__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_13simplecantera_11_pybindings_12MultiReactor_8__reduce_cython__(((struct __pyx_obj_13simplecantera_11_pybindings_MultiReactor *)__pyx_v_self));
+  __pyx_r = __pyx_pf_13pyroxa_11_pybindings_12MultiReactor_8__reduce_cython__(((struct __pyx_obj_13pyroxa_11_pybindings_MultiReactor *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_13simplecantera_11_pybindings_12MultiReactor_8__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_13simplecantera_11_pybindings_MultiReactor *__pyx_v_self) {
+static PyObject *__pyx_pf_13pyroxa_11_pybindings_12MultiReactor_8__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_13pyroxa_11_pybindings_MultiReactor *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -5178,7 +5178,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_12MultiReactor_8__reduce
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("simplecantera._pybindings.MultiReactor.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyroxa._pybindings.MultiReactor.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
@@ -5193,19 +5193,19 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_12MultiReactor_8__reduce
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_13simplecantera_11_pybindings_12MultiReactor_11__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state); /*proto*/
-static PyObject *__pyx_pw_13simplecantera_11_pybindings_12MultiReactor_11__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pw_13pyroxa_11_pybindings_12MultiReactor_11__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state); /*proto*/
+static PyObject *__pyx_pw_13pyroxa_11_pybindings_12MultiReactor_11__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__setstate_cython__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_13simplecantera_11_pybindings_12MultiReactor_10__setstate_cython__(((struct __pyx_obj_13simplecantera_11_pybindings_MultiReactor *)__pyx_v_self), ((PyObject *)__pyx_v___pyx_state));
+  __pyx_r = __pyx_pf_13pyroxa_11_pybindings_12MultiReactor_10__setstate_cython__(((struct __pyx_obj_13pyroxa_11_pybindings_MultiReactor *)__pyx_v_self), ((PyObject *)__pyx_v___pyx_state));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_13simplecantera_11_pybindings_12MultiReactor_10__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_13simplecantera_11_pybindings_MultiReactor *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_13pyroxa_11_pybindings_12MultiReactor_10__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_13pyroxa_11_pybindings_MultiReactor *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -5235,14 +5235,14 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_12MultiReactor_10__setst
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("simplecantera._pybindings.MultiReactor.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyroxa._pybindings.MultiReactor.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "simplecantera/pybindings.pyx":143
+/* "pyroxa/pybindings.pyx":143
  * 	cdef double dt
  * 
  * 	def __cinit__(self, Reaction rxn, double A0=1.0, double B0=0.0, double time_span=10.0, double dt=0.01):             # <<<<<<<<<<<<<<
@@ -5251,9 +5251,9 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_12MultiReactor_10__setst
  */
 
 /* Python wrapper */
-static int __pyx_pw_13simplecantera_11_pybindings_7Reactor_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static int __pyx_pw_13simplecantera_11_pybindings_7Reactor_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  struct __pyx_obj_13simplecantera_11_pybindings_Reaction *__pyx_v_rxn = 0;
+static int __pyx_pw_13pyroxa_11_pybindings_7Reactor_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_13pyroxa_11_pybindings_7Reactor_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  struct __pyx_obj_13pyroxa_11_pybindings_Reaction *__pyx_v_rxn = 0;
   double __pyx_v_A0;
   double __pyx_v_B0;
   double __pyx_v_time_span;
@@ -5332,7 +5332,7 @@ static int __pyx_pw_13simplecantera_11_pybindings_7Reactor_1__cinit__(PyObject *
         default: goto __pyx_L5_argtuple_error;
       }
     }
-    __pyx_v_rxn = ((struct __pyx_obj_13simplecantera_11_pybindings_Reaction *)values[0]);
+    __pyx_v_rxn = ((struct __pyx_obj_13pyroxa_11_pybindings_Reaction *)values[0]);
     if (values[1]) {
       __pyx_v_A0 = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_A0 == (double)-1) && PyErr_Occurred())) __PYX_ERR(1, 143, __pyx_L3_error)
     } else {
@@ -5358,12 +5358,12 @@ static int __pyx_pw_13simplecantera_11_pybindings_7Reactor_1__cinit__(PyObject *
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 1, 5, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(1, 143, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("simplecantera._pybindings.Reactor.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyroxa._pybindings.Reactor.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_rxn), __pyx_ptype_13simplecantera_11_pybindings_Reaction, 1, "rxn", 0))) __PYX_ERR(1, 143, __pyx_L1_error)
-  __pyx_r = __pyx_pf_13simplecantera_11_pybindings_7Reactor___cinit__(((struct __pyx_obj_13simplecantera_11_pybindings_Reactor *)__pyx_v_self), __pyx_v_rxn, __pyx_v_A0, __pyx_v_B0, __pyx_v_time_span, __pyx_v_dt);
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_rxn), __pyx_ptype_13pyroxa_11_pybindings_Reaction, 1, "rxn", 0))) __PYX_ERR(1, 143, __pyx_L1_error)
+  __pyx_r = __pyx_pf_13pyroxa_11_pybindings_7Reactor___cinit__(((struct __pyx_obj_13pyroxa_11_pybindings_Reactor *)__pyx_v_self), __pyx_v_rxn, __pyx_v_A0, __pyx_v_B0, __pyx_v_time_span, __pyx_v_dt);
 
   /* function exit code */
   goto __pyx_L0;
@@ -5374,13 +5374,13 @@ static int __pyx_pw_13simplecantera_11_pybindings_7Reactor_1__cinit__(PyObject *
   return __pyx_r;
 }
 
-static int __pyx_pf_13simplecantera_11_pybindings_7Reactor___cinit__(struct __pyx_obj_13simplecantera_11_pybindings_Reactor *__pyx_v_self, struct __pyx_obj_13simplecantera_11_pybindings_Reaction *__pyx_v_rxn, double __pyx_v_A0, double __pyx_v_B0, double __pyx_v_time_span, double __pyx_v_dt) {
+static int __pyx_pf_13pyroxa_11_pybindings_7Reactor___cinit__(struct __pyx_obj_13pyroxa_11_pybindings_Reactor *__pyx_v_self, struct __pyx_obj_13pyroxa_11_pybindings_Reaction *__pyx_v_rxn, double __pyx_v_A0, double __pyx_v_B0, double __pyx_v_time_span, double __pyx_v_dt) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   double __pyx_t_1;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "simplecantera/pybindings.pyx":144
+  /* "pyroxa/pybindings.pyx":144
  * 
  * 	def __cinit__(self, Reaction rxn, double A0=1.0, double B0=0.0, double time_span=10.0, double dt=0.01):
  * 		self.kf = rxn.kf             # <<<<<<<<<<<<<<
@@ -5390,7 +5390,7 @@ static int __pyx_pf_13simplecantera_11_pybindings_7Reactor___cinit__(struct __py
   __pyx_t_1 = __pyx_v_rxn->kf;
   __pyx_v_self->kf = __pyx_t_1;
 
-  /* "simplecantera/pybindings.pyx":145
+  /* "pyroxa/pybindings.pyx":145
  * 	def __cinit__(self, Reaction rxn, double A0=1.0, double B0=0.0, double time_span=10.0, double dt=0.01):
  * 		self.kf = rxn.kf
  * 		self.kr = rxn.kr             # <<<<<<<<<<<<<<
@@ -5400,7 +5400,7 @@ static int __pyx_pf_13simplecantera_11_pybindings_7Reactor___cinit__(struct __py
   __pyx_t_1 = __pyx_v_rxn->kr;
   __pyx_v_self->kr = __pyx_t_1;
 
-  /* "simplecantera/pybindings.pyx":146
+  /* "pyroxa/pybindings.pyx":146
  * 		self.kf = rxn.kf
  * 		self.kr = rxn.kr
  * 		self.A0 = A0             # <<<<<<<<<<<<<<
@@ -5409,7 +5409,7 @@ static int __pyx_pf_13simplecantera_11_pybindings_7Reactor___cinit__(struct __py
  */
   __pyx_v_self->A0 = __pyx_v_A0;
 
-  /* "simplecantera/pybindings.pyx":147
+  /* "pyroxa/pybindings.pyx":147
  * 		self.kr = rxn.kr
  * 		self.A0 = A0
  * 		self.B0 = B0             # <<<<<<<<<<<<<<
@@ -5418,7 +5418,7 @@ static int __pyx_pf_13simplecantera_11_pybindings_7Reactor___cinit__(struct __py
  */
   __pyx_v_self->B0 = __pyx_v_B0;
 
-  /* "simplecantera/pybindings.pyx":148
+  /* "pyroxa/pybindings.pyx":148
  * 		self.A0 = A0
  * 		self.B0 = B0
  * 		self.time_span = time_span             # <<<<<<<<<<<<<<
@@ -5427,7 +5427,7 @@ static int __pyx_pf_13simplecantera_11_pybindings_7Reactor___cinit__(struct __py
  */
   __pyx_v_self->time_span = __pyx_v_time_span;
 
-  /* "simplecantera/pybindings.pyx":149
+  /* "pyroxa/pybindings.pyx":149
  * 		self.B0 = B0
  * 		self.time_span = time_span
  * 		self.dt = dt             # <<<<<<<<<<<<<<
@@ -5436,7 +5436,7 @@ static int __pyx_pf_13simplecantera_11_pybindings_7Reactor___cinit__(struct __py
  */
   __pyx_v_self->dt = __pyx_v_dt;
 
-  /* "simplecantera/pybindings.pyx":143
+  /* "pyroxa/pybindings.pyx":143
  * 	cdef double dt
  * 
  * 	def __cinit__(self, Reaction rxn, double A0=1.0, double B0=0.0, double time_span=10.0, double dt=0.01):             # <<<<<<<<<<<<<<
@@ -5450,7 +5450,7 @@ static int __pyx_pf_13simplecantera_11_pybindings_7Reactor___cinit__(struct __py
   return __pyx_r;
 }
 
-/* "simplecantera/pybindings.pyx":151
+/* "pyroxa/pybindings.pyx":151
  * 		self.dt = dt
  * 
  * 	def run(self):             # <<<<<<<<<<<<<<
@@ -5459,19 +5459,19 @@ static int __pyx_pf_13simplecantera_11_pybindings_7Reactor___cinit__(struct __py
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_13simplecantera_11_pybindings_7Reactor_3run(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyObject *__pyx_pw_13simplecantera_11_pybindings_7Reactor_3run(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_13pyroxa_11_pybindings_7Reactor_3run(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_13pyroxa_11_pybindings_7Reactor_3run(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("run (wrapper)", 0);
-  __pyx_r = __pyx_pf_13simplecantera_11_pybindings_7Reactor_2run(((struct __pyx_obj_13simplecantera_11_pybindings_Reactor *)__pyx_v_self));
+  __pyx_r = __pyx_pf_13pyroxa_11_pybindings_7Reactor_2run(((struct __pyx_obj_13pyroxa_11_pybindings_Reactor *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_13simplecantera_11_pybindings_7Reactor_2run(struct __pyx_obj_13simplecantera_11_pybindings_Reactor *__pyx_v_self) {
+static PyObject *__pyx_pf_13pyroxa_11_pybindings_7Reactor_2run(struct __pyx_obj_13pyroxa_11_pybindings_Reactor *__pyx_v_self) {
   int __pyx_v_nsteps;
   int __pyx_v_npts;
   int __pyx_v_max_len;
@@ -5510,7 +5510,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_7Reactor_2run(struct __p
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("run", 0);
 
-  /* "simplecantera/pybindings.pyx":152
+  /* "pyroxa/pybindings.pyx":152
  * 
  * 	def run(self):
  * 		cdef int nsteps = <int>round(self.time_span / self.dt)             # <<<<<<<<<<<<<<
@@ -5530,7 +5530,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_7Reactor_2run(struct __p
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_nsteps = ((int)__pyx_t_3);
 
-  /* "simplecantera/pybindings.pyx":153
+  /* "pyroxa/pybindings.pyx":153
  * 	def run(self):
  * 		cdef int nsteps = <int>round(self.time_span / self.dt)
  * 		cdef int npts = nsteps + 1             # <<<<<<<<<<<<<<
@@ -5539,7 +5539,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_7Reactor_2run(struct __p
  */
   __pyx_v_npts = (__pyx_v_nsteps + 1);
 
-  /* "simplecantera/pybindings.pyx":154
+  /* "pyroxa/pybindings.pyx":154
  * 		cdef int nsteps = <int>round(self.time_span / self.dt)
  * 		cdef int npts = nsteps + 1
  * 		cdef int max_len = npts             # <<<<<<<<<<<<<<
@@ -5548,7 +5548,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_7Reactor_2run(struct __p
  */
   __pyx_v_max_len = __pyx_v_npts;
 
-  /* "simplecantera/pybindings.pyx":155
+  /* "pyroxa/pybindings.pyx":155
  * 		cdef int npts = nsteps + 1
  * 		cdef int max_len = npts
  * 		cdef double* times = <double*>malloc(max_len * sizeof(double))             # <<<<<<<<<<<<<<
@@ -5557,7 +5557,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_7Reactor_2run(struct __p
  */
   __pyx_v_times = ((double *)malloc((__pyx_v_max_len * (sizeof(double)))));
 
-  /* "simplecantera/pybindings.pyx":156
+  /* "pyroxa/pybindings.pyx":156
  * 		cdef int max_len = npts
  * 		cdef double* times = <double*>malloc(max_len * sizeof(double))
  * 		cdef double* Aout = <double*>malloc(max_len * sizeof(double))             # <<<<<<<<<<<<<<
@@ -5566,7 +5566,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_7Reactor_2run(struct __p
  */
   __pyx_v_Aout = ((double *)malloc((__pyx_v_max_len * (sizeof(double)))));
 
-  /* "simplecantera/pybindings.pyx":157
+  /* "pyroxa/pybindings.pyx":157
  * 		cdef double* times = <double*>malloc(max_len * sizeof(double))
  * 		cdef double* Aout = <double*>malloc(max_len * sizeof(double))
  * 		cdef double* Bout = <double*>malloc(max_len * sizeof(double))             # <<<<<<<<<<<<<<
@@ -5575,7 +5575,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_7Reactor_2run(struct __p
  */
   __pyx_v_Bout = ((double *)malloc((__pyx_v_max_len * (sizeof(double)))));
 
-  /* "simplecantera/pybindings.pyx":158
+  /* "pyroxa/pybindings.pyx":158
  * 		cdef double* Aout = <double*>malloc(max_len * sizeof(double))
  * 		cdef double* Bout = <double*>malloc(max_len * sizeof(double))
  * 		if not times or not Aout or not Bout:             # <<<<<<<<<<<<<<
@@ -5599,7 +5599,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_7Reactor_2run(struct __p
   __pyx_L4_bool_binop_done:;
   if (__pyx_t_4) {
 
-    /* "simplecantera/pybindings.pyx":159
+    /* "pyroxa/pybindings.pyx":159
  * 		cdef double* Bout = <double*>malloc(max_len * sizeof(double))
  * 		if not times or not Aout or not Bout:
  * 			if times: free(times)             # <<<<<<<<<<<<<<
@@ -5611,7 +5611,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_7Reactor_2run(struct __p
       free(__pyx_v_times);
     }
 
-    /* "simplecantera/pybindings.pyx":160
+    /* "pyroxa/pybindings.pyx":160
  * 		if not times or not Aout or not Bout:
  * 			if times: free(times)
  * 			if Aout: free(Aout)             # <<<<<<<<<<<<<<
@@ -5623,7 +5623,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_7Reactor_2run(struct __p
       free(__pyx_v_Aout);
     }
 
-    /* "simplecantera/pybindings.pyx":161
+    /* "pyroxa/pybindings.pyx":161
  * 			if times: free(times)
  * 			if Aout: free(Aout)
  * 			if Bout: free(Bout)             # <<<<<<<<<<<<<<
@@ -5635,7 +5635,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_7Reactor_2run(struct __p
       free(__pyx_v_Bout);
     }
 
-    /* "simplecantera/pybindings.pyx":162
+    /* "pyroxa/pybindings.pyx":162
  * 			if Aout: free(Aout)
  * 			if Bout: free(Bout)
  * 			raise MemoryError("allocation failed")             # <<<<<<<<<<<<<<
@@ -5648,7 +5648,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_7Reactor_2run(struct __p
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __PYX_ERR(1, 162, __pyx_L1_error)
 
-    /* "simplecantera/pybindings.pyx":158
+    /* "pyroxa/pybindings.pyx":158
  * 		cdef double* Aout = <double*>malloc(max_len * sizeof(double))
  * 		cdef double* Bout = <double*>malloc(max_len * sizeof(double))
  * 		if not times or not Aout or not Bout:             # <<<<<<<<<<<<<<
@@ -5657,7 +5657,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_7Reactor_2run(struct __p
  */
   }
 
-  /* "simplecantera/pybindings.pyx":164
+  /* "pyroxa/pybindings.pyx":164
  * 			raise MemoryError("allocation failed")
  * 		cdef int written
  * 		written = simulate_reactor(self.kf, self.kr, self.A0, self.B0, self.time_span, self.dt, times, Aout, Bout, max_len)             # <<<<<<<<<<<<<<
@@ -5666,7 +5666,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_7Reactor_2run(struct __p
  */
   __pyx_v_written = simulate_reactor(__pyx_v_self->kf, __pyx_v_self->kr, __pyx_v_self->A0, __pyx_v_self->B0, __pyx_v_self->time_span, __pyx_v_self->dt, __pyx_v_times, __pyx_v_Aout, __pyx_v_Bout, __pyx_v_max_len);
 
-  /* "simplecantera/pybindings.pyx":165
+  /* "pyroxa/pybindings.pyx":165
  * 		cdef int written
  * 		written = simulate_reactor(self.kf, self.kr, self.A0, self.B0, self.time_span, self.dt, times, Aout, Bout, max_len)
  * 		if written <= 0:             # <<<<<<<<<<<<<<
@@ -5676,7 +5676,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_7Reactor_2run(struct __p
   __pyx_t_4 = ((__pyx_v_written <= 0) != 0);
   if (unlikely(__pyx_t_4)) {
 
-    /* "simplecantera/pybindings.pyx":166
+    /* "pyroxa/pybindings.pyx":166
  * 		written = simulate_reactor(self.kf, self.kr, self.A0, self.B0, self.time_span, self.dt, times, Aout, Bout, max_len)
  * 		if written <= 0:
  * 			raise RuntimeError("simulation failed or insufficient buffer size")             # <<<<<<<<<<<<<<
@@ -5689,7 +5689,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_7Reactor_2run(struct __p
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __PYX_ERR(1, 166, __pyx_L1_error)
 
-    /* "simplecantera/pybindings.pyx":165
+    /* "pyroxa/pybindings.pyx":165
  * 		cdef int written
  * 		written = simulate_reactor(self.kf, self.kr, self.A0, self.B0, self.time_span, self.dt, times, Aout, Bout, max_len)
  * 		if written <= 0:             # <<<<<<<<<<<<<<
@@ -5698,7 +5698,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_7Reactor_2run(struct __p
  */
   }
 
-  /* "simplecantera/pybindings.pyx":167
+  /* "pyroxa/pybindings.pyx":167
  * 		if written <= 0:
  * 			raise RuntimeError("simulation failed or insufficient buffer size")
  * 		try:             # <<<<<<<<<<<<<<
@@ -5707,7 +5707,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_7Reactor_2run(struct __p
  */
   /*try:*/ {
 
-    /* "simplecantera/pybindings.pyx":168
+    /* "pyroxa/pybindings.pyx":168
  * 			raise RuntimeError("simulation failed or insufficient buffer size")
  * 		try:
  * 			if _HAS_NUMPY:             # <<<<<<<<<<<<<<
@@ -5720,7 +5720,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_7Reactor_2run(struct __p
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     if (__pyx_t_4) {
 
-      /* "simplecantera/pybindings.pyx":169
+      /* "pyroxa/pybindings.pyx":169
  * 		try:
  * 			if _HAS_NUMPY:
  * 				tarr = np.empty(written, dtype=np.float64)             # <<<<<<<<<<<<<<
@@ -5756,7 +5756,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_7Reactor_2run(struct __p
       __pyx_v_tarr = __pyx_t_8;
       __pyx_t_8 = 0;
 
-      /* "simplecantera/pybindings.pyx":170
+      /* "pyroxa/pybindings.pyx":170
  * 			if _HAS_NUMPY:
  * 				tarr = np.empty(written, dtype=np.float64)
  * 				aarr = np.empty((written, 2), dtype=np.float64)             # <<<<<<<<<<<<<<
@@ -5800,7 +5800,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_7Reactor_2run(struct __p
       __pyx_v_aarr = __pyx_t_7;
       __pyx_t_7 = 0;
 
-      /* "simplecantera/pybindings.pyx":171
+      /* "pyroxa/pybindings.pyx":171
  * 				tarr = np.empty(written, dtype=np.float64)
  * 				aarr = np.empty((written, 2), dtype=np.float64)
  * 				for i in range(written):             # <<<<<<<<<<<<<<
@@ -5812,7 +5812,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_7Reactor_2run(struct __p
       for (__pyx_t_10 = 0; __pyx_t_10 < __pyx_t_9; __pyx_t_10+=1) {
         __pyx_v_i = __pyx_t_10;
 
-        /* "simplecantera/pybindings.pyx":172
+        /* "pyroxa/pybindings.pyx":172
  * 				aarr = np.empty((written, 2), dtype=np.float64)
  * 				for i in range(written):
  * 					tarr[i] = times[i]             # <<<<<<<<<<<<<<
@@ -5824,7 +5824,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_7Reactor_2run(struct __p
         if (unlikely(__Pyx_SetItemInt(__pyx_v_tarr, __pyx_v_i, __pyx_t_7, int, 1, __Pyx_PyInt_From_int, 0, 1, 1) < 0)) __PYX_ERR(1, 172, __pyx_L12_error)
         __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-        /* "simplecantera/pybindings.pyx":173
+        /* "pyroxa/pybindings.pyx":173
  * 				for i in range(written):
  * 					tarr[i] = times[i]
  * 					aarr[i, 0] = Aout[i]             # <<<<<<<<<<<<<<
@@ -5847,7 +5847,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_7Reactor_2run(struct __p
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
         __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-        /* "simplecantera/pybindings.pyx":174
+        /* "pyroxa/pybindings.pyx":174
  * 					tarr[i] = times[i]
  * 					aarr[i, 0] = Aout[i]
  * 					aarr[i, 1] = Bout[i]             # <<<<<<<<<<<<<<
@@ -5871,7 +5871,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_7Reactor_2run(struct __p
         __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       }
 
-      /* "simplecantera/pybindings.pyx":175
+      /* "pyroxa/pybindings.pyx":175
  * 					aarr[i, 0] = Aout[i]
  * 					aarr[i, 1] = Bout[i]
  * 				return tarr, aarr             # <<<<<<<<<<<<<<
@@ -5891,7 +5891,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_7Reactor_2run(struct __p
       __pyx_t_7 = 0;
       goto __pyx_L11_return;
 
-      /* "simplecantera/pybindings.pyx":168
+      /* "pyroxa/pybindings.pyx":168
  * 			raise RuntimeError("simulation failed or insufficient buffer size")
  * 		try:
  * 			if _HAS_NUMPY:             # <<<<<<<<<<<<<<
@@ -5900,7 +5900,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_7Reactor_2run(struct __p
  */
     }
 
-    /* "simplecantera/pybindings.pyx":177
+    /* "pyroxa/pybindings.pyx":177
  * 				return tarr, aarr
  * 			else:
  * 				py_times = [times[i] for i in range(written)]             # <<<<<<<<<<<<<<
@@ -5924,7 +5924,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_7Reactor_2run(struct __p
       __pyx_v_py_times = ((PyObject*)__pyx_t_7);
       __pyx_t_7 = 0;
 
-      /* "simplecantera/pybindings.pyx":178
+      /* "pyroxa/pybindings.pyx":178
  * 			else:
  * 				py_times = [times[i] for i in range(written)]
  * 				traj = [[Aout[i], Bout[i]] for i in range(written)]             # <<<<<<<<<<<<<<
@@ -5957,7 +5957,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_7Reactor_2run(struct __p
       __pyx_v_traj = ((PyObject*)__pyx_t_7);
       __pyx_t_7 = 0;
 
-      /* "simplecantera/pybindings.pyx":179
+      /* "pyroxa/pybindings.pyx":179
  * 				py_times = [times[i] for i in range(written)]
  * 				traj = [[Aout[i], Bout[i]] for i in range(written)]
  * 				return py_times, traj             # <<<<<<<<<<<<<<
@@ -5979,7 +5979,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_7Reactor_2run(struct __p
     }
   }
 
-  /* "simplecantera/pybindings.pyx":181
+  /* "pyroxa/pybindings.pyx":181
  * 				return py_times, traj
  * 		finally:
  * 			free(times)             # <<<<<<<<<<<<<<
@@ -6009,7 +6009,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_7Reactor_2run(struct __p
       {
         free(__pyx_v_times);
 
-        /* "simplecantera/pybindings.pyx":182
+        /* "pyroxa/pybindings.pyx":182
  * 		finally:
  * 			free(times)
  * 			free(Aout)             # <<<<<<<<<<<<<<
@@ -6018,7 +6018,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_7Reactor_2run(struct __p
  */
         free(__pyx_v_Aout);
 
-        /* "simplecantera/pybindings.pyx":183
+        /* "pyroxa/pybindings.pyx":183
  * 			free(times)
  * 			free(Aout)
  * 			free(Bout)             # <<<<<<<<<<<<<<
@@ -6045,7 +6045,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_7Reactor_2run(struct __p
       __pyx_t_17 = __pyx_r;
       __pyx_r = 0;
 
-      /* "simplecantera/pybindings.pyx":181
+      /* "pyroxa/pybindings.pyx":181
  * 				return py_times, traj
  * 		finally:
  * 			free(times)             # <<<<<<<<<<<<<<
@@ -6054,7 +6054,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_7Reactor_2run(struct __p
  */
       free(__pyx_v_times);
 
-      /* "simplecantera/pybindings.pyx":182
+      /* "pyroxa/pybindings.pyx":182
  * 		finally:
  * 			free(times)
  * 			free(Aout)             # <<<<<<<<<<<<<<
@@ -6063,7 +6063,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_7Reactor_2run(struct __p
  */
       free(__pyx_v_Aout);
 
-      /* "simplecantera/pybindings.pyx":183
+      /* "pyroxa/pybindings.pyx":183
  * 			free(times)
  * 			free(Aout)
  * 			free(Bout)             # <<<<<<<<<<<<<<
@@ -6077,7 +6077,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_7Reactor_2run(struct __p
     }
   }
 
-  /* "simplecantera/pybindings.pyx":151
+  /* "pyroxa/pybindings.pyx":151
  * 		self.dt = dt
  * 
  * 	def run(self):             # <<<<<<<<<<<<<<
@@ -6092,7 +6092,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_7Reactor_2run(struct __p
   __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_8);
-  __Pyx_AddTraceback("simplecantera._pybindings.Reactor.run", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyroxa._pybindings.Reactor.run", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_tarr);
@@ -6111,19 +6111,19 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_7Reactor_2run(struct __p
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_13simplecantera_11_pybindings_7Reactor_5__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyObject *__pyx_pw_13simplecantera_11_pybindings_7Reactor_5__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_13pyroxa_11_pybindings_7Reactor_5__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_13pyroxa_11_pybindings_7Reactor_5__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__reduce_cython__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_13simplecantera_11_pybindings_7Reactor_4__reduce_cython__(((struct __pyx_obj_13simplecantera_11_pybindings_Reactor *)__pyx_v_self));
+  __pyx_r = __pyx_pf_13pyroxa_11_pybindings_7Reactor_4__reduce_cython__(((struct __pyx_obj_13pyroxa_11_pybindings_Reactor *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_13simplecantera_11_pybindings_7Reactor_4__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_13simplecantera_11_pybindings_Reactor *__pyx_v_self) {
+static PyObject *__pyx_pf_13pyroxa_11_pybindings_7Reactor_4__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_13pyroxa_11_pybindings_Reactor *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -6153,7 +6153,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_7Reactor_4__reduce_cytho
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("simplecantera._pybindings.Reactor.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyroxa._pybindings.Reactor.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
@@ -6168,19 +6168,19 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_7Reactor_4__reduce_cytho
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_13simplecantera_11_pybindings_7Reactor_7__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state); /*proto*/
-static PyObject *__pyx_pw_13simplecantera_11_pybindings_7Reactor_7__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pw_13pyroxa_11_pybindings_7Reactor_7__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state); /*proto*/
+static PyObject *__pyx_pw_13pyroxa_11_pybindings_7Reactor_7__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__setstate_cython__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_13simplecantera_11_pybindings_7Reactor_6__setstate_cython__(((struct __pyx_obj_13simplecantera_11_pybindings_Reactor *)__pyx_v_self), ((PyObject *)__pyx_v___pyx_state));
+  __pyx_r = __pyx_pf_13pyroxa_11_pybindings_7Reactor_6__setstate_cython__(((struct __pyx_obj_13pyroxa_11_pybindings_Reactor *)__pyx_v_self), ((PyObject *)__pyx_v___pyx_state));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_13simplecantera_11_pybindings_7Reactor_6__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_13simplecantera_11_pybindings_Reactor *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_13pyroxa_11_pybindings_7Reactor_6__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_13pyroxa_11_pybindings_Reactor *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -6210,14 +6210,14 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_7Reactor_6__setstate_cyt
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("simplecantera._pybindings.Reactor.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyroxa._pybindings.Reactor.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "simplecantera/pybindings.pyx":186
+/* "pyroxa/pybindings.pyx":186
  * 
  * 
  * def run_simulation_cpp(spec):             # <<<<<<<<<<<<<<
@@ -6226,21 +6226,21 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_7Reactor_6__setstate_cyt
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_13simplecantera_11_pybindings_1run_simulation_cpp(PyObject *__pyx_self, PyObject *__pyx_v_spec); /*proto*/
-static char __pyx_doc_13simplecantera_11_pybindings_run_simulation_cpp[] = "High-level helper that takes a Python dict spec and runs the C++ reactor.\n\n\tExpected spec keys similar to pure-Python runner:\n\t  reaction: {'kf', 'kr'}\n\t  initial: {'conc': {'A','B'}}\n\t  sim: {'time_span', 'time_step'}\n\t";
-static PyMethodDef __pyx_mdef_13simplecantera_11_pybindings_1run_simulation_cpp = {"run_simulation_cpp", (PyCFunction)__pyx_pw_13simplecantera_11_pybindings_1run_simulation_cpp, METH_O, __pyx_doc_13simplecantera_11_pybindings_run_simulation_cpp};
-static PyObject *__pyx_pw_13simplecantera_11_pybindings_1run_simulation_cpp(PyObject *__pyx_self, PyObject *__pyx_v_spec) {
+static PyObject *__pyx_pw_13pyroxa_11_pybindings_1run_simulation_cpp(PyObject *__pyx_self, PyObject *__pyx_v_spec); /*proto*/
+static char __pyx_doc_13pyroxa_11_pybindings_run_simulation_cpp[] = "High-level helper that takes a Python dict spec and runs the C++ reactor.\n\n\tExpected spec keys similar to pure-Python runner:\n\t  reaction: {'kf', 'kr'}\n\t  initial: {'conc': {'A','B'}}\n\t  sim: {'time_span', 'time_step'}\n\t";
+static PyMethodDef __pyx_mdef_13pyroxa_11_pybindings_1run_simulation_cpp = {"run_simulation_cpp", (PyCFunction)__pyx_pw_13pyroxa_11_pybindings_1run_simulation_cpp, METH_O, __pyx_doc_13pyroxa_11_pybindings_run_simulation_cpp};
+static PyObject *__pyx_pw_13pyroxa_11_pybindings_1run_simulation_cpp(PyObject *__pyx_self, PyObject *__pyx_v_spec) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("run_simulation_cpp (wrapper)", 0);
-  __pyx_r = __pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(__pyx_self, ((PyObject *)__pyx_v_spec));
+  __pyx_r = __pyx_pf_13pyroxa_11_pybindings_run_simulation_cpp(__pyx_self, ((PyObject *)__pyx_v_spec));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_spec) {
+static PyObject *__pyx_pf_13pyroxa_11_pybindings_run_simulation_cpp(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_spec) {
   int __pyx_v_N;
   int __pyx_v_M;
   int __pyx_v_nsteps;
@@ -6293,8 +6293,8 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
   double __pyx_v_B0;
   double __pyx_v_time_span;
   double __pyx_v_dt;
-  struct __pyx_obj_13simplecantera_11_pybindings_Reaction *__pyx_v_rxn = NULL;
-  struct __pyx_obj_13simplecantera_11_pybindings_Reactor *__pyx_v_reactor = NULL;
+  struct __pyx_obj_13pyroxa_11_pybindings_Reaction *__pyx_v_rxn = NULL;
+  struct __pyx_obj_13pyroxa_11_pybindings_Reactor *__pyx_v_reactor = NULL;
   PyObject *__pyx_8genexpr6__pyx_v_s = NULL;
   int __pyx_8genexpr7__pyx_v_i;
   int __pyx_8genexpr8__pyx_v_i;
@@ -6331,7 +6331,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("run_simulation_cpp", 0);
 
-  /* "simplecantera/pybindings.pyx":210
+  /* "pyroxa/pybindings.pyx":210
  * 	cdef double* conc_out_flat
  * 	# pointers for buffers will be allocated with malloc below
  * 	if not isinstance(spec, dict):             # <<<<<<<<<<<<<<
@@ -6342,7 +6342,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
   __pyx_t_2 = ((!(__pyx_t_1 != 0)) != 0);
   if (unlikely(__pyx_t_2)) {
 
-    /* "simplecantera/pybindings.pyx":211
+    /* "pyroxa/pybindings.pyx":211
  * 	# pointers for buffers will be allocated with malloc below
  * 	if not isinstance(spec, dict):
  * 		raise TypeError('spec must be a dict')             # <<<<<<<<<<<<<<
@@ -6355,7 +6355,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __PYX_ERR(1, 211, __pyx_L1_error)
 
-    /* "simplecantera/pybindings.pyx":210
+    /* "pyroxa/pybindings.pyx":210
  * 	cdef double* conc_out_flat
  * 	# pointers for buffers will be allocated with malloc below
  * 	if not isinstance(spec, dict):             # <<<<<<<<<<<<<<
@@ -6364,7 +6364,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
  */
   }
 
-  /* "simplecantera/pybindings.pyx":212
+  /* "pyroxa/pybindings.pyx":212
  * 	if not isinstance(spec, dict):
  * 		raise TypeError('spec must be a dict')
  * 	reaction = spec.get('reaction', {})             # <<<<<<<<<<<<<<
@@ -6425,7 +6425,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
   __pyx_v_reaction = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "simplecantera/pybindings.pyx":213
+  /* "pyroxa/pybindings.pyx":213
  * 		raise TypeError('spec must be a dict')
  * 	reaction = spec.get('reaction', {})
  * 	initial = spec.get('initial', {})             # <<<<<<<<<<<<<<
@@ -6486,7 +6486,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
   __pyx_v_initial = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "simplecantera/pybindings.pyx":214
+  /* "pyroxa/pybindings.pyx":214
  * 	reaction = spec.get('reaction', {})
  * 	initial = spec.get('initial', {})
  * 	sim = spec.get('sim', {})             # <<<<<<<<<<<<<<
@@ -6547,7 +6547,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
   __pyx_v_sim = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "simplecantera/pybindings.pyx":216
+  /* "pyroxa/pybindings.pyx":216
  * 	sim = spec.get('sim', {})
  * 	# multi-species branch: try calling optimized C++ multi-reactor
  * 	if 'species' in spec and 'reactions' in spec:             # <<<<<<<<<<<<<<
@@ -6567,7 +6567,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
   __pyx_L5_bool_binop_done:;
   if (__pyx_t_2) {
 
-    /* "simplecantera/pybindings.pyx":217
+    /* "pyroxa/pybindings.pyx":217
  * 	# multi-species branch: try calling optimized C++ multi-reactor
  * 	if 'species' in spec and 'reactions' in spec:
  * 		species = spec.get('species', [])             # <<<<<<<<<<<<<<
@@ -6628,7 +6628,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
     __pyx_v_species = __pyx_t_3;
     __pyx_t_3 = 0;
 
-    /* "simplecantera/pybindings.pyx":218
+    /* "pyroxa/pybindings.pyx":218
  * 	if 'species' in spec and 'reactions' in spec:
  * 		species = spec.get('species', [])
  * 		N = len(species)             # <<<<<<<<<<<<<<
@@ -6638,7 +6638,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
     __pyx_t_10 = PyObject_Length(__pyx_v_species); if (unlikely(__pyx_t_10 == ((Py_ssize_t)-1))) __PYX_ERR(1, 218, __pyx_L1_error)
     __pyx_v_N = __pyx_t_10;
 
-    /* "simplecantera/pybindings.pyx":219
+    /* "pyroxa/pybindings.pyx":219
  * 		species = spec.get('species', [])
  * 		N = len(species)
  * 		rxns = spec.get('reactions', [])             # <<<<<<<<<<<<<<
@@ -6699,7 +6699,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
     __pyx_v_rxns = __pyx_t_3;
     __pyx_t_3 = 0;
 
-    /* "simplecantera/pybindings.pyx":220
+    /* "pyroxa/pybindings.pyx":220
  * 		N = len(species)
  * 		rxns = spec.get('reactions', [])
  * 		M = len(rxns)             # <<<<<<<<<<<<<<
@@ -6709,7 +6709,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
     __pyx_t_10 = PyObject_Length(__pyx_v_rxns); if (unlikely(__pyx_t_10 == ((Py_ssize_t)-1))) __PYX_ERR(1, 220, __pyx_L1_error)
     __pyx_v_M = __pyx_t_10;
 
-    /* "simplecantera/pybindings.pyx":223
+    /* "pyroxa/pybindings.pyx":223
  * 		# prepare arrays: allocate C arrays and fill them
  * 		# kf/kr
  * 		if M > 0:             # <<<<<<<<<<<<<<
@@ -6719,7 +6719,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
     __pyx_t_2 = ((__pyx_v_M > 0) != 0);
     if (__pyx_t_2) {
 
-      /* "simplecantera/pybindings.pyx":224
+      /* "pyroxa/pybindings.pyx":224
  * 		# kf/kr
  * 		if M > 0:
  * 			kf_ptr = <double*>malloc(M * sizeof(double))             # <<<<<<<<<<<<<<
@@ -6728,7 +6728,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
  */
       __pyx_v_kf_ptr = ((double *)malloc((__pyx_v_M * (sizeof(double)))));
 
-      /* "simplecantera/pybindings.pyx":225
+      /* "pyroxa/pybindings.pyx":225
  * 		if M > 0:
  * 			kf_ptr = <double*>malloc(M * sizeof(double))
  * 			kr_ptr = <double*>malloc(M * sizeof(double))             # <<<<<<<<<<<<<<
@@ -6737,7 +6737,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
  */
       __pyx_v_kr_ptr = ((double *)malloc((__pyx_v_M * (sizeof(double)))));
 
-      /* "simplecantera/pybindings.pyx":226
+      /* "pyroxa/pybindings.pyx":226
  * 			kf_ptr = <double*>malloc(M * sizeof(double))
  * 			kr_ptr = <double*>malloc(M * sizeof(double))
  * 			if not kf_ptr or not kr_ptr:             # <<<<<<<<<<<<<<
@@ -6755,7 +6755,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
       __pyx_L9_bool_binop_done:;
       if (__pyx_t_2) {
 
-        /* "simplecantera/pybindings.pyx":227
+        /* "pyroxa/pybindings.pyx":227
  * 			kr_ptr = <double*>malloc(M * sizeof(double))
  * 			if not kf_ptr or not kr_ptr:
  * 				if kf_ptr: free(kf_ptr)             # <<<<<<<<<<<<<<
@@ -6767,7 +6767,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
           free(__pyx_v_kf_ptr);
         }
 
-        /* "simplecantera/pybindings.pyx":228
+        /* "pyroxa/pybindings.pyx":228
  * 			if not kf_ptr or not kr_ptr:
  * 				if kf_ptr: free(kf_ptr)
  * 				if kr_ptr: free(kr_ptr)             # <<<<<<<<<<<<<<
@@ -6779,7 +6779,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
           free(__pyx_v_kr_ptr);
         }
 
-        /* "simplecantera/pybindings.pyx":229
+        /* "pyroxa/pybindings.pyx":229
  * 				if kf_ptr: free(kf_ptr)
  * 				if kr_ptr: free(kr_ptr)
  * 				raise MemoryError('allocation failed for kf/kr')             # <<<<<<<<<<<<<<
@@ -6792,7 +6792,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __PYX_ERR(1, 229, __pyx_L1_error)
 
-        /* "simplecantera/pybindings.pyx":226
+        /* "pyroxa/pybindings.pyx":226
  * 			kf_ptr = <double*>malloc(M * sizeof(double))
  * 			kr_ptr = <double*>malloc(M * sizeof(double))
  * 			if not kf_ptr or not kr_ptr:             # <<<<<<<<<<<<<<
@@ -6801,7 +6801,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
  */
       }
 
-      /* "simplecantera/pybindings.pyx":230
+      /* "pyroxa/pybindings.pyx":230
  * 				if kr_ptr: free(kr_ptr)
  * 				raise MemoryError('allocation failed for kf/kr')
  * 			for i in range(M):             # <<<<<<<<<<<<<<
@@ -6813,7 +6813,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
       for (__pyx_t_12 = 0; __pyx_t_12 < __pyx_t_11; __pyx_t_12+=1) {
         __pyx_v_i = __pyx_t_12;
 
-        /* "simplecantera/pybindings.pyx":231
+        /* "pyroxa/pybindings.pyx":231
  * 				raise MemoryError('allocation failed for kf/kr')
  * 			for i in range(M):
  * 				kf_ptr[i] = float(rxns[i].get('kf', 1.0))             # <<<<<<<<<<<<<<
@@ -6832,7 +6832,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         (__pyx_v_kf_ptr[__pyx_v_i]) = __pyx_t_13;
 
-        /* "simplecantera/pybindings.pyx":232
+        /* "pyroxa/pybindings.pyx":232
  * 			for i in range(M):
  * 				kf_ptr[i] = float(rxns[i].get('kf', 1.0))
  * 				kr_ptr[i] = float(rxns[i].get('kr', 0.0))             # <<<<<<<<<<<<<<
@@ -6852,7 +6852,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
         (__pyx_v_kr_ptr[__pyx_v_i]) = __pyx_t_13;
       }
 
-      /* "simplecantera/pybindings.pyx":223
+      /* "pyroxa/pybindings.pyx":223
  * 		# prepare arrays: allocate C arrays and fill them
  * 		# kf/kr
  * 		if M > 0:             # <<<<<<<<<<<<<<
@@ -6862,7 +6862,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
       goto __pyx_L7;
     }
 
-    /* "simplecantera/pybindings.pyx":234
+    /* "pyroxa/pybindings.pyx":234
  * 				kr_ptr[i] = float(rxns[i].get('kr', 0.0))
  * 		else:
  * 			kf_ptr = <double*>0             # <<<<<<<<<<<<<<
@@ -6872,7 +6872,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
     /*else*/ {
       __pyx_v_kf_ptr = ((double *)0);
 
-      /* "simplecantera/pybindings.pyx":235
+      /* "pyroxa/pybindings.pyx":235
  * 		else:
  * 			kf_ptr = <double*>0
  * 			kr_ptr = <double*>0             # <<<<<<<<<<<<<<
@@ -6883,7 +6883,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
     }
     __pyx_L7:;
 
-    /* "simplecantera/pybindings.pyx":237
+    /* "pyroxa/pybindings.pyx":237
  * 			kr_ptr = <double*>0
  * 		# reactant/product flattened lists and offsets
  * 		reac_idx_list = []             # <<<<<<<<<<<<<<
@@ -6895,7 +6895,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
     __pyx_v_reac_idx_list = ((PyObject*)__pyx_t_3);
     __pyx_t_3 = 0;
 
-    /* "simplecantera/pybindings.pyx":238
+    /* "pyroxa/pybindings.pyx":238
  * 		# reactant/product flattened lists and offsets
  * 		reac_idx_list = []
  * 		reac_nu_list = []             # <<<<<<<<<<<<<<
@@ -6907,7 +6907,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
     __pyx_v_reac_nu_list = ((PyObject*)__pyx_t_3);
     __pyx_t_3 = 0;
 
-    /* "simplecantera/pybindings.pyx":239
+    /* "pyroxa/pybindings.pyx":239
  * 		reac_idx_list = []
  * 		reac_nu_list = []
  * 		reac_off = [0]             # <<<<<<<<<<<<<<
@@ -6922,7 +6922,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
     __pyx_v_reac_off = ((PyObject*)__pyx_t_3);
     __pyx_t_3 = 0;
 
-    /* "simplecantera/pybindings.pyx":240
+    /* "pyroxa/pybindings.pyx":240
  * 		reac_nu_list = []
  * 		reac_off = [0]
  * 		prod_idx_list = []             # <<<<<<<<<<<<<<
@@ -6934,7 +6934,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
     __pyx_v_prod_idx_list = ((PyObject*)__pyx_t_3);
     __pyx_t_3 = 0;
 
-    /* "simplecantera/pybindings.pyx":241
+    /* "pyroxa/pybindings.pyx":241
  * 		reac_off = [0]
  * 		prod_idx_list = []
  * 		prod_nu_list = []             # <<<<<<<<<<<<<<
@@ -6946,7 +6946,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
     __pyx_v_prod_nu_list = ((PyObject*)__pyx_t_3);
     __pyx_t_3 = 0;
 
-    /* "simplecantera/pybindings.pyx":242
+    /* "pyroxa/pybindings.pyx":242
  * 		prod_idx_list = []
  * 		prod_nu_list = []
  * 		prod_off = [0]             # <<<<<<<<<<<<<<
@@ -6961,7 +6961,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
     __pyx_v_prod_off = ((PyObject*)__pyx_t_3);
     __pyx_t_3 = 0;
 
-    /* "simplecantera/pybindings.pyx":243
+    /* "pyroxa/pybindings.pyx":243
  * 		prod_nu_list = []
  * 		prod_off = [0]
  * 		for r in rxns:             # <<<<<<<<<<<<<<
@@ -7010,7 +7010,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
       __Pyx_XDECREF_SET(__pyx_v_r, __pyx_t_4);
       __pyx_t_4 = 0;
 
-      /* "simplecantera/pybindings.pyx":244
+      /* "pyroxa/pybindings.pyx":244
  * 		prod_off = [0]
  * 		for r in rxns:
  * 			reactants = r.get('reactants', {})             # <<<<<<<<<<<<<<
@@ -7071,7 +7071,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
       __Pyx_XDECREF_SET(__pyx_v_reactants, __pyx_t_4);
       __pyx_t_4 = 0;
 
-      /* "simplecantera/pybindings.pyx":245
+      /* "pyroxa/pybindings.pyx":245
  * 		for r in rxns:
  * 			reactants = r.get('reactants', {})
  * 			products = r.get('products', {})             # <<<<<<<<<<<<<<
@@ -7132,7 +7132,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
       __Pyx_XDECREF_SET(__pyx_v_products, __pyx_t_4);
       __pyx_t_4 = 0;
 
-      /* "simplecantera/pybindings.pyx":246
+      /* "pyroxa/pybindings.pyx":246
  * 			reactants = r.get('reactants', {})
  * 			products = r.get('products', {})
  * 			for s, nu in reactants.items():             # <<<<<<<<<<<<<<
@@ -7160,7 +7160,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
         __Pyx_XDECREF_SET(__pyx_v_nu, __pyx_t_5);
         __pyx_t_5 = 0;
 
-        /* "simplecantera/pybindings.pyx":247
+        /* "pyroxa/pybindings.pyx":247
  * 			products = r.get('products', {})
  * 			for s, nu in reactants.items():
  * 				reac_idx_list.append(int(species.index(s)))             # <<<<<<<<<<<<<<
@@ -7190,7 +7190,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
         __pyx_t_18 = __Pyx_PyList_Append(__pyx_v_reac_idx_list, __pyx_t_6); if (unlikely(__pyx_t_18 == ((int)-1))) __PYX_ERR(1, 247, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-        /* "simplecantera/pybindings.pyx":248
+        /* "pyroxa/pybindings.pyx":248
  * 			for s, nu in reactants.items():
  * 				reac_idx_list.append(int(species.index(s)))
  * 				reac_nu_list.append(float(nu))             # <<<<<<<<<<<<<<
@@ -7204,7 +7204,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "simplecantera/pybindings.pyx":249
+      /* "pyroxa/pybindings.pyx":249
  * 				reac_idx_list.append(int(species.index(s)))
  * 				reac_nu_list.append(float(nu))
  * 			reac_off.append(len(reac_idx_list))             # <<<<<<<<<<<<<<
@@ -7217,7 +7217,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
       __pyx_t_18 = __Pyx_PyList_Append(__pyx_v_reac_off, __pyx_t_4); if (unlikely(__pyx_t_18 == ((int)-1))) __PYX_ERR(1, 249, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "simplecantera/pybindings.pyx":250
+      /* "pyroxa/pybindings.pyx":250
  * 				reac_nu_list.append(float(nu))
  * 			reac_off.append(len(reac_idx_list))
  * 			for s, nu in products.items():             # <<<<<<<<<<<<<<
@@ -7245,7 +7245,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
         __Pyx_XDECREF_SET(__pyx_v_nu, __pyx_t_5);
         __pyx_t_5 = 0;
 
-        /* "simplecantera/pybindings.pyx":251
+        /* "pyroxa/pybindings.pyx":251
  * 			reac_off.append(len(reac_idx_list))
  * 			for s, nu in products.items():
  * 				prod_idx_list.append(int(species.index(s)))             # <<<<<<<<<<<<<<
@@ -7275,7 +7275,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
         __pyx_t_18 = __Pyx_PyList_Append(__pyx_v_prod_idx_list, __pyx_t_6); if (unlikely(__pyx_t_18 == ((int)-1))) __PYX_ERR(1, 251, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-        /* "simplecantera/pybindings.pyx":252
+        /* "pyroxa/pybindings.pyx":252
  * 			for s, nu in products.items():
  * 				prod_idx_list.append(int(species.index(s)))
  * 				prod_nu_list.append(float(nu))             # <<<<<<<<<<<<<<
@@ -7289,7 +7289,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "simplecantera/pybindings.pyx":253
+      /* "pyroxa/pybindings.pyx":253
  * 				prod_idx_list.append(int(species.index(s)))
  * 				prod_nu_list.append(float(nu))
  * 			prod_off.append(len(prod_idx_list))             # <<<<<<<<<<<<<<
@@ -7302,7 +7302,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
       __pyx_t_18 = __Pyx_PyList_Append(__pyx_v_prod_off, __pyx_t_4); if (unlikely(__pyx_t_18 == ((int)-1))) __PYX_ERR(1, 253, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "simplecantera/pybindings.pyx":243
+      /* "pyroxa/pybindings.pyx":243
  * 		prod_nu_list = []
  * 		prod_off = [0]
  * 		for r in rxns:             # <<<<<<<<<<<<<<
@@ -7312,7 +7312,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
     }
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "simplecantera/pybindings.pyx":255
+    /* "pyroxa/pybindings.pyx":255
  * 			prod_off.append(len(prod_idx_list))
  * 		# create arrays
  * 		kf_c = kf_ptr             # <<<<<<<<<<<<<<
@@ -7321,7 +7321,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
  */
     __pyx_v_kf_c = __pyx_v_kf_ptr;
 
-    /* "simplecantera/pybindings.pyx":256
+    /* "pyroxa/pybindings.pyx":256
  * 		# create arrays
  * 		kf_c = kf_ptr
  * 		kr_c = kr_ptr             # <<<<<<<<<<<<<<
@@ -7330,7 +7330,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
  */
     __pyx_v_kr_c = __pyx_v_kr_ptr;
 
-    /* "simplecantera/pybindings.pyx":257
+    /* "pyroxa/pybindings.pyx":257
  * 		kf_c = kf_ptr
  * 		kr_c = kr_ptr
  * 		import ctypes             # <<<<<<<<<<<<<<
@@ -7342,7 +7342,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
     __pyx_v_ctypes = __pyx_t_3;
     __pyx_t_3 = 0;
 
-    /* "simplecantera/pybindings.pyx":259
+    /* "pyroxa/pybindings.pyx":259
  * 		import ctypes
  * 		# allocate and fill reactant/product arrays
  * 		total_reac = len(reac_idx_list)             # <<<<<<<<<<<<<<
@@ -7352,7 +7352,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
     __pyx_t_10 = PyList_GET_SIZE(__pyx_v_reac_idx_list); if (unlikely(__pyx_t_10 == ((Py_ssize_t)-1))) __PYX_ERR(1, 259, __pyx_L1_error)
     __pyx_v_total_reac = __pyx_t_10;
 
-    /* "simplecantera/pybindings.pyx":260
+    /* "pyroxa/pybindings.pyx":260
  * 		# allocate and fill reactant/product arrays
  * 		total_reac = len(reac_idx_list)
  * 		total_prod = len(prod_idx_list)             # <<<<<<<<<<<<<<
@@ -7362,7 +7362,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
     __pyx_t_10 = PyList_GET_SIZE(__pyx_v_prod_idx_list); if (unlikely(__pyx_t_10 == ((Py_ssize_t)-1))) __PYX_ERR(1, 260, __pyx_L1_error)
     __pyx_v_total_prod = __pyx_t_10;
 
-    /* "simplecantera/pybindings.pyx":261
+    /* "pyroxa/pybindings.pyx":261
  * 		total_reac = len(reac_idx_list)
  * 		total_prod = len(prod_idx_list)
  * 		if total_reac > 0:             # <<<<<<<<<<<<<<
@@ -7372,7 +7372,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
     __pyx_t_2 = ((__pyx_v_total_reac > 0) != 0);
     if (__pyx_t_2) {
 
-      /* "simplecantera/pybindings.pyx":262
+      /* "pyroxa/pybindings.pyx":262
  * 		total_prod = len(prod_idx_list)
  * 		if total_reac > 0:
  * 			c_reac_idx = <int*>malloc(total_reac * sizeof(int))             # <<<<<<<<<<<<<<
@@ -7381,7 +7381,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
  */
       __pyx_v_c_reac_idx = ((int *)malloc((__pyx_v_total_reac * (sizeof(int)))));
 
-      /* "simplecantera/pybindings.pyx":263
+      /* "pyroxa/pybindings.pyx":263
  * 		if total_reac > 0:
  * 			c_reac_idx = <int*>malloc(total_reac * sizeof(int))
  * 			c_reac_nu = <double*>malloc(total_reac * sizeof(double))             # <<<<<<<<<<<<<<
@@ -7390,7 +7390,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
  */
       __pyx_v_c_reac_nu = ((double *)malloc((__pyx_v_total_reac * (sizeof(double)))));
 
-      /* "simplecantera/pybindings.pyx":264
+      /* "pyroxa/pybindings.pyx":264
  * 			c_reac_idx = <int*>malloc(total_reac * sizeof(int))
  * 			c_reac_nu = <double*>malloc(total_reac * sizeof(double))
  * 			if not c_reac_idx or not c_reac_nu:             # <<<<<<<<<<<<<<
@@ -7408,7 +7408,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
       __pyx_L23_bool_binop_done:;
       if (__pyx_t_2) {
 
-        /* "simplecantera/pybindings.pyx":265
+        /* "pyroxa/pybindings.pyx":265
  * 			c_reac_nu = <double*>malloc(total_reac * sizeof(double))
  * 			if not c_reac_idx or not c_reac_nu:
  * 				if c_reac_idx: free(c_reac_idx)             # <<<<<<<<<<<<<<
@@ -7420,7 +7420,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
           free(__pyx_v_c_reac_idx);
         }
 
-        /* "simplecantera/pybindings.pyx":266
+        /* "pyroxa/pybindings.pyx":266
  * 			if not c_reac_idx or not c_reac_nu:
  * 				if c_reac_idx: free(c_reac_idx)
  * 				if c_reac_nu: free(c_reac_nu)             # <<<<<<<<<<<<<<
@@ -7432,7 +7432,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
           free(__pyx_v_c_reac_nu);
         }
 
-        /* "simplecantera/pybindings.pyx":267
+        /* "pyroxa/pybindings.pyx":267
  * 				if c_reac_idx: free(c_reac_idx)
  * 				if c_reac_nu: free(c_reac_nu)
  * 				raise MemoryError('allocation failed for reactants')             # <<<<<<<<<<<<<<
@@ -7445,7 +7445,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __PYX_ERR(1, 267, __pyx_L1_error)
 
-        /* "simplecantera/pybindings.pyx":264
+        /* "pyroxa/pybindings.pyx":264
  * 			c_reac_idx = <int*>malloc(total_reac * sizeof(int))
  * 			c_reac_nu = <double*>malloc(total_reac * sizeof(double))
  * 			if not c_reac_idx or not c_reac_nu:             # <<<<<<<<<<<<<<
@@ -7454,7 +7454,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
  */
       }
 
-      /* "simplecantera/pybindings.pyx":268
+      /* "pyroxa/pybindings.pyx":268
  * 				if c_reac_nu: free(c_reac_nu)
  * 				raise MemoryError('allocation failed for reactants')
  * 			for i in range(total_reac):             # <<<<<<<<<<<<<<
@@ -7466,7 +7466,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
       for (__pyx_t_12 = 0; __pyx_t_12 < __pyx_t_11; __pyx_t_12+=1) {
         __pyx_v_i = __pyx_t_12;
 
-        /* "simplecantera/pybindings.pyx":269
+        /* "pyroxa/pybindings.pyx":269
  * 				raise MemoryError('allocation failed for reactants')
  * 			for i in range(total_reac):
  * 				c_reac_idx[i] = reac_idx_list[i]             # <<<<<<<<<<<<<<
@@ -7479,7 +7479,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         (__pyx_v_c_reac_idx[__pyx_v_i]) = __pyx_t_19;
 
-        /* "simplecantera/pybindings.pyx":270
+        /* "pyroxa/pybindings.pyx":270
  * 			for i in range(total_reac):
  * 				c_reac_idx[i] = reac_idx_list[i]
  * 				c_reac_nu[i] = reac_nu_list[i]             # <<<<<<<<<<<<<<
@@ -7493,7 +7493,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
         (__pyx_v_c_reac_nu[__pyx_v_i]) = __pyx_t_13;
       }
 
-      /* "simplecantera/pybindings.pyx":261
+      /* "pyroxa/pybindings.pyx":261
  * 		total_reac = len(reac_idx_list)
  * 		total_prod = len(prod_idx_list)
  * 		if total_reac > 0:             # <<<<<<<<<<<<<<
@@ -7503,7 +7503,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
       goto __pyx_L21;
     }
 
-    /* "simplecantera/pybindings.pyx":272
+    /* "pyroxa/pybindings.pyx":272
  * 				c_reac_nu[i] = reac_nu_list[i]
  * 		else:
  * 			c_reac_idx = <int*>0             # <<<<<<<<<<<<<<
@@ -7513,7 +7513,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
     /*else*/ {
       __pyx_v_c_reac_idx = ((int *)0);
 
-      /* "simplecantera/pybindings.pyx":273
+      /* "pyroxa/pybindings.pyx":273
  * 		else:
  * 			c_reac_idx = <int*>0
  * 			c_reac_nu = <double*>0             # <<<<<<<<<<<<<<
@@ -7524,7 +7524,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
     }
     __pyx_L21:;
 
-    /* "simplecantera/pybindings.pyx":275
+    /* "pyroxa/pybindings.pyx":275
  * 			c_reac_nu = <double*>0
  * 		# offsets
  * 		c_reac_off = <int*>malloc(len(reac_off) * sizeof(int))             # <<<<<<<<<<<<<<
@@ -7534,7 +7534,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
     __pyx_t_10 = PyList_GET_SIZE(__pyx_v_reac_off); if (unlikely(__pyx_t_10 == ((Py_ssize_t)-1))) __PYX_ERR(1, 275, __pyx_L1_error)
     __pyx_v_c_reac_off = ((int *)malloc((__pyx_t_10 * (sizeof(int)))));
 
-    /* "simplecantera/pybindings.pyx":276
+    /* "pyroxa/pybindings.pyx":276
  * 		# offsets
  * 		c_reac_off = <int*>malloc(len(reac_off) * sizeof(int))
  * 		for i in range(len(reac_off)):             # <<<<<<<<<<<<<<
@@ -7546,7 +7546,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
     for (__pyx_t_7 = 0; __pyx_t_7 < __pyx_t_16; __pyx_t_7+=1) {
       __pyx_v_i = __pyx_t_7;
 
-      /* "simplecantera/pybindings.pyx":277
+      /* "pyroxa/pybindings.pyx":277
  * 		c_reac_off = <int*>malloc(len(reac_off) * sizeof(int))
  * 		for i in range(len(reac_off)):
  * 			c_reac_off[i] = reac_off[i]             # <<<<<<<<<<<<<<
@@ -7560,7 +7560,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
       (__pyx_v_c_reac_off[__pyx_v_i]) = __pyx_t_11;
     }
 
-    /* "simplecantera/pybindings.pyx":279
+    /* "pyroxa/pybindings.pyx":279
  * 			c_reac_off[i] = reac_off[i]
  * 		# products
  * 		if total_prod > 0:             # <<<<<<<<<<<<<<
@@ -7570,7 +7570,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
     __pyx_t_2 = ((__pyx_v_total_prod > 0) != 0);
     if (__pyx_t_2) {
 
-      /* "simplecantera/pybindings.pyx":280
+      /* "pyroxa/pybindings.pyx":280
  * 		# products
  * 		if total_prod > 0:
  * 			c_prod_idx = <int*>malloc(total_prod * sizeof(int))             # <<<<<<<<<<<<<<
@@ -7579,7 +7579,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
  */
       __pyx_v_c_prod_idx = ((int *)malloc((__pyx_v_total_prod * (sizeof(int)))));
 
-      /* "simplecantera/pybindings.pyx":281
+      /* "pyroxa/pybindings.pyx":281
  * 		if total_prod > 0:
  * 			c_prod_idx = <int*>malloc(total_prod * sizeof(int))
  * 			c_prod_nu = <double*>malloc(total_prod * sizeof(double))             # <<<<<<<<<<<<<<
@@ -7588,7 +7588,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
  */
       __pyx_v_c_prod_nu = ((double *)malloc((__pyx_v_total_prod * (sizeof(double)))));
 
-      /* "simplecantera/pybindings.pyx":282
+      /* "pyroxa/pybindings.pyx":282
  * 			c_prod_idx = <int*>malloc(total_prod * sizeof(int))
  * 			c_prod_nu = <double*>malloc(total_prod * sizeof(double))
  * 			if not c_prod_idx or not c_prod_nu:             # <<<<<<<<<<<<<<
@@ -7606,7 +7606,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
       __pyx_L33_bool_binop_done:;
       if (__pyx_t_2) {
 
-        /* "simplecantera/pybindings.pyx":283
+        /* "pyroxa/pybindings.pyx":283
  * 			c_prod_nu = <double*>malloc(total_prod * sizeof(double))
  * 			if not c_prod_idx or not c_prod_nu:
  * 				if c_prod_idx: free(c_prod_idx)             # <<<<<<<<<<<<<<
@@ -7618,7 +7618,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
           free(__pyx_v_c_prod_idx);
         }
 
-        /* "simplecantera/pybindings.pyx":284
+        /* "pyroxa/pybindings.pyx":284
  * 			if not c_prod_idx or not c_prod_nu:
  * 				if c_prod_idx: free(c_prod_idx)
  * 				if c_prod_nu: free(c_prod_nu)             # <<<<<<<<<<<<<<
@@ -7630,7 +7630,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
           free(__pyx_v_c_prod_nu);
         }
 
-        /* "simplecantera/pybindings.pyx":285
+        /* "pyroxa/pybindings.pyx":285
  * 				if c_prod_idx: free(c_prod_idx)
  * 				if c_prod_nu: free(c_prod_nu)
  * 				raise MemoryError('allocation failed for products')             # <<<<<<<<<<<<<<
@@ -7643,7 +7643,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __PYX_ERR(1, 285, __pyx_L1_error)
 
-        /* "simplecantera/pybindings.pyx":282
+        /* "pyroxa/pybindings.pyx":282
  * 			c_prod_idx = <int*>malloc(total_prod * sizeof(int))
  * 			c_prod_nu = <double*>malloc(total_prod * sizeof(double))
  * 			if not c_prod_idx or not c_prod_nu:             # <<<<<<<<<<<<<<
@@ -7652,7 +7652,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
  */
       }
 
-      /* "simplecantera/pybindings.pyx":286
+      /* "pyroxa/pybindings.pyx":286
  * 				if c_prod_nu: free(c_prod_nu)
  * 				raise MemoryError('allocation failed for products')
  * 			for i in range(total_prod):             # <<<<<<<<<<<<<<
@@ -7664,7 +7664,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
       for (__pyx_t_12 = 0; __pyx_t_12 < __pyx_t_11; __pyx_t_12+=1) {
         __pyx_v_i = __pyx_t_12;
 
-        /* "simplecantera/pybindings.pyx":287
+        /* "pyroxa/pybindings.pyx":287
  * 				raise MemoryError('allocation failed for products')
  * 			for i in range(total_prod):
  * 				c_prod_idx[i] = prod_idx_list[i]             # <<<<<<<<<<<<<<
@@ -7677,7 +7677,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         (__pyx_v_c_prod_idx[__pyx_v_i]) = __pyx_t_19;
 
-        /* "simplecantera/pybindings.pyx":288
+        /* "pyroxa/pybindings.pyx":288
  * 			for i in range(total_prod):
  * 				c_prod_idx[i] = prod_idx_list[i]
  * 				c_prod_nu[i] = prod_nu_list[i]             # <<<<<<<<<<<<<<
@@ -7691,7 +7691,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
         (__pyx_v_c_prod_nu[__pyx_v_i]) = __pyx_t_13;
       }
 
-      /* "simplecantera/pybindings.pyx":279
+      /* "pyroxa/pybindings.pyx":279
  * 			c_reac_off[i] = reac_off[i]
  * 		# products
  * 		if total_prod > 0:             # <<<<<<<<<<<<<<
@@ -7701,7 +7701,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
       goto __pyx_L31;
     }
 
-    /* "simplecantera/pybindings.pyx":290
+    /* "pyroxa/pybindings.pyx":290
  * 				c_prod_nu[i] = prod_nu_list[i]
  * 		else:
  * 			c_prod_idx = <int*>0             # <<<<<<<<<<<<<<
@@ -7711,7 +7711,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
     /*else*/ {
       __pyx_v_c_prod_idx = ((int *)0);
 
-      /* "simplecantera/pybindings.pyx":291
+      /* "pyroxa/pybindings.pyx":291
  * 		else:
  * 			c_prod_idx = <int*>0
  * 			c_prod_nu = <double*>0             # <<<<<<<<<<<<<<
@@ -7722,7 +7722,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
     }
     __pyx_L31:;
 
-    /* "simplecantera/pybindings.pyx":293
+    /* "pyroxa/pybindings.pyx":293
  * 			c_prod_nu = <double*>0
  * 		# offsets
  * 		c_prod_off = <int*>malloc(len(prod_off) * sizeof(int))             # <<<<<<<<<<<<<<
@@ -7732,7 +7732,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
     __pyx_t_10 = PyList_GET_SIZE(__pyx_v_prod_off); if (unlikely(__pyx_t_10 == ((Py_ssize_t)-1))) __PYX_ERR(1, 293, __pyx_L1_error)
     __pyx_v_c_prod_off = ((int *)malloc((__pyx_t_10 * (sizeof(int)))));
 
-    /* "simplecantera/pybindings.pyx":294
+    /* "pyroxa/pybindings.pyx":294
  * 		# offsets
  * 		c_prod_off = <int*>malloc(len(prod_off) * sizeof(int))
  * 		for i in range(len(prod_off)):             # <<<<<<<<<<<<<<
@@ -7744,7 +7744,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
     for (__pyx_t_7 = 0; __pyx_t_7 < __pyx_t_16; __pyx_t_7+=1) {
       __pyx_v_i = __pyx_t_7;
 
-      /* "simplecantera/pybindings.pyx":295
+      /* "pyroxa/pybindings.pyx":295
  * 		c_prod_off = <int*>malloc(len(prod_off) * sizeof(int))
  * 		for i in range(len(prod_off)):
  * 			c_prod_off[i] = prod_off[i]             # <<<<<<<<<<<<<<
@@ -7758,7 +7758,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
       (__pyx_v_c_prod_off[__pyx_v_i]) = __pyx_t_11;
     }
 
-    /* "simplecantera/pybindings.pyx":297
+    /* "pyroxa/pybindings.pyx":297
  * 			c_prod_off[i] = prod_off[i]
  * 		# conc0 C array
  * 		conc0_py = [float(spec.get('initial', {}).get('conc', {}).get(s, 0.0)) for s in species]             # <<<<<<<<<<<<<<
@@ -7977,7 +7977,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
     __pyx_v_conc0_py = ((PyObject*)__pyx_t_3);
     __pyx_t_3 = 0;
 
-    /* "simplecantera/pybindings.pyx":298
+    /* "pyroxa/pybindings.pyx":298
  * 		# conc0 C array
  * 		conc0_py = [float(spec.get('initial', {}).get('conc', {}).get(s, 0.0)) for s in species]
  * 		if N > 0:             # <<<<<<<<<<<<<<
@@ -7987,7 +7987,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
     __pyx_t_2 = ((__pyx_v_N > 0) != 0);
     if (__pyx_t_2) {
 
-      /* "simplecantera/pybindings.pyx":299
+      /* "pyroxa/pybindings.pyx":299
  * 		conc0_py = [float(spec.get('initial', {}).get('conc', {}).get(s, 0.0)) for s in species]
  * 		if N > 0:
  * 			c_conc0 = <double*>malloc(N * sizeof(double))             # <<<<<<<<<<<<<<
@@ -7996,7 +7996,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
  */
       __pyx_v_c_conc0 = ((double *)malloc((__pyx_v_N * (sizeof(double)))));
 
-      /* "simplecantera/pybindings.pyx":300
+      /* "pyroxa/pybindings.pyx":300
  * 		if N > 0:
  * 			c_conc0 = <double*>malloc(N * sizeof(double))
  * 			if not c_conc0:             # <<<<<<<<<<<<<<
@@ -8006,7 +8006,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
       __pyx_t_2 = ((!(__pyx_v_c_conc0 != 0)) != 0);
       if (unlikely(__pyx_t_2)) {
 
-        /* "simplecantera/pybindings.pyx":301
+        /* "pyroxa/pybindings.pyx":301
  * 			c_conc0 = <double*>malloc(N * sizeof(double))
  * 			if not c_conc0:
  * 				raise MemoryError('allocation failed for conc0')             # <<<<<<<<<<<<<<
@@ -8019,7 +8019,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __PYX_ERR(1, 301, __pyx_L1_error)
 
-        /* "simplecantera/pybindings.pyx":300
+        /* "pyroxa/pybindings.pyx":300
  * 		if N > 0:
  * 			c_conc0 = <double*>malloc(N * sizeof(double))
  * 			if not c_conc0:             # <<<<<<<<<<<<<<
@@ -8028,7 +8028,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
  */
       }
 
-      /* "simplecantera/pybindings.pyx":302
+      /* "pyroxa/pybindings.pyx":302
  * 			if not c_conc0:
  * 				raise MemoryError('allocation failed for conc0')
  * 			for i in range(N):             # <<<<<<<<<<<<<<
@@ -8040,7 +8040,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
       for (__pyx_t_12 = 0; __pyx_t_12 < __pyx_t_11; __pyx_t_12+=1) {
         __pyx_v_i = __pyx_t_12;
 
-        /* "simplecantera/pybindings.pyx":303
+        /* "pyroxa/pybindings.pyx":303
  * 				raise MemoryError('allocation failed for conc0')
  * 			for i in range(N):
  * 				c_conc0[i] = conc0_py[i]             # <<<<<<<<<<<<<<
@@ -8054,7 +8054,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
         (__pyx_v_c_conc0[__pyx_v_i]) = __pyx_t_13;
       }
 
-      /* "simplecantera/pybindings.pyx":298
+      /* "pyroxa/pybindings.pyx":298
  * 		# conc0 C array
  * 		conc0_py = [float(spec.get('initial', {}).get('conc', {}).get(s, 0.0)) for s in species]
  * 		if N > 0:             # <<<<<<<<<<<<<<
@@ -8064,7 +8064,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
       goto __pyx_L47;
     }
 
-    /* "simplecantera/pybindings.pyx":305
+    /* "pyroxa/pybindings.pyx":305
  * 				c_conc0[i] = conc0_py[i]
  * 		else:
  * 			c_conc0 = <double*>0             # <<<<<<<<<<<<<<
@@ -8076,7 +8076,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
     }
     __pyx_L47:;
 
-    /* "simplecantera/pybindings.pyx":307
+    /* "pyroxa/pybindings.pyx":307
  * 			c_conc0 = <double*>0
  * 		# output buffers
  * 		nsteps = int(round(float(sim.get('time_span', 10.0)) / float(sim.get('time_step', 0.01))))             # <<<<<<<<<<<<<<
@@ -8113,7 +8113,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_v_nsteps = __pyx_t_7;
 
-    /* "simplecantera/pybindings.pyx":308
+    /* "pyroxa/pybindings.pyx":308
  * 		# output buffers
  * 		nsteps = int(round(float(sim.get('time_span', 10.0)) / float(sim.get('time_step', 0.01))))
  * 		npts = nsteps + 1             # <<<<<<<<<<<<<<
@@ -8122,7 +8122,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
  */
     __pyx_v_npts = (__pyx_v_nsteps + 1);
 
-    /* "simplecantera/pybindings.pyx":309
+    /* "pyroxa/pybindings.pyx":309
  * 		nsteps = int(round(float(sim.get('time_span', 10.0)) / float(sim.get('time_step', 0.01))))
  * 		npts = nsteps + 1
  * 		max_len = npts             # <<<<<<<<<<<<<<
@@ -8131,7 +8131,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
  */
     __pyx_v_max_len = __pyx_v_npts;
 
-    /* "simplecantera/pybindings.pyx":310
+    /* "pyroxa/pybindings.pyx":310
  * 		npts = nsteps + 1
  * 		max_len = npts
  * 		times_buf = <double*>malloc(max_len * sizeof(double))             # <<<<<<<<<<<<<<
@@ -8140,7 +8140,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
  */
     __pyx_v_times_buf = ((double *)malloc((__pyx_v_max_len * (sizeof(double)))));
 
-    /* "simplecantera/pybindings.pyx":311
+    /* "pyroxa/pybindings.pyx":311
  * 		max_len = npts
  * 		times_buf = <double*>malloc(max_len * sizeof(double))
  * 		conc_out_flat = <double*>malloc(max_len * N * sizeof(double))             # <<<<<<<<<<<<<<
@@ -8149,7 +8149,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
  */
     __pyx_v_conc_out_flat = ((double *)malloc(((__pyx_v_max_len * __pyx_v_N) * (sizeof(double)))));
 
-    /* "simplecantera/pybindings.pyx":312
+    /* "pyroxa/pybindings.pyx":312
  * 		times_buf = <double*>malloc(max_len * sizeof(double))
  * 		conc_out_flat = <double*>malloc(max_len * N * sizeof(double))
  * 		if (max_len > 0 and not times_buf) or (max_len * N > 0 and not conc_out_flat):             # <<<<<<<<<<<<<<
@@ -8179,7 +8179,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
     __pyx_L52_bool_binop_done:;
     if (__pyx_t_2) {
 
-      /* "simplecantera/pybindings.pyx":314
+      /* "pyroxa/pybindings.pyx":314
  * 		if (max_len > 0 and not times_buf) or (max_len * N > 0 and not conc_out_flat):
  * 			# free previously allocated
  * 			if kf_ptr and kf_ptr != <double*>0: free(kf_ptr)             # <<<<<<<<<<<<<<
@@ -8199,7 +8199,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
         free(__pyx_v_kf_ptr);
       }
 
-      /* "simplecantera/pybindings.pyx":315
+      /* "pyroxa/pybindings.pyx":315
  * 			# free previously allocated
  * 			if kf_ptr and kf_ptr != <double*>0: free(kf_ptr)
  * 			if kr_ptr and kr_ptr != <double*>0: free(kr_ptr)             # <<<<<<<<<<<<<<
@@ -8219,7 +8219,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
         free(__pyx_v_kr_ptr);
       }
 
-      /* "simplecantera/pybindings.pyx":316
+      /* "pyroxa/pybindings.pyx":316
  * 			if kf_ptr and kf_ptr != <double*>0: free(kf_ptr)
  * 			if kr_ptr and kr_ptr != <double*>0: free(kr_ptr)
  * 			if c_reac_idx and c_reac_idx != <int*>0: free(c_reac_idx)             # <<<<<<<<<<<<<<
@@ -8239,7 +8239,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
         free(__pyx_v_c_reac_idx);
       }
 
-      /* "simplecantera/pybindings.pyx":317
+      /* "pyroxa/pybindings.pyx":317
  * 			if kr_ptr and kr_ptr != <double*>0: free(kr_ptr)
  * 			if c_reac_idx and c_reac_idx != <int*>0: free(c_reac_idx)
  * 			if c_reac_nu and c_reac_nu != <double*>0: free(c_reac_nu)             # <<<<<<<<<<<<<<
@@ -8259,7 +8259,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
         free(__pyx_v_c_reac_nu);
       }
 
-      /* "simplecantera/pybindings.pyx":318
+      /* "pyroxa/pybindings.pyx":318
  * 			if c_reac_idx and c_reac_idx != <int*>0: free(c_reac_idx)
  * 			if c_reac_nu and c_reac_nu != <double*>0: free(c_reac_nu)
  * 			if c_reac_off: free(c_reac_off)             # <<<<<<<<<<<<<<
@@ -8271,7 +8271,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
         free(__pyx_v_c_reac_off);
       }
 
-      /* "simplecantera/pybindings.pyx":319
+      /* "pyroxa/pybindings.pyx":319
  * 			if c_reac_nu and c_reac_nu != <double*>0: free(c_reac_nu)
  * 			if c_reac_off: free(c_reac_off)
  * 			if c_prod_idx and c_prod_idx != <int*>0: free(c_prod_idx)             # <<<<<<<<<<<<<<
@@ -8291,7 +8291,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
         free(__pyx_v_c_prod_idx);
       }
 
-      /* "simplecantera/pybindings.pyx":320
+      /* "pyroxa/pybindings.pyx":320
  * 			if c_reac_off: free(c_reac_off)
  * 			if c_prod_idx and c_prod_idx != <int*>0: free(c_prod_idx)
  * 			if c_prod_nu and c_prod_nu != <double*>0: free(c_prod_nu)             # <<<<<<<<<<<<<<
@@ -8311,7 +8311,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
         free(__pyx_v_c_prod_nu);
       }
 
-      /* "simplecantera/pybindings.pyx":321
+      /* "pyroxa/pybindings.pyx":321
  * 			if c_prod_idx and c_prod_idx != <int*>0: free(c_prod_idx)
  * 			if c_prod_nu and c_prod_nu != <double*>0: free(c_prod_nu)
  * 			if c_prod_off: free(c_prod_off)             # <<<<<<<<<<<<<<
@@ -8323,7 +8323,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
         free(__pyx_v_c_prod_off);
       }
 
-      /* "simplecantera/pybindings.pyx":322
+      /* "pyroxa/pybindings.pyx":322
  * 			if c_prod_nu and c_prod_nu != <double*>0: free(c_prod_nu)
  * 			if c_prod_off: free(c_prod_off)
  * 			if c_conc0 and c_conc0 != <double*>0: free(c_conc0)             # <<<<<<<<<<<<<<
@@ -8343,7 +8343,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
         free(__pyx_v_c_conc0);
       }
 
-      /* "simplecantera/pybindings.pyx":323
+      /* "pyroxa/pybindings.pyx":323
  * 			if c_prod_off: free(c_prod_off)
  * 			if c_conc0 and c_conc0 != <double*>0: free(c_conc0)
  * 			raise MemoryError('allocation failed for output buffers')             # <<<<<<<<<<<<<<
@@ -8356,7 +8356,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __PYX_ERR(1, 323, __pyx_L1_error)
 
-      /* "simplecantera/pybindings.pyx":312
+      /* "pyroxa/pybindings.pyx":312
  * 		times_buf = <double*>malloc(max_len * sizeof(double))
  * 		conc_out_flat = <double*>malloc(max_len * N * sizeof(double))
  * 		if (max_len > 0 and not times_buf) or (max_len * N > 0 and not conc_out_flat):             # <<<<<<<<<<<<<<
@@ -8365,7 +8365,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
  */
     }
 
-    /* "simplecantera/pybindings.pyx":329
+    /* "pyroxa/pybindings.pyx":329
  * 							 <int*>c_prod_idx, <double*>c_prod_nu, <int*>c_prod_off,
  * 							 <double*>c_conc0,
  * 							 float(sim.get('time_span', 10.0)), float(sim.get('time_step', 0.01)),             # <<<<<<<<<<<<<<
@@ -8387,7 +8387,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
     __pyx_t_13 = __Pyx_PyObject_AsDouble(__pyx_t_3); if (unlikely(__pyx_t_13 == ((double)((double)-1)) && PyErr_Occurred())) __PYX_ERR(1, 329, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "simplecantera/pybindings.pyx":325
+    /* "pyroxa/pybindings.pyx":325
  * 			raise MemoryError('allocation failed for output buffers')
  * 		# call
  * 		written = simulate_multi_reactor(N, M, kf_ptr, kr_ptr,             # <<<<<<<<<<<<<<
@@ -8396,7 +8396,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
  */
     __pyx_v_written = simulate_multi_reactor(__pyx_v_N, __pyx_v_M, __pyx_v_kf_ptr, __pyx_v_kr_ptr, ((int *)__pyx_v_c_reac_idx), ((double *)__pyx_v_c_reac_nu), ((int *)__pyx_v_c_reac_off), ((int *)__pyx_v_c_prod_idx), ((double *)__pyx_v_c_prod_nu), ((int *)__pyx_v_c_prod_off), ((double *)__pyx_v_c_conc0), __pyx_t_23, __pyx_t_13, ((double *)__pyx_v_times_buf), ((double *)__pyx_v_conc_out_flat), __pyx_v_max_len);
 
-    /* "simplecantera/pybindings.pyx":331
+    /* "pyroxa/pybindings.pyx":331
  * 							 float(sim.get('time_span', 10.0)), float(sim.get('time_step', 0.01)),
  * 							 <double*>times_buf, <double*>conc_out_flat, max_len)
  * 		if written <= 0:             # <<<<<<<<<<<<<<
@@ -8406,7 +8406,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
     __pyx_t_2 = ((__pyx_v_written <= 0) != 0);
     if (unlikely(__pyx_t_2)) {
 
-      /* "simplecantera/pybindings.pyx":332
+      /* "pyroxa/pybindings.pyx":332
  * 							 <double*>times_buf, <double*>conc_out_flat, max_len)
  * 		if written <= 0:
  * 			raise RuntimeError('multi-reactor C++ simulation failed')             # <<<<<<<<<<<<<<
@@ -8419,7 +8419,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __PYX_ERR(1, 332, __pyx_L1_error)
 
-      /* "simplecantera/pybindings.pyx":331
+      /* "pyroxa/pybindings.pyx":331
  * 							 float(sim.get('time_span', 10.0)), float(sim.get('time_step', 0.01)),
  * 							 <double*>times_buf, <double*>conc_out_flat, max_len)
  * 		if written <= 0:             # <<<<<<<<<<<<<<
@@ -8428,7 +8428,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
  */
     }
 
-    /* "simplecantera/pybindings.pyx":334
+    /* "pyroxa/pybindings.pyx":334
  * 			raise RuntimeError('multi-reactor C++ simulation failed')
  * 		# build numpy arrays if available
  * 		if _HAS_NUMPY:             # <<<<<<<<<<<<<<
@@ -8441,7 +8441,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     if (__pyx_t_2) {
 
-      /* "simplecantera/pybindings.pyx":335
+      /* "pyroxa/pybindings.pyx":335
  * 		# build numpy arrays if available
  * 		if _HAS_NUMPY:
  * 			tarr = np.empty(written, dtype=np.float64)             # <<<<<<<<<<<<<<
@@ -8477,7 +8477,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
       __pyx_v_tarr = __pyx_t_20;
       __pyx_t_20 = 0;
 
-      /* "simplecantera/pybindings.pyx":336
+      /* "pyroxa/pybindings.pyx":336
  * 		if _HAS_NUMPY:
  * 			tarr = np.empty(written, dtype=np.float64)
  * 			carr = np.empty((written, N), dtype=np.float64)             # <<<<<<<<<<<<<<
@@ -8523,7 +8523,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
       __pyx_v_carr = __pyx_t_6;
       __pyx_t_6 = 0;
 
-      /* "simplecantera/pybindings.pyx":337
+      /* "pyroxa/pybindings.pyx":337
  * 			tarr = np.empty(written, dtype=np.float64)
  * 			carr = np.empty((written, N), dtype=np.float64)
  * 			for i in range(written):             # <<<<<<<<<<<<<<
@@ -8535,7 +8535,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
       for (__pyx_t_12 = 0; __pyx_t_12 < __pyx_t_11; __pyx_t_12+=1) {
         __pyx_v_i = __pyx_t_12;
 
-        /* "simplecantera/pybindings.pyx":338
+        /* "pyroxa/pybindings.pyx":338
  * 			carr = np.empty((written, N), dtype=np.float64)
  * 			for i in range(written):
  * 				tarr[i] = times_buf[i]             # <<<<<<<<<<<<<<
@@ -8547,7 +8547,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
         if (unlikely(__Pyx_SetItemInt(__pyx_v_tarr, __pyx_v_i, __pyx_t_6, int, 1, __Pyx_PyInt_From_int, 0, 1, 1) < 0)) __PYX_ERR(1, 338, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-        /* "simplecantera/pybindings.pyx":339
+        /* "pyroxa/pybindings.pyx":339
  * 			for i in range(written):
  * 				tarr[i] = times_buf[i]
  * 				for j in range(N):             # <<<<<<<<<<<<<<
@@ -8602,7 +8602,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
           __Pyx_XDECREF_SET(__pyx_v_j, __pyx_t_4);
           __pyx_t_4 = 0;
 
-          /* "simplecantera/pybindings.pyx":340
+          /* "pyroxa/pybindings.pyx":340
  * 				tarr[i] = times_buf[i]
  * 				for j in range(N):
  * 					carr[i, j] = conc_out_flat[i*N + j]             # <<<<<<<<<<<<<<
@@ -8632,7 +8632,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
           __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-          /* "simplecantera/pybindings.pyx":339
+          /* "pyroxa/pybindings.pyx":339
  * 			for i in range(written):
  * 				tarr[i] = times_buf[i]
  * 				for j in range(N):             # <<<<<<<<<<<<<<
@@ -8643,7 +8643,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
 
-      /* "simplecantera/pybindings.pyx":341
+      /* "pyroxa/pybindings.pyx":341
  * 				for j in range(N):
  * 					carr[i, j] = conc_out_flat[i*N + j]
  * 			return tarr, carr             # <<<<<<<<<<<<<<
@@ -8663,7 +8663,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
       __pyx_t_6 = 0;
       goto __pyx_L0;
 
-      /* "simplecantera/pybindings.pyx":334
+      /* "pyroxa/pybindings.pyx":334
  * 			raise RuntimeError('multi-reactor C++ simulation failed')
  * 		# build numpy arrays if available
  * 		if _HAS_NUMPY:             # <<<<<<<<<<<<<<
@@ -8672,7 +8672,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
  */
     }
 
-    /* "simplecantera/pybindings.pyx":343
+    /* "pyroxa/pybindings.pyx":343
  * 			return tarr, carr
  * 		else:
  * 			times_py = [times_buf[i] for i in range(written)]             # <<<<<<<<<<<<<<
@@ -8696,7 +8696,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
       __pyx_v_times_py = ((PyObject*)__pyx_t_6);
       __pyx_t_6 = 0;
 
-      /* "simplecantera/pybindings.pyx":344
+      /* "pyroxa/pybindings.pyx":344
  * 		else:
  * 			times_py = [times_buf[i] for i in range(written)]
  * 			traj = [[conc_out_flat[i*N + j] for j in range(N)] for i in range(written)]             # <<<<<<<<<<<<<<
@@ -8730,7 +8730,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
       __pyx_v_traj = ((PyObject*)__pyx_t_6);
       __pyx_t_6 = 0;
 
-      /* "simplecantera/pybindings.pyx":345
+      /* "pyroxa/pybindings.pyx":345
  * 			times_py = [times_buf[i] for i in range(written)]
  * 			traj = [[conc_out_flat[i*N + j] for j in range(N)] for i in range(written)]
  * 			return times_py, traj             # <<<<<<<<<<<<<<
@@ -8751,7 +8751,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
       goto __pyx_L0;
     }
 
-    /* "simplecantera/pybindings.pyx":216
+    /* "pyroxa/pybindings.pyx":216
  * 	sim = spec.get('sim', {})
  * 	# multi-species branch: try calling optimized C++ multi-reactor
  * 	if 'species' in spec and 'reactions' in spec:             # <<<<<<<<<<<<<<
@@ -8760,7 +8760,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
  */
   }
 
-  /* "simplecantera/pybindings.pyx":347
+  /* "pyroxa/pybindings.pyx":347
  * 			return times_py, traj
  * 	else:
  * 		kf = float(reaction.get('kf', 1.0))             # <<<<<<<<<<<<<<
@@ -8777,7 +8777,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     __pyx_v_kf = __pyx_t_13;
 
-    /* "simplecantera/pybindings.pyx":348
+    /* "pyroxa/pybindings.pyx":348
  * 	else:
  * 		kf = float(reaction.get('kf', 1.0))
  * 		kr = float(reaction.get('kr', 0.5))             # <<<<<<<<<<<<<<
@@ -8793,7 +8793,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __pyx_v_kr = __pyx_t_13;
 
-    /* "simplecantera/pybindings.pyx":349
+    /* "pyroxa/pybindings.pyx":349
  * 		kf = float(reaction.get('kf', 1.0))
  * 		kr = float(reaction.get('kr', 0.5))
  * 		conc = initial.get('conc', {})             # <<<<<<<<<<<<<<
@@ -8854,7 +8854,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
     __pyx_v_conc = __pyx_t_6;
     __pyx_t_6 = 0;
 
-    /* "simplecantera/pybindings.pyx":350
+    /* "pyroxa/pybindings.pyx":350
  * 		kr = float(reaction.get('kr', 0.5))
  * 		conc = initial.get('conc', {})
  * 		A0 = float(conc.get('A', 1.0))             # <<<<<<<<<<<<<<
@@ -8870,7 +8870,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     __pyx_v_A0 = __pyx_t_13;
 
-    /* "simplecantera/pybindings.pyx":351
+    /* "pyroxa/pybindings.pyx":351
  * 		conc = initial.get('conc', {})
  * 		A0 = float(conc.get('A', 1.0))
  * 		B0 = float(conc.get('B', 0.0))             # <<<<<<<<<<<<<<
@@ -8886,7 +8886,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __pyx_v_B0 = __pyx_t_13;
 
-    /* "simplecantera/pybindings.pyx":352
+    /* "pyroxa/pybindings.pyx":352
  * 		A0 = float(conc.get('A', 1.0))
  * 		B0 = float(conc.get('B', 0.0))
  * 		time_span = float(sim.get('time_span', 10.0))             # <<<<<<<<<<<<<<
@@ -8902,7 +8902,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     __pyx_v_time_span = __pyx_t_13;
 
-    /* "simplecantera/pybindings.pyx":353
+    /* "pyroxa/pybindings.pyx":353
  * 		B0 = float(conc.get('B', 0.0))
  * 		time_span = float(sim.get('time_span', 10.0))
  * 		dt = float(sim.get('time_step', 0.01))             # <<<<<<<<<<<<<<
@@ -8918,7 +8918,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __pyx_v_dt = __pyx_t_13;
 
-    /* "simplecantera/pybindings.pyx":354
+    /* "pyroxa/pybindings.pyx":354
  * 		time_span = float(sim.get('time_span', 10.0))
  * 		dt = float(sim.get('time_step', 0.01))
  * 		rxn = Reaction(kf, kr)             # <<<<<<<<<<<<<<
@@ -8937,13 +8937,13 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
     PyTuple_SET_ITEM(__pyx_t_20, 1, __pyx_t_8);
     __pyx_t_6 = 0;
     __pyx_t_8 = 0;
-    __pyx_t_8 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_13simplecantera_11_pybindings_Reaction), __pyx_t_20, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 354, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_13pyroxa_11_pybindings_Reaction), __pyx_t_20, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 354, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
     __Pyx_DECREF(__pyx_t_20); __pyx_t_20 = 0;
-    __pyx_v_rxn = ((struct __pyx_obj_13simplecantera_11_pybindings_Reaction *)__pyx_t_8);
+    __pyx_v_rxn = ((struct __pyx_obj_13pyroxa_11_pybindings_Reaction *)__pyx_t_8);
     __pyx_t_8 = 0;
 
-    /* "simplecantera/pybindings.pyx":355
+    /* "pyroxa/pybindings.pyx":355
  * 		dt = float(sim.get('time_step', 0.01))
  * 		rxn = Reaction(kf, kr)
  * 		reactor = Reactor(rxn, A0=A0, B0=B0, time_span=time_span, dt=dt)             # <<<<<<<<<<<<<<
@@ -8972,14 +8972,14 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
     __Pyx_GOTREF(__pyx_t_6);
     if (PyDict_SetItem(__pyx_t_20, __pyx_n_s_dt, __pyx_t_6) < 0) __PYX_ERR(1, 355, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_6 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_13simplecantera_11_pybindings_Reactor), __pyx_t_8, __pyx_t_20); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 355, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_13pyroxa_11_pybindings_Reactor), __pyx_t_8, __pyx_t_20); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 355, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     __Pyx_DECREF(__pyx_t_20); __pyx_t_20 = 0;
-    __pyx_v_reactor = ((struct __pyx_obj_13simplecantera_11_pybindings_Reactor *)__pyx_t_6);
+    __pyx_v_reactor = ((struct __pyx_obj_13pyroxa_11_pybindings_Reactor *)__pyx_t_6);
     __pyx_t_6 = 0;
 
-    /* "simplecantera/pybindings.pyx":356
+    /* "pyroxa/pybindings.pyx":356
  * 		rxn = Reaction(kf, kr)
  * 		reactor = Reactor(rxn, A0=A0, B0=B0, time_span=time_span, dt=dt)
  * 		return reactor.run()             # <<<<<<<<<<<<<<
@@ -9007,7 +9007,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
     goto __pyx_L0;
   }
 
-  /* "simplecantera/pybindings.pyx":186
+  /* "pyroxa/pybindings.pyx":186
  * 
  * 
  * def run_simulation_cpp(spec):             # <<<<<<<<<<<<<<
@@ -9026,7 +9026,7 @@ static PyObject *__pyx_pf_13simplecantera_11_pybindings_run_simulation_cpp(CYTHO
   __Pyx_XDECREF(__pyx_t_20);
   __Pyx_XDECREF(__pyx_t_21);
   __Pyx_XDECREF(__pyx_t_22);
-  __Pyx_AddTraceback("simplecantera._pybindings.run_simulation_cpp", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyroxa._pybindings.run_simulation_cpp", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_reaction);
@@ -10104,7 +10104,7 @@ static CYTHON_INLINE NPY_DATETIMEUNIT __pyx_f_5numpy_get_datetime64_unit(PyObjec
   return __pyx_r;
 }
 
-static PyObject *__pyx_tp_new_13simplecantera_11_pybindings_Thermodynamics(PyTypeObject *t, PyObject *a, PyObject *k) {
+static PyObject *__pyx_tp_new_13pyroxa_11_pybindings_Thermodynamics(PyTypeObject *t, PyObject *a, PyObject *k) {
   PyObject *o;
   if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
     o = (*t->tp_alloc)(t, 0);
@@ -10112,14 +10112,14 @@ static PyObject *__pyx_tp_new_13simplecantera_11_pybindings_Thermodynamics(PyTyp
     o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
   }
   if (unlikely(!o)) return 0;
-  if (unlikely(__pyx_pw_13simplecantera_11_pybindings_14Thermodynamics_1__cinit__(o, a, k) < 0)) goto bad;
+  if (unlikely(__pyx_pw_13pyroxa_11_pybindings_14Thermodynamics_1__cinit__(o, a, k) < 0)) goto bad;
   return o;
   bad:
   Py_DECREF(o); o = 0;
   return NULL;
 }
 
-static void __pyx_tp_dealloc_13simplecantera_11_pybindings_Thermodynamics(PyObject *o) {
+static void __pyx_tp_dealloc_13pyroxa_11_pybindings_Thermodynamics(PyObject *o) {
   #if CYTHON_USE_TP_FINALIZE
   if (unlikely(PyType_HasFeature(Py_TYPE(o), Py_TPFLAGS_HAVE_FINALIZE) && Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !__Pyx_PyObject_GC_IsFinalized(o))) {
     if (PyObject_CallFinalizerFromDealloc(o)) return;
@@ -10128,20 +10128,20 @@ static void __pyx_tp_dealloc_13simplecantera_11_pybindings_Thermodynamics(PyObje
   (*Py_TYPE(o)->tp_free)(o);
 }
 
-static PyMethodDef __pyx_methods_13simplecantera_11_pybindings_Thermodynamics[] = {
-  {"enthalpy", (PyCFunction)__pyx_pw_13simplecantera_11_pybindings_14Thermodynamics_3enthalpy, METH_O, 0},
-  {"entropy", (PyCFunction)__pyx_pw_13simplecantera_11_pybindings_14Thermodynamics_5entropy, METH_O, 0},
-  {"__reduce_cython__", (PyCFunction)__pyx_pw_13simplecantera_11_pybindings_14Thermodynamics_7__reduce_cython__, METH_NOARGS, 0},
-  {"__setstate_cython__", (PyCFunction)__pyx_pw_13simplecantera_11_pybindings_14Thermodynamics_9__setstate_cython__, METH_O, 0},
+static PyMethodDef __pyx_methods_13pyroxa_11_pybindings_Thermodynamics[] = {
+  {"enthalpy", (PyCFunction)__pyx_pw_13pyroxa_11_pybindings_14Thermodynamics_3enthalpy, METH_O, 0},
+  {"entropy", (PyCFunction)__pyx_pw_13pyroxa_11_pybindings_14Thermodynamics_5entropy, METH_O, 0},
+  {"__reduce_cython__", (PyCFunction)__pyx_pw_13pyroxa_11_pybindings_14Thermodynamics_7__reduce_cython__, METH_NOARGS, 0},
+  {"__setstate_cython__", (PyCFunction)__pyx_pw_13pyroxa_11_pybindings_14Thermodynamics_9__setstate_cython__, METH_O, 0},
   {0, 0, 0, 0}
 };
 
-static PyTypeObject __pyx_type_13simplecantera_11_pybindings_Thermodynamics = {
+static PyTypeObject __pyx_type_13pyroxa_11_pybindings_Thermodynamics = {
   PyVarObject_HEAD_INIT(0, 0)
-  "simplecantera._pybindings.Thermodynamics", /*tp_name*/
-  sizeof(struct __pyx_obj_13simplecantera_11_pybindings_Thermodynamics), /*tp_basicsize*/
+  "pyroxa._pybindings.Thermodynamics", /*tp_name*/
+  sizeof(struct __pyx_obj_13pyroxa_11_pybindings_Thermodynamics), /*tp_basicsize*/
   0, /*tp_itemsize*/
-  __pyx_tp_dealloc_13simplecantera_11_pybindings_Thermodynamics, /*tp_dealloc*/
+  __pyx_tp_dealloc_13pyroxa_11_pybindings_Thermodynamics, /*tp_dealloc*/
   #if PY_VERSION_HEX < 0x030800b4
   0, /*tp_print*/
   #endif
@@ -10174,7 +10174,7 @@ static PyTypeObject __pyx_type_13simplecantera_11_pybindings_Thermodynamics = {
   0, /*tp_weaklistoffset*/
   0, /*tp_iter*/
   0, /*tp_iternext*/
-  __pyx_methods_13simplecantera_11_pybindings_Thermodynamics, /*tp_methods*/
+  __pyx_methods_13pyroxa_11_pybindings_Thermodynamics, /*tp_methods*/
   0, /*tp_members*/
   0, /*tp_getset*/
   0, /*tp_base*/
@@ -10184,7 +10184,7 @@ static PyTypeObject __pyx_type_13simplecantera_11_pybindings_Thermodynamics = {
   0, /*tp_dictoffset*/
   0, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_13simplecantera_11_pybindings_Thermodynamics, /*tp_new*/
+  __pyx_tp_new_13pyroxa_11_pybindings_Thermodynamics, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -10208,7 +10208,7 @@ static PyTypeObject __pyx_type_13simplecantera_11_pybindings_Thermodynamics = {
   #endif
 };
 
-static PyObject *__pyx_tp_new_13simplecantera_11_pybindings_Reaction(PyTypeObject *t, PyObject *a, PyObject *k) {
+static PyObject *__pyx_tp_new_13pyroxa_11_pybindings_Reaction(PyTypeObject *t, PyObject *a, PyObject *k) {
   PyObject *o;
   if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
     o = (*t->tp_alloc)(t, 0);
@@ -10216,14 +10216,14 @@ static PyObject *__pyx_tp_new_13simplecantera_11_pybindings_Reaction(PyTypeObjec
     o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
   }
   if (unlikely(!o)) return 0;
-  if (unlikely(__pyx_pw_13simplecantera_11_pybindings_8Reaction_1__cinit__(o, a, k) < 0)) goto bad;
+  if (unlikely(__pyx_pw_13pyroxa_11_pybindings_8Reaction_1__cinit__(o, a, k) < 0)) goto bad;
   return o;
   bad:
   Py_DECREF(o); o = 0;
   return NULL;
 }
 
-static void __pyx_tp_dealloc_13simplecantera_11_pybindings_Reaction(PyObject *o) {
+static void __pyx_tp_dealloc_13pyroxa_11_pybindings_Reaction(PyObject *o) {
   #if CYTHON_USE_TP_FINALIZE
   if (unlikely(PyType_HasFeature(Py_TYPE(o), Py_TPFLAGS_HAVE_FINALIZE) && Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !__Pyx_PyObject_GC_IsFinalized(o))) {
     if (PyObject_CallFinalizerFromDealloc(o)) return;
@@ -10232,19 +10232,19 @@ static void __pyx_tp_dealloc_13simplecantera_11_pybindings_Reaction(PyObject *o)
   (*Py_TYPE(o)->tp_free)(o);
 }
 
-static PyMethodDef __pyx_methods_13simplecantera_11_pybindings_Reaction[] = {
-  {"rate", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_13simplecantera_11_pybindings_8Reaction_3rate, METH_VARARGS|METH_KEYWORDS, 0},
-  {"__reduce_cython__", (PyCFunction)__pyx_pw_13simplecantera_11_pybindings_8Reaction_5__reduce_cython__, METH_NOARGS, 0},
-  {"__setstate_cython__", (PyCFunction)__pyx_pw_13simplecantera_11_pybindings_8Reaction_7__setstate_cython__, METH_O, 0},
+static PyMethodDef __pyx_methods_13pyroxa_11_pybindings_Reaction[] = {
+  {"rate", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_13pyroxa_11_pybindings_8Reaction_3rate, METH_VARARGS|METH_KEYWORDS, 0},
+  {"__reduce_cython__", (PyCFunction)__pyx_pw_13pyroxa_11_pybindings_8Reaction_5__reduce_cython__, METH_NOARGS, 0},
+  {"__setstate_cython__", (PyCFunction)__pyx_pw_13pyroxa_11_pybindings_8Reaction_7__setstate_cython__, METH_O, 0},
   {0, 0, 0, 0}
 };
 
-static PyTypeObject __pyx_type_13simplecantera_11_pybindings_Reaction = {
+static PyTypeObject __pyx_type_13pyroxa_11_pybindings_Reaction = {
   PyVarObject_HEAD_INIT(0, 0)
-  "simplecantera._pybindings.Reaction", /*tp_name*/
-  sizeof(struct __pyx_obj_13simplecantera_11_pybindings_Reaction), /*tp_basicsize*/
+  "pyroxa._pybindings.Reaction", /*tp_name*/
+  sizeof(struct __pyx_obj_13pyroxa_11_pybindings_Reaction), /*tp_basicsize*/
   0, /*tp_itemsize*/
-  __pyx_tp_dealloc_13simplecantera_11_pybindings_Reaction, /*tp_dealloc*/
+  __pyx_tp_dealloc_13pyroxa_11_pybindings_Reaction, /*tp_dealloc*/
   #if PY_VERSION_HEX < 0x030800b4
   0, /*tp_print*/
   #endif
@@ -10277,7 +10277,7 @@ static PyTypeObject __pyx_type_13simplecantera_11_pybindings_Reaction = {
   0, /*tp_weaklistoffset*/
   0, /*tp_iter*/
   0, /*tp_iternext*/
-  __pyx_methods_13simplecantera_11_pybindings_Reaction, /*tp_methods*/
+  __pyx_methods_13pyroxa_11_pybindings_Reaction, /*tp_methods*/
   0, /*tp_members*/
   0, /*tp_getset*/
   0, /*tp_base*/
@@ -10287,7 +10287,7 @@ static PyTypeObject __pyx_type_13simplecantera_11_pybindings_Reaction = {
   0, /*tp_dictoffset*/
   0, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_13simplecantera_11_pybindings_Reaction, /*tp_new*/
+  __pyx_tp_new_13pyroxa_11_pybindings_Reaction, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -10310,10 +10310,10 @@ static PyTypeObject __pyx_type_13simplecantera_11_pybindings_Reaction = {
   0, /*tp_pypy_flags*/
   #endif
 };
-static struct __pyx_vtabstruct_13simplecantera_11_pybindings_ReactionMulti __pyx_vtable_13simplecantera_11_pybindings_ReactionMulti;
+static struct __pyx_vtabstruct_13pyroxa_11_pybindings_ReactionMulti __pyx_vtable_13pyroxa_11_pybindings_ReactionMulti;
 
-static PyObject *__pyx_tp_new_13simplecantera_11_pybindings_ReactionMulti(PyTypeObject *t, PyObject *a, PyObject *k) {
-  struct __pyx_obj_13simplecantera_11_pybindings_ReactionMulti *p;
+static PyObject *__pyx_tp_new_13pyroxa_11_pybindings_ReactionMulti(PyTypeObject *t, PyObject *a, PyObject *k) {
+  struct __pyx_obj_13pyroxa_11_pybindings_ReactionMulti *p;
   PyObject *o;
   if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
     o = (*t->tp_alloc)(t, 0);
@@ -10321,19 +10321,19 @@ static PyObject *__pyx_tp_new_13simplecantera_11_pybindings_ReactionMulti(PyType
     o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
   }
   if (unlikely(!o)) return 0;
-  p = ((struct __pyx_obj_13simplecantera_11_pybindings_ReactionMulti *)o);
-  p->__pyx_vtab = __pyx_vtabptr_13simplecantera_11_pybindings_ReactionMulti;
+  p = ((struct __pyx_obj_13pyroxa_11_pybindings_ReactionMulti *)o);
+  p->__pyx_vtab = __pyx_vtabptr_13pyroxa_11_pybindings_ReactionMulti;
   p->reactants = ((PyObject*)Py_None); Py_INCREF(Py_None);
   p->products = ((PyObject*)Py_None); Py_INCREF(Py_None);
-  if (unlikely(__pyx_pw_13simplecantera_11_pybindings_13ReactionMulti_1__cinit__(o, a, k) < 0)) goto bad;
+  if (unlikely(__pyx_pw_13pyroxa_11_pybindings_13ReactionMulti_1__cinit__(o, a, k) < 0)) goto bad;
   return o;
   bad:
   Py_DECREF(o); o = 0;
   return NULL;
 }
 
-static void __pyx_tp_dealloc_13simplecantera_11_pybindings_ReactionMulti(PyObject *o) {
-  struct __pyx_obj_13simplecantera_11_pybindings_ReactionMulti *p = (struct __pyx_obj_13simplecantera_11_pybindings_ReactionMulti *)o;
+static void __pyx_tp_dealloc_13pyroxa_11_pybindings_ReactionMulti(PyObject *o) {
+  struct __pyx_obj_13pyroxa_11_pybindings_ReactionMulti *p = (struct __pyx_obj_13pyroxa_11_pybindings_ReactionMulti *)o;
   #if CYTHON_USE_TP_FINALIZE
   if (unlikely(PyType_HasFeature(Py_TYPE(o), Py_TPFLAGS_HAVE_FINALIZE) && Py_TYPE(o)->tp_finalize) && !__Pyx_PyObject_GC_IsFinalized(o)) {
     if (PyObject_CallFinalizerFromDealloc(o)) return;
@@ -10345,9 +10345,9 @@ static void __pyx_tp_dealloc_13simplecantera_11_pybindings_ReactionMulti(PyObjec
   (*Py_TYPE(o)->tp_free)(o);
 }
 
-static int __pyx_tp_traverse_13simplecantera_11_pybindings_ReactionMulti(PyObject *o, visitproc v, void *a) {
+static int __pyx_tp_traverse_13pyroxa_11_pybindings_ReactionMulti(PyObject *o, visitproc v, void *a) {
   int e;
-  struct __pyx_obj_13simplecantera_11_pybindings_ReactionMulti *p = (struct __pyx_obj_13simplecantera_11_pybindings_ReactionMulti *)o;
+  struct __pyx_obj_13pyroxa_11_pybindings_ReactionMulti *p = (struct __pyx_obj_13pyroxa_11_pybindings_ReactionMulti *)o;
   if (p->reactants) {
     e = (*v)(p->reactants, a); if (e) return e;
   }
@@ -10357,9 +10357,9 @@ static int __pyx_tp_traverse_13simplecantera_11_pybindings_ReactionMulti(PyObjec
   return 0;
 }
 
-static int __pyx_tp_clear_13simplecantera_11_pybindings_ReactionMulti(PyObject *o) {
+static int __pyx_tp_clear_13pyroxa_11_pybindings_ReactionMulti(PyObject *o) {
   PyObject* tmp;
-  struct __pyx_obj_13simplecantera_11_pybindings_ReactionMulti *p = (struct __pyx_obj_13simplecantera_11_pybindings_ReactionMulti *)o;
+  struct __pyx_obj_13pyroxa_11_pybindings_ReactionMulti *p = (struct __pyx_obj_13pyroxa_11_pybindings_ReactionMulti *)o;
   tmp = ((PyObject*)p->reactants);
   p->reactants = ((PyObject*)Py_None); Py_INCREF(Py_None);
   Py_XDECREF(tmp);
@@ -10369,19 +10369,19 @@ static int __pyx_tp_clear_13simplecantera_11_pybindings_ReactionMulti(PyObject *
   return 0;
 }
 
-static PyMethodDef __pyx_methods_13simplecantera_11_pybindings_ReactionMulti[] = {
-  {"rate", (PyCFunction)__pyx_pw_13simplecantera_11_pybindings_13ReactionMulti_3rate, METH_O, 0},
-  {"__reduce_cython__", (PyCFunction)__pyx_pw_13simplecantera_11_pybindings_13ReactionMulti_5__reduce_cython__, METH_NOARGS, 0},
-  {"__setstate_cython__", (PyCFunction)__pyx_pw_13simplecantera_11_pybindings_13ReactionMulti_7__setstate_cython__, METH_O, 0},
+static PyMethodDef __pyx_methods_13pyroxa_11_pybindings_ReactionMulti[] = {
+  {"rate", (PyCFunction)__pyx_pw_13pyroxa_11_pybindings_13ReactionMulti_3rate, METH_O, 0},
+  {"__reduce_cython__", (PyCFunction)__pyx_pw_13pyroxa_11_pybindings_13ReactionMulti_5__reduce_cython__, METH_NOARGS, 0},
+  {"__setstate_cython__", (PyCFunction)__pyx_pw_13pyroxa_11_pybindings_13ReactionMulti_7__setstate_cython__, METH_O, 0},
   {0, 0, 0, 0}
 };
 
-static PyTypeObject __pyx_type_13simplecantera_11_pybindings_ReactionMulti = {
+static PyTypeObject __pyx_type_13pyroxa_11_pybindings_ReactionMulti = {
   PyVarObject_HEAD_INIT(0, 0)
-  "simplecantera._pybindings.ReactionMulti", /*tp_name*/
-  sizeof(struct __pyx_obj_13simplecantera_11_pybindings_ReactionMulti), /*tp_basicsize*/
+  "pyroxa._pybindings.ReactionMulti", /*tp_name*/
+  sizeof(struct __pyx_obj_13pyroxa_11_pybindings_ReactionMulti), /*tp_basicsize*/
   0, /*tp_itemsize*/
-  __pyx_tp_dealloc_13simplecantera_11_pybindings_ReactionMulti, /*tp_dealloc*/
+  __pyx_tp_dealloc_13pyroxa_11_pybindings_ReactionMulti, /*tp_dealloc*/
   #if PY_VERSION_HEX < 0x030800b4
   0, /*tp_print*/
   #endif
@@ -10408,13 +10408,13 @@ static PyTypeObject __pyx_type_13simplecantera_11_pybindings_ReactionMulti = {
   0, /*tp_as_buffer*/
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE|Py_TPFLAGS_HAVE_GC, /*tp_flags*/
   0, /*tp_doc*/
-  __pyx_tp_traverse_13simplecantera_11_pybindings_ReactionMulti, /*tp_traverse*/
-  __pyx_tp_clear_13simplecantera_11_pybindings_ReactionMulti, /*tp_clear*/
+  __pyx_tp_traverse_13pyroxa_11_pybindings_ReactionMulti, /*tp_traverse*/
+  __pyx_tp_clear_13pyroxa_11_pybindings_ReactionMulti, /*tp_clear*/
   0, /*tp_richcompare*/
   0, /*tp_weaklistoffset*/
   0, /*tp_iter*/
   0, /*tp_iternext*/
-  __pyx_methods_13simplecantera_11_pybindings_ReactionMulti, /*tp_methods*/
+  __pyx_methods_13pyroxa_11_pybindings_ReactionMulti, /*tp_methods*/
   0, /*tp_members*/
   0, /*tp_getset*/
   0, /*tp_base*/
@@ -10424,7 +10424,7 @@ static PyTypeObject __pyx_type_13simplecantera_11_pybindings_ReactionMulti = {
   0, /*tp_dictoffset*/
   0, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_13simplecantera_11_pybindings_ReactionMulti, /*tp_new*/
+  __pyx_tp_new_13pyroxa_11_pybindings_ReactionMulti, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -10447,10 +10447,10 @@ static PyTypeObject __pyx_type_13simplecantera_11_pybindings_ReactionMulti = {
   0, /*tp_pypy_flags*/
   #endif
 };
-static struct __pyx_vtabstruct_13simplecantera_11_pybindings_MultiReactor __pyx_vtable_13simplecantera_11_pybindings_MultiReactor;
+static struct __pyx_vtabstruct_13pyroxa_11_pybindings_MultiReactor __pyx_vtable_13pyroxa_11_pybindings_MultiReactor;
 
-static PyObject *__pyx_tp_new_13simplecantera_11_pybindings_MultiReactor(PyTypeObject *t, PyObject *a, PyObject *k) {
-  struct __pyx_obj_13simplecantera_11_pybindings_MultiReactor *p;
+static PyObject *__pyx_tp_new_13pyroxa_11_pybindings_MultiReactor(PyTypeObject *t, PyObject *a, PyObject *k) {
+  struct __pyx_obj_13pyroxa_11_pybindings_MultiReactor *p;
   PyObject *o;
   if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
     o = (*t->tp_alloc)(t, 0);
@@ -10458,20 +10458,20 @@ static PyObject *__pyx_tp_new_13simplecantera_11_pybindings_MultiReactor(PyTypeO
     o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
   }
   if (unlikely(!o)) return 0;
-  p = ((struct __pyx_obj_13simplecantera_11_pybindings_MultiReactor *)o);
-  p->__pyx_vtab = __pyx_vtabptr_13simplecantera_11_pybindings_MultiReactor;
+  p = ((struct __pyx_obj_13pyroxa_11_pybindings_MultiReactor *)o);
+  p->__pyx_vtab = __pyx_vtabptr_13pyroxa_11_pybindings_MultiReactor;
   p->species = ((PyObject*)Py_None); Py_INCREF(Py_None);
   p->conc = ((PyObject*)Py_None); Py_INCREF(Py_None);
   p->reactions = ((PyObject*)Py_None); Py_INCREF(Py_None);
-  if (unlikely(__pyx_pw_13simplecantera_11_pybindings_12MultiReactor_1__cinit__(o, a, k) < 0)) goto bad;
+  if (unlikely(__pyx_pw_13pyroxa_11_pybindings_12MultiReactor_1__cinit__(o, a, k) < 0)) goto bad;
   return o;
   bad:
   Py_DECREF(o); o = 0;
   return NULL;
 }
 
-static void __pyx_tp_dealloc_13simplecantera_11_pybindings_MultiReactor(PyObject *o) {
-  struct __pyx_obj_13simplecantera_11_pybindings_MultiReactor *p = (struct __pyx_obj_13simplecantera_11_pybindings_MultiReactor *)o;
+static void __pyx_tp_dealloc_13pyroxa_11_pybindings_MultiReactor(PyObject *o) {
+  struct __pyx_obj_13pyroxa_11_pybindings_MultiReactor *p = (struct __pyx_obj_13pyroxa_11_pybindings_MultiReactor *)o;
   #if CYTHON_USE_TP_FINALIZE
   if (unlikely(PyType_HasFeature(Py_TYPE(o), Py_TPFLAGS_HAVE_FINALIZE) && Py_TYPE(o)->tp_finalize) && !__Pyx_PyObject_GC_IsFinalized(o)) {
     if (PyObject_CallFinalizerFromDealloc(o)) return;
@@ -10484,9 +10484,9 @@ static void __pyx_tp_dealloc_13simplecantera_11_pybindings_MultiReactor(PyObject
   (*Py_TYPE(o)->tp_free)(o);
 }
 
-static int __pyx_tp_traverse_13simplecantera_11_pybindings_MultiReactor(PyObject *o, visitproc v, void *a) {
+static int __pyx_tp_traverse_13pyroxa_11_pybindings_MultiReactor(PyObject *o, visitproc v, void *a) {
   int e;
-  struct __pyx_obj_13simplecantera_11_pybindings_MultiReactor *p = (struct __pyx_obj_13simplecantera_11_pybindings_MultiReactor *)o;
+  struct __pyx_obj_13pyroxa_11_pybindings_MultiReactor *p = (struct __pyx_obj_13pyroxa_11_pybindings_MultiReactor *)o;
   if (p->species) {
     e = (*v)(p->species, a); if (e) return e;
   }
@@ -10499,9 +10499,9 @@ static int __pyx_tp_traverse_13simplecantera_11_pybindings_MultiReactor(PyObject
   return 0;
 }
 
-static int __pyx_tp_clear_13simplecantera_11_pybindings_MultiReactor(PyObject *o) {
+static int __pyx_tp_clear_13pyroxa_11_pybindings_MultiReactor(PyObject *o) {
   PyObject* tmp;
-  struct __pyx_obj_13simplecantera_11_pybindings_MultiReactor *p = (struct __pyx_obj_13simplecantera_11_pybindings_MultiReactor *)o;
+  struct __pyx_obj_13pyroxa_11_pybindings_MultiReactor *p = (struct __pyx_obj_13pyroxa_11_pybindings_MultiReactor *)o;
   tmp = ((PyObject*)p->species);
   p->species = ((PyObject*)Py_None); Py_INCREF(Py_None);
   Py_XDECREF(tmp);
@@ -10514,21 +10514,21 @@ static int __pyx_tp_clear_13simplecantera_11_pybindings_MultiReactor(PyObject *o
   return 0;
 }
 
-static PyMethodDef __pyx_methods_13simplecantera_11_pybindings_MultiReactor[] = {
-  {"_dcdt", (PyCFunction)__pyx_pw_13simplecantera_11_pybindings_12MultiReactor_3_dcdt, METH_O, 0},
-  {"step", (PyCFunction)__pyx_pw_13simplecantera_11_pybindings_12MultiReactor_5step, METH_O, 0},
-  {"run", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_13simplecantera_11_pybindings_12MultiReactor_7run, METH_VARARGS|METH_KEYWORDS, 0},
-  {"__reduce_cython__", (PyCFunction)__pyx_pw_13simplecantera_11_pybindings_12MultiReactor_9__reduce_cython__, METH_NOARGS, 0},
-  {"__setstate_cython__", (PyCFunction)__pyx_pw_13simplecantera_11_pybindings_12MultiReactor_11__setstate_cython__, METH_O, 0},
+static PyMethodDef __pyx_methods_13pyroxa_11_pybindings_MultiReactor[] = {
+  {"_dcdt", (PyCFunction)__pyx_pw_13pyroxa_11_pybindings_12MultiReactor_3_dcdt, METH_O, 0},
+  {"step", (PyCFunction)__pyx_pw_13pyroxa_11_pybindings_12MultiReactor_5step, METH_O, 0},
+  {"run", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_13pyroxa_11_pybindings_12MultiReactor_7run, METH_VARARGS|METH_KEYWORDS, 0},
+  {"__reduce_cython__", (PyCFunction)__pyx_pw_13pyroxa_11_pybindings_12MultiReactor_9__reduce_cython__, METH_NOARGS, 0},
+  {"__setstate_cython__", (PyCFunction)__pyx_pw_13pyroxa_11_pybindings_12MultiReactor_11__setstate_cython__, METH_O, 0},
   {0, 0, 0, 0}
 };
 
-static PyTypeObject __pyx_type_13simplecantera_11_pybindings_MultiReactor = {
+static PyTypeObject __pyx_type_13pyroxa_11_pybindings_MultiReactor = {
   PyVarObject_HEAD_INIT(0, 0)
-  "simplecantera._pybindings.MultiReactor", /*tp_name*/
-  sizeof(struct __pyx_obj_13simplecantera_11_pybindings_MultiReactor), /*tp_basicsize*/
+  "pyroxa._pybindings.MultiReactor", /*tp_name*/
+  sizeof(struct __pyx_obj_13pyroxa_11_pybindings_MultiReactor), /*tp_basicsize*/
   0, /*tp_itemsize*/
-  __pyx_tp_dealloc_13simplecantera_11_pybindings_MultiReactor, /*tp_dealloc*/
+  __pyx_tp_dealloc_13pyroxa_11_pybindings_MultiReactor, /*tp_dealloc*/
   #if PY_VERSION_HEX < 0x030800b4
   0, /*tp_print*/
   #endif
@@ -10555,13 +10555,13 @@ static PyTypeObject __pyx_type_13simplecantera_11_pybindings_MultiReactor = {
   0, /*tp_as_buffer*/
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE|Py_TPFLAGS_HAVE_GC, /*tp_flags*/
   0, /*tp_doc*/
-  __pyx_tp_traverse_13simplecantera_11_pybindings_MultiReactor, /*tp_traverse*/
-  __pyx_tp_clear_13simplecantera_11_pybindings_MultiReactor, /*tp_clear*/
+  __pyx_tp_traverse_13pyroxa_11_pybindings_MultiReactor, /*tp_traverse*/
+  __pyx_tp_clear_13pyroxa_11_pybindings_MultiReactor, /*tp_clear*/
   0, /*tp_richcompare*/
   0, /*tp_weaklistoffset*/
   0, /*tp_iter*/
   0, /*tp_iternext*/
-  __pyx_methods_13simplecantera_11_pybindings_MultiReactor, /*tp_methods*/
+  __pyx_methods_13pyroxa_11_pybindings_MultiReactor, /*tp_methods*/
   0, /*tp_members*/
   0, /*tp_getset*/
   0, /*tp_base*/
@@ -10571,7 +10571,7 @@ static PyTypeObject __pyx_type_13simplecantera_11_pybindings_MultiReactor = {
   0, /*tp_dictoffset*/
   0, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_13simplecantera_11_pybindings_MultiReactor, /*tp_new*/
+  __pyx_tp_new_13pyroxa_11_pybindings_MultiReactor, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -10595,7 +10595,7 @@ static PyTypeObject __pyx_type_13simplecantera_11_pybindings_MultiReactor = {
   #endif
 };
 
-static PyObject *__pyx_tp_new_13simplecantera_11_pybindings_Reactor(PyTypeObject *t, PyObject *a, PyObject *k) {
+static PyObject *__pyx_tp_new_13pyroxa_11_pybindings_Reactor(PyTypeObject *t, PyObject *a, PyObject *k) {
   PyObject *o;
   if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
     o = (*t->tp_alloc)(t, 0);
@@ -10603,14 +10603,14 @@ static PyObject *__pyx_tp_new_13simplecantera_11_pybindings_Reactor(PyTypeObject
     o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
   }
   if (unlikely(!o)) return 0;
-  if (unlikely(__pyx_pw_13simplecantera_11_pybindings_7Reactor_1__cinit__(o, a, k) < 0)) goto bad;
+  if (unlikely(__pyx_pw_13pyroxa_11_pybindings_7Reactor_1__cinit__(o, a, k) < 0)) goto bad;
   return o;
   bad:
   Py_DECREF(o); o = 0;
   return NULL;
 }
 
-static void __pyx_tp_dealloc_13simplecantera_11_pybindings_Reactor(PyObject *o) {
+static void __pyx_tp_dealloc_13pyroxa_11_pybindings_Reactor(PyObject *o) {
   #if CYTHON_USE_TP_FINALIZE
   if (unlikely(PyType_HasFeature(Py_TYPE(o), Py_TPFLAGS_HAVE_FINALIZE) && Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !__Pyx_PyObject_GC_IsFinalized(o))) {
     if (PyObject_CallFinalizerFromDealloc(o)) return;
@@ -10619,19 +10619,19 @@ static void __pyx_tp_dealloc_13simplecantera_11_pybindings_Reactor(PyObject *o) 
   (*Py_TYPE(o)->tp_free)(o);
 }
 
-static PyMethodDef __pyx_methods_13simplecantera_11_pybindings_Reactor[] = {
-  {"run", (PyCFunction)__pyx_pw_13simplecantera_11_pybindings_7Reactor_3run, METH_NOARGS, 0},
-  {"__reduce_cython__", (PyCFunction)__pyx_pw_13simplecantera_11_pybindings_7Reactor_5__reduce_cython__, METH_NOARGS, 0},
-  {"__setstate_cython__", (PyCFunction)__pyx_pw_13simplecantera_11_pybindings_7Reactor_7__setstate_cython__, METH_O, 0},
+static PyMethodDef __pyx_methods_13pyroxa_11_pybindings_Reactor[] = {
+  {"run", (PyCFunction)__pyx_pw_13pyroxa_11_pybindings_7Reactor_3run, METH_NOARGS, 0},
+  {"__reduce_cython__", (PyCFunction)__pyx_pw_13pyroxa_11_pybindings_7Reactor_5__reduce_cython__, METH_NOARGS, 0},
+  {"__setstate_cython__", (PyCFunction)__pyx_pw_13pyroxa_11_pybindings_7Reactor_7__setstate_cython__, METH_O, 0},
   {0, 0, 0, 0}
 };
 
-static PyTypeObject __pyx_type_13simplecantera_11_pybindings_Reactor = {
+static PyTypeObject __pyx_type_13pyroxa_11_pybindings_Reactor = {
   PyVarObject_HEAD_INIT(0, 0)
-  "simplecantera._pybindings.Reactor", /*tp_name*/
-  sizeof(struct __pyx_obj_13simplecantera_11_pybindings_Reactor), /*tp_basicsize*/
+  "pyroxa._pybindings.Reactor", /*tp_name*/
+  sizeof(struct __pyx_obj_13pyroxa_11_pybindings_Reactor), /*tp_basicsize*/
   0, /*tp_itemsize*/
-  __pyx_tp_dealloc_13simplecantera_11_pybindings_Reactor, /*tp_dealloc*/
+  __pyx_tp_dealloc_13pyroxa_11_pybindings_Reactor, /*tp_dealloc*/
   #if PY_VERSION_HEX < 0x030800b4
   0, /*tp_print*/
   #endif
@@ -10664,7 +10664,7 @@ static PyTypeObject __pyx_type_13simplecantera_11_pybindings_Reactor = {
   0, /*tp_weaklistoffset*/
   0, /*tp_iter*/
   0, /*tp_iternext*/
-  __pyx_methods_13simplecantera_11_pybindings_Reactor, /*tp_methods*/
+  __pyx_methods_13pyroxa_11_pybindings_Reactor, /*tp_methods*/
   0, /*tp_members*/
   0, /*tp_getset*/
   0, /*tp_base*/
@@ -10674,7 +10674,7 @@ static PyTypeObject __pyx_type_13simplecantera_11_pybindings_Reactor = {
   0, /*tp_dictoffset*/
   0, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_13simplecantera_11_pybindings_Reactor, /*tp_new*/
+  __pyx_tp_new_13pyroxa_11_pybindings_Reactor, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -10852,8 +10852,8 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_shape, __pyx_k_shape, sizeof(__pyx_k_shape), 0, 0, 1, 1},
   {&__pyx_n_s_sim, __pyx_k_sim, sizeof(__pyx_k_sim), 0, 0, 1, 1},
   {&__pyx_n_u_sim, __pyx_k_sim, sizeof(__pyx_k_sim), 0, 1, 0, 1},
-  {&__pyx_n_s_simplecantera__pybindings, __pyx_k_simplecantera__pybindings, sizeof(__pyx_k_simplecantera__pybindings), 0, 0, 1, 1},
-  {&__pyx_kp_s_simplecantera_pybindings_pyx, __pyx_k_simplecantera_pybindings_pyx, sizeof(__pyx_k_simplecantera_pybindings_pyx), 0, 0, 1, 0},
+  {&__pyx_n_s_pyroxa__pybindings, __pyx_k_pyroxa__pybindings, sizeof(__pyx_k_pyroxa__pybindings), 0, 0, 1, 1},
+  {&__pyx_kp_s_pyroxa_pybindings_pyx, __pyx_k_pyroxa_pybindings_pyx, sizeof(__pyx_k_pyroxa_pybindings_pyx), 0, 0, 1, 0},
   {&__pyx_kp_u_simulation_failed_or_insufficien, __pyx_k_simulation_failed_or_insufficien, sizeof(__pyx_k_simulation_failed_or_insufficien), 0, 1, 0, 0},
   {&__pyx_n_s_spec, __pyx_k_spec, sizeof(__pyx_k_spec), 0, 0, 1, 1},
   {&__pyx_kp_u_spec_must_be_a_dict, __pyx_k_spec_must_be_a_dict, sizeof(__pyx_k_spec_must_be_a_dict), 0, 1, 0, 0},
@@ -10966,7 +10966,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__8);
   __Pyx_GIVEREF(__pyx_tuple__8);
 
-  /* "simplecantera/pybindings.pyx":162
+  /* "pyroxa/pybindings.pyx":162
  * 			if Aout: free(Aout)
  * 			if Bout: free(Bout)
  * 			raise MemoryError("allocation failed")             # <<<<<<<<<<<<<<
@@ -10977,7 +10977,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__9);
   __Pyx_GIVEREF(__pyx_tuple__9);
 
-  /* "simplecantera/pybindings.pyx":166
+  /* "pyroxa/pybindings.pyx":166
  * 		written = simulate_reactor(self.kf, self.kr, self.A0, self.B0, self.time_span, self.dt, times, Aout, Bout, max_len)
  * 		if written <= 0:
  * 			raise RuntimeError("simulation failed or insufficient buffer size")             # <<<<<<<<<<<<<<
@@ -11007,7 +11007,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__12);
   __Pyx_GIVEREF(__pyx_tuple__12);
 
-  /* "simplecantera/pybindings.pyx":211
+  /* "pyroxa/pybindings.pyx":211
  * 	# pointers for buffers will be allocated with malloc below
  * 	if not isinstance(spec, dict):
  * 		raise TypeError('spec must be a dict')             # <<<<<<<<<<<<<<
@@ -11018,7 +11018,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__13);
   __Pyx_GIVEREF(__pyx_tuple__13);
 
-  /* "simplecantera/pybindings.pyx":229
+  /* "pyroxa/pybindings.pyx":229
  * 				if kf_ptr: free(kf_ptr)
  * 				if kr_ptr: free(kr_ptr)
  * 				raise MemoryError('allocation failed for kf/kr')             # <<<<<<<<<<<<<<
@@ -11029,7 +11029,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__14);
   __Pyx_GIVEREF(__pyx_tuple__14);
 
-  /* "simplecantera/pybindings.pyx":231
+  /* "pyroxa/pybindings.pyx":231
  * 				raise MemoryError('allocation failed for kf/kr')
  * 			for i in range(M):
  * 				kf_ptr[i] = float(rxns[i].get('kf', 1.0))             # <<<<<<<<<<<<<<
@@ -11040,7 +11040,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__15);
   __Pyx_GIVEREF(__pyx_tuple__15);
 
-  /* "simplecantera/pybindings.pyx":232
+  /* "pyroxa/pybindings.pyx":232
  * 			for i in range(M):
  * 				kf_ptr[i] = float(rxns[i].get('kf', 1.0))
  * 				kr_ptr[i] = float(rxns[i].get('kr', 0.0))             # <<<<<<<<<<<<<<
@@ -11051,7 +11051,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__16);
   __Pyx_GIVEREF(__pyx_tuple__16);
 
-  /* "simplecantera/pybindings.pyx":267
+  /* "pyroxa/pybindings.pyx":267
  * 				if c_reac_idx: free(c_reac_idx)
  * 				if c_reac_nu: free(c_reac_nu)
  * 				raise MemoryError('allocation failed for reactants')             # <<<<<<<<<<<<<<
@@ -11062,7 +11062,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__17);
   __Pyx_GIVEREF(__pyx_tuple__17);
 
-  /* "simplecantera/pybindings.pyx":285
+  /* "pyroxa/pybindings.pyx":285
  * 				if c_prod_idx: free(c_prod_idx)
  * 				if c_prod_nu: free(c_prod_nu)
  * 				raise MemoryError('allocation failed for products')             # <<<<<<<<<<<<<<
@@ -11073,7 +11073,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__18);
   __Pyx_GIVEREF(__pyx_tuple__18);
 
-  /* "simplecantera/pybindings.pyx":301
+  /* "pyroxa/pybindings.pyx":301
  * 			c_conc0 = <double*>malloc(N * sizeof(double))
  * 			if not c_conc0:
  * 				raise MemoryError('allocation failed for conc0')             # <<<<<<<<<<<<<<
@@ -11084,7 +11084,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__19);
   __Pyx_GIVEREF(__pyx_tuple__19);
 
-  /* "simplecantera/pybindings.pyx":307
+  /* "pyroxa/pybindings.pyx":307
  * 			c_conc0 = <double*>0
  * 		# output buffers
  * 		nsteps = int(round(float(sim.get('time_span', 10.0)) / float(sim.get('time_step', 0.01))))             # <<<<<<<<<<<<<<
@@ -11098,7 +11098,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__21);
   __Pyx_GIVEREF(__pyx_tuple__21);
 
-  /* "simplecantera/pybindings.pyx":323
+  /* "pyroxa/pybindings.pyx":323
  * 			if c_prod_off: free(c_prod_off)
  * 			if c_conc0 and c_conc0 != <double*>0: free(c_conc0)
  * 			raise MemoryError('allocation failed for output buffers')             # <<<<<<<<<<<<<<
@@ -11109,7 +11109,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__22);
   __Pyx_GIVEREF(__pyx_tuple__22);
 
-  /* "simplecantera/pybindings.pyx":332
+  /* "pyroxa/pybindings.pyx":332
  * 							 <double*>times_buf, <double*>conc_out_flat, max_len)
  * 		if written <= 0:
  * 			raise RuntimeError('multi-reactor C++ simulation failed')             # <<<<<<<<<<<<<<
@@ -11120,7 +11120,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__23);
   __Pyx_GIVEREF(__pyx_tuple__23);
 
-  /* "simplecantera/pybindings.pyx":348
+  /* "pyroxa/pybindings.pyx":348
  * 	else:
  * 		kf = float(reaction.get('kf', 1.0))
  * 		kr = float(reaction.get('kr', 0.5))             # <<<<<<<<<<<<<<
@@ -11131,7 +11131,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__24);
   __Pyx_GIVEREF(__pyx_tuple__24);
 
-  /* "simplecantera/pybindings.pyx":350
+  /* "pyroxa/pybindings.pyx":350
  * 		kr = float(reaction.get('kr', 0.5))
  * 		conc = initial.get('conc', {})
  * 		A0 = float(conc.get('A', 1.0))             # <<<<<<<<<<<<<<
@@ -11142,7 +11142,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__25);
   __Pyx_GIVEREF(__pyx_tuple__25);
 
-  /* "simplecantera/pybindings.pyx":351
+  /* "pyroxa/pybindings.pyx":351
  * 		conc = initial.get('conc', {})
  * 		A0 = float(conc.get('A', 1.0))
  * 		B0 = float(conc.get('B', 0.0))             # <<<<<<<<<<<<<<
@@ -11175,7 +11175,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__28);
   __Pyx_GIVEREF(__pyx_tuple__28);
 
-  /* "simplecantera/pybindings.pyx":186
+  /* "pyroxa/pybindings.pyx":186
  * 
  * 
  * def run_simulation_cpp(spec):             # <<<<<<<<<<<<<<
@@ -11185,7 +11185,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __pyx_tuple__29 = PyTuple_Pack(59, __pyx_n_s_spec, __pyx_n_s_N, __pyx_n_s_M, __pyx_n_s_nsteps, __pyx_n_s_npts, __pyx_n_s_max_len, __pyx_n_s_written, __pyx_n_s_kf_ptr, __pyx_n_s_kr_ptr, __pyx_n_s_i, __pyx_n_s_total_reac, __pyx_n_s_total_prod, __pyx_n_s_c_reac_idx, __pyx_n_s_c_reac_nu, __pyx_n_s_c_reac_off, __pyx_n_s_c_prod_idx, __pyx_n_s_c_prod_nu, __pyx_n_s_c_prod_off, __pyx_n_s_c_conc0, __pyx_n_s_times_buf, __pyx_n_s_conc_out_flat, __pyx_n_s_reaction, __pyx_n_s_initial, __pyx_n_s_sim, __pyx_n_s_species, __pyx_n_s_rxns, __pyx_n_s_reac_idx_list, __pyx_n_s_reac_nu_list, __pyx_n_s_reac_off, __pyx_n_s_prod_idx_list, __pyx_n_s_prod_nu_list, __pyx_n_s_prod_off, __pyx_n_s_r, __pyx_n_s_reactants, __pyx_n_s_products, __pyx_n_s_s, __pyx_n_s_nu, __pyx_n_s_kf_c, __pyx_n_s_kr_c, __pyx_n_s_ctypes, __pyx_n_s_conc0_py, __pyx_n_s_tarr, __pyx_n_s_carr, __pyx_n_s_j, __pyx_n_s_times_py, __pyx_n_s_traj, __pyx_n_s_kf, __pyx_n_s_kr, __pyx_n_s_conc, __pyx_n_s_A0, __pyx_n_s_B0, __pyx_n_s_time_span, __pyx_n_s_dt, __pyx_n_s_rxn, __pyx_n_s_reactor, __pyx_n_s_s, __pyx_n_s_i, __pyx_n_s_i, __pyx_n_s_j); if (unlikely(!__pyx_tuple__29)) __PYX_ERR(1, 186, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__29);
   __Pyx_GIVEREF(__pyx_tuple__29);
-  __pyx_codeobj__30 = (PyObject*)__Pyx_PyCode_New(1, 0, 59, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__29, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_simplecantera_pybindings_pyx, __pyx_n_s_run_simulation_cpp, 186, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__30)) __PYX_ERR(1, 186, __pyx_L1_error)
+  __pyx_codeobj__30 = (PyObject*)__Pyx_PyCode_New(1, 0, 59, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__29, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_pyroxa_pybindings_pyx, __pyx_n_s_run_simulation_cpp, 186, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__30)) __PYX_ERR(1, 186, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -11248,62 +11248,62 @@ static int __Pyx_modinit_type_init_code(void) {
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__Pyx_modinit_type_init_code", 0);
   /*--- Type init code ---*/
-  if (PyType_Ready(&__pyx_type_13simplecantera_11_pybindings_Thermodynamics) < 0) __PYX_ERR(1, 26, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_13pyroxa_11_pybindings_Thermodynamics) < 0) __PYX_ERR(1, 26, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
-  __pyx_type_13simplecantera_11_pybindings_Thermodynamics.tp_print = 0;
+  __pyx_type_13pyroxa_11_pybindings_Thermodynamics.tp_print = 0;
   #endif
-  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_13simplecantera_11_pybindings_Thermodynamics.tp_dictoffset && __pyx_type_13simplecantera_11_pybindings_Thermodynamics.tp_getattro == PyObject_GenericGetAttr)) {
-    __pyx_type_13simplecantera_11_pybindings_Thermodynamics.tp_getattro = __Pyx_PyObject_GenericGetAttr;
+  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_13pyroxa_11_pybindings_Thermodynamics.tp_dictoffset && __pyx_type_13pyroxa_11_pybindings_Thermodynamics.tp_getattro == PyObject_GenericGetAttr)) {
+    __pyx_type_13pyroxa_11_pybindings_Thermodynamics.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_Thermodynamics, (PyObject *)&__pyx_type_13simplecantera_11_pybindings_Thermodynamics) < 0) __PYX_ERR(1, 26, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_13simplecantera_11_pybindings_Thermodynamics) < 0) __PYX_ERR(1, 26, __pyx_L1_error)
-  __pyx_ptype_13simplecantera_11_pybindings_Thermodynamics = &__pyx_type_13simplecantera_11_pybindings_Thermodynamics;
-  if (PyType_Ready(&__pyx_type_13simplecantera_11_pybindings_Reaction) < 0) __PYX_ERR(1, 39, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_Thermodynamics, (PyObject *)&__pyx_type_13pyroxa_11_pybindings_Thermodynamics) < 0) __PYX_ERR(1, 26, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_13pyroxa_11_pybindings_Thermodynamics) < 0) __PYX_ERR(1, 26, __pyx_L1_error)
+  __pyx_ptype_13pyroxa_11_pybindings_Thermodynamics = &__pyx_type_13pyroxa_11_pybindings_Thermodynamics;
+  if (PyType_Ready(&__pyx_type_13pyroxa_11_pybindings_Reaction) < 0) __PYX_ERR(1, 39, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
-  __pyx_type_13simplecantera_11_pybindings_Reaction.tp_print = 0;
+  __pyx_type_13pyroxa_11_pybindings_Reaction.tp_print = 0;
   #endif
-  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_13simplecantera_11_pybindings_Reaction.tp_dictoffset && __pyx_type_13simplecantera_11_pybindings_Reaction.tp_getattro == PyObject_GenericGetAttr)) {
-    __pyx_type_13simplecantera_11_pybindings_Reaction.tp_getattro = __Pyx_PyObject_GenericGetAttr;
+  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_13pyroxa_11_pybindings_Reaction.tp_dictoffset && __pyx_type_13pyroxa_11_pybindings_Reaction.tp_getattro == PyObject_GenericGetAttr)) {
+    __pyx_type_13pyroxa_11_pybindings_Reaction.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_Reaction, (PyObject *)&__pyx_type_13simplecantera_11_pybindings_Reaction) < 0) __PYX_ERR(1, 39, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_13simplecantera_11_pybindings_Reaction) < 0) __PYX_ERR(1, 39, __pyx_L1_error)
-  __pyx_ptype_13simplecantera_11_pybindings_Reaction = &__pyx_type_13simplecantera_11_pybindings_Reaction;
-  __pyx_vtabptr_13simplecantera_11_pybindings_ReactionMulti = &__pyx_vtable_13simplecantera_11_pybindings_ReactionMulti;
-  __pyx_vtable_13simplecantera_11_pybindings_ReactionMulti.rate = (double (*)(struct __pyx_obj_13simplecantera_11_pybindings_ReactionMulti *, PyObject *, int __pyx_skip_dispatch))__pyx_f_13simplecantera_11_pybindings_13ReactionMulti_rate;
-  if (PyType_Ready(&__pyx_type_13simplecantera_11_pybindings_ReactionMulti) < 0) __PYX_ERR(1, 51, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_Reaction, (PyObject *)&__pyx_type_13pyroxa_11_pybindings_Reaction) < 0) __PYX_ERR(1, 39, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_13pyroxa_11_pybindings_Reaction) < 0) __PYX_ERR(1, 39, __pyx_L1_error)
+  __pyx_ptype_13pyroxa_11_pybindings_Reaction = &__pyx_type_13pyroxa_11_pybindings_Reaction;
+  __pyx_vtabptr_13pyroxa_11_pybindings_ReactionMulti = &__pyx_vtable_13pyroxa_11_pybindings_ReactionMulti;
+  __pyx_vtable_13pyroxa_11_pybindings_ReactionMulti.rate = (double (*)(struct __pyx_obj_13pyroxa_11_pybindings_ReactionMulti *, PyObject *, int __pyx_skip_dispatch))__pyx_f_13pyroxa_11_pybindings_13ReactionMulti_rate;
+  if (PyType_Ready(&__pyx_type_13pyroxa_11_pybindings_ReactionMulti) < 0) __PYX_ERR(1, 51, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
-  __pyx_type_13simplecantera_11_pybindings_ReactionMulti.tp_print = 0;
+  __pyx_type_13pyroxa_11_pybindings_ReactionMulti.tp_print = 0;
   #endif
-  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_13simplecantera_11_pybindings_ReactionMulti.tp_dictoffset && __pyx_type_13simplecantera_11_pybindings_ReactionMulti.tp_getattro == PyObject_GenericGetAttr)) {
-    __pyx_type_13simplecantera_11_pybindings_ReactionMulti.tp_getattro = __Pyx_PyObject_GenericGetAttr;
+  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_13pyroxa_11_pybindings_ReactionMulti.tp_dictoffset && __pyx_type_13pyroxa_11_pybindings_ReactionMulti.tp_getattro == PyObject_GenericGetAttr)) {
+    __pyx_type_13pyroxa_11_pybindings_ReactionMulti.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (__Pyx_SetVtable(__pyx_type_13simplecantera_11_pybindings_ReactionMulti.tp_dict, __pyx_vtabptr_13simplecantera_11_pybindings_ReactionMulti) < 0) __PYX_ERR(1, 51, __pyx_L1_error)
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_ReactionMulti, (PyObject *)&__pyx_type_13simplecantera_11_pybindings_ReactionMulti) < 0) __PYX_ERR(1, 51, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_13simplecantera_11_pybindings_ReactionMulti) < 0) __PYX_ERR(1, 51, __pyx_L1_error)
-  __pyx_ptype_13simplecantera_11_pybindings_ReactionMulti = &__pyx_type_13simplecantera_11_pybindings_ReactionMulti;
-  __pyx_vtabptr_13simplecantera_11_pybindings_MultiReactor = &__pyx_vtable_13simplecantera_11_pybindings_MultiReactor;
-  __pyx_vtable_13simplecantera_11_pybindings_MultiReactor._dcdt = (PyObject *(*)(struct __pyx_obj_13simplecantera_11_pybindings_MultiReactor *, PyObject *, int __pyx_skip_dispatch))__pyx_f_13simplecantera_11_pybindings_12MultiReactor__dcdt;
-  if (PyType_Ready(&__pyx_type_13simplecantera_11_pybindings_MultiReactor) < 0) __PYX_ERR(1, 84, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_type_13pyroxa_11_pybindings_ReactionMulti.tp_dict, __pyx_vtabptr_13pyroxa_11_pybindings_ReactionMulti) < 0) __PYX_ERR(1, 51, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_ReactionMulti, (PyObject *)&__pyx_type_13pyroxa_11_pybindings_ReactionMulti) < 0) __PYX_ERR(1, 51, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_13pyroxa_11_pybindings_ReactionMulti) < 0) __PYX_ERR(1, 51, __pyx_L1_error)
+  __pyx_ptype_13pyroxa_11_pybindings_ReactionMulti = &__pyx_type_13pyroxa_11_pybindings_ReactionMulti;
+  __pyx_vtabptr_13pyroxa_11_pybindings_MultiReactor = &__pyx_vtable_13pyroxa_11_pybindings_MultiReactor;
+  __pyx_vtable_13pyroxa_11_pybindings_MultiReactor._dcdt = (PyObject *(*)(struct __pyx_obj_13pyroxa_11_pybindings_MultiReactor *, PyObject *, int __pyx_skip_dispatch))__pyx_f_13pyroxa_11_pybindings_12MultiReactor__dcdt;
+  if (PyType_Ready(&__pyx_type_13pyroxa_11_pybindings_MultiReactor) < 0) __PYX_ERR(1, 84, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
-  __pyx_type_13simplecantera_11_pybindings_MultiReactor.tp_print = 0;
+  __pyx_type_13pyroxa_11_pybindings_MultiReactor.tp_print = 0;
   #endif
-  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_13simplecantera_11_pybindings_MultiReactor.tp_dictoffset && __pyx_type_13simplecantera_11_pybindings_MultiReactor.tp_getattro == PyObject_GenericGetAttr)) {
-    __pyx_type_13simplecantera_11_pybindings_MultiReactor.tp_getattro = __Pyx_PyObject_GenericGetAttr;
+  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_13pyroxa_11_pybindings_MultiReactor.tp_dictoffset && __pyx_type_13pyroxa_11_pybindings_MultiReactor.tp_getattro == PyObject_GenericGetAttr)) {
+    __pyx_type_13pyroxa_11_pybindings_MultiReactor.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (__Pyx_SetVtable(__pyx_type_13simplecantera_11_pybindings_MultiReactor.tp_dict, __pyx_vtabptr_13simplecantera_11_pybindings_MultiReactor) < 0) __PYX_ERR(1, 84, __pyx_L1_error)
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_MultiReactor, (PyObject *)&__pyx_type_13simplecantera_11_pybindings_MultiReactor) < 0) __PYX_ERR(1, 84, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_13simplecantera_11_pybindings_MultiReactor) < 0) __PYX_ERR(1, 84, __pyx_L1_error)
-  __pyx_ptype_13simplecantera_11_pybindings_MultiReactor = &__pyx_type_13simplecantera_11_pybindings_MultiReactor;
-  if (PyType_Ready(&__pyx_type_13simplecantera_11_pybindings_Reactor) < 0) __PYX_ERR(1, 135, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_type_13pyroxa_11_pybindings_MultiReactor.tp_dict, __pyx_vtabptr_13pyroxa_11_pybindings_MultiReactor) < 0) __PYX_ERR(1, 84, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_MultiReactor, (PyObject *)&__pyx_type_13pyroxa_11_pybindings_MultiReactor) < 0) __PYX_ERR(1, 84, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_13pyroxa_11_pybindings_MultiReactor) < 0) __PYX_ERR(1, 84, __pyx_L1_error)
+  __pyx_ptype_13pyroxa_11_pybindings_MultiReactor = &__pyx_type_13pyroxa_11_pybindings_MultiReactor;
+  if (PyType_Ready(&__pyx_type_13pyroxa_11_pybindings_Reactor) < 0) __PYX_ERR(1, 135, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
-  __pyx_type_13simplecantera_11_pybindings_Reactor.tp_print = 0;
+  __pyx_type_13pyroxa_11_pybindings_Reactor.tp_print = 0;
   #endif
-  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_13simplecantera_11_pybindings_Reactor.tp_dictoffset && __pyx_type_13simplecantera_11_pybindings_Reactor.tp_getattro == PyObject_GenericGetAttr)) {
-    __pyx_type_13simplecantera_11_pybindings_Reactor.tp_getattro = __Pyx_PyObject_GenericGetAttr;
+  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_13pyroxa_11_pybindings_Reactor.tp_dictoffset && __pyx_type_13pyroxa_11_pybindings_Reactor.tp_getattro == PyObject_GenericGetAttr)) {
+    __pyx_type_13pyroxa_11_pybindings_Reactor.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_Reactor, (PyObject *)&__pyx_type_13simplecantera_11_pybindings_Reactor) < 0) __PYX_ERR(1, 135, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_13simplecantera_11_pybindings_Reactor) < 0) __PYX_ERR(1, 135, __pyx_L1_error)
-  __pyx_ptype_13simplecantera_11_pybindings_Reactor = &__pyx_type_13simplecantera_11_pybindings_Reactor;
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_Reactor, (PyObject *)&__pyx_type_13pyroxa_11_pybindings_Reactor) < 0) __PYX_ERR(1, 135, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_13pyroxa_11_pybindings_Reactor) < 0) __PYX_ERR(1, 135, __pyx_L1_error)
+  __pyx_ptype_13pyroxa_11_pybindings_Reactor = &__pyx_type_13pyroxa_11_pybindings_Reactor;
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -11543,14 +11543,14 @@ if (!__Pyx_RefNanny) {
   #if PY_MAJOR_VERSION < 3 && (__PYX_DEFAULT_STRING_ENCODING_IS_ASCII || __PYX_DEFAULT_STRING_ENCODING_IS_DEFAULT)
   if (__Pyx_init_sys_getdefaultencoding_params() < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   #endif
-  if (__pyx_module_is_main_simplecantera___pybindings) {
+  if (__pyx_module_is_main_pyroxa___pybindings) {
     if (PyObject_SetAttr(__pyx_m, __pyx_n_s_name, __pyx_n_s_main) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   }
   #if PY_MAJOR_VERSION >= 3
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(1, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "simplecantera._pybindings")) {
-      if (unlikely(PyDict_SetItemString(modules, "simplecantera._pybindings", __pyx_m) < 0)) __PYX_ERR(1, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "pyroxa._pybindings")) {
+      if (unlikely(PyDict_SetItemString(modules, "pyroxa._pybindings", __pyx_m) < 0)) __PYX_ERR(1, 1, __pyx_L1_error)
     }
   }
   #endif
@@ -11571,7 +11571,7 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_patch_abc() < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   #endif
 
-  /* "simplecantera/pybindings.pyx":21
+  /* "pyroxa/pybindings.pyx":21
  * 							   double* times, double* conc_out_flat, int max_len)
  * 
  * import numpy as np             # <<<<<<<<<<<<<<
@@ -11583,7 +11583,7 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_np, __pyx_t_1) < 0) __PYX_ERR(1, 21, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "simplecantera/pybindings.pyx":23
+  /* "pyroxa/pybindings.pyx":23
  * import numpy as np
  * cimport numpy as np
  * _HAS_NUMPY = True             # <<<<<<<<<<<<<<
@@ -11592,19 +11592,19 @@ if (!__Pyx_RefNanny) {
  */
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_HAS_NUMPY, Py_True) < 0) __PYX_ERR(1, 23, __pyx_L1_error)
 
-  /* "simplecantera/pybindings.pyx":186
+  /* "pyroxa/pybindings.pyx":186
  * 
  * 
  * def run_simulation_cpp(spec):             # <<<<<<<<<<<<<<
  * 	"""High-level helper that takes a Python dict spec and runs the C++ reactor.
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_13simplecantera_11_pybindings_1run_simulation_cpp, NULL, __pyx_n_s_simplecantera__pybindings); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 186, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_13pyroxa_11_pybindings_1run_simulation_cpp, NULL, __pyx_n_s_pyroxa__pybindings); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 186, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_run_simulation_cpp, __pyx_t_1) < 0) __PYX_ERR(1, 186, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "simplecantera/pybindings.pyx":1
+  /* "pyroxa/pybindings.pyx":1
  * # distutils: language = c++             # <<<<<<<<<<<<<<
  * from libc.stdlib cimport malloc, free
  * from cpython.ref cimport PyObject
@@ -11629,11 +11629,11 @@ if (!__Pyx_RefNanny) {
   __Pyx_XDECREF(__pyx_t_1);
   if (__pyx_m) {
     if (__pyx_d) {
-      __Pyx_AddTraceback("init simplecantera._pybindings", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init pyroxa._pybindings", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     Py_CLEAR(__pyx_m);
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init simplecantera._pybindings");
+    PyErr_SetString(PyExc_ImportError, "init pyroxa._pybindings");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();

@@ -1,5 +1,5 @@
 """Simple test to verify equilibrium concentrations for A <=> B"""
-from simplecantera import run_simulation
+from pyroxa import run_simulation
 
 
 def test_equilibrium():

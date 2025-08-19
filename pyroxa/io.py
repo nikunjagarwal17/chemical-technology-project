@@ -1,4 +1,4 @@
-"""I/O helpers for SimpleCantera MVP: YAML/CTI spec loader."""
+"""I/O helpers for Pyroxa MVP: YAML/CTI spec loader."""
 import yaml
 import os
 

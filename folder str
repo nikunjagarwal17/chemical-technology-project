@@ -13,7 +13,7 @@ Root (project root)
   - Purpose: notes about Windows wheel installation issues and guidance (developer-maintained).
 
 Top-level source and packaging folders
-- simplecantera/
+- pyroxa/
   - Purpose: Python package that provides the public API.
   - Key files:
     - __init__.py: imports compiled bindings if available, otherwise falls back to pure-Python implementation.
@@ -38,12 +38,12 @@ Build, CI and packaging
 - CI-related files (not always visible here): GitHub Actions workflows using cibuildwheel to produce manylinux/macos/windows wheels.
 - Packaging strategy:
   - Pure-Python fallback: keep `purepy.py` fully functional so users can `pip install` from source without C toolchain.
-  - Compiled path: C++ core in `src/` + Cython wrapper in `simplecantera/pybindings.pyx`. `pyproject.toml` contains build-system requirements (numpy, Cython pinned) so isolated builds regenerate wrappers with a compatible Cython.
+  - Compiled path: C++ core in `src/` + Cython wrapper in `pyroxa/pybindings.pyx`. `pyproject.toml` contains build-system requirements (numpy, Cython pinned) so isolated builds regenerate wrappers with a compatible Cython.
   - `setup.py` contains conditional logic to cythonize when appropriate and add NumPy include dirs.
 
 Modular architecture and how it works
 - Layered design:
-  1. Public Python API (`simplecantera.__init__`) exports user-facing classes/functions.
+  1. Public Python API (`pyroxa.__init__`) exports user-facing classes/functions.
   2. High-level implementation: `purepy.py` provides models and integrators in pure Python. It is the canonical fallback and reference implementation.
   3. Performance core (optional): `src/core.cpp` implements faster integrators and vectorized operations. The C++ functions are exposed to Python via Cython (`pybindings.pyx`).
   4. IO & specs: YAML-based specs live in `examples/` and `io.py` contains helpers to load those specs into the builder (`build_from_dict`).
@@ -51,7 +51,7 @@ Modular architecture and how it works
 
 How components interact at runtime
 - Importing the package:
-  - `simplecantera.__init__` attempts to import compiled `_pybindings` (C-extension). If present, it will expose the compiled core. If not present, it imports and uses `purepy.py`.
+  - `pyroxa.__init__` attempts to import compiled `_pybindings` (C-extension). If present, it will expose the compiled core. If not present, it imports and uses `purepy.py`.
 - Running an example:
   - Example script loads YAML spec -> uses `build_from_dict` to create reactor(s) and reactions -> calls `reactor.run(...)` to integrate -> writes CSV / plots results.
 

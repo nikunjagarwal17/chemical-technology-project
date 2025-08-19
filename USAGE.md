@@ -1,4 +1,4 @@
-Usage guide — SimpleCantera (local/pure-Python)
+Usage guide — Pyroxa (local/pure-Python)
 
 Purpose
 -------
@@ -15,7 +15,7 @@ Quick examples
 - Import and run a simple well-mixed reactor::
 
 ```python
-from simplecantera import Reaction, WellMixedReactor
+from pyroxa import Reaction, WellMixedReactor
 rxn = Reaction(kf=1.0, kr=0.5)
 r = WellMixedReactor(rxn, A0=1.0, B0=0.0)
 times, traj = r.run(1.0, 0.1)
@@ -26,7 +26,7 @@ print('trajectory last:', traj[-1])
 - Use the high-level `build_from_dict` runner for spec-driven runs:
 
 ```python
-from simplecantera.purepy import build_from_dict, run_simulation_from_dict
+from pyroxa.purepy import build_from_dict, run_simulation_from_dict
 spec = {
   'reaction': {'kf': 1.0, 'kr': 0.5},
   'initial': {'conc': {'A': 1.0, 'B': 0.0}},
@@ -48,8 +48,8 @@ When you need more speed
 
 Files of interest
 -----------------
-- `simplecantera/purepy.py` — pure-Python implementation.
-- `simplecantera/pybindings.pyx` — Cython binding source (used for compiled extension).
+- `pyroxa/purepy.py` — pure-Python implementation.
+- `pyroxa/pybindings.pyx` — Cython binding source (used for compiled extension).
 - `src/core.cpp` / `src/core.h` — C++ numerical core.
 
 Troubleshooting

@@ -1,5 +1,5 @@
 include README.md
 include requirements.txt
-recursive-include simplecantera *
+recursive-include pyroxa *
 recursive-include examples *
 recursive-include tests *

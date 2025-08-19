@@ -1,4 +1,4 @@
-SimpleCantera — Full usage & developer documentation
+Pyroxa — Full usage & developer documentation
 =====================================================
 
 This document explains every line of `USAGE.md`, describes the public API and features, shows all common usage combinations with examples, and provides concrete steps to customize functions and rebuild the project.
@@ -20,7 +20,7 @@ Below each original line from `USAGE.md` is shown (quoted) followed by a plain-E
   - Introduces a Python snippet showing how to import types from the package and run a reaction simulation.
 
 - The Python snippet:
-  - `from simplecantera import Reaction, WellMixedReactor` — imports the two classes used in the simple example.
+  - `from pyroxa import Reaction, WellMixedReactor` — imports the two classes used in the simple example.
   - `rxn = Reaction(kf=1.0, kr=0.5)` — creates a reversible reaction with forward rate constant `kf` and reverse `kr`.
   - `r = WellMixedReactor(rxn, A0=1.0, B0=0.0)` — constructs a reactor using the reaction `rxn` and initial concentrations `A0`, `B0` (defaults exist if omitted).
   - `times, traj = r.run(1.0, 0.1)` — runs the reactor from t=0 to t=1.0 with time step 0.1; returns `times` list and `traj` list of concentration states.
@@ -39,14 +39,14 @@ Below each original line from `USAGE.md` is shown (quoted) followed by a plain-E
   - Explains that the project contains a compiled C++ core and Cython bindings for performance, and points to `DEV.md` for build notes.
 
 - "Files of interest"
-  - Points to the main source files: `simplecantera/purepy.py`, `simplecantera/pybindings.pyx`, and `src/core.cpp`.
+  - Points to the main source files: `pyroxa/purepy.py`, `pyroxa/pybindings.pyx`, and `src/core.cpp`.
 
 - "Troubleshooting"
   - Advises to consult `DEV.md` if you encounter build or linker errors.
 
 2) Public API reference and behavior
 ------------------------------------
-This section documents the classes, functions and how to use them. All code references are in `simplecantera/purepy.py` (falling back if compiled extension not present).
+This section documents the classes, functions and how to use them. All code references are in `pyroxa/purepy.py` (falling back if compiled extension not present).
 
 Thermodynamics
 ~~~~~~~~~~~~~~
@@ -201,7 +201,7 @@ Examples of combinations (YAML snippets)
 --------------------------------------------------------
 - Run a WellMixed reactor (pure-Python):
   ```python
-  from simplecantera import Reaction, WellMixedReactor
+  from pyroxa import Reaction, WellMixedReactor
   rxn = Reaction(1.0, 0.5)
   r = WellMixedReactor(rxn, A0=1.0, B0=0.0)
   times, traj = r.run(2.0, 0.1)
@@ -211,7 +211,7 @@ Examples of combinations (YAML snippets)
 
 - Multi-species, using builder:
   ```python
-  from simplecantera.purepy import build_from_dict
+  from pyroxa.purepy import build_from_dict
   spec = { ... 'species': [...], 'reactions': [...] }
   reactor, sim = build_from_dict(spec)
   times, traj = reactor.run(sim['time_span'], sim['time_step'])
@@ -232,7 +232,7 @@ Goal: modify reaction kinetics, add a new integrator, or add a reactor type.
 
 A. Changing reaction kinetics (fast path)
 - Files:
-  - `simplecantera/purepy.py` — edit `Reaction.rate()` or add a new `Reaction` subclass.
+  - `pyroxa/purepy.py` — edit `Reaction.rate()` or add a new `Reaction` subclass.
 
 - Steps:
   1. Edit the `Reaction.rate()` method to the desired form (for example include a temperature dependence).
@@ -245,7 +245,7 @@ A. Changing reaction kinetics (fast path)
 
 B. Adding a new reactor type
 - Files to modify/add:
-  - `simplecantera/purepy.py` — add a class `MyReactor` that implements `step(self, dt)` and `run(self, time_span, time_step)`.
+  - `pyroxa/purepy.py` — add a class `MyReactor` that implements `step(self, dt)` and `run(self, time_span, time_step)`.
   - Optionally add builder logic in `build_from_dict()` to accept `system: 'MyReactor'`.
   - Add tests in `tests/` validating behavior.
 
@@ -260,8 +260,8 @@ B. Adding a new reactor type
 
 C. Changing numerical integrator or adding adaptive options
 - Files:
-  - `simplecantera/purepy.py` for Python-only changes, or
-  - `src/core.cpp` and `simplecantera/pybindings.pyx` if you want a compiled high-performance integrator.
+  - `pyroxa/purepy.py` for Python-only changes, or
+  - `src/core.cpp` and `pyroxa/pybindings.pyx` if you want a compiled high-performance integrator.
 
 - Steps for Python-only integrator changes:
   1. Implement new integrator function (e.g., an implicit method) inside `purepy.py` or in a new module.
@@ -270,14 +270,14 @@ C. Changing numerical integrator or adding adaptive options
 
 - Steps to add compiled integrator:
   1. Implement the integrator in C++ (`src/core.cpp`) and declare it in `src/core.h`.
-  2. Update `simplecantera/pybindings.pyx` to expose the function to Python (or write a thin wrapper class).
+  2. Update `pyroxa/pybindings.pyx` to expose the function to Python (or write a thin wrapper class).
   3. Rebuild using CI or locally (see `DEV.md`).
 
 - Effects:
   - Switching integrators may change stability and accuracy; add tests and tune tolerances.
 
 D. Editing Cython / building compiled extension
-- Files commonly edited: `simplecantera/pybindings.pyx`, `setup.py`, `pyproject.toml`, `src/core.cpp`.
+- Files commonly edited: `pyroxa/pybindings.pyx`, `setup.py`, `pyproject.toml`, `src/core.cpp`.
 - Steps:
   1. Edit `.pyx` or `src/core.cpp`.
   2. If modifying Cython signatures, regenerate C++ by running `python setup.py build_ext --inplace` (locally) or rely on CI to cythonize.
