@@ -29,7 +29,7 @@ jobs:
           python -m build -w
       - name: List built wheels
         run: |
-          echo "Wheels in dist:" && ls -la dist || true
+          python -c "import glob,sys; print('Wheels in dist:'); print(glob.glob('dist/*.whl'))"
       - name: Upload per-job wheel artifact
         uses: actions/upload-artifact@v4
         with:
