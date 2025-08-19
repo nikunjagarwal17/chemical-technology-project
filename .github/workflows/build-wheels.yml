@@ -1,5 +1,3 @@
-name: Build wheels
-
 name: Build wheels (cibuildwheel)
 
 on:
