@@ -42,3 +42,7 @@ Contact & repo pointers (show these during the presentation)
 
 One-line takeaway for audience
 - A working, testable pure-Python implementation is ready for demos; compiled performance path is staged and will be demonstrated and benchmarked in Part 2.
+
+Layers — uses and purpose
+- Pure-Python reference: used for development, correctness validation, demos, and unit testing; it is the canonical implementation ensuring reproducible behavior without a native build.
+- Optional C++ performance core (via Cython): used for computationally intensive simulations and large reaction networks where performance matters; it is optional and produced via CI-built wheels for distribution.
