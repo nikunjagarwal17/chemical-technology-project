@@ -22,8 +22,15 @@ except Exception:
 # Helper to pick C++ standard flags across platforms
 if sys.platform == 'win32':
     extra_compile_args = ['/std:c++17']
+    # Fix Python 3.13 free-threaded linking issue
+    extra_link_args = []
+    libraries = []
+    library_dirs = [os.path.abspath('.')]  # Use local directory for python313t.lib
 else:
     extra_compile_args = ['-std=gnu++14']
+    extra_link_args = []
+    libraries = []
+    library_dirs = []
 
 # Build extension: prefer to cythonize the .pyx if Cython is available; if not,
 # fall back to a pre-generated .cpp file (kept as a fallback for legacy builds).
@@ -36,10 +43,19 @@ try:
         sources=sources,
         language='c++',
         include_dirs=include_dirs + [os.path.abspath('pyroxa')],
+        library_dirs=library_dirs,
         extra_compile_args=extra_compile_args,
+        extra_link_args=extra_link_args,
+        libraries=libraries,
         define_macros=[('NPY_NO_DEPRECATED_API', 'NPY_1_7_API_VERSION')],
     )
-    extensions = cythonize([ext], compiler_directives={"language_level": "3"})
+    extensions = cythonize([ext], compiler_directives={
+        "language_level": "3",
+        "boundscheck": False,
+        "wraparound": False,
+        "cdivision": True,
+        "embedsignature": True
+    })
 except Exception:
     # Last-resort fallback: if Cython not present and no pre-generated .cpp, skip ext build
     if os.path.exists(os.path.join('pyroxa', 'pybindings.cpp')):
@@ -49,7 +65,10 @@ except Exception:
             sources=sources,
             language='c++',
             include_dirs=include_dirs + [os.path.abspath('pyroxa')],
+            library_dirs=library_dirs,
             extra_compile_args=extra_compile_args,
+            extra_link_args=extra_link_args,
+            libraries=libraries,
             define_macros=[('NPY_NO_DEPRECATED_API', 'NPY_1_7_API_VERSION')],
         )
         extensions = [ext]
