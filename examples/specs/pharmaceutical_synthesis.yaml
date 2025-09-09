@@ -1,0 +1,97 @@
+# Pharmaceutical Synthesis Network
+# Complex multi-pathway synthesis with intermediates and catalysis
+
+species: ["Starting_Material", "Intermediate_1", "Intermediate_2", "API", "Impurity_A", "Impurity_B", "Catalyst"]
+
+reactions:
+  # Catalytic activation step
+  - name: "Catalyst_Activation"
+    kf_ref: 10.0
+    kr_ref: 0.01
+    Ea_f: 25000
+    Ea_r: 5000
+    T_ref: 298.15
+    reactants: {"Starting_Material": 1, "Catalyst": 1}
+    products: {"Intermediate_1": 1, "Catalyst": 1}  # Catalyst regenerated
+  
+  # First coupling reaction
+  - name: "Coupling_Reaction"
+    kf_ref: 4.0
+    kr_ref: 0.1
+    Ea_f: 55000
+    Ea_r: 20000
+    T_ref: 298.15
+    reactants: {"Intermediate_1": 1}
+    products: {"Intermediate_2": 1}
+  
+  # Cyclization to API (Active Pharmaceutical Ingredient)
+  - name: "Cyclization"
+    kf_ref: 2.5
+    kr_ref: 0.05
+    Ea_f: 48000
+    Ea_r: 15000
+    T_ref: 298.15
+    reactants: {"Intermediate_2": 1}
+    products: {"API": 1}
+  
+  # Side reactions forming impurities
+  - name: "Impurity_Formation_A"
+    kf_ref: 0.8
+    kr_ref: 0.0
+    Ea_f: 42000
+    Ea_r: 0
+    T_ref: 298.15
+    reactants: {"Intermediate_1": 1}
+    products: {"Impurity_A": 1}
+  
+  - name: "Impurity_Formation_B"
+    kf_ref: 0.3
+    kr_ref: 0.0
+    Ea_f: 38000
+    Ea_r: 0
+    T_ref: 298.15
+    reactants: {"Intermediate_2": 1}
+    products: {"Impurity_B": 1}
+
+# Pharmaceutical process conditions
+initial:
+  temperature: 323.15  # 50°C controlled synthesis
+  pressure: 101325     # Atmospheric pressure
+  conc:
+    Starting_Material: 1.0
+    Intermediate_1: 0.0
+    Intermediate_2: 0.0
+    API: 0.0
+    Impurity_A: 0.0
+    Impurity_B: 0.0
+    Catalyst: 0.1  # 10% catalyst loading
+
+# Batch reactor setup
+reactor:
+  type: "Batch"
+  volume: 0.01     # 10L laboratory scale
+  mixing_rate: 300 # RPM
+  heat_capacity: 3500
+  density: 900
+
+# Extended reaction time for complete conversion
+sim:
+  time_span: 120.0  # 2 hours
+  time_step: 0.2
+  temperature_control: "PID"  # Temperature control
+
+# Quality control analysis
+analysis:
+  target_product: "API"
+  impurity_tracking: true
+  purity_calculation: true
+  yield_analysis: true
+  reaction_monitoring: true
+  
+# Quality plots
+plots:
+  reaction_progress: true
+  purity_profile: true
+  impurity_analysis: true
+  yield_vs_time: true
+  temperature_control: true

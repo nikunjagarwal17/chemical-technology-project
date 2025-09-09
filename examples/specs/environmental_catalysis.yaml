@@ -1,0 +1,88 @@
+# Environmental Catalysis - NOx Reduction
+# Demonstrates environmental applications with gas-phase reactions
+
+species: ["NO", "NO2", "NH3", "N2", "H2O", "O2", "Catalyst_Site"]
+
+reactions:
+  # Selective Catalytic Reduction (SCR) reactions
+  - name: "SCR_NO_Reduction"
+    kf_ref: 8.0
+    kr_ref: 0.0
+    Ea_f: 65000  # Higher activation energy for gas-phase
+    Ea_r: 0
+    T_ref: 298.15
+    reactants: {"NO": 4, "NH3": 4, "O2": 1, "Catalyst_Site": 1}
+    products: {"N2": 4, "H2O": 6, "Catalyst_Site": 1}
+  
+  - name: "SCR_NO2_Reduction"
+    kf_ref: 12.0
+    kr_ref: 0.0
+    Ea_f: 58000
+    Ea_r: 0
+    T_ref: 298.15
+    reactants: {"NO2": 2, "NH3": 4, "Catalyst_Site": 1}
+    products: {"N2": 3, "H2O": 6, "Catalyst_Site": 1}
+  
+  # NO oxidation to NO2
+  - name: "NO_Oxidation"
+    kf_ref: 3.0
+    kr_ref: 0.1
+    Ea_f: 45000
+    Ea_r: 20000
+    T_ref: 298.15
+    reactants: {"NO": 2, "O2": 1}
+    products: {"NO2": 2}
+  
+  # Ammonia slip (unwanted side reaction)
+  - name: "NH3_Oxidation"
+    kf_ref: 1.5
+    kr_ref: 0.0
+    Ea_f: 70000
+    Ea_r: 0
+    T_ref: 298.15
+    reactants: {"NH3": 4, "O2": 5}
+    products: {"NO": 4, "H2O": 6}
+
+# Exhaust gas treatment conditions
+initial:
+  temperature: 573.15  # 300°C typical SCR temperature
+  pressure: 150000     # 1.5 bar exhaust pressure
+  conc:
+    NO: 0.5      # 500 ppm NOx in exhaust
+    NO2: 0.2     # 200 ppm
+    NH3: 0.6     # Slight excess of ammonia
+    N2: 78.0     # Background nitrogen
+    H2O: 5.0     # Water vapor
+    O2: 10.0     # Excess oxygen
+    Catalyst_Site: 1.0  # Active catalyst sites
+
+# Continuous flow reactor
+reactor:
+  type: "PFR"  # Plug Flow Reactor for gas treatment
+  length: 2.0  # 2 meter reactor length
+  diameter: 0.5 # 0.5 meter diameter
+  flow_rate: 100.0  # 100 m³/min gas flow
+  catalyst_loading: 500  # kg/m³
+
+# Gas treatment simulation
+sim:
+  time_span: 30.0   # 30 seconds residence time
+  time_step: 0.05
+  flow_profile: "plug"
+  temperature_gradient: false
+
+# Environmental performance analysis
+analysis:
+  NOx_conversion: true
+  NH3_slip: true
+  selectivity_N2: true
+  catalyst_deactivation: false
+  emission_compliance: true
+  
+# Environmental monitoring plots
+plots:
+  NOx_conversion_profile: true
+  species_concentration: true
+  selectivity_analysis: true
+  emission_reduction: true
+  catalyst_performance: true

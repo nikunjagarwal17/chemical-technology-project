@@ -1,0 +1,77 @@
+# Industrial Catalytic Process Specification
+# Showcases: Complex kinetics, temperature effects, industrial conditions
+
+species: ["Reactant_A", "Reactant_B", "Intermediate", "Product", "Byproduct"]
+
+# Multi-step catalytic process with temperature-dependent kinetics
+reactions:
+  # Step 1: A + B → Intermediate (Arrhenius kinetics)
+  - name: "Formation"
+    kf_ref: 5.0
+    kr_ref: 0.1
+    Ea_f: 45000  # J/mol activation energy
+    Ea_r: 15000  # J/mol
+    T_ref: 298.15
+    reactants: {"Reactant_A": 1, "Reactant_B": 1}
+    products: {"Intermediate": 1}
+  
+  # Step 2: Intermediate → Product (desired pathway)
+  - name: "Main_Product"
+    kf_ref: 3.0
+    kr_ref: 0.05
+    Ea_f: 35000
+    Ea_r: 10000
+    T_ref: 298.15
+    reactants: {"Intermediate": 1}
+    products: {"Product": 1}
+  
+  # Step 3: Intermediate → Byproduct (competing pathway)
+  - name: "Side_Reaction"
+    kf_ref: 1.0
+    kr_ref: 0.0
+    Ea_f: 40000
+    Ea_r: 0
+    T_ref: 298.15
+    reactants: {"Intermediate": 1}
+    products: {"Byproduct": 1}
+
+# Industrial operating conditions
+initial:
+  temperature: 450.0  # High temperature operation
+  pressure: 500000    # 5 bar pressure
+  conc:
+    Reactant_A: 2.0
+    Reactant_B: 1.5
+    Intermediate: 0.0
+    Product: 0.0
+    Byproduct: 0.0
+
+# Reactor configuration
+reactor:
+  type: "CSTR"
+  volume: 0.5      # 500L industrial reactor
+  flow_rate: 0.05  # 50 L/min
+  heat_capacity: 4180  # J/kg/K
+  density: 1000    # kg/m³
+
+# Simulation parameters
+sim:
+  time_span: 60.0    # 1 hour operation
+  time_step: 0.1
+  temperature_profile: "constant"  # Could be "ramp" or "programmed"
+
+# Analysis and optimization
+analysis:
+  target_product: "Product"
+  optimize_selectivity: true
+  track_temperature: true
+  calculate_yield: true
+  economic_evaluation: true
+  
+# Visualization settings
+plots:
+  concentration_vs_time: true
+  selectivity_analysis: true
+  temperature_profile: true
+  reactor_performance: true
+  yield_optimization: true
