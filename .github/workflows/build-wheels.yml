@@ -76,26 +76,27 @@ jobs:
           name: pyroxa-pure-python-wheel
           path: ./dist
       
-      - name: Install and test wheel
+      - name: Install dependencies and test wheel
         run: |
+          pip install numpy matplotlib
           pip install dist/*.whl
           python -c "
           import pyroxa
           print(f'✅ PyroXa loaded on ${{ matrix.os }} Python ${{ matrix.python-version }}')
           
           # Test core functionality
-          assert hasattr(pyroxa, 'arrhenius_rate')
-          assert hasattr(pyroxa, 'ChainReactorVisualizer')
-          assert hasattr(pyroxa, 'run_simulation')
+          assert hasattr(pyroxa, 'arrhenius_rate'), 'arrhenius_rate function missing'
+          assert hasattr(pyroxa, 'ChainReactorVisualizer'), 'ChainReactorVisualizer class missing'
+          assert hasattr(pyroxa, 'run_simulation'), 'run_simulation function missing'
           
+          # Test actual function call
           result = pyroxa.arrhenius_rate(1e6, 50000, 298)
-          assert 0.001 < result < 0.01, f'Unexpected result: {result}'
+          assert 0.001 < result < 0.01, f'Unexpected arrhenius_rate result: {result}'
           
+          # Test another function
+          linear_result = pyroxa.linear_interpolate(2.5, [1,2,3,4], [2,4,6,8])
+          assert linear_result == 5.0, f'Unexpected linear_interpolate result: {linear_result}'
+          
+          print(f'✅ All {len([x for x in dir(pyroxa) if not x.startswith(\"_\")])} functions available')
           print('🎉 All tests passed!')
           "
-
-      - name: Upload combined wheels zip
-        uses: actions/upload-artifact@v4
-        with:
-          name: wheels-all
-          path: wheels-all.zip
