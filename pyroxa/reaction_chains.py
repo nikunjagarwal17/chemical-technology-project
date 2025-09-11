@@ -98,6 +98,46 @@ class ReactionChain:
             final_conc = self._last_result['concentrations'][-1, :]
             return final_conc[product_index] / (1 - final_conc[0]) if final_conc[0] < 1 else 0
         return 0.0
+    
+    def create_reactor(self, conc0: List[float]):
+        """Create a reactor for this reaction chain"""
+        # Simple reactor class that wraps the chain simulation
+        class ChainReactor:
+            def __init__(self, chain, initial_conc):
+                self.chain = chain
+                self.initial_conc = initial_conc
+            
+            def run(self, time_span: float = 10.0, time_step: float = 0.1):
+                """Run the reactor simulation"""
+                # Update initial concentrations
+                self.chain.initial_conc = self.initial_conc
+                result = self.chain.simulate(time_span, time_step)
+                times = result['times']
+                concentrations = result['concentrations']
+                return times, concentrations
+        
+        return ChainReactor(self, conc0)
+    
+    def get_analytical_solution(self, times, C0: float = 1.0):
+        """Get analytical solution for simple reaction chains"""
+        # For A -> B -> C with rate constants k1, k2
+        if len(self.rate_constants) >= 2:
+            k1, k2 = self.rate_constants[0], self.rate_constants[1]
+            
+            # Simple analytical solutions
+            CA = C0 * np.exp(-k1 * times)
+            
+            if abs(k1 - k2) < 1e-10:  # k1 ≈ k2
+                CB = C0 * k1 * times * np.exp(-k1 * times)
+            else:
+                CB = C0 * k1 / (k2 - k1) * (np.exp(-k1 * times) - np.exp(-k2 * times))
+            
+            CC = C0 - CA - CB
+            
+            return np.column_stack([CA, CB, CC])
+        else:
+            # Fallback for other cases
+            return np.zeros((len(times), len(self.species)))
 
 
 class ChainReactorVisualizer:

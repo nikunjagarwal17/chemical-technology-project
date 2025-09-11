@@ -470,6 +470,7 @@ class WellMixedReactor:
         self.volume = float(volume)
         self.conc = [float(conc0[0]), float(conc0[1])]
         self._initial_total = sum(self.conc)
+        self.q = 0.0  # Flow rate (default to closed system)
 
     def step(self, dt: float):
         # Enhanced RK4 with error checking
@@ -482,7 +483,7 @@ class WellMixedReactor:
         def f(a, b):
             # Clamp negative values
             a, b = max(0.0, a), max(0.0, b)
-            r = self.reaction.rate(a, b)
+            r = self.reaction.rate([a, b])
             return -r, r
 
         try:
@@ -533,7 +534,7 @@ class WellMixedReactor:
         def rk4_step_scalar(state, dt):
             a, b = state
             def f(a, b):
-                r = self.reaction.rate(a, b)
+                r = self.reaction.rate([a, b])
                 return -r, r
             k1A, k1B = f(a, b)
             k2A, k2B = f(a + 0.5*dt*k1A, b + 0.5*dt*k1B)
@@ -605,7 +606,7 @@ class CSTR(WellMixedReactor):
         def f(a, b):
             # Clamp negative values
             a, b = max(0.0, a), max(0.0, b)
-            r = self.reaction.rate(a, b)
+            r = self.reaction.rate([a, b])
             ra = -r
             rb = r
             fa = ra + (self.q / self.volume) * (self.conc_in[0] - a)
@@ -675,7 +676,7 @@ class PFR:
                 B = self.segs[i][1]
                 def f(a, b):
                     a, b = max(0.0, a), max(0.0, b)  # Clamp negatives
-                    r = self.reaction.rate(a, b)
+                    r = self.reaction.rate([a, b])
                     return -r, r
                 k1A, k1B = f(A, B)
                 k2A, k2B = f(A + 0.5 * dt * k1A, B + 0.5 * dt * k1B)

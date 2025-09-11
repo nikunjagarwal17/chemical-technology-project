@@ -271,8 +271,14 @@ def calculate_rmse(y_actual, y_predicted):
     return np.sqrt(np.mean((y_actual - y_predicted) ** 2))
 
 
-def calculate_aic(n, rss, k):
+def calculate_aic(y_actual, y_predicted, k):
     """Calculate Akaike Information Criterion"""
+    y_actual = np.array(y_actual)
+    y_predicted = np.array(y_predicted)
+    
+    n = len(y_actual)
+    rss = np.sum((y_actual - y_predicted) ** 2)
+    
     if n <= 0 or rss <= 0:
         return float('inf')
     

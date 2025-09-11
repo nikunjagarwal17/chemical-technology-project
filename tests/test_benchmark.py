@@ -16,5 +16,6 @@ def test_benchmark_small():
         rxn_objs.append(ReactionMulti(r['kf'], r['kr'], react_idx, prod_idx))
     thermo = Thermodynamics()
     reactor = MultiReactor(thermo, rxn_objs, species, conc0=[1.0, 0.0, 0.0])
-    elapsed = benchmark_multi_reactor(reactor, time_span=0.1, time_step=0.01)
-    assert elapsed >= 0.0
+    results = benchmark_multi_reactor(reactor, time_span=0.1, time_step=0.01)
+    assert results['mean_time'] >= 0.0
+    assert 'iterations' in results

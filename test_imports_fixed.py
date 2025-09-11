@@ -10,7 +10,7 @@ def test_chainreactor_visualizer_import():
     # Create a simple reaction chain
     species = ['A', 'B', 'C']
     rate_constants = [1.0, 0.5]
-    chain = ReactionChain(species)
+    chain = ReactionChain(species, rate_constants)
     
     # Create visualizer
     visualizer = ChainReactorVisualizer(chain)
