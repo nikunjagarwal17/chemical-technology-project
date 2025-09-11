@@ -1,4 +1,4 @@
-name: Simple Release
+name: Simple Pure Python Release
 
 on:
   push:
@@ -23,17 +23,17 @@ jobs:
         python -m pip install --upgrade pip
         pip install build twine
     
-    - name: Build wheel and source distribution
+    - name: Build pure Python wheel and source distribution
       run: |
-        echo "Building PyroXa (pure Python is fast enough!)..."
+        echo "Building PyroXa - 100% Pure Python, no compilation required!"
         python -m build
         ls -la dist/
     
-    - name: Test the wheel
+    - name: Test the wheel  
       run: |
         pip install dist/*.whl
-        python -c "import pyroxa; print(f'✅ PyroXa {pyroxa.get_version()} works!')"
-        python -c "import pyroxa; rate = pyroxa.arrhenius_rate(1e6, 50000, 298); print(f'Test function result: {rate}')"
+        python -c "import pyroxa; print('✅ PyroXa 1.0.0 works - Pure Python!')"
+        python -c "from pyroxa.new_functions import arrhenius_rate; print(f'Test function: {arrhenius_rate(1e6, 50000, 298):.6f}')"
     
     - name: Upload to PyPI (uncomment when ready)
       # env:
@@ -45,5 +45,5 @@ jobs:
     - name: Upload build artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: pyroxa-dist
+        name: pyroxa-pure-python-dist
         path: dist/

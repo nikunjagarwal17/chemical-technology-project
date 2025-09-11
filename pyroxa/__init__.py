@@ -1,477 +1,235 @@
-try:
-	# Try to import main C++ extension first
-	from . import _pybindings as _bind
-	print("✓ C++ extension loaded successfully")
-	
-	# Create function aliases for compatibility with the py_ prefixed functions
-	simulate_reactor_cpp = getattr(_bind, 'run_simulation_cpp', None)
-	enthalpy_c_cpp = getattr(_bind, 'py_enthalpy_c', None)  
-	entropy_c_cpp = getattr(_bind, 'py_entropy_c', None)
-	autocatalytic_rate_cpp = getattr(_bind, 'py_autocatalytic_rate', None)
-	michaelis_menten_rate_cpp = getattr(_bind, 'py_michaelis_menten_rate', None)
-	arrhenius_rate_cpp = getattr(_bind, 'py_arrhenius_rate', None)
-	
-	_cpp_available = True
-	
-	# Since simplified bindings don't have classes, we'll use pure Python classes
-	# but with C++ acceleration for computationally intensive functions
-	print("✓ Using C++ accelerated functions for core operations")
-	
-	# Set flags for available functions - main pybindings has many functions available
-	_NEW_FUNCTIONS_FROM_CPP = True  # Many functions available from C++
-	_EXTENDED_FUNCTIONS_FROM_CPP = True  
-	_ALL_65_FUNCTIONS_FROM_CPP = True  # Most functions should be available
-	
-	# Create standard function aliases from C++ functions
-	autocatalytic_rate = _bind.py_autocatalytic_rate
-	michaelis_menten_rate = _bind.py_michaelis_menten_rate
-	competitive_inhibition_rate = _bind.py_competitive_inhibition_rate
-	arrhenius_rate = _bind.py_arrhenius_rate
-	gibbs_free_energy = _bind.py_gibbs_free_energy
-	equilibrium_constant = _bind.py_equilibrium_constant
-	linear_interpolate = _bind.py_linear_interpolate
-	calculate_r_squared = _bind.py_calculate_r_squared
-	calculate_rmse = _bind.py_calculate_rmse
-	enthalpy_c = _bind.py_enthalpy_c
-	entropy_c = _bind.py_entropy_c
-	heat_capacity_nasa = _bind.py_heat_capacity_nasa
-	enthalpy_nasa = _bind.py_enthalpy_nasa
-	entropy_nasa = _bind.py_entropy_nasa
-	mass_transfer_correlation = _bind.py_mass_transfer_correlation
-	heat_transfer_correlation = _bind.py_heat_transfer_correlation
-	effective_diffusivity = _bind.py_effective_diffusivity
-	pressure_drop_ergun = _bind.py_pressure_drop_ergun
-	langmuir_hinshelwood_rate = _bind.py_langmuir_hinshelwood_rate
-	photochemical_rate = _bind.py_photochemical_rate
-	pressure_peng_robinson = _bind.py_pressure_peng_robinson
-	fugacity_coefficient = _bind.py_fugacity_coefficient
-	cubic_spline_interpolate = _bind.py_cubic_spline_interpolate
-	calculate_aic = _bind.py_calculate_aic
-	
-	# Always import all functions from Python implementations (C++ may not have all)
-	if not _EXTENDED_FUNCTIONS_FROM_CPP:
-		from .new_functions import (
-			langmuir_hinshelwood_rate, photochemical_rate, 
-			pressure_peng_robinson, fugacity_coefficient, PIDController
-		)
-	else:
-		# Import only missing functions when extended C++ functions available
-		from .new_functions import PIDController
-	
-	# Import missing functions from Python if not in C++
-	if not _NEW_FUNCTIONS_FROM_CPP:
-		from .new_functions import (
-			autocatalytic_rate, michaelis_menten_rate, competitive_inhibition_rate,
-			heat_capacity_nasa, enthalpy_nasa, entropy_nasa,
-			mass_transfer_correlation, heat_transfer_correlation,
-			effective_diffusivity, pressure_drop_ergun, pid_controller
-		)
-	
-	# Fallback pure-Python helpers still available
-	from .purepy import (
-		WellMixedReactor, CSTR, PFR, ReactorNetwork, run_simulation, build_from_dict,
-		ReactionMulti, MultiReactor, benchmark_multi_reactor,
-		PackedBedReactor, FluidizedBedReactor, HeterogeneousReactor, HomogeneousReactor,
-		PyroXaError, ThermodynamicsError, ReactionError, ReactorError
-	)
-	# Import enhanced multi-reaction features
-	try:
-		from .reaction_chains import ReactionChain, ChainReactorVisualizer, OptimalReactorDesign
-		_REACTION_CHAINS_AVAILABLE = True
-	except ImportError:
-		_REACTION_CHAINS_AVAILABLE = False
-	
-	__all__ = [
-		"Thermodynamics",
-		"Reaction", 
-		"ReactionMulti",
-		"Reactor",
-		"WellMixedReactor",
-		"CSTR",
-		"PFR", 
-		"MultiReactor",
-		"ReactorNetwork",
-		"run_simulation_cpp",
-		"run_simulation",
-		"build_from_dict",
-		"benchmark_multi_reactor",
-		"PyroXaError",
-		"ThermodynamicsError", 
-		"ReactionError",
-		"ReactorError",
-		# Newly implemented functions
-		"autocatalytic_rate",
-		"michaelis_menten_rate", 
-		"competitive_inhibition_rate",
-		"heat_capacity_nasa",
-		"enthalpy_nasa",
-		"entropy_nasa",
-		"mass_transfer_correlation",
-		"heat_transfer_correlation",
-		"effective_diffusivity",
-		"pressure_drop_ergun",
-		"pid_controller",
-		"langmuir_hinshelwood_rate",
-		"photochemical_rate",
-		"pressure_peng_robinson",
-		"fugacity_coefficient",
-		"gibbs_free_energy",
-		"equilibrium_constant",
-		"arrhenius_rate",
-		"PIDController",
-		# Batch 1: Statistical and interpolation functions
-		"linear_interpolate",
-		"cubic_spline_interpolate", 
-		"calculate_r_squared",
-		"calculate_rmse",
-		"calculate_aic",
-		# Batch 5: Core thermodynamic functions
-		"enthalpy_c",
-		"entropy_c",
-		# Batch 6: Analytical solutions
-		"analytical_first_order",
-		"analytical_reversible_first_order",
-		"analytical_consecutive_first_order",
-		# Batch 8: Utility and optimization functions
-		"calculate_objective_function",
-		"check_mass_conservation",
-		"calculate_rate_constants",
-		# Batch 9: Simple utility and validation functions
-		"cross_validation_score",
-		"kriging_interpolation", 
-		"bootstrap_uncertainty",
-		# Batch 10: Matrix operations
-		"matrix_multiply",
-		"matrix_invert",
-		"solve_linear_system",
-		# Batch 11: Advanced optimization and sensitivity analysis
-		"calculate_sensitivity",
-		"calculate_jacobian",
-		"stability_analysis",
-		"mpc_controller",
-		"real_time_optimization",
-		# "parameter_sweep_parallel",  # TEMPORARILY DISABLED
-		# Batch 12: Advanced reactor simulations
-		"simulate_packed_bed",
-		"simulate_fluidized_bed",
-		"simulate_homogeneous_batch",
-		"simulate_multi_reactor_adaptive",
-		# Batch 13: Energy analysis and statistical methods
-		"calculate_energy_balance",
-		"monte_carlo_simulation",
-		"residence_time_distribution",
-		# Batch 14: Final functions
-		"catalyst_deactivation_model",
-		"process_scale_up"
-	]
-	
-	if _REACTION_CHAINS_AVAILABLE:
-		__all__.extend(["ReactionChain", "ChainReactorVisualizer", "OptimalReactorDesign"])
-	
-	# Import I/O utilities for convenience
-	try:
-		from .io import load_spec_from_yaml, parse_mechanism, save_results_to_csv
-	except ImportError:
-		# I/O utilities are optional
-		load_spec_from_yaml = None
-		parse_mechanism = None
-		save_results_to_csv = None
-	
-	_COMPILED_AVAILABLE = True
-except (ImportError, MemoryError, OSError) as e:
-	print(f"⚠ C++ extension failed to load ({type(e).__name__}: {e})")
-	if isinstance(e, MemoryError):
-		print("  This is expected with free-threaded Python 3.13 due to missing symbols:")
-		print("  - __imp__Py_MergeZeroLocalRefcount")
-		print("  - __imp_PyUnstable_Module_SetGIL") 
-		print("  - __imp__Py_DecRefShared")
-		print("  Solution: Install standard Python 3.13 (not free-threaded) for C++ extensions")
-	print("✓ Falling back to pure Python implementation...")
-	
-	# Pure-Python fallback
-	from .purepy import (
-		Thermodynamics,
-		Reaction,
-		ReactionMulti,
-		WellMixedReactor,
-		CSTR,
-		PFR,
-		MultiReactor,
-		ReactorNetwork,
-		PackedBedReactor,
-		FluidizedBedReactor,
-		HeterogeneousReactor,
-		HomogeneousReactor,
-		run_simulation,
-		build_from_dict,
-		benchmark_multi_reactor,
-		PyroXaError,
-		ThermodynamicsError,
-		ReactionError,
-		ReactorError
-	)
-	
-	# Import all new functions from Python implementations
-	from .new_functions import (
-		autocatalytic_rate, michaelis_menten_rate, competitive_inhibition_rate,
-		heat_capacity_nasa, enthalpy_nasa, entropy_nasa,
-		mass_transfer_correlation, heat_transfer_correlation,
-		effective_diffusivity, pressure_drop_ergun, pid_controller,
-		langmuir_hinshelwood_rate, photochemical_rate, 
-		pressure_peng_robinson, fugacity_coefficient, PIDController,
-		# Statistical and interpolation functions
-		linear_interpolate, cubic_spline_interpolate,
-		calculate_r_squared, calculate_rmse, calculate_aic,
-		gibbs_free_energy, equilibrium_constant, arrhenius_rate
-	)
-	
-	# Import basic thermodynamic functions from purepy
-	from .purepy import enthalpy_c, entropy_c
-	
-	# Analytical solutions (if available in purepy, otherwise create simple fallbacks)
-	try:
-		from .purepy import analytical_first_order, analytical_reversible_first_order, analytical_consecutive_first_order
-	except ImportError:
-		# Simple fallback implementations
-		def analytical_first_order(k, A0, time_span, dt, max_len=1000):
-			"""Simple analytical solution for A -> B (first order)"""
-			import numpy as np
-			times = np.arange(0, time_span + dt, dt)
-			A = A0 * np.exp(-k * times)
-			B = A0 * (1 - np.exp(-k * times))
-			return {'times': times.tolist(), 'A': A.tolist(), 'B': B.tolist()}
-		
-		def analytical_reversible_first_order(kf, kr, A0, B0, time_span, dt, max_len=1000):
-			"""Simple analytical solution for A <=> B (reversible first order)"""
-			import numpy as np
-			times = np.arange(0, time_span + dt, dt)
-			k_total = kf + kr
-			K_eq = kf / kr if kr > 0 else 1e6
-			A_eq = (A0 + B0) / (1 + K_eq)
-			B_eq = (A0 + B0) * K_eq / (1 + K_eq)
-			A = A_eq + (A0 - A_eq) * np.exp(-k_total * times)
-			B = B_eq + (B0 - B_eq) * np.exp(-k_total * times)
-			return {'times': times.tolist(), 'A': A.tolist(), 'B': B.tolist()}
-		
-		def analytical_consecutive_first_order(k1, k2, A0, time_span, dt, max_len=1000):
-			"""Simple analytical solution for A -> B -> C (consecutive first order)"""
-			import numpy as np
-			times = np.arange(0, time_span + dt, dt)
-			A = A0 * np.exp(-k1 * times)
-			if abs(k1 - k2) > 1e-10:
-				B = A0 * k1 / (k2 - k1) * (np.exp(-k1 * times) - np.exp(-k2 * times))
-			else:
-				B = A0 * k1 * times * np.exp(-k1 * times)
-			C = A0 * (1 - np.exp(-k1 * times) - k1/(k2-k1) * (np.exp(-k1 * times) - np.exp(-k2 * times))) if abs(k1-k2) > 1e-10 else A0 * (1 - (1 + k1*times) * np.exp(-k1 * times))
-			return {'times': times.tolist(), 'A': A.tolist(), 'B': B.tolist(), 'C': C.tolist()}
-	
-	# Simple fallback utility functions
-	def calculate_objective_function(experimental_data, simulated_data, weights=None):
-		"""Calculate objective function (sum of squared residuals)"""
-		import numpy as np
-		exp = np.array(experimental_data)
-		sim = np.array(simulated_data)
-		w = np.array(weights) if weights else np.ones_like(exp)
-		return np.sum(w * (exp - sim)**2)
-	
-	def check_mass_conservation(concentrations, tolerance=1e-6):
-		"""Check mass conservation during simulation"""
-		import numpy as np
-		conc_array = np.array(concentrations)
-		total_mass = np.sum(conc_array, axis=1)
-		mass_balance = total_mass - total_mass[0]
-		max_violation = np.max(np.abs(mass_balance))
-		return {
-			'is_conserved': max_violation < tolerance,
-			'mass_balance': mass_balance.tolist(),
-			'max_violation': max_violation
-		}
-	
-	def calculate_rate_constants(kf_ref, kr_ref, Ea_f, Ea_r, T, T_ref=298.15, R=8.314):
-		"""Calculate temperature-dependent rate constants using Arrhenius equation"""
-		import numpy as np
-		kf_ref = np.array(kf_ref)
-		kr_ref = np.array(kr_ref)
-		Ea_f = np.array(Ea_f)
-		Ea_r = np.array(Ea_r)
-		
-		kf_out = kf_ref * np.exp(-(Ea_f/R) * (1/T - 1/T_ref))
-		kr_out = kr_ref * np.exp(-(Ea_r/R) * (1/T - 1/T_ref))
-		
-		return {
-			'kf': kf_out.tolist(),
-			'kr': kr_out.tolist()
-		}
-	
-	_NEW_FUNCTIONS_FROM_CPP = False
-	
-	# Import enhanced multi-reaction features
-	try:
-		from .reaction_chains import ReactionChain, ChainReactorVisualizer, OptimalReactorDesign
-		_REACTION_CHAINS_AVAILABLE = True
-	except ImportError:
-		_REACTION_CHAINS_AVAILABLE = False
-	
-	# Alias for compatibility
-	Reactor = WellMixedReactor
-	
-	def run_simulation_cpp(*args, **kwargs):
-		"""Fallback function when compiled extension is not available."""
-		import warnings
-		warnings.warn("Compiled extension not available, falling back to pure Python implementation")
-		return run_simulation(*args, **kwargs)
-	
-	__all__ = [
-		# Core classes
-		"Thermodynamics",
-		"Reaction",
-		"ReactionMulti", 
-		"WellMixedReactor",
-		"CSTR",
-		"PFR",
-		"MultiReactor",
-		"ReactorNetwork",
-		"PackedBedReactor",
-		"FluidizedBedReactor",
-		"HeterogeneousReactor",
-		"HomogeneousReactor",
-		"Reactor",
-		
-		# Simulation functions
-		"run_simulation_cpp",
-		"run_simulation",
-		"build_from_dict",
-		"benchmark_multi_reactor",
-		
-		# Error classes
-		"PyroXaError",
-		"ThermodynamicsError",
-		"ReactionError", 
-		"ReactorError",
-		
-		# Rate calculation functions
-		"autocatalytic_rate",
-		"michaelis_menten_rate", 
-		"competitive_inhibition_rate",
-		"langmuir_hinshelwood_rate",
-		"photochemical_rate",
-		
-		# Thermodynamic functions
-		"heat_capacity_nasa",
-		"enthalpy_nasa",
-		"entropy_nasa",
-		"pressure_peng_robinson",
-		"fugacity_coefficient",
-		"gibbs_free_energy",
-		"equilibrium_constant",
-		"arrhenius_rate",
-		
-		# Transport phenomena functions
-		"mass_transfer_correlation",
-		"heat_transfer_correlation",
-		"effective_diffusivity",
-		"pressure_drop_ergun",
-		
-		# Control functions
-		"pid_controller",
-		"PIDController",
-		
-		# Statistical and interpolation functions
-		"linear_interpolate",
-		"cubic_spline_interpolate", 
-		"calculate_r_squared",
-		"calculate_rmse",
-		"calculate_aic",
-		
-		# Core thermodynamic functions
-		"enthalpy_c",
-		"entropy_c",
-		
-		# Analytical solutions
-		"analytical_first_order",
-		"analytical_reversible_first_order",
-		"analytical_consecutive_first_order",
-		
-		# Utility and optimization functions
-		"calculate_objective_function",
-		"check_mass_conservation",
-		"calculate_rate_constants",
-		
-		# Utility functions
-		"get_version",
-		"get_build_info",
-		"is_compiled_available",
-		"is_reaction_chains_available",
-		"create_reaction_chain",
-		
-		# I/O functions
-		"load_spec_from_yaml",
-		"parse_mechanism",
-		"save_results_to_csv"
-	]
-	
-	if _REACTION_CHAINS_AVAILABLE:
-		__all__.extend(["ReactionChain", "ChainReactorVisualizer", "OptimalReactorDesign"])
-	
-	_COMPILED_AVAILABLE = False
+"""
+PyroXa - Chemical Kinetics and Reactor Simulation Library
+Pure Python Implementation (v1.0.0)
+"""
+
+import math
+import numpy as np
 
 # Version information
-__version__ = "0.3.0"
-__author__ = "Pyroxa Development Team"
-__description__ = "Chemical kinetics and reactor simulation library inspired by Cantera"
+__version__ = "1.0.0"
+__author__ = "PyroXa Development Team"
 
-# Convenience functions for users
 def get_version():
-	"""Get the current version of Pyroxa."""
-	return __version__
+    """Return the PyroXa version string"""
+    return __version__
 
-def is_compiled_available():
-	"""Check if the compiled C++ extension is available."""
-	return _COMPILED_AVAILABLE
+# Import core functions from new_functions module
+from .new_functions import (
+    # Basic kinetic functions
+    autocatalytic_rate,
+    michaelis_menten_rate,
+    competitive_inhibition_rate,
+    arrhenius_rate,
+    langmuir_hinshelwood_rate,
+    photochemical_rate,
+    
+    # Thermodynamic functions
+    heat_capacity_nasa,
+    enthalpy_nasa,
+    entropy_nasa,
+    gibbs_free_energy,
+    equilibrium_constant,
+    
+    # Transport phenomena
+    mass_transfer_correlation,
+    heat_transfer_correlation,
+    effective_diffusivity,
+    pressure_drop_ergun,
+    
+    # Equation of state
+    pressure_peng_robinson,
+    fugacity_coefficient,
+    
+    # Mathematical utilities
+    linear_interpolate,
+    cubic_spline_interpolate,
+    calculate_r_squared,
+    calculate_rmse,
+    calculate_aic,
+    
+    # Process control
+    PIDController,
+    pid_controller,
+)
 
-def is_reaction_chains_available():
-	"""Check if the enhanced reaction chain features are available."""
-	return _REACTION_CHAINS_AVAILABLE
-
-def get_build_info():
-	"""Get information about the current build."""
-	info = {
-		'version': __version__,
-		'compiled_extension': _COMPILED_AVAILABLE,
-		'python_fallback': True,
-		'reaction_chains': _REACTION_CHAINS_AVAILABLE,
-	}
-	
-	if _COMPILED_AVAILABLE:
-		try:
-			# Try to get additional info from compiled extension
-			info['cpp_core'] = True
-		except:
-			info['cpp_core'] = False
-	else:
-		info['cpp_core'] = False
-		
-	return info
-
-def create_reaction_chain(species, rate_constants, **kwargs):
-	"""Convenience function to create a reaction chain.
-	
-	Args:
-		species: List of species names
-		rate_constants: List of forward rate constants
-		**kwargs: Additional arguments for ReactionChain
-		
-	Returns:
-		ReactionChain object
-	"""
-	if not _REACTION_CHAINS_AVAILABLE:
-		raise ImportError("ReactionChain features not available. Check dependencies.")
-	
-	return ReactionChain(species, rate_constants, **kwargs)
-
-# Import I/O utilities for convenience
+# Import additional utility functions from new_functions if they exist
 try:
-	from .io import load_spec_from_yaml, parse_mechanism, save_results_to_csv
-	__all__.extend(['load_spec_from_yaml', 'parse_mechanism', 'save_results_to_csv'])
+    from .new_functions import (
+        # Additional functions that might be defined
+        first_order_rate,
+        second_order_rate,
+        zero_order_rate,
+        reversible_rate,
+        parallel_reaction_rate,
+        series_reaction_rate,
+        enzyme_inhibition_rate,
+        temperature_dependence,
+        pressure_dependence,
+        activity_coefficient,
+        diffusion_coefficient,
+        thermal_conductivity,
+        heat_transfer_coefficient,
+        mass_transfer_coefficient,
+        reynolds_number,
+        prandtl_number,
+        schmidt_number,
+        nusselt_number,
+        sherwood_number,
+        friction_factor,
+        hydraulic_diameter,
+        residence_time,
+        conversion,
+        selectivity,
+        yield_coefficient,
+        space_time,
+        space_velocity,
+        reaction_quotient,
+        extent_of_reaction,
+        batch_reactor_time,
+        cstr_volume,
+        pfr_volume,
+        fluidized_bed_hydrodynamics,
+        packed_bed_pressure_drop,
+        bubble_column_dynamics,
+        crystallization_rate,
+        precipitation_rate,
+        dissolution_rate,
+        evaporation_rate,
+        distillation_efficiency,
+        extraction_efficiency,
+        adsorption_isotherm,
+        desorption_rate,
+        catalyst_activity,
+        catalyst_deactivation,
+        surface_reaction_rate,
+        pore_diffusion_rate,
+        film_mass_transfer,
+        bubble_rise_velocity,
+        terminal_velocity,
+        drag_coefficient,
+        mixing_time,
+        power_consumption,
+        pumping_power,
+        compression_work,
+        heat_exchanger_effectiveness,
+        overall_heat_transfer_coefficient,
+        fouling_resistance,
+    )
 except ImportError:
-	pass  # I/O utilities are optional
+    # These functions might not be implemented yet
+    pass
+
+# Import classes and advanced functions from purepy module
+try:
+    from .purepy import (
+        Thermodynamics,
+        Reaction,
+        ReactionMulti,
+        Reactor,
+        MultiReactor,
+        FluidizedBedReactor,
+        build_from_dict,
+        run_simulation_from_dict,
+        benchmark_multi_reactor,
+        enthalpy_c,
+        entropy_c,
+    )
+except ImportError:
+    # These might not be available in simplified version
+    pass
+
+# Import reaction chains if available
+try:
+    from .reaction_chains import (
+        # Reaction chain functions if they exist
+        chain_reaction_rate,
+        branching_factor,
+        chain_length,
+        initiation_rate,
+        propagation_rate,
+        termination_rate,
+    )
+except ImportError:
+    pass
+
+# Define essential functions that might be missing
+if 'first_order_rate' not in globals():
+    def first_order_rate(k, concentration):
+        """First-order reaction rate: r = k * [A]"""
+        return k * concentration
+
+if 'second_order_rate' not in globals():
+    def second_order_rate(k, conc_A, conc_B=None):
+        """Second-order reaction rate: r = k * [A] * [B] or r = k * [A]^2"""
+        if conc_B is None:
+            return k * conc_A * conc_A
+        return k * conc_A * conc_B
+
+if 'zero_order_rate' not in globals():
+    def zero_order_rate(k):
+        """Zero-order reaction rate: r = k"""
+        return k
+
+if 'reynolds_number' not in globals():
+    def reynolds_number(density, velocity, length, viscosity):
+        """Calculate Reynolds number"""
+        return density * velocity * length / viscosity
+
+if 'conversion' not in globals():
+    def conversion(initial_conc, final_conc):
+        """Calculate conversion: X = (C0 - C) / C0"""
+        if initial_conc == 0:
+            return 0.0
+        return (initial_conc - final_conc) / initial_conc
+
+# List all available functions for easy discovery
+__all__ = [
+    'get_version',
+    # Basic kinetics
+    'autocatalytic_rate',
+    'michaelis_menten_rate', 
+    'competitive_inhibition_rate',
+    'arrhenius_rate',
+    'langmuir_hinshelwood_rate',
+    'photochemical_rate',
+    'first_order_rate',
+    'second_order_rate',
+    'zero_order_rate',
+    # Thermodynamics
+    'heat_capacity_nasa',
+    'enthalpy_nasa',
+    'entropy_nasa',
+    'gibbs_free_energy',
+    'equilibrium_constant',
+    # Transport
+    'mass_transfer_correlation',
+    'heat_transfer_correlation',
+    'effective_diffusivity',
+    'pressure_drop_ergun',
+    'reynolds_number',
+    # Equation of state
+    'pressure_peng_robinson',
+    'fugacity_coefficient',
+    # Mathematical utilities
+    'linear_interpolate',
+    'cubic_spline_interpolate',
+    'calculate_r_squared',
+    'calculate_rmse',
+    'calculate_aic',
+    # Process control
+    'PIDController',
+    'pid_controller',
+    # Reactor design
+    'conversion',
+    # Classes (if available)
+    'Thermodynamics',
+    'Reaction',
+    'ReactionMulti', 
+    'Reactor',
+    'MultiReactor',
+    'FluidizedBedReactor',
+]
+
+print("✅ PyroXa v1.0.0 loaded successfully (Pure Python)")
+print(f"📦 Available functions: {len([x for x in __all__ if x in globals()])}")
