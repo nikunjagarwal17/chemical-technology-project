@@ -39,16 +39,8 @@ else:  # Linux and others
 # Build extension with error handling
 extensions = []
 
-# Check if we should force pure Python mode
-FORCE_PURE_PYTHON = os.environ.get('PYROXA_PURE_PYTHON', '').lower() in ('1', 'true', 'yes')
-
 def build_extension():
     """Try to build the C++ extension with proper error handling"""
-    
-    if FORCE_PURE_PYTHON:
-        warnings.warn("Pure Python mode forced by environment variable")
-        return []
-    
     try:
         from Cython.Build import cythonize
         
