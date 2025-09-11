@@ -56,22 +56,33 @@ jobs:
     - name: Build wheels
       uses: pypa/cibuildwheel@v2.21.0
       env:
-        # Try C++ build first, fallback to pure Python if it fails
-        CIBW_ENVIRONMENT_LINUX: "PYROXA_PURE_PYTHON=0"
-        CIBW_ENVIRONMENT_WINDOWS: "PYROXA_PURE_PYTHON=0"
-        CIBW_ENVIRONMENT_MACOS: "PYROXA_PURE_PYTHON=0"
+        # Build configuration
+        CIBW_BUILD: "cp38-* cp39-* cp310-* cp311-* cp312-*"
+        CIBW_SKIP: "*-win32 *-manylinux_i686 *-musllinux* pp*"
         
-        # Fallback to pure Python on build failure
+        # Install build dependencies
         CIBW_BEFORE_BUILD: |
-          pip install --upgrade pip setuptools wheel numpy>=1.19.0 Cython>=3.0.0 || \
-          (echo "C++ build failed, trying pure Python" && export PYROXA_PURE_PYTHON=1 && pip install --upgrade pip setuptools wheel numpy>=1.19.0)
+          pip install --upgrade pip setuptools wheel
+          pip install numpy>=1.19.0 || pip install numpy
+          pip install "Cython>=3.0.0" || pip install Cython
         
+        # Force pure Python build for CI reliability
+        CIBW_ENVIRONMENT: "PYROXA_PURE_PYTHON=1"
+        
+        # Test the built wheel
         CIBW_TEST_COMMAND: "python -c 'import pyroxa; print(f\"PyroXa {pyroxa.get_version()} works!\")'"
         CIBW_TEST_REQUIRES: "numpy"
         
-        # Build settings
-        CIBW_BUILD: "cp38-* cp39-* cp310-* cp311-* cp312-*"
-        CIBW_SKIP: "*-win32 *-manylinux_i686 *-musllinux* pp*"
+        # Build verbosity for debugging
+        CIBW_BUILD_VERBOSITY: 1
+    
+    - name: Show wheel build logs on failure
+      if: failure()
+      run: |
+        echo "=== Build failed, showing logs ==="
+        find . -name "*.log" -type f -exec echo "=== {} ===" \; -exec cat {} \; || true
+        echo "=== End logs ==="
+      shell: bash
     
     - name: Upload wheels
       uses: actions/upload-artifact@v4
