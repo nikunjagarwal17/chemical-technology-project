@@ -1,0 +1,49 @@
+name: Simple Release
+
+on:
+  push:
+    tags:
+      - 'v*'  # Trigger on version tags like v1.0.0
+  workflow_dispatch:  # Manual trigger
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    
+    - name: Install build dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install build twine
+    
+    - name: Build wheel and source distribution
+      run: |
+        echo "Building PyroXa (pure Python is fast enough!)..."
+        python -m build
+        ls -la dist/
+    
+    - name: Test the wheel
+      run: |
+        pip install dist/*.whl
+        python -c "import pyroxa; print(f'✅ PyroXa {pyroxa.get_version()} works!')"
+        python -c "import pyroxa; rate = pyroxa.arrhenius_rate(1e6, 50000, 298); print(f'Test function result: {rate}')"
+    
+    - name: Upload to PyPI (uncomment when ready)
+      # env:
+      #   TWINE_USERNAME: __token__
+      #   TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
+      # run: twine upload dist/*
+      run: echo "Ready to upload to PyPI when you add PYPI_API_TOKEN secret"
+    
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: pyroxa-dist
+        path: dist/

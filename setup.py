@@ -40,7 +40,7 @@ else:  # Linux and others
 extensions = []
 
 # Check if we should force pure Python mode
-FORCE_PURE_PYTHON = os.environ.get('PYROXA_PURE_PYTHON', '').lower() in ('1', 'true', 'yes')
+FORCE_PURE_PYTHON = os.environ.get('PYROXA_PURE_PYTHON', '').strip().lower() in ('1', 'true', 'yes')
 
 def build_extension():
     """Try to build the C++ extension with proper error handling"""
