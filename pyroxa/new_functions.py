@@ -273,15 +273,14 @@ def calculate_rmse(y_actual, y_predicted):
 
 def calculate_aic(y_actual, y_predicted, k):
     """Calculate Akaike Information Criterion"""
+    if isinstance(y_actual, (float, int)) or isinstance(y_predicted, (float, int)):
+        raise TypeError("y_actual and y_predicted must be array-like, not float")
     y_actual = np.array(y_actual)
     y_predicted = np.array(y_predicted)
-    
     n = len(y_actual)
     rss = np.sum((y_actual - y_predicted) ** 2)
-    
     if n <= 0 or rss <= 0:
         return float('inf')
-    
     return n * np.log(rss / n) + 2 * k
 
 

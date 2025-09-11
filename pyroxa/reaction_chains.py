@@ -98,6 +98,15 @@ class ReactionChain:
             final_conc = self._last_result['concentrations'][-1, :]
             return final_conc[product_index] / (1 - final_conc[0]) if final_conc[0] < 1 else 0
         return 0.0
+
+    def analyze_kinetics(self) -> Dict[str, Any]:
+        """Basic kinetic analysis for the reaction chain (stub)."""
+        # Example: return rate constants and number of species/reactions
+        return {
+            'n_species': self.n_species,
+            'n_reactions': self.n_reactions,
+            'rate_constants': self.rate_constants,
+        }
     
     def create_reactor(self, conc0: List[float]):
         """Create a reactor for this reaction chain"""
