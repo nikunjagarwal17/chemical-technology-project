@@ -267,6 +267,10 @@ try:
         ReactionError,
         ReactorError,
     )
+    
+    # Create alias for run_simulation
+    run_simulation = run_simulation_from_dict
+    
 except ImportError as e:
     # These might not be available in simplified version
     print(f"Warning: Some advanced classes not available: {e}")
@@ -275,20 +279,13 @@ except ImportError as e:
 # Import reaction chains if available
 try:
     from .reaction_chains import (
-        # Reaction chain classes and functions
+        # Reaction chain classes and functions that actually exist
         ReactionChain,
         create_reaction_chain,
-        ChainReactor,
-        Chain_Reactor_With_Inhibition,
-        # Individual functions that might exist
-        chain_reaction_rate,
-        branching_factor,
-        chain_length,
-        initiation_rate,
-        propagation_rate,
-        termination_rate,
+        ChainReactorVisualizer,
+        OptimalReactorDesign,
     )
-except ImportError:
+except ImportError as e:
     # Some reaction chain functions might not be implemented
     pass
 
@@ -476,8 +473,11 @@ __all__ = [
     # Reaction chains
     'ReactionChain',
     'create_reaction_chain',
-    'ChainReactor',
-    'Chain_Reactor_With_Inhibition',
+    'ChainReactorVisualizer',
+    'OptimalReactorDesign',
+    # Simulation utilities
+    'run_simulation_from_dict',
+    'run_simulation',
 ]
 
 print("✅ PyroXa v1.0.0 loaded successfully (Pure Python)")
