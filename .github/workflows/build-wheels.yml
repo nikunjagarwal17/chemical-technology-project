@@ -38,15 +38,15 @@ jobs:
           pip install dist/*.whl
           python -c "
           import pyroxa
-          print(f'✅ PyroXa {pyroxa.get_version()} loaded successfully')
-          print(f'📦 Available functions: {len([x for x in dir(pyroxa) if not x.startswith(\"_\")])}')
+          print('PyroXa ' + pyroxa.get_version() + ' loaded successfully')
+          print('Available functions: ' + str(len([x for x in dir(pyroxa) if not x.startswith('_')])))
           
           # Quick functionality test
           result1 = pyroxa.arrhenius_rate(1e6, 50000, 298)
           result2 = pyroxa.linear_interpolate(2.5, [1,2,3,4], [2,4,6,8])
-          print(f'✅ arrhenius_rate: {result1:.3e}')
-          print(f'✅ linear_interpolate: {result2}')
-          print('🎉 PyroXa pure Python wheel working perfectly!')
+          print('arrhenius_rate: ' + str(result1))
+          print('linear_interpolate: ' + str(result2))
+          print('PyroXa pure Python wheel working perfectly!')
           "
 
       - name: Upload wheel artifact
@@ -87,7 +87,7 @@ jobs:
           pip install "$wheel_file"
           python -c "
           import pyroxa
-          print('✅ PyroXa loaded on ${{ matrix.os }} Python ${{ matrix.python-version }}')
+          print('PyroXa loaded on ${{ matrix.os }} Python ${{ matrix.python-version }}')
           
           # Test core functionality
           assert hasattr(pyroxa, 'arrhenius_rate'), 'arrhenius_rate function missing'
@@ -103,6 +103,6 @@ jobs:
           assert linear_result == 5.0, 'Unexpected linear_interpolate result: ' + str(linear_result)
           
           func_count = len([x for x in dir(pyroxa) if not x.startswith('_')])
-          print('✅ All ' + str(func_count) + ' functions available')
-          print('🎉 All tests passed!')
+          print('All ' + str(func_count) + ' functions available')
+          print('All tests passed!')
           "

@@ -480,5 +480,5 @@ __all__ = [
     'run_simulation',
 ]
 
-print("✅ PyroXa v1.0.0 loaded successfully (Pure Python)")
-print(f"📦 Available functions: {len([x for x in __all__ if x in globals()])}")
+print("PyroXa v1.0.0 loaded successfully (Pure Python)")
+print(f"Available functions: {len([x for x in __all__ if x in globals()])}")
