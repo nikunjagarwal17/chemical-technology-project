@@ -123,26 +123,49 @@ except ImportError:
 # Import classes and advanced functions from purepy module
 try:
     from .purepy import (
+        # Core classes
         Thermodynamics,
         Reaction,
         ReactionMulti,
-        Reactor,
         MultiReactor,
+        
+        # Reactor classes
+        WellMixedReactor,
+        CSTR,
+        PFR,
+        ReactorNetwork,
+        PackedBedReactor,
         FluidizedBedReactor,
+        HeterogeneousReactor,
+        HomogeneousReactor,
+        
+        # Utility functions
         build_from_dict,
         run_simulation_from_dict,
         benchmark_multi_reactor,
         enthalpy_c,
         entropy_c,
+        
+        # Exception classes
+        PyroXaError,
+        ThermodynamicsError,
+        ReactionError,
+        ReactorError,
     )
-except ImportError:
+except ImportError as e:
     # These might not be available in simplified version
+    print(f"Warning: Some advanced classes not available: {e}")
     pass
 
 # Import reaction chains if available
 try:
     from .reaction_chains import (
-        # Reaction chain functions if they exist
+        # Reaction chain classes and functions
+        ReactionChain,
+        create_reaction_chain,
+        ChainReactor,
+        Chain_Reactor_With_Inhibition,
+        # Individual functions that might exist
         chain_reaction_rate,
         branching_factor,
         chain_length,
@@ -151,6 +174,7 @@ try:
         termination_rate,
     )
 except ImportError:
+    # Some reaction chain functions might not be implemented
     pass
 
 # Define essential functions that might be missing
@@ -222,13 +246,30 @@ __all__ = [
     'pid_controller',
     # Reactor design
     'conversion',
-    # Classes (if available)
+    # Core classes
     'Thermodynamics',
     'Reaction',
     'ReactionMulti', 
-    'Reactor',
     'MultiReactor',
+    # Reactor classes
+    'WellMixedReactor',
+    'CSTR',
+    'PFR',
+    'ReactorNetwork',
+    'PackedBedReactor',
     'FluidizedBedReactor',
+    'HeterogeneousReactor',
+    'HomogeneousReactor',
+    # Exception classes
+    'PyroXaError',
+    'ThermodynamicsError',
+    'ReactionError',
+    'ReactorError',
+    # Reaction chains
+    'ReactionChain',
+    'create_reaction_chain',
+    'ChainReactor',
+    'Chain_Reactor_With_Inhibition',
 ]
 
 print("✅ PyroXa v1.0.0 loaded successfully (Pure Python)")
