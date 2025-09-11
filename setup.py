@@ -21,11 +21,11 @@ except Exception:
 
 # Helper to pick C++ standard flags across platforms
 if sys.platform == 'win32':
-    extra_compile_args = ['/std:c++17']
+    extra_compile_args = ['/std:c++17', '/bigobj']
     # Fix Python 3.13 free-threaded linking issue
     extra_link_args = []
     libraries = []
-    library_dirs = [os.path.abspath('.')]  # Use local directory for python313t.lib
+    library_dirs = []
 else:
     extra_compile_args = ['-std=gnu++14']
     extra_link_args = []

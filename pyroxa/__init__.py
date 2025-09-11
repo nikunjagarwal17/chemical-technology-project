@@ -1,96 +1,26 @@
 try:
-	# Try to import compiled extension (may fail with free-threaded Python)
-	from . import _pybindings as _bind
+	# Try to import simplified C++ extension first
+	from . import simple_bindings as _bind
 	print("✓ C++ extension loaded successfully")
-	Thermodynamics = _bind.Thermodynamics
-	Reaction = _bind.Reaction
-	Reactor = _bind.Reactor
-	run_simulation_cpp = _bind.run_simulation_cpp
 	
-	# Try to import newly implemented functions from C++ bindings
-	try:
-		autocatalytic_rate = _bind.py_autocatalytic_rate
-		michaelis_menten_rate = _bind.py_michaelis_menten_rate
-		competitive_inhibition_rate = _bind.py_competitive_inhibition_rate
-		heat_capacity_nasa = _bind.py_heat_capacity_nasa
-		enthalpy_nasa = _bind.py_enthalpy_nasa
-		entropy_nasa = _bind.py_entropy_nasa
-		mass_transfer_correlation = _bind.py_mass_transfer_correlation
-		heat_transfer_correlation = _bind.py_heat_transfer_correlation
-		effective_diffusivity = _bind.py_effective_diffusivity
-		pressure_drop_ergun = _bind.py_pressure_drop_ergun
-		pid_controller = _bind.py_pid_controller
-		
-		# New high-priority functions
-		gibbs_free_energy = _bind.py_gibbs_free_energy
-		equilibrium_constant = _bind.py_equilibrium_constant
-		arrhenius_rate = _bind.py_arrhenius_rate
-		pressure_peng_robinson = _bind.py_pressure_peng_robinson
-		fugacity_coefficient = _bind.py_fugacity_coefficient
-		langmuir_hinshelwood_rate = _bind.py_langmuir_hinshelwood_rate
-		photochemical_rate = _bind.py_photochemical_rate
-		
-		# Batch 1: Statistical and interpolation functions
-		linear_interpolate = _bind.py_linear_interpolate
-		cubic_spline_interpolate = _bind.py_cubic_spline_interpolate
-		calculate_r_squared = _bind.py_calculate_r_squared
-		calculate_rmse = _bind.py_calculate_rmse
-		calculate_aic = _bind.py_calculate_aic
-		
-		# Batch 5: Core thermodynamic functions
-		enthalpy_c = _bind.py_enthalpy_c
-		entropy_c = _bind.py_entropy_c
-		
-		# Batch 6: Analytical solutions
-		analytical_first_order = _bind.py_analytical_first_order
-		analytical_reversible_first_order = _bind.py_analytical_reversible_first_order
-		analytical_consecutive_first_order = _bind.py_analytical_consecutive_first_order
-		
-		# Batch 8: Utility and optimization functions
-		calculate_objective_function = _bind.py_calculate_objective_function
-		check_mass_conservation = _bind.py_check_mass_conservation
-		calculate_rate_constants = _bind.py_calculate_rate_constants
-		
-		# Batch 9: Simple utility and validation functions
-		cross_validation_score = _bind.py_cross_validation_score
-		kriging_interpolation = _bind.py_kriging_interpolation
-		bootstrap_uncertainty = _bind.py_bootstrap_uncertainty
-		
-		# Batch 10: Matrix operations
-		matrix_multiply = _bind.py_matrix_multiply
-		matrix_invert = _bind.py_matrix_invert
-		solve_linear_system = _bind.py_solve_linear_system
-		
-		# Batch 11: Advanced optimization and sensitivity analysis
-		calculate_sensitivity = _bind.py_calculate_sensitivity
-		calculate_jacobian = _bind.py_calculate_jacobian
-		stability_analysis = _bind.py_stability_analysis
-		mpc_controller = _bind.py_mpc_controller
-		real_time_optimization = _bind.py_real_time_optimization
-		# parameter_sweep_parallel = _bind.py_parameter_sweep_parallel  # TEMPORARILY DISABLED
-		
-		# Batch 12: Advanced reactor simulations
-		simulate_packed_bed = _bind.py_simulate_packed_bed
-		simulate_fluidized_bed = _bind.py_simulate_fluidized_bed
-		simulate_homogeneous_batch = _bind.py_simulate_homogeneous_batch
-		simulate_multi_reactor_adaptive = _bind.py_simulate_multi_reactor_adaptive
-		
-		# Batch 13: Energy analysis and statistical methods
-		calculate_energy_balance = _bind.py_calculate_energy_balance
-		monte_carlo_simulation = _bind.py_monte_carlo_simulation
-		residence_time_distribution = _bind.py_residence_time_distribution
-		
-		# Batch 14: Final functions
-		catalyst_deactivation_model = _bind.py_catalyst_deactivation_model
-		process_scale_up = _bind.py_process_scale_up
-		
-		_NEW_FUNCTIONS_FROM_CPP = True
-		_EXTENDED_FUNCTIONS_FROM_CPP = True
-		_ALL_65_FUNCTIONS_FROM_CPP = True  # 65 out of 68 functions (3 don't exist in core.h)
-	except AttributeError:
-		# Fallback to Python implementations if C++ bindings not available
-		_NEW_FUNCTIONS_FROM_CPP = False
-		_EXTENDED_FUNCTIONS_FROM_CPP = False
+	# Create function aliases for compatibility
+	simulate_reactor_cpp = _bind.py_simulate_reactor
+	enthalpy_c_cpp = _bind.py_enthalpy_c
+	entropy_c_cpp = _bind.py_entropy_c
+	autocatalytic_rate_cpp = _bind.py_autocatalytic_rate
+	michaelis_menten_rate_cpp = _bind.py_michaelis_menten_rate
+	arrhenius_rate_cpp = _bind.py_arrhenius_rate
+	
+	_cpp_available = True
+	
+	# Since simplified bindings don't have classes, we'll use pure Python classes
+	# but with C++ acceleration for computationally intensive functions
+	print("✓ Using C++ accelerated functions for core operations")
+	
+	# Set flags for available functions
+	_NEW_FUNCTIONS_FROM_CPP = False  # Most functions will use Python fallback
+	_EXTENDED_FUNCTIONS_FROM_CPP = False
+	_ALL_65_FUNCTIONS_FROM_CPP = False
 	
 	# Always import all functions from Python implementations (C++ may not have all)
 	if not _EXTENDED_FUNCTIONS_FROM_CPP:

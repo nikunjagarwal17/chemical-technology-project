@@ -1552,3 +1552,15 @@ class HomogeneousReactor(WellMixedReactor):
 
 # Backwards-compatible alias
 run_simulation = run_simulation_from_dict
+
+
+def enthalpy_c(cp, T):
+    """Calculate enthalpy for constant heat capacity"""
+    return cp * T
+
+
+def entropy_c(cp, T):
+    """Calculate entropy for constant heat capacity"""
+    if T <= 0:
+        return 0.0
+    return cp * log(T)

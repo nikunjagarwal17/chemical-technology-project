@@ -2,8 +2,7 @@
 Alternative build script for C++ extensions with fixed library linking
 """
 
-from distutils.core import setup
-from distutils.extension import Extension
+from setuptools import setup, Extension
 from Cython.Build import cythonize
 import os
 import sys
@@ -34,28 +33,8 @@ ext = Extension(
 
 # Build with custom configuration
 if __name__ == "__main__":
-    # Override the library linking configuration
-    import distutils.msvccompiler
-    
-    # Patch the linker to use our library
-    original_link = distutils.msvccompiler.MSVCCompiler.link
-    
-    def patched_link(self, target_desc, objects, output_filename, output_dir=None,
-                     libraries=None, library_dirs=None, runtime_library_dirs=None,
-                     export_symbols=None, debug=0, extra_preargs=None,
-                     extra_postargs=None, build_temp=None, target_lang=None):
-        
-        # Add our local directory to library search path
-        if library_dirs is None:
-            library_dirs = []
-        library_dirs = [os.path.abspath('.')] + list(library_dirs)
-        
-        return original_link(self, target_desc, objects, output_filename, output_dir,
-                           libraries, library_dirs, runtime_library_dirs,
-                           export_symbols, debug, extra_preargs, extra_postargs,
-                           build_temp, target_lang)
-    
-    distutils.msvccompiler.MSVCCompiler.link = patched_link
+    # Modern setuptools approach - library dirs are handled in Extension definition above
+    # No need for complex compiler patching with modern setuptools
     
     setup(
         name='pyroxa_cpp',

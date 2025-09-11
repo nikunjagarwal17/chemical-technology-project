@@ -1,6 +1,7 @@
 # distutils: language = c++
+# cython: language_level=3
+
 from libc.stdlib cimport malloc, free
-from cpython.ref cimport PyObject
 import cython
 
 # core.h is expected to be found via include_dirs passed by setup.py (src/)

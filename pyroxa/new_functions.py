@@ -179,3 +179,74 @@ def fugacity_coefficient(P, T, Tc, Pc, omega):
     ln_phi = B * Pr / Tr
     
     return math.exp(ln_phi)
+
+
+def linear_interpolate(x1, y1, x2, y2, x):
+    """Linear interpolation between two points"""
+    if x2 == x1:
+        return y1
+    return y1 + (y2 - y1) * (x - x1) / (x2 - x1)
+
+
+def cubic_spline_interpolate(x_points, y_points, x):
+    """Simple cubic spline interpolation (basic implementation)"""
+    if len(x_points) != len(y_points) or len(x_points) < 2:
+        raise ValueError("Invalid input for spline interpolation")
+    
+    # For simplicity, use linear interpolation as fallback
+    # In a full implementation, this would use cubic spline calculations
+    n = len(x_points)
+    for i in range(n - 1):
+        if x_points[i] <= x <= x_points[i + 1]:
+            return linear_interpolate(x_points[i], y_points[i], x_points[i + 1], y_points[i + 1], x)
+    
+    # Extrapolation
+    if x < x_points[0]:
+        return linear_interpolate(x_points[0], y_points[0], x_points[1], y_points[1], x)
+    else:
+        return linear_interpolate(x_points[-2], y_points[-2], x_points[-1], y_points[-1], x)
+
+
+def calculate_r_squared(y_actual, y_predicted):
+    """Calculate R-squared (coefficient of determination)"""
+    y_actual = np.array(y_actual)
+    y_predicted = np.array(y_predicted)
+    
+    ss_res = np.sum((y_actual - y_predicted) ** 2)
+    ss_tot = np.sum((y_actual - np.mean(y_actual)) ** 2)
+    
+    if ss_tot == 0:
+        return 1.0 if ss_res == 0 else 0.0
+    
+    return 1 - (ss_res / ss_tot)
+
+
+def calculate_rmse(y_actual, y_predicted):
+    """Calculate Root Mean Square Error"""
+    y_actual = np.array(y_actual)
+    y_predicted = np.array(y_predicted)
+    
+    return np.sqrt(np.mean((y_actual - y_predicted) ** 2))
+
+
+def calculate_aic(n, rss, k):
+    """Calculate Akaike Information Criterion"""
+    if n <= 0 or rss <= 0:
+        return float('inf')
+    
+    return n * np.log(rss / n) + 2 * k
+
+
+def gibbs_free_energy(enthalpy, entropy, T):
+    """Calculate Gibbs free energy: G = H - T*S"""
+    return enthalpy - T * entropy
+
+
+def equilibrium_constant(delta_G, T, R=8.314):
+    """Calculate equilibrium constant from Gibbs free energy"""
+    return math.exp(-delta_G / (R * T))
+
+
+def arrhenius_rate(A, Ea, T, R=8.314):
+    """Calculate reaction rate using Arrhenius equation"""
+    return A * math.exp(-Ea / (R * T))
