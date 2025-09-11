@@ -230,7 +230,7 @@ def linear_interpolate(*args):
         raise ValueError("linear_interpolate() takes either 3 or 5 arguments")
 
 
-def cubic_spline_interpolate(x_points, y_points, x):
+def cubic_spline_interpolate(x, x_points, y_points):
     """Simple cubic spline interpolation (basic implementation)"""
     if len(x_points) != len(y_points) or len(x_points) < 2:
         raise ValueError("Invalid input for spline interpolation")
