@@ -52,7 +52,7 @@ try:
     
     # Test reaction
     rxn = pyroxa.Reaction(kf=1e-3, kr=1e-4)
-    rate = rxn.rate(1.0, 0.5)
+    rate = rxn.rate([1.0, 0.5])
     print(f"✓ Reaction: rate = {rate:.2e} mol/L/s")
     
     # Test rate function
