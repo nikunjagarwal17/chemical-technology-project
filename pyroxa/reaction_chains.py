@@ -101,7 +101,6 @@ class ReactionChain:
 
     def analyze_kinetics(self, times=None, concentrations=None) -> Dict[str, Any]:
         """Basic kinetic analysis for the reaction chain."""
-        # Example: return rate constants and number of species/reactions
         result = {
             'n_species': self.n_species,
             'n_reactions': self.n_reactions,
@@ -110,10 +109,39 @@ class ReactionChain:
         
         # If data is provided, add basic analysis
         if times is not None and concentrations is not None:
+            times = np.array(times)
+            concentrations = np.array(concentrations)
+            
+            # Handle both orientations of concentrations array
+            if concentrations.shape[0] == len(self.species):
+                # Shape is (n_species, n_timepoints) - transposed
+                final_conc = concentrations[:, -1]  # Last column (final time)
+                max_conc = np.max(concentrations, axis=1)  # Max along time axis
+            else:
+                # Shape is (n_timepoints, n_species) - normal
+                final_conc = concentrations[-1, :]  # Last row (final time)
+                max_conc = np.max(concentrations, axis=0)  # Max along time axis
+            
+            # Calculate conversions for each species
+            conversions = {}
+            max_concentrations = {}
+            
+            for i, species in enumerate(self.species):
+                if i == 0:  # First species (reactant)
+                    conversion = 1 - final_conc[i] / self.initial_conc[i] if self.initial_conc[i] > 0 else 0.0
+                else:  # Products
+                    conversion = final_conc[i] / self.initial_conc[0] if self.initial_conc[0] > 0 else 0.0
+                
+                conversions[species] = conversion
+                max_concentrations[species] = max_conc[i]
+            
             result.update({
                 'simulation_time': np.max(times) if len(times) > 0 else 0.0,
-                'final_concentrations': concentrations[-1] if len(concentrations) > 0 else [],
-                'conversion': 1 - concentrations[-1][0] / self.initial_conc[0] if len(concentrations) > 0 and self.initial_conc[0] > 0 else 0.0
+                'final_concentrations': final_conc,
+                'conversion': conversions,
+                'max_concentrations': max_concentrations,
+                # Backward compatibility
+                'conversion_A': conversions.get('A', 0.0) if 'A' in conversions else 0.0
             })
         
         return result
