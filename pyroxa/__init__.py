@@ -1,15 +1,15 @@
 try:
-	# Try to import simplified C++ extension first
-	from . import simple_bindings as _bind
+	# Try to import main C++ extension first
+	from . import _pybindings as _bind
 	print("✓ C++ extension loaded successfully")
 	
-	# Create function aliases for compatibility
-	simulate_reactor_cpp = _bind.py_simulate_reactor
-	enthalpy_c_cpp = _bind.py_enthalpy_c
-	entropy_c_cpp = _bind.py_entropy_c
-	autocatalytic_rate_cpp = _bind.py_autocatalytic_rate
-	michaelis_menten_rate_cpp = _bind.py_michaelis_menten_rate
-	arrhenius_rate_cpp = _bind.py_arrhenius_rate
+	# Create function aliases for compatibility with the py_ prefixed functions
+	simulate_reactor_cpp = getattr(_bind, 'run_simulation_cpp', None)
+	enthalpy_c_cpp = getattr(_bind, 'py_enthalpy_c', None)  
+	entropy_c_cpp = getattr(_bind, 'py_entropy_c', None)
+	autocatalytic_rate_cpp = getattr(_bind, 'py_autocatalytic_rate', None)
+	michaelis_menten_rate_cpp = getattr(_bind, 'py_michaelis_menten_rate', None)
+	arrhenius_rate_cpp = getattr(_bind, 'py_arrhenius_rate', None)
 	
 	_cpp_available = True
 	
@@ -17,10 +17,36 @@ try:
 	# but with C++ acceleration for computationally intensive functions
 	print("✓ Using C++ accelerated functions for core operations")
 	
-	# Set flags for available functions
-	_NEW_FUNCTIONS_FROM_CPP = False  # Most functions will use Python fallback
-	_EXTENDED_FUNCTIONS_FROM_CPP = False
-	_ALL_65_FUNCTIONS_FROM_CPP = False
+	# Set flags for available functions - main pybindings has many functions available
+	_NEW_FUNCTIONS_FROM_CPP = True  # Many functions available from C++
+	_EXTENDED_FUNCTIONS_FROM_CPP = True  
+	_ALL_65_FUNCTIONS_FROM_CPP = True  # Most functions should be available
+	
+	# Create standard function aliases from C++ functions
+	autocatalytic_rate = _bind.py_autocatalytic_rate
+	michaelis_menten_rate = _bind.py_michaelis_menten_rate
+	competitive_inhibition_rate = _bind.py_competitive_inhibition_rate
+	arrhenius_rate = _bind.py_arrhenius_rate
+	gibbs_free_energy = _bind.py_gibbs_free_energy
+	equilibrium_constant = _bind.py_equilibrium_constant
+	linear_interpolate = _bind.py_linear_interpolate
+	calculate_r_squared = _bind.py_calculate_r_squared
+	calculate_rmse = _bind.py_calculate_rmse
+	enthalpy_c = _bind.py_enthalpy_c
+	entropy_c = _bind.py_entropy_c
+	heat_capacity_nasa = _bind.py_heat_capacity_nasa
+	enthalpy_nasa = _bind.py_enthalpy_nasa
+	entropy_nasa = _bind.py_entropy_nasa
+	mass_transfer_correlation = _bind.py_mass_transfer_correlation
+	heat_transfer_correlation = _bind.py_heat_transfer_correlation
+	effective_diffusivity = _bind.py_effective_diffusivity
+	pressure_drop_ergun = _bind.py_pressure_drop_ergun
+	langmuir_hinshelwood_rate = _bind.py_langmuir_hinshelwood_rate
+	photochemical_rate = _bind.py_photochemical_rate
+	pressure_peng_robinson = _bind.py_pressure_peng_robinson
+	fugacity_coefficient = _bind.py_fugacity_coefficient
+	cubic_spline_interpolate = _bind.py_cubic_spline_interpolate
+	calculate_aic = _bind.py_calculate_aic
 	
 	# Always import all functions from Python implementations (C++ may not have all)
 	if not _EXTENDED_FUNCTIONS_FROM_CPP:

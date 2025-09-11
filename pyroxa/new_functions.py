@@ -181,11 +181,53 @@ def fugacity_coefficient(P, T, Tc, Pc, omega):
     return math.exp(ln_phi)
 
 
-def linear_interpolate(x1, y1, x2, y2, x):
-    """Linear interpolation between two points"""
-    if x2 == x1:
-        return y1
-    return y1 + (y2 - y1) * (x - x1) / (x2 - x1)
+def linear_interpolate(*args):
+    """Linear interpolation - supports two calling modes:
+    1. linear_interpolate(x1, y1, x2, y2, x) - interpolate between two points
+    2. linear_interpolate(x, x_data, y_data) - interpolate from arrays
+    """
+    if len(args) == 5:
+        # Mode 1: individual points
+        x1, y1, x2, y2, x = args
+        if x2 == x1:
+            return y1
+        return y1 + (y2 - y1) * (x - x1) / (x2 - x1)
+    
+    elif len(args) == 3:
+        # Mode 2: arrays
+        x, x_data, y_data = args
+        x_data = np.array(x_data)
+        y_data = np.array(y_data)
+        
+        if len(x_data) != len(y_data):
+            raise ValueError("x_data and y_data must have the same length")
+        
+        # Find the interval containing x
+        for i in range(len(x_data) - 1):
+            if x_data[i] <= x <= x_data[i + 1]:
+                # Linear interpolation between points i and i+1
+                x1, y1 = x_data[i], y_data[i]
+                x2, y2 = x_data[i + 1], y_data[i + 1]
+                if x2 == x1:
+                    return y1
+                return y1 + (y2 - y1) * (x - x1) / (x2 - x1)
+        
+        # Extrapolation
+        if x < x_data[0]:
+            # Extrapolate using first two points
+            x1, y1 = x_data[0], y_data[0]
+            x2, y2 = x_data[1], y_data[1]
+        else:
+            # Extrapolate using last two points
+            x1, y1 = x_data[-2], y_data[-2]
+            x2, y2 = x_data[-1], y_data[-1]
+        
+        if x2 == x1:
+            return y1
+        return y1 + (y2 - y1) * (x - x1) / (x2 - x1)
+    
+    else:
+        raise ValueError("linear_interpolate() takes either 3 or 5 arguments")
 
 
 def cubic_spline_interpolate(x_points, y_points, x):
