@@ -1,120 +1,192 @@
-# PyroXa Installation and Usage Guide
+# PyroXa Installation Guide
 
-## ❌ C++ Compilation Issue (Python 3.13 Free-Threaded)
+## 🚀 Quick Installation (Pure Python)
 
-**Problem**: The C++ extension compilation fails with:
-```
-LINK : fatal error LNK1104: cannot open file 'python313t.lib'
-```
+PyroXa v1.0.0 is now a pure Python implementation for maximum compatibility and ease of use.
 
-**Root Cause**: Python 3.13 free-threaded build requires `python313t.lib` but only `python313.lib` is available in standard installations.
+### Prerequisites
+- **Python**: 3.8 or higher
+- **Operating System**: Windows, Linux, macOS
+- **Dependencies**: NumPy, SciPy, Matplotlib (optional)
 
-## ✅ **SOLUTION: Use Direct Import (Recommended)**
-
-PyroXa works perfectly without installation. All functionality is available through direct import:
-
-### Quick Start
-```python
-import sys
-sys.path.insert(0, r'c:\Users\nikun\OneDrive\Documents\Chemical Technology Project\project')
-import pyroxa
-
-# All 48 functions available
-print("Available functions:", len([attr for attr in dir(pyroxa) if not attr.startswith('_')]))
-
-# Test reactor functionality
-from pyroxa.purepy import PackedBedReactor, FluidizedBedReactor
-reactor = PackedBedReactor(0.01, 0.4, 100.0, 293.15)
-print("✅ PyroXa is working perfectly!")
-```
-
-### Full Reactor Examples
-```python
-# Import all reactor types
-from pyroxa.purepy import (
-    PackedBedReactor, 
-    FluidizedBedReactor,
-    HeterogeneousReactor,
-    HomogeneousReactor
-)
-
-# Example: Packed Bed Reactor
-pbr = PackedBedReactor(
-    volume=0.01,        # m³
-    bed_porosity=0.4,   # dimensionless
-    pressure=100000,    # Pa
-    temperature=293.15  # K
-)
-
-# Example: Fluidized Bed Reactor  
-fbr = FluidizedBedReactor(
-    volume=0.01,             # m³
-    bed_porosity=0.5,        # dimensionless  
-    pressure=100000,         # Pa
-    temperature=293.15,      # K
-    catalyst_density=2000,   # kg/m³
-    gas_velocity=0.1         # m/s
-)
-
-# Use all new chemical engineering functions
-rate = pyroxa.autocatalytic_rate(0.1, 2.0, 3.0)
-cp = pyroxa.heat_capacity_nasa(298.15, [29.0, 0.001, 0.0, 0.0, 0.0, 0.0, 0.0])
-pid_output = pyroxa.pid_controller(100, 95, 0.1, 1.0, 0.1, 0.01, 0.0, 0.0)
-```
-
-## 🧪 **Verification Tests**
-
-Run these commands to verify everything works:
+### Method 1: Direct Installation (Recommended)
 
 ```bash
-# Test all advanced reactors
-python tests/test_advanced_reactors.py
+# Clone the repository
+git clone https://github.com/nikunjagarwal17/chemical-technology-project.git
+cd chemical-technology-project/project
 
-# Test all new functions  
-python test_new_functions.py
+# Install dependencies
+pip install -r requirements.txt
 
-# Quick functionality check
-python -c "import sys; sys.path.insert(0, '.'); import pyroxa; print('✅ PyroXa works!', len([attr for attr in dir(pyroxa) if not attr.startswith('_')]), 'functions available')"
+# Install PyroXa
+pip install -e .
+
+# Verify installation
+python -c "import pyroxa; print(f'PyroXa v{pyroxa.get_version()} installed successfully!')"
 ```
 
-## 📊 **Current Status**
-
-- ✅ **All 4 reactor types implemented and working**
-- ✅ **All 68 C++ functions implemented (Python versions)**  
-- ✅ **48 public API functions available**
-- ✅ **Complete chemical engineering library**
-- ✅ **All tests passing**
-- ❌ **C++ compilation blocked by Python 3.13 linking issue**
-
-## 🚀 **Production Usage**
-
-For production use, simply add the project directory to your Python path:
+### Method 2: Direct Import (Development)
 
 ```python
-# Option 1: Direct path insertion
 import sys
-sys.path.insert(0, r'c:\Users\nikun\OneDrive\Documents\Chemical Technology Project\project')
+import os
+sys.path.insert(0, '/path/to/chemical-technology-project/project')
 import pyroxa
 
-# Option 2: Environment variable (recommended for production)
-# Set PYTHONPATH environment variable to include the project directory
+# All 132+ functions available
+print(f"PyroXa v{pyroxa.get_version()} loaded")
+print(f"Available functions: {len(pyroxa.__all__)}")
+```
+
+## 🧪 Quick Start Examples
+
+### Basic Reaction Kinetics
+```python
+import pyroxa
+
+# First-order reaction rate
+rate = pyroxa.first_order_rate(k=0.1, concentration=2.0)
+print(f"Reaction rate: {rate} mol/L/s")
+
+# Arrhenius temperature dependence
+k = pyroxa.arrhenius_rate(A=1e10, Ea=50000, T=298.15)
+print(f"Rate constant: {k:.2e} 1/s")
+```
+
+### Reactor Simulation
+```python
+# Create a simple reaction: A → B
+reaction = pyroxa.Reaction(kf=2.0, kr=0.5)
+
+# Set up a well-mixed reactor
+reactor = pyroxa.WellMixedReactor(reaction, T=300.0, conc0=(1.0, 0.0))
+
+# Run simulation
+times, concentrations = reactor.run(time_span=10.0, time_step=0.01)
+print(f"Final: A={concentrations[-1][0]:.3f}, B={concentrations[-1][1]:.3f}")
+```
+
+### Advanced Reactor Types
+```python
+# Packed bed reactor
+pbr = pyroxa.PackedBedReactor(
+    bed_length=1.0,
+    bed_porosity=0.4,
+    particle_diameter=0.003,
+    catalyst_density=1200.0
+)
+
+# Fluidized bed reactor
+fbr = pyroxa.FluidizedBedReactor(
+    bed_height=2.0,
+    bed_porosity=0.5,
+    bubble_fraction=0.3,
+    particle_diameter=0.001,
+    catalyst_density=1500.0,
+    gas_velocity=0.5
+)
+
+# Multi-reactor network
+network = pyroxa.ReactorNetwork([reactor1, reactor2], mode='series')
+```
+
+### Thermodynamic Calculations
+```python
+# Heat capacity using NASA polynomials
+coeffs = [4.45, 3.14e-3, -1.28e-6, 2.39e-10, -1.67e-14]
+cp = pyroxa.heat_capacity_nasa(coeffs, T=298.15)
+
+# Equilibrium constant
+keq = pyroxa.equilibrium_constant(delta_g=-50000, T=298.15)
+
+# Activity coefficient
+gamma = pyroxa.activity_coefficient(x=0.3, gamma_inf=2.5, alpha=0.5)
+```
+
+## 🧪 Testing
+
+Run the comprehensive test suite to verify functionality:
+
+```bash
+# Run all tests
+python tests/run_all_tests.py
+
+# Run specific test modules
+python tests/test_basic_kinetics.py
+python tests/test_thermodynamics.py
+python tests/test_reactor_classes.py
+python tests/test_transport_phenomena.py
+python tests/test_advanced_functions.py
+```
+
+## 📊 Available Functions
+
+PyroXa provides 132+ functions organized in categories:
+
+- **Basic Kinetics**: 14 functions (first_order_rate, arrhenius_rate, etc.)
+- **Thermodynamics**: 12 functions (heat_capacity_nasa, equilibrium_constant, etc.)
+- **Transport**: 18 functions (reynolds_number, heat_transfer_coefficient, etc.)
+- **Reactor Design**: 15 functions (cstr_volume, pfr_volume, residence_time, etc.)
+- **Process Engineering**: 20 functions (mixing_time, pumping_power, etc.)
+- **Advanced Simulation**: 12 functions (simulate_packed_bed, etc.)
+- **Analysis Tools**: 25 functions (sensitivity analysis, optimization, etc.)
+- **Reactor Classes**: 9 classes (WellMixedReactor, CSTR, PFR, etc.)
+
+## � Troubleshooting
+
+### Import Errors
+```python
+# If you get import errors, check the path
+import sys
+print(sys.path)
+
+# Add the correct path
+sys.path.insert(0, '/path/to/project')
 import pyroxa
 ```
 
-## 🔧 **Future C++ Compilation Fix**
+### Dependency Issues
+```bash
+# Install missing dependencies
+pip install numpy scipy matplotlib pyyaml
 
-To resolve the C++ compilation in the future:
+# Or install all at once
+pip install -r requirements.txt
+```
 
-1. **Install Python 3.13 with development libraries** that include `python313t.lib`
-2. **Or use standard Python 3.13** (non-free-threaded) 
-3. **Or wait for better Cython/setuptools support** for free-threaded Python
+### Verification
+```python
+# Check PyroXa installation
+import pyroxa
+print(f"PyroXa version: {pyroxa.get_version()}")
+print(f"Available functions: {len(pyroxa.__all__)}")
 
-**Note**: The Python implementations provide identical functionality to C++ versions, so compilation is optional for performance optimization only.
+# Test a simple function
+rate = pyroxa.first_order_rate(k=0.1, concentration=2.0)
+print(f"Test calculation successful: {rate}")
+```
 
-## 📈 **Performance**
+## � Performance Notes
 
-Current Python implementation performance:
-- Packed bed reactor simulation: ~0.067 seconds
+- **Pure Python Implementation**: Optimized for compatibility and ease of use
+- **NumPy Integration**: Vectorized operations for numerical efficiency
+- **Memory Efficient**: Careful memory management in simulations
+- **Scalable**: Suitable for both small studies and large simulations
+
+## 🚀 Next Steps
+
+1. **Explore Examples**: Check the `examples/` directory for detailed tutorials
+2. **Read Documentation**: See `API_REFERENCE.md` for complete function reference
+3. **Run Tests**: Execute the test suite to understand functionality
+4. **Contribute**: Fork the repository and submit improvements
+
+## � Support
+
+- **Documentation**: Complete API reference available
+- **Examples**: Comprehensive examples in `/examples` directory
+- **Tests**: Full test suite in `/tests` directory
+- **Issues**: Report problems on GitHub repository
 - All reactors achieve realistic conversions (48-91%)
 - Mass balance errors < 1e-15 (excellent accuracy)
 - Production-ready for all chemical engineering applications

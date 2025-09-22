@@ -1,4 +1,13 @@
-numpy
-matplotlib
-pytest
-PyYAML
+# PyroXa Pure Python Requirements
+# Core dependencies for chemical kinetics simulation
+numpy>=1.19.0
+scipy>=1.7.0
+matplotlib>=3.3.0
+
+# Development and testing
+pytest>=6.0.0
+PyYAML>=5.3.0
+
+# Optional for advanced features
+jupyter>=1.0.0
+pandas>=1.2.0
